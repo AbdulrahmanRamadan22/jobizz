@@ -49,6 +49,7 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   retrofit: ^4.4.2
   retrofit_generator: ^9.1.9
+  shared_preferences: ^2.5.3
   smooth_page_indicator: ^1.2.1
 
 dev_dependencies:
