@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobizz/core/routing/routers_string.dart';
 import 'package:jobizz/features/onboarding/ui/onboarding_screen.dart';
 
+import '../../features/auth/login/logic/cubit/login_cubit.dart';
 import '../../features/auth/login/ui/login_screen.dart';
+import '../di/dependancy_ingection.dart';
+
+// import '../../features/auth/login/ui/login_screen.dart';
 
 class AppRouter {
   static Route? generateRoute(RouteSettings settings) {
@@ -15,9 +20,13 @@ class AppRouter {
           builder: (_) => OnBoardingScreen(),
         );
 
+      // Login screen
       case Routes.loginScreen:
         return MaterialPageRoute(
-          builder: (_) => LoginScreen(),
+          builder: (_) => BlocProvider(
+            create: (context) => LoginCubit(getIt()),
+            child: const LoginScreen(),
+          ),
         );
 
       default:

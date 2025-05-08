@@ -37,8 +37,8 @@ dependencies:
   flutter_native_splash: ^2.4.4
   flutter_screenutil: ^5.9.3
   flutter_secure_storage: ^9.2.4
-  freezed: ^3.0.6
-  freezed_annotation: ^3.0.0
+  freezed: ^2.5.7
+  freezed_annotation: ^2.4.4
   freezed_result: ^1.0.3+1
   get_it: ^8.0.3
   google_sign_in: ^6.3.0
@@ -72,6 +72,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/lottie/
+  #   - images/a_dot_ham.jpeg
 
   fonts:
     - family: Poppins
