@@ -5,6 +5,9 @@ import 'package:jobizz/core/networking/api_constants.dart';
 import 'package:retrofit/http.dart';
 import 'package:retrofit/error_logger.dart';
 
+import '../../features/auth/login/data/model/login_request.dart';
+import '../../features/auth/login/data/model/login_response.dart';
+
 part 'api_services.g.dart';
 
 @RestApi(baseUrl: ApiConstant.apiBaseUrl)
@@ -15,11 +18,17 @@ abstract class ApisServices {
 //   Future<SignUpResponse> signUp(
 //     @Body() SignUpRequaste signUpRequaste,
 //   );
-//   // login service
-//   @POST(ApiConstant.login)
-//   Future<LoginResponse> login(
-//     @Body() LoginRequest loginRequest,
-//   );
+  // login service
+  @POST(ApiConstant.login)
+  Future<LoginResponse> login(
+    @Body() LoginRequest loginRequest,
+  );
+
+  //  google auth service
+  @POST(ApiConstant.googleAuth)
+  Future<LoginResponse> googleAuth(
+    @Body() Map<String, dynamic> data,
+  );
 //   // forgot password service
 
 //   @POST(ApiConstant.forgetPassword)

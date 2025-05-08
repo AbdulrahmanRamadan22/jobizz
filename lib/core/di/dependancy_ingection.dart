@@ -2,6 +2,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../features/auth/login/data/repo/login_repo.dart';
 import '../networking/api_factory.dart';
 import '../networking/api_services.dart';
 
@@ -15,7 +16,7 @@ Future<void> setupGetIt() async {
   // sign up
   // getIt.registerLazySingleton<SignUpRepo>(() => SignUpRepo(getIt()));
   // // login
-  // getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
+  getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
   // // forget password
   // getIt.registerLazySingleton<ForgetPasswordRepo>(
   //     () => ForgetPasswordRepo(getIt()));
