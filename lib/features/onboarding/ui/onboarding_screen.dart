@@ -74,11 +74,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 // Indicator page
                 SmoothIndicatorPages(pageController: _pageController),
                 verticalSpace(30), // Add spacing between elements
-                // ButtonNextAndSkip ...
                 Padding(
                   padding:
                       EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 20.h),
-                  child: ButtonNextAndSkip(pageController: _pageController,currentIndex: currentIndex,),
+                  child: ButtonNextAndSkip(
+                    pageController: _pageController,
+                    currentIndex: currentIndex,
+                  ),
                 ),
               ],
             ),
