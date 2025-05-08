@@ -6,10 +6,11 @@ class JobizzApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Jobizz App',
       theme: ThemeData(
-        // fontFamily: 'Poppins',
-      ),
+          // fontFamily: 'Poppins',
+          ),
       home: Scaffold(body: Center(child: Text("Jobizz App"))),
     );
   }
