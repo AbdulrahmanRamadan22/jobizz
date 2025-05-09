@@ -11,7 +11,6 @@ class TextStyles {
   );
   static TextStyle font14Gray = TextStyle(
     fontSize: 14.sp,
-    fontWeight: FontWeightHelper.regular,
     color: ColorsApp.gray,
   );
   static TextStyle font16Gray = TextStyle(
@@ -31,7 +30,6 @@ class TextStyles {
   );
   static TextStyle font14MainBlue = TextStyle(
     fontSize: 14.sp,
-    fontWeight: FontWeightHelper.thin,
     color: ColorsApp.mainBlue,
   );
   static TextStyle font22MainBlue = TextStyle(
@@ -71,7 +69,7 @@ class TextStyles {
   );
   static TextStyle font12Gray = TextStyle(
     fontSize: 12.sp,
-    fontWeight: FontWeightHelper.thin,
+    // fontWeight: FontWeightHelper.regular,
     color: ColorsApp.gray,
   );
   static TextStyle font12LightGray = TextStyle(
@@ -132,6 +130,18 @@ class TextStyles {
   static TextStyle font24DarkBlack = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeightHelper.bold,
+    color: ColorsApp.darkBlack,
+  );
+
+  static TextStyle font24DarkBlackSemiBold = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsApp.darkBlack,
+  );
+
+  static TextStyle font28DarkBlackSemiBold = TextStyle(
+    fontSize: 28.sp,
+    fontWeight: FontWeightHelper.semiBold,
     color: ColorsApp.darkBlack,
   );
 }

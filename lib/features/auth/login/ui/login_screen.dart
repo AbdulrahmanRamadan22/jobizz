@@ -46,25 +46,16 @@ class LoginScreen extends StatelessWidget {
                   validatedGoLoading(context);
                 },
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      ' Reset your password from here',
-                      style: TextStyles.font14Gray,
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        context.pushNamed(Routes.forgotPasswordScreen);
-                      },
-                      child: Text(
-                        'Forgot Password?',
-                        style: TextStyles.font14MainBlue,
-                      ),
-                    ),
-                  ],
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () {
+                    context.pushNamed(Routes.forgotPasswordScreen);
+                  },
+                  child: Text(
+                    'Forgot Password?',
+                    style: TextStyles.font14MainBlue,
+                  ),
                 ),
               ),
               RowDividerAndText(),

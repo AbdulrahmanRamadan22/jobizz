@@ -16,7 +16,7 @@ class RowDividerAndText extends StatelessWidget {
       children: [
         Expanded(
           child: Divider(
-            thickness: 1.3.h,
+            thickness: 0.5,
             color: ColorsApp.gray,
           ),
         ),
@@ -28,7 +28,7 @@ class RowDividerAndText extends StatelessWidget {
         horizontalSpace(14),
         Expanded(
           child: Divider(
-            thickness: 1.3.h,
+            thickness: 0.5,
             color: ColorsApp.gray,
           ),
         ),

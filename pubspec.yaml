@@ -37,6 +37,7 @@ dependencies:
   flutter_native_splash: ^2.4.4
   flutter_screenutil: ^5.9.3
   flutter_secure_storage: ^9.2.4
+  flutter_svg: ^2.1.0
   freezed: ^2.5.7
   freezed_annotation: ^2.4.4
   freezed_result: ^1.0.3+1
@@ -73,8 +74,8 @@ flutter:
   assets:
     - assets/images/
     - assets/lottie/
+    - assets/svgs/
   #   - images/a_dot_ham.jpeg
-
   fonts:
     - family: Poppins
       fonts:

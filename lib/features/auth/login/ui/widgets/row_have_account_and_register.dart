@@ -16,10 +16,13 @@ class RowHaveAccountAndButtonRegister extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Have an account?',
+          'Have an account? ',
           style: TextStyles.font14Gray,
         ),
         TextButton(
+          style: TextButton.styleFrom(
+            padding: EdgeInsets.zero,
+          ),
           child: Text(
             'Register',
             style: TextStyles.font14MainBlue,

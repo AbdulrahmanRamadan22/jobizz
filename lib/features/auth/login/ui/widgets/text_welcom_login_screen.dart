@@ -18,9 +18,23 @@ class TextWelcomeLoginScreen extends StatelessWidget {
           style: TextStyles.font22MainBlue,
         ),
         verticalSpace(8),
-        Text(
-          'Welcome Back 👋',
-          style: TextStyles.font24DarkBlack,
+        RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: 'Welcome Back',
+                style: TextStyles.font24DarkBlackSemiBold,
+              ),
+              TextSpan(
+                text: '👋',
+                style: TextStyles.font24DarkBlackSemiBold.copyWith(
+                  fontSize: 28.0, // Slightly larger for emoji emphasis
+                  // color: Colors
+                  //     .blueAccent, // Different color for visual distinction
+                ),
+              ),
+            ],
+          ),
         ),
         verticalSpace(7),
         Text(

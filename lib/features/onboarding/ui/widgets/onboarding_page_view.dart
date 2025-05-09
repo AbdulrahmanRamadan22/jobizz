@@ -21,6 +21,7 @@ class OnBoardingPageView extends StatelessWidget {
             child: Image.asset(
               model.image,
               width: double.infinity,
+              fit: BoxFit.cover,
               cacheWidth: (MediaQuery.of(context).size.width *
                       MediaQuery.of(context).devicePixelRatio)
                   .round(),

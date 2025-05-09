@@ -19,7 +19,7 @@ class TitleAndSubTitle extends StatelessWidget {
       children: [
         Text(
           model.title,
-          style: TextStyles.font24DarkBlack,
+          style: TextStyles.font28DarkBlackSemiBold,
         ),
         Padding(
           padding: EdgeInsets.symmetric(vertical: 10.h),

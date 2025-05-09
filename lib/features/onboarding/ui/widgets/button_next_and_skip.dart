@@ -19,14 +19,14 @@ class ButtonNextAndSkip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         TextButton(
           onPressed: () {
             context.pushReplacementNamed(Routes.loginScreen);
           },
-          child: Text('Skip', style: TextStyles.font14Gray),
+          child: Text('Skip', style: TextStyles.font16Gray),
         ),
-        Spacer(),
         AppTextButton(
           borderRadius: 5.r,
           buttonWidth: 158.w,
@@ -37,7 +37,7 @@ class ButtonNextAndSkip extends StatelessWidget {
             if (pageController.page! < 3) {
               pageController.nextPage(
                 duration: const Duration(milliseconds: 500),
-                curve: Curves.easeInOut,
+                curve: Curves.linear,
               );
             } else {
               context.pushReplacementNamed(Routes.loginScreen);
