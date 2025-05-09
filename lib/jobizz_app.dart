@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/routing/app_router.dart';
 import 'core/routing/routers_string.dart';
+import 'core/theming/colors.dart';
 
 class JobizzApp extends StatelessWidget {
   const JobizzApp({super.key, required this.appRouter});
@@ -19,6 +20,8 @@ class JobizzApp extends StatelessWidget {
         title: 'Jobizz',
         theme: ThemeData(
           fontFamily: 'Poppins',
+          primaryColor: ColorsApp.mainBlue,
+          scaffoldBackgroundColor: ColorsApp.backGroundWhite,
         ),
         // home: Scaffold(body: Center(child: Text("Jobizz App"))),
 

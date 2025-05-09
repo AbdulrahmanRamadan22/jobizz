@@ -1,9 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/font_weight.dart';
-
 
 class TextStyles {
   static TextStyle font11Black = TextStyle(
@@ -38,7 +36,7 @@ class TextStyles {
   );
   static TextStyle font22MainBlue = TextStyle(
     fontSize: 22.sp,
-    fontWeight: FontWeightHelper.thin,
+    fontWeight: FontWeightHelper.semiBold,
     color: ColorsApp.mainBlue,
   );
   static TextStyle font14Black = TextStyle(

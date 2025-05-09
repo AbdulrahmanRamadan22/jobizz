@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/theming/colors.dart';
 import '../../logic/cubit/login_cubit.dart';
 
-
 class LoginWithSocialMedia extends StatelessWidget {
   const LoginWithSocialMedia({
     super.key,
@@ -28,6 +27,8 @@ class LoginWithSocialMedia extends StatelessWidget {
               borderRadius: BorderRadius.circular(50.r),
             ),
             child: Image.asset(
+              height: 50.h,
+              width: 50.w,
               'assets/images/flat-color-icons_google.png',
             ),
           ),
