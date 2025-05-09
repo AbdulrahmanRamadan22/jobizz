@@ -35,3 +35,4 @@ class RowHaveAccountAndButtonRegister extends StatelessWidget {
     );
   }
 }
+
