@@ -13,6 +13,7 @@ class LoginWithSocialMedia extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Row(
       spacing: 32.w,
       mainAxisAlignment: MainAxisAlignment.center,

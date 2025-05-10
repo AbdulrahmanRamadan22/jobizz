@@ -34,9 +34,9 @@ class RegisterScreen extends StatelessWidget {
             spacing: 20.h,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextWelcomeRegisterScreen(),
+              const TextWelcomeRegisterScreen(),
               // form register (name , email , password , confirm password)..
-              FormRegister(),
+              const FormRegister(),
               // button register..
               AppTextButton(
                 borderRadius: 5.r,
@@ -48,16 +48,17 @@ class RegisterScreen extends StatelessWidget {
                 },
               ),
               // BlocListener
-              
-              // row divider and text
-              RowDividerAndText(),
-              // row register social another..
-              RegisterWithSocialMedia(),
-              // row have account and button login
-              RowHaveAccountAndButtonLogin(),
-              SignUpBlocListener(),
 
-              GoogleRegisterBlocListener(),
+              // row divider and text
+              const RowDividerAndText(),
+              // row register social another..
+              const RegisterWithSocialMedia(),
+              // row have account and button login
+              const RowHaveAccountAndButtonLogin(),
+              
+              const SignUpBlocListener(),
+
+              const GoogleRegisterBlocListener(),
             ],
           ),
         ),

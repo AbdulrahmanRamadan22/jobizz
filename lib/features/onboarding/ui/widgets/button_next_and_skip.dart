@@ -21,28 +21,40 @@ class ButtonNextAndSkip extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        TextButton(
-          onPressed: () {
-            context.pushReplacementNamed(Routes.loginScreen);
-          },
-          child: Text('Skip', style: TextStyles.font16Gray),
-        ),
-        AppTextButton(
-          borderRadius: 5.r,
-          buttonWidth: 158.w,
-          buttonHeight: 55.h,
-          buttonText: currentIndex < 3 ? 'Next' : 'Get Started',
-          textStyle: TextStyles.font16White,
-          onPressed: () {
-            if (pageController.page! < 3) {
-              pageController.nextPage(
-                duration: const Duration(milliseconds: 500),
-                curve: Curves.linear,
-              );
-            } else {
+        Expanded(
+          child: TextButton(
+            onPressed: () {
               context.pushReplacementNamed(Routes.loginScreen);
-            }
-          },
+            },
+            child: Align(
+              alignment: Alignment.bottomLeft,
+              child: Text(
+                'Skip',
+                style: TextStyles.font16Gray,
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          child: AppTextButton(
+            borderRadius: 5.r,
+            buttonHeight: 55.h,
+            buttonText: currentIndex < 3 ? 'Next' : 'Get Started',
+            textStyle: TextStyles.font16White,
+            onPressed: () {
+              if (pageController.page! < 3) {
+                pageController.nextPage(
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.linear,
+                );
+              } else {
+                context.pushNamedAndRemoveUntil(Routes.loginScreen,
+                    predicate: (Route<dynamic> route) {
+                  return false;
+                });
+              }
+            },
+          ),
         ),
       ],
     );

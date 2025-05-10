@@ -27,9 +27,9 @@ class ForgetPassScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextNamedAndForgetPassword(),
+           const   TextNamedAndForgetPassword(),
               verticalSpace(96),
-              FormEmailForgetPass(),
+           const   FormEmailForgetPass(),
               verticalSpace(48),
 
               // button send code ..

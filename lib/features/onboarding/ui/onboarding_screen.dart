@@ -65,7 +65,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     controller: _pageController,
                     itemCount: onBoardingModelList.length,
                     itemBuilder: (context, index) {
-                      return OnBoardingPageView(
+                      return  OnBoardingPageView(
                         model: onBoardingModelList[index],
                       );
                     },

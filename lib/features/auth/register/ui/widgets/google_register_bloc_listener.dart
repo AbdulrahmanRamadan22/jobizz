@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobizz/core/helper/extensions.dart';
 
-
 import '../../../../../core/routing/routers_string.dart';
 import '../../../../../core/widgets/showdialog_errors.dart';
 import '../../../../../core/widgets/showdialog_loadin.dart';

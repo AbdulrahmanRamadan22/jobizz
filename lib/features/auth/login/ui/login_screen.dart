@@ -16,8 +16,6 @@ import 'widgets/google_login_bloc_listner.dart';
 import 'widgets/login_with_social_media.dart';
 import 'widgets/text_welcom_login_screen.dart';
 
-
-
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
   @override
@@ -37,8 +35,9 @@ class LoginScreen extends StatelessWidget {
             spacing: 20.h,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextWelcomeLoginScreen(),
-              FormLogin(),
+              const TextWelcomeLoginScreen(),
+              const FormLogin(),
+              // update
               AppTextButton(
                 borderRadius: 5.r,
                 buttonHeight: 55.h,
@@ -60,9 +59,9 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              RowDividerAndText(),
-              LoginWithSocialMedia(),
-              RowHaveAccountAndButtonRegister(),
+              const RowDividerAndText(),
+              const LoginWithSocialMedia(),
+              const RowHaveAccountAndButtonRegister(),
               const LoginBlocListener(),
               const GoogleLoginBlocListener(),
             ],
