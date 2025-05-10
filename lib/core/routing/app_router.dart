@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobizz/core/routing/routers_string.dart';
+import 'package:jobizz/features/auth/change_password/ui/change_password_screen.dart';
 import 'package:jobizz/features/auth/register/logic/cubit/sign_up_cubit.dart';
 import 'package:jobizz/features/auth/reset_password_screen/logic/cubit/resetpassword_cubit.dart';
 import 'package:jobizz/features/onboarding/ui/onboarding_screen.dart';
 
+import '../../features/auth/change_password/logic/cubit/change_password_cubit.dart';
 import '../../features/auth/forget_password_screen/logic/cubit/forget_pass_cubit.dart';
 import '../../features/auth/forget_password_screen/ui/forget_pass_screen.dart';
 import '../../features/auth/login/logic/cubit/login_cubit.dart';
@@ -84,6 +86,16 @@ class AppRouter {
       case Routes.resetPasswordConformationScreen:
         return MaterialPageRoute(
           builder: (_) => const ResetPasswordConformation(),
+        );
+         // change password screen
+      case Routes.changePasswordScreen:
+        final token = settings.arguments as String? ?? '';
+
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => ChangePasswordCubit(getIt()),
+            child: ChangePasswordScreen(token: token),
+          ),
         );
 
       default:
