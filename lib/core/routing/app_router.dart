@@ -4,6 +4,8 @@ import 'package:jobizz/core/routing/routers_string.dart';
 import 'package:jobizz/features/auth/register/logic/cubit/sign_up_cubit.dart';
 import 'package:jobizz/features/onboarding/ui/onboarding_screen.dart';
 
+import '../../features/auth/forget_password_screen/logic/cubit/forget_pass_cubit.dart';
+import '../../features/auth/forget_password_screen/ui/forget_pass_screen.dart';
 import '../../features/auth/login/logic/cubit/login_cubit.dart';
 import '../../features/auth/login/ui/login_screen.dart';
 import '../../features/auth/register/ui/register_screen.dart';
@@ -31,12 +33,21 @@ class AppRouter {
           ),
         );
 
-          // register screen
+      // register screen
       case Routes.registerScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => SignUpCubit(getIt()),
             child: const RegisterScreen(),
+          ),
+        );
+
+      // forgot password
+      case Routes.forgotPasswordScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => ForgetPassCubit(getIt()),
+            child: const ForgetPassScreen(),
           ),
         );
 

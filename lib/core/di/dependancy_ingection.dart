@@ -2,6 +2,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../features/auth/forget_password_screen/data/repo/forget_pass.dart';
 import '../../features/auth/login/data/repo/login_repo.dart';
 import '../../features/auth/register/data/repo/sign_up_repo.dart';
 import '../networking/api_factory.dart';
@@ -19,8 +20,8 @@ Future<void> setupGetIt() async {
   // // login
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
   // // forget password
-  // getIt.registerLazySingleton<ForgetPasswordRepo>(
-  //     () => ForgetPasswordRepo(getIt()));
+  getIt.registerLazySingleton<ForgetPasswordRepo>(
+      () => ForgetPasswordRepo(getIt()));
   // // change password
   // getIt.registerLazySingleton<ChangePasswordRepo>(
   //     () => ChangePasswordRepo(getIt()));

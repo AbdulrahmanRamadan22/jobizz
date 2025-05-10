@@ -5,6 +5,8 @@ import 'package:jobizz/core/networking/api_constants.dart';
 import 'package:retrofit/http.dart';
 import 'package:retrofit/error_logger.dart';
 
+import '../../features/auth/forget_password_screen/data/models/forget_pass_request.dart';
+import '../../features/auth/forget_password_screen/data/models/forget_pass_response.dart';
 import '../../features/auth/login/data/model/login_request.dart';
 import '../../features/auth/login/data/model/login_response.dart';
 import '../../features/auth/register/data/model/sign_up_request.dart';
@@ -36,11 +38,10 @@ abstract class ApisServices {
     @Body() Map<String, dynamic> data,
   );
 //   // forgot password service
-
-//   @POST(ApiConstant.forgetPassword)
-//   Future<ForgetPasswordResponse> forgetpassword(
-//     @Body() ForgetPassRequaset forgetPassRequaset,
-//   );
+  @POST(ApiConstant.forgetPassword)
+  Future<ForgetPasswordResponse> forgetpassword(
+    @Body() ForgetPassRequest forgetPassRequest,
+  );
 //   // otp valid service
 //   @POST(ApiConstant.otpCode)
 //   Future<OtpResponse> otpValid(
