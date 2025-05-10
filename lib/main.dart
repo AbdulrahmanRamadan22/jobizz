@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:flutter/rendering.dart';
 import 'package:jobizz/core/helper/bloc_observer.dart';
 import 'package:jobizz/core/routing/app_router.dart';
@@ -11,12 +12,12 @@ import 'jobizz_app.dart';
 void main() async {
   // debugRepaintRainbowEnabled = true;
 
-  WidgetsFlutterBinding.ensureInitialized();
+  // WidgetsFlutterBinding.ensureInitialized();
+   setupGetIt();
+  await ScreenUtil.ensureScreenSize();
 
   // Initialize shared preferences
   await SharedPrefHelper.init();
-  // Initialize dependency injection
-  setupGetIt();
 
   Bloc.observer = MyBlocObserver();
   // Check login status

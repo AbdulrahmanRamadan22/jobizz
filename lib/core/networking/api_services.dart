@@ -5,6 +5,8 @@ import 'package:jobizz/core/networking/api_constants.dart';
 import 'package:retrofit/http.dart';
 import 'package:retrofit/error_logger.dart';
 
+import '../../features/auth/change_password/data/model/change_password_request.dart';
+import '../../features/auth/change_password/data/model/change_password_response.dart';
 import '../../features/auth/forget_password_screen/data/models/forget_pass_request.dart';
 import '../../features/auth/forget_password_screen/data/models/forget_pass_response.dart';
 import '../../features/auth/login/data/model/login_request.dart';
@@ -56,6 +58,14 @@ abstract class ApisServices {
   Future<ResetPasswordResponse> resetPasswordValid(
     @Header("Authorization") String token,
     @Body() ResetPasswordRequest resetPasswordRequest,
+  );
+
+
+//   // change password service
+  @POST(ApiConstant.changePassword)
+  Future<ChangePasswordResponse> changePassword(
+    @Header("Authorization") String token,
+    @Body() ChangePasswordRequest changePasswordRequest,
   );
 // // get company info
 //   @GET(ApiConstant.getCompanyInfo)

@@ -12,20 +12,19 @@ class JobizzApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ScreenUtilInit(
+    return ScreenUtilInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,
-      child: MaterialApp(
+      builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        
         title: 'Jobizz',
-        theme:  ThemeData(
+        theme: ThemeData(
           fontFamily: 'Poppins',
           primaryColor: ColorsApp.mainBlue,
           scaffoldBackgroundColor: ColorsApp.backGroundWhite,
         ),
         // home: Scaffold(body: Center(child: Text("Jobizz App"))),
-        initialRoute: Routes.onBoardingScreen,
+        initialRoute: Routes.changePasswordScreen,
         onGenerateRoute: AppRouter.generateRoute,
       ),
     );
