@@ -7,6 +7,8 @@ import 'package:retrofit/error_logger.dart';
 
 import '../../features/auth/login/data/model/login_request.dart';
 import '../../features/auth/login/data/model/login_response.dart';
+import '../../features/auth/register/data/model/sign_up_request.dart';
+import '../../features/auth/register/data/model/sign_up_response.dart';
 
 part 'api_services.g.dart';
 
@@ -14,10 +16,14 @@ part 'api_services.g.dart';
 abstract class ApisServices {
   factory ApisServices(Dio dio, {String baseUrl}) = _ApisServices;
 // sign up service
-//   @POST(ApiConstant.register)
-//   Future<SignUpResponse> signUp(
-//     @Body() SignUpRequaste signUpRequaste,
-//   );
+  @POST(ApiConstant.register)
+  Future<SignUpResponse> signUp(
+    @Body() SignUpRequest signUpRequest,
+  );
+    @POST(ApiConstant.googleAuth)
+  Future<SignUpResponse> googleAuthSignUp(
+    @Body() Map<String, dynamic> data,
+  );
   // login service
   @POST(ApiConstant.login)
   Future<LoginResponse> login(

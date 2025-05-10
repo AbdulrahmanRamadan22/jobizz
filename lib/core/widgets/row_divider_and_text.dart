@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/helper/size_box.dart';
 
 import '../theming/colors.dart';

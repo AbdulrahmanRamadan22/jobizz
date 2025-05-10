@@ -4,8 +4,8 @@ import 'package:jobizz/core/helper/extensions.dart';
 import '../../../../../core/routing/routers_string.dart';
 import '../../../../../core/theming/styles.dart';
 
-class RowHaveAccountAndButtonRegister extends StatelessWidget {
-  const RowHaveAccountAndButtonRegister({
+class RowHaveAccountAndButtonLogin extends StatelessWidget {
+  const RowHaveAccountAndButtonLogin({
     super.key,
   });
 
@@ -19,15 +19,13 @@ class RowHaveAccountAndButtonRegister extends StatelessWidget {
           style: TextStyles.font14Gray,
         ),
         TextButton(
-          style: TextButton.styleFrom(
-            padding: EdgeInsets.zero,
-          ),
+          style: TextButton.styleFrom(padding: EdgeInsets.zero),
           child: Text(
-            'Register',
+            'Login',
             style: TextStyles.font14MainBlue,
           ),
           onPressed: () {
-            context.pushNamedAndRemoveUntil(Routes.registerScreen,
+            context.pushNamedAndRemoveUntil(Routes.loginScreen,
                 predicate: (Route<dynamic> route) {
               return false;
             });
