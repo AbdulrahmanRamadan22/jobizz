@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class ColorsApp {
   static const Color darkBlue = Color(0xFF2C557D);
   static const Color mainBlue = Color(0xff356899);
@@ -15,6 +14,4 @@ class ColorsApp {
   static const Color darkBlack = Color(0xFF0D0D26);
   static const Color whiteColor = Color(0xffFFFFFF);
   static const Color red = Color(0xFFE74C3C);
-
-
 }

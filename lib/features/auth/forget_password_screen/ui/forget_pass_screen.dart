@@ -11,7 +11,6 @@ import '../../../../core/widgets/button_app_text.dart';
 import '../logic/cubit/forget_pass_cubit.dart';
 import 'widgets/forget_pass_bloc_listener.dart';
 
-
 class ForgetPassScreen extends StatelessWidget {
   const ForgetPassScreen({super.key});
 
@@ -44,7 +43,7 @@ class ForgetPassScreen extends StatelessWidget {
                 },
               ),
               // BlocListener ..
-              ForgetPassBlocListener()
+             const ForgetPassBlocListener(),
             ],
           ),
         ),

@@ -17,6 +17,7 @@ class JobizzApp extends StatelessWidget {
       minTextAdapt: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        
         title: 'Jobizz',
         theme: ThemeData(
           fontFamily: 'Poppins',
