@@ -24,7 +24,7 @@ class JobizzApp extends StatelessWidget {
           scaffoldBackgroundColor: ColorsApp.backGroundWhite,
         ),
         // home: Scaffold(body: Center(child: Text("Jobizz App"))),
-        initialRoute: Routes.changePasswordScreen,
+        initialRoute: Routes.loginScreen,
         onGenerateRoute: AppRouter.generateRoute,
       ),
     );

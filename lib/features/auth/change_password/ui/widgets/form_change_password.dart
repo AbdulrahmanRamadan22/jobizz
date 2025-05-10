@@ -101,6 +101,7 @@ class _FormChangePasswordState extends State<FormChangePassword> {
               return null;
             },
           ),
+           verticalSpace(10),
           //  new password
           Text('New password', style: TextStyles.font14Gray),
           verticalSpace(10),
