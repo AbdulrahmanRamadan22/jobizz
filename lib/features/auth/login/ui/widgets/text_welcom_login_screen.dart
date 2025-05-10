@@ -27,10 +27,8 @@ class TextWelcomeLoginScreen extends StatelessWidget {
               ),
               TextSpan(
                 text: '👋',
-                style: TextStyles.font24DarkBlackSemiBold.copyWith(
-                  fontSize: 28.0, // Slightly larger for emoji emphasis
-                  // color: Colors
-                  //     .blueAccent, // Different color for visual distinction
+                style: TextStyle(
+                  fontSize: 28.0, 
                 ),
               ),
             ],

@@ -9,6 +9,8 @@ import '../../features/auth/forget_password_screen/data/models/forget_pass_reque
 import '../../features/auth/forget_password_screen/data/models/forget_pass_response.dart';
 import '../../features/auth/login/data/model/login_request.dart';
 import '../../features/auth/login/data/model/login_response.dart';
+import '../../features/auth/otp_screen/data/model/otp_request.dart';
+import '../../features/auth/otp_screen/data/model/otp_response.dart';
 import '../../features/auth/register/data/model/sign_up_request.dart';
 import '../../features/auth/register/data/model/sign_up_response.dart';
 
@@ -43,10 +45,10 @@ abstract class ApisServices {
     @Body() ForgetPassRequest forgetPassRequest,
   );
 //   // otp valid service
-//   @POST(ApiConstant.otpCode)
-//   Future<OtpResponse> otpValid(
-//     @Body() OtpRequestCode otpRequestCode,
-//   );
+  @POST(ApiConstant.otpCode)
+  Future<OtpResponse> otpValid(
+    @Body() OtpRequestCode otpRequestCode,
+  );
 //   // reset password service otp
 //   @POST(ApiConstant.resetPassword)
 //   Future<ResetPasswordResponse> resetPasswordValied(

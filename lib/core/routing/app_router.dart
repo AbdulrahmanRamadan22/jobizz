@@ -8,6 +8,8 @@ import '../../features/auth/forget_password_screen/logic/cubit/forget_pass_cubit
 import '../../features/auth/forget_password_screen/ui/forget_pass_screen.dart';
 import '../../features/auth/login/logic/cubit/login_cubit.dart';
 import '../../features/auth/login/ui/login_screen.dart';
+import '../../features/auth/otp_screen/logic/cubit/otp_cubit.dart';
+import '../../features/auth/otp_screen/ui/otp_screen.dart';
 import '../../features/auth/register/ui/register_screen.dart';
 import '../di/dependancy_ingection.dart';
 
@@ -48,6 +50,19 @@ class AppRouter {
           builder: (_) => BlocProvider(
             create: (context) => ForgetPassCubit(getIt()),
             child: const ForgetPassScreen(),
+          ),
+        );
+
+              // otp screen
+      case Routes.otpScreen:
+        final email = settings.arguments as String;
+
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => OtpCubit(getIt()),
+            child: OtpScreen(
+              email: email,
+            ),
           ),
         );
 
