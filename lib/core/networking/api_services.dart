@@ -13,6 +13,8 @@ import '../../features/auth/otp_screen/data/model/otp_request.dart';
 import '../../features/auth/otp_screen/data/model/otp_response.dart';
 import '../../features/auth/register/data/model/sign_up_request.dart';
 import '../../features/auth/register/data/model/sign_up_response.dart';
+import '../../features/auth/reset_password_screen/data/model/reset_passwoed_response.dart';
+import '../../features/auth/reset_password_screen/data/model/reset_password_requast.dart';
 
 part 'api_services.g.dart';
 
@@ -50,11 +52,11 @@ abstract class ApisServices {
     @Body() OtpRequestCode otpRequestCode,
   );
 //   // reset password service otp
-//   @POST(ApiConstant.resetPassword)
-//   Future<ResetPasswordResponse> resetPasswordValied(
-//     @Header("Authorization") String token,
-//     @Body() ResetPasswordRequest resetPasswordRequest,
-//   );
+  @POST(ApiConstant.resetPassword)
+  Future<ResetPasswordResponse> resetPasswordValid(
+    @Header("Authorization") String token,
+    @Body() ResetPasswordRequest resetPasswordRequest,
+  );
 // // get company info
 //   @GET(ApiConstant.getCompanyInfo)
 //   Future<GetCompanyResponse> getCompanyInfo(

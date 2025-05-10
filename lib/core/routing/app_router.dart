@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobizz/core/routing/routers_string.dart';
 import 'package:jobizz/features/auth/register/logic/cubit/sign_up_cubit.dart';
+import 'package:jobizz/features/auth/reset_password_screen/logic/cubit/resetpassword_cubit.dart';
 import 'package:jobizz/features/onboarding/ui/onboarding_screen.dart';
 
 import '../../features/auth/forget_password_screen/logic/cubit/forget_pass_cubit.dart';
@@ -11,6 +12,8 @@ import '../../features/auth/login/ui/login_screen.dart';
 import '../../features/auth/otp_screen/logic/cubit/otp_cubit.dart';
 import '../../features/auth/otp_screen/ui/otp_screen.dart';
 import '../../features/auth/register/ui/register_screen.dart';
+import '../../features/auth/reset_password_screen/ui/reset_password_conformation_screen.dart';
+import '../../features/auth/reset_password_screen/ui/reset_password_screen.dart';
 import '../di/dependancy_ingection.dart';
 
 // import '../../features/auth/login/ui/login_screen.dart';
@@ -64,6 +67,23 @@ class AppRouter {
               email: email,
             ),
           ),
+        );
+
+             // reset password
+      case Routes.resetPasswordScreen:
+        // final token = settings.arguments as String;
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => ResetPasswordCubit(
+              getIt(),
+            ),
+            child: const ResetPasswordScreen(),
+          ),
+        );
+      // reset password conformation
+      case Routes.resetPasswordConformationScreen:
+        return MaterialPageRoute(
+          builder: (_) => const ResetPasswordConformation(),
         );
 
       default:
