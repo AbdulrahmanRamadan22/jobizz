@@ -5,12 +5,9 @@ import 'package:jobizz/features/home/data/model/home_response_model.dart';
 import 'recommended_jobs_item.dart';
 
 class SliverGridRecommendedJobs extends StatelessWidget {
-  const SliverGridRecommendedJobs({
-    super.key,
-    this.recommendedJobs
-  });
+  const SliverGridRecommendedJobs({super.key, this.recommendedJobs});
 
- final List<Jop?>? recommendedJobs;
+  final List<Jop?>? recommendedJobs;
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
@@ -20,7 +17,7 @@ class SliverGridRecommendedJobs extends StatelessWidget {
           crossAxisCount: 2, // Number of columns
           crossAxisSpacing: 10.w, // Horizontal spacing between items
           mainAxisSpacing: 10.h, // Vertical spacing between items
-          // childAspectRatio: 0.8, // Width/height ratio of each item
+          // childAspectRatio: 0.9, // Width/height ratio of each item
         ),
         delegate: SliverChildBuilderDelegate(
           addAutomaticKeepAlives: true, // Preserves state
