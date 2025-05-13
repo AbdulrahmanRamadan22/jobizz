@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jobizz/features/home/ui/widgets/custom_scroll_view.dart';
 import 'package:jobizz/features/home/ui/widgets/page_to_top.dart';
 
 import '../../../core/di/dependancy_ingection.dart';
@@ -8,6 +6,7 @@ import '../../../core/helper/size_box.dart';
 import '../../../core/theming/colors.dart';
 import '../../layout/drawer/drawer_wiget.dart';
 import '../logic/cubit/home_cubit.dart';
+import 'widgets/jobs_bloc_builder.dart';
 import 'widgets/search_and_filter.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -21,13 +20,10 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // welcome and name and image
             PageTopBar(),
             verticalSpace(10),
-            // search and filter
             SearchAndFilter(),
             verticalSpace(9),
-            // custom scroll view (featured jobs , popular jobs and recomented jobs)
             Expanded(
               child: RefreshIndicator(
                 backgroundColor: ColorsApp.mainBlue,
@@ -36,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                   await Future.delayed(const Duration(seconds: 1));
                   HomeCubit(getIt()).emitGetHomeData();
                 },
-                child: CustomScrollViewHomeScreen(),
+                child: JobsBlocBuilder(),
               ),
             ),
           ],
