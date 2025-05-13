@@ -10,7 +10,7 @@ class SharedPrefKeys {
 }
 
 class SharedPrefValues {
-  static String? token;
+  static String token="";
   static String username = "";
   static String fullName = "";
   static String email = "";

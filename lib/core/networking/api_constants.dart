@@ -9,4 +9,8 @@ class ApiConstant {
   static const String resetPassword = "auth/password/reset";
   static const String changePassword = "auth/password/change-password";
   // static const String getCompanyInfo = "auth/companies";
+
+  static const String home = "auth/home";
+
+
 }

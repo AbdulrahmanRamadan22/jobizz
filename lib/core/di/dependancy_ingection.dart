@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:jobizz/features/auth/change_password/data/repo/change_password_repo.dart';
+import 'package:jobizz/features/home/data/repo/home_repo.dart';
 
 import '../../features/auth/forget_password_screen/data/repo/forget_pass.dart';
 import '../../features/auth/login/data/repo/login_repo.dart';
@@ -31,6 +32,8 @@ Future<void> setupGetIt() async {
   // // change password
   getIt.registerLazySingleton<ChangePasswordRepo>(
       () => ChangePasswordRepo(getIt()));
+
+  getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
 
   // // reset password
 
