@@ -1,36 +1,37 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../theming/styles.dart';
 
 class RowTextAndSeeAll extends StatelessWidget {
   const RowTextAndSeeAll({
     super.key,
     required this.text,
-    required this.seeAllText,
-    required this.textStyle,
-    required this.seeAllTextStyle,
+    this.textStyle,
+    this.seeAllTextStyle,
     required this.onPressed,
   });
   final String text;
-  final String seeAllText;
-  final TextStyle textStyle;
-  final TextStyle seeAllTextStyle;
+  final TextStyle? textStyle;
+  final TextStyle? seeAllTextStyle;
   final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20.0),
+      padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 18.w),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             text,
-            style: textStyle,
+            style: TextStyles.font16DarkBlackSemiBold,
           ),
-          Spacer(),
           TextButton(
             onPressed: onPressed,
             child: Text(
-              seeAllText,
-              style: seeAllTextStyle,
+              "See all",
+              style: TextStyles.font14Gray,
             ),
           ),
         ],

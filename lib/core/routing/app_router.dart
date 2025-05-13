@@ -4,6 +4,7 @@ import 'package:jobizz/core/routing/routers_string.dart';
 import 'package:jobizz/features/auth/change_password/ui/change_password_screen.dart';
 import 'package:jobizz/features/auth/register/logic/cubit/sign_up_cubit.dart';
 import 'package:jobizz/features/auth/reset_password_screen/logic/cubit/resetpassword_cubit.dart';
+
 import 'package:jobizz/features/onboarding/ui/onboarding_screen.dart';
 
 import '../../features/auth/change_password/logic/cubit/change_password_cubit.dart';
@@ -16,6 +17,10 @@ import '../../features/auth/otp_screen/ui/otp_screen.dart';
 import '../../features/auth/register/ui/register_screen.dart';
 import '../../features/auth/reset_password_screen/ui/reset_password_conformation_screen.dart';
 import '../../features/auth/reset_password_screen/ui/reset_password_screen.dart';
+import '../../features/home/logic/cubit/home_cubit.dart';
+import '../../features/home/ui/home_screen.dart';
+import '../../features/layout/layout_screen/logic/cubit/layout_cubit.dart';
+import '../../features/layout/layout_screen/ui/layout_screen.dart';
 import '../di/dependancy_ingection.dart';
 
 // import '../../features/auth/login/ui/login_screen.dart';
@@ -58,7 +63,7 @@ class AppRouter {
           ),
         );
 
-              // otp screen
+      // otp screen
       case Routes.otpScreen:
         final email = settings.arguments as String;
 
@@ -71,7 +76,7 @@ class AppRouter {
           ),
         );
 
-             // reset password
+      // reset password
       case Routes.resetPasswordScreen:
         // final token = settings.arguments as String;
         return MaterialPageRoute(
@@ -87,7 +92,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const ResetPasswordConformation(),
         );
-         // change password screen
+      // change password screen
       case Routes.changePasswordScreen:
         final token = settings.arguments as String? ?? '';
 
@@ -97,6 +102,20 @@ class AppRouter {
             child: ChangePasswordScreen(token: token),
           ),
         );
+
+      // layout screen
+      case Routes.layoutScreen:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => LayoutCubit(),
+            child: const LayoutScreens(),
+          ),
+        );
+
+      // case Routes.homeScreen:
+      //   return MaterialPageRoute(
+      //     builder: (context) => HomeScreen(),
+      //   );
 
       default:
         return null;

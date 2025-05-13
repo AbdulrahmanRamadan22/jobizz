@@ -12,7 +12,7 @@ import 'jobizz_app.dart';
 void main() async {
   // debugRepaintRainbowEnabled = true;
 
-  // WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
    setupGetIt();
   await ScreenUtil.ensureScreenSize();
 
@@ -20,10 +20,11 @@ void main() async {
   await SharedPrefHelper.init();
 
   Bloc.observer = MyBlocObserver();
+  
   // Check login status
   // final bool isLoggedIn = SharedPrefHelper.isLoggedIn();
   // // final String initialRoute =
-  //     isLoggedIn ? Routes.homeScreen : Routes.loginScreen;
+  // isLoggedIn ? Routes.homeScreen : Routes.loginScreen;
 
   runApp(JobizzApp(
     appRouter: AppRouter(),

@@ -17,6 +17,7 @@ import '../../features/auth/register/data/model/sign_up_request.dart';
 import '../../features/auth/register/data/model/sign_up_response.dart';
 import '../../features/auth/reset_password_screen/data/model/reset_passwoed_response.dart';
 import '../../features/auth/reset_password_screen/data/model/reset_password_requast.dart';
+import '../../features/home/data/model/home_response_model.dart';
 
 part 'api_services.g.dart';
 
@@ -88,4 +89,10 @@ abstract class ApisServices {
 //     @Header("Authorization") String token,
 //     @Body() ChangePasswordRequest changePasswordRequest,
 //   );
+
+
+  @GET(ApiConstant.home)
+  Future<HomeResponseModel> homeData(
+    @Header("Authorization") String token,
+  );
 }

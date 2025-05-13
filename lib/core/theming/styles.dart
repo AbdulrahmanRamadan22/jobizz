@@ -3,13 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/font_weight.dart';
 
-
- const double horizontalPadding = 24.0;
-   const double verticalPadding = 25.0;
-   const double verticalSpaceAfterTitle = 96.0;
-   const double verticalSpaceAfterForm = 48.0;
-   const double buttonBorderRadius = 5.0;
-   const double buttonHeight = 56.0;
+const double horizontalPadding = 24.0;
+const double verticalPadding = 25.0;
+const double verticalSpaceAfterTitle = 96.0;
+const double verticalSpaceAfterForm = 48.0;
+const double buttonBorderRadius = 5.0;
+const double buttonHeight = 56.0;
 
 class TextStyles {
   static final TextStyle font11Black = TextStyle(
@@ -48,6 +47,12 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     color: ColorsApp.black,
   );
+
+  static final TextStyle font14DarkBlackSemiBold = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsApp.darkBlack,
+  );
   static final TextStyle font18DarkBlack = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeightHelper.bold,
@@ -63,21 +68,29 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     color: ColorsApp.red,
   );
-  static final TextStyle font12Black = TextStyle(
+  static final TextStyle font12DarkBlack = TextStyle(
     fontSize: 12.sp,
-    fontWeight: FontWeightHelper.thin,
     color: ColorsApp.darkBlack,
   );
-  static final TextStyle font13Black = TextStyle(
-    fontSize: 13.sp,
-    fontWeight: FontWeightHelper.thin,
-    color: ColorsApp.darkBlack,
-  );
+  // static final TextStyle font13DarkBlackMedium = TextStyle(
+  //   fontSize: 13.sp,
+  //   fontWeight: FontWeightHelper.medium,
+  //   color: ColorsApp.darkBlack,
+  // );
   static final TextStyle font12Gray = TextStyle(
     fontSize: 12.sp,
-    // fontWeight: FontWeightHelper.regular,
     color: ColorsApp.gray,
   );
+  static final TextStyle font12GrayMedium = TextStyle(
+    fontSize: 12.sp,
+    color: ColorsApp.gray,
+    fontWeight: FontWeightHelper.medium,
+  );
+  //   static final TextStyle font14Gray = TextStyle(
+  //   fontSize: 12.sp,
+  //   // fontWeight: FontWeightHelper.regular,
+  //   color: ColorsApp.gray,
+  // );
   static final TextStyle font12LightGray = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeightHelper.thin,
@@ -85,7 +98,7 @@ class TextStyles {
   );
   static final TextStyle font14LightGray = TextStyle(
     fontSize: 14.sp,
-    fontWeight: FontWeightHelper.thin,
+    // fontWeight: FontWeightHelper.thin,
     color: ColorsApp.lightGray,
   );
   static final TextStyle font16Black = TextStyle(
@@ -93,9 +106,21 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     color: ColorsApp.darkBlack,
   );
+
+  static final TextStyle font16DarkBlackSemiBold = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsApp.darkBlack,
+  );
   static final TextStyle font16White = TextStyle(
     fontSize: 16.sp,
-    fontWeight: FontWeightHelper.light,
+    // fontWeight: FontWeightHelper.light,
+    color: ColorsApp.whiteColor,
+  );
+
+  static final TextStyle font16WhiteSemiBold = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.semiBold,
     color: ColorsApp.whiteColor,
   );
   static final TextStyle font18White = TextStyle(
@@ -120,7 +145,6 @@ class TextStyles {
   );
   static final TextStyle font13White = TextStyle(
     fontSize: 13.sp,
-    fontWeight: FontWeightHelper.light,
     color: ColorsApp.whiteColor,
   );
   static final TextStyle font20WhiteBold = TextStyle(
@@ -135,6 +159,11 @@ class TextStyles {
   );
   static final TextStyle font24DarkBlack = TextStyle(
     fontSize: 24.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: ColorsApp.darkBlack,
+  );
+  static final TextStyle font22DarkBlackBold = TextStyle(
+    fontSize: 22.sp,
     fontWeight: FontWeightHelper.bold,
     color: ColorsApp.darkBlack,
   );
