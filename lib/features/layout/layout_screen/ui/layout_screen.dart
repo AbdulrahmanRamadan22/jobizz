@@ -12,10 +12,11 @@ class LayoutScreens extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LayoutCubit, LayoutState>(
-      builder: (context, state) {
-        final cubit = context.read<LayoutCubit>();
+    final cubit = context.read<LayoutCubit>();
 
+    return BlocConsumer<LayoutCubit, LayoutState>(
+      listener: (context, state) {},
+      builder: (context, state) {
         return Scaffold(
           key: cubit.scaffoldKey,
           drawer: const DrawerWidget(), // Mark as const
@@ -39,55 +40,28 @@ class LayoutScreens extends StatelessWidget {
                   Icons.home,
                   size: 30,
                 ),
-                activeIcon: Icon(
-                  Icons.home,
-                  size: 30,
-                ),
                 label: 'Home',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.email,
+                  Icons.category_rounded,
                   size: 30,
                 ),
-                activeIcon: Icon(
-                  Icons.email,
-                  size: 30,
-                ),
-                label: 'Messages',
+                label: 'Categories',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.bookmark,
+                  Icons.apartment,
                   size: 30,
                 ),
-                activeIcon: Icon(
-                  Icons.bookmark,
-                  size: 30,
-                ),
-                label: 'Saved',
+                label: 'Companies',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.notifications,
-                  size: 30,
-                ),
-                activeIcon: Icon(
                   Icons.notifications,
                   size: 30,
                 ),
                 label: 'Notification',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.category_rounded,
-                  size: 30,
-                ),
-                activeIcon: Icon(
-                  Icons.category_rounded,
-                  size: 30,
-                ),
-                label: 'Category',
               ),
             ],
           ),

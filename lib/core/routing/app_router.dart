@@ -25,6 +25,7 @@ import '../../features/jobs/screens/popular_jobs_screen.dart';
 import '../../features/jobs/screens/recommended_jobs_screen.dart';
 import '../../features/layout/layout_screen/logic/cubit/layout_cubit.dart';
 import '../../features/layout/layout_screen/ui/layout_screen.dart';
+import '../../features/notifications/ui/notifications_screen.dart.dart';
 import '../../features/profile/ui/profile_screen.dart';
 import '../../features/saved_jobs/ui/saved_screen.dart';
 import '../../features/settings/ui/screens/settings_screen.dart';
@@ -139,13 +140,20 @@ class AppRouter {
             child: const LayoutScreens(),
           ),
         );
+      case Routes.notificationsScreen:
+        return MaterialPageRoute(
+          builder: (context) => const NotificationScreen(),
+        );
 
       // Profile screen
 
-      // case Routes.homeScreen:
-      //   return MaterialPageRoute(
-      //     builder: (context) => HomeScreen(),
-      //   );
+      case Routes.homeScreen:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => HomeCubit(getIt())..emitGetHomeData(),
+            child: HomeScreen(),
+          ),
+        );
 
       // Jobs Screen
       case Routes.popularJobsScreen:

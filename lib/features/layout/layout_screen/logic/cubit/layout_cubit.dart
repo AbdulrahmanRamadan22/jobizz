@@ -5,27 +5,24 @@ import 'package:jobizz/features/home/logic/cubit/home_cubit.dart';
 import 'package:jobizz/features/layout/layout_screen/logic/cubit/layout_state.dart';
 
 import '../../../../home/ui/home_screen.dart';
+import '../../../../notifications/ui/notifications_screen.dart.dart';
 
 class LayoutCubit extends Cubit<LayoutState> {
   LayoutCubit() : super(LayoutInitialState());
   static LayoutCubit get(context) => BlocProvider.of(context);
   int currentIndex = 0;
-      final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   List<Widget> screensBottom = [
-    BlocProvider<HomeCubit>(
-      // create: HomeCubit(getIt())..emitGetHomeData(),
-      create: (context) => HomeCubit(getIt())..emitGetHomeData(),
-      child: HomeScreen(),
+    BlocProvider<HomeCubit>.value(
+      value: HomeCubit(getIt())..emitGetHomeData(),
+      child: const HomeScreen(),
     ),
-     Container(
-      child: Center(
-        child: Text("Search Screen"),
-      ),
-    ),
+
+    const NotificationScreen(),
+
     const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
+    const NotificationScreen(),
 
     // const MessagesScreen(),
     // const SavedScreen(),

@@ -132,6 +132,7 @@ class ListViewDrawer extends StatelessWidget {
                       onTap: () {
                         SharedPrefHelper.clearAllSecuredData().then((value) {
                           SharedPrefValues.token = '';
+                          SharedPrefHelper.clearAllData();
                           context.pushNamedAndRemoveUntil(
                             Routes.loginScreen,
                             predicate: (Route<dynamic> route) => false,
