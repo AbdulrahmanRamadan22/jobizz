@@ -10,7 +10,8 @@ class LayoutCubit extends Cubit<LayoutState> {
   LayoutCubit() : super(LayoutInitialState());
   static LayoutCubit get(context) => BlocProvider.of(context);
   int currentIndex = 0;
-    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+      final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
   List<Widget> screensBottom = [
     BlocProvider<HomeCubit>(
       // create: HomeCubit(getIt())..emitGetHomeData(),
