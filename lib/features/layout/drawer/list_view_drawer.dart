@@ -89,7 +89,7 @@ class ListViewDrawer extends StatelessWidget {
                   _buildMenuItem(
                     icon: Icons.bookmark_outline,
                     title: 'Saved Jobs',
-                    onTap: () => context.pushNamed(Routes.profileScreen),
+                    onTap: () => context.pushNamed(Routes.savedScreen),
                   ),
                   _buildMenuItem(
                     icon: Icons.description_outlined,
