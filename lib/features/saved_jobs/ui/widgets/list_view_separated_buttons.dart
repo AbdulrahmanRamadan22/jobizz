@@ -30,8 +30,8 @@ class _ListViewSeparatedState extends State<ListViewSeparated> {
             backgroundColor:
                 isSelected ? ColorsApp.darkBlue : Colors.transparent,
             borderRadius: 25.r,
-            // buttonWidth: 105.w,
-            buttonText: 'Developer',
+            buttonWidth:double.infinity,
+            buttonText: 'Developer ',
             borderColor: isSelected ? Colors.transparent : ColorsApp.gray,
             textStyle:
                 isSelected ? TextStyles.font14White : TextStyles.font14Gray,

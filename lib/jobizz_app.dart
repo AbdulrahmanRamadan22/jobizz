@@ -26,7 +26,7 @@ class JobizzApp extends StatelessWidget {
             iconTheme: IconThemeData(color: ColorsApp.darkBlack),
             titleTextStyle: TextStyle(
               color: ColorsApp.darkBlack,
-              fontSize: 16,
+              fontSize: 18,
               fontWeight: FontWeight.w600,
             ),
             centerTitle: true,
