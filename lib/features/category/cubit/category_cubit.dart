@@ -1,0 +1,25 @@
+import 'package:bloc/bloc.dart';
+import 'package:jobizz/features/category/cubit/category_state.dart';
+
+import '../../../core/cache/constants.dart';
+import '../data/repo/category_repo.dart';
+
+
+class CategoryCubit extends Cubit<CategoryState> {
+  CategoryCubit(this.categoryRepo) : super(const CategoryState.initial());
+  CategoryRepo categoryRepo;
+  void getAllCategories() async {
+    emit(CategoryState.categoryLoading());
+    final response = await categoryRepo.getCategories(
+      token: 'Bearer ${SharedPrefValues.token}',
+    );
+    response.when(
+      success: (data) {
+        emit(CategoryState.categorySuccess(data));
+      },
+      failure: (error) {
+        emit(CategoryState.categoryFailure(error));
+      },
+    );
+  }
+}
