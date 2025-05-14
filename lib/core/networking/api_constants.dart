@@ -12,5 +12,8 @@ class ApiConstant {
 
   static const String home = "auth/home";
 
+    static const String getCompanyInfo = "auth/companies";
+  static const String getCategories = "auth/categories";
+
 
 }

@@ -34,9 +34,14 @@ class Routes {
   static const String applySuccessScreen = '/applySuccessScreen';
   static const String messageScreen = '/messageScreen';
   static const String categoryScreen = '/categoryScreen';
-  static const String campaniesScreen = '/campaniesScreen';
+  static const String companiesScreen = '/companiesScreen';
   static const String notificationsScreen = '/notificationsScreen';
   static const String appliedJobDetailsScreen = '/appliedJobDetailsScreen';
   static const String resumeAndProtfolioScreen = '/resumeAndProtfolioScreen';
   static const String termsAndConditionsScreen = '/termsAndConditionsScreen';
+
+    static const String popularCompanyScreen = '/popularCompanyScreen';
+  static const String trendingCompanyScreen = '/trendingCompanyScreen';
+  static const String popularCategoryScreen = '/popularCategoryScreen';
+  static const String trendingCategoryScreen = '/trendingCategoryScreen';
 }

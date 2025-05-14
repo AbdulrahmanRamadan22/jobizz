@@ -17,6 +17,7 @@ import '../../features/auth/register/data/model/sign_up_request.dart';
 import '../../features/auth/register/data/model/sign_up_response.dart';
 import '../../features/auth/reset_password_screen/data/model/reset_passwoed_response.dart';
 import '../../features/auth/reset_password_screen/data/model/reset_password_requast.dart';
+import '../../features/companies/data/model/company_response.dart';
 import '../../features/home/data/model/home_response_model.dart';
 
 part 'api_services.g.dart';
@@ -89,6 +90,12 @@ abstract class ApisServices {
 //     @Header("Authorization") String token,
 //     @Body() ChangePasswordRequest changePasswordRequest,
 //   );
+
+// get company info
+  @GET(ApiConstant.getCompanyInfo)
+  Future<CompanyResponse> getCompanyInfo(
+    @Header("Authorization") String token,
+  );
 
 
   @GET(ApiConstant.home)
