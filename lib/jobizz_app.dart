@@ -19,6 +19,18 @@ class JobizzApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Jobizz',
         theme: ThemeData(
+          appBarTheme: const AppBarTheme(
+            backgroundColor: ColorsApp.whiteColor,
+            elevation: 0,
+            scrolledUnderElevation: 0,
+            iconTheme: IconThemeData(color: ColorsApp.darkBlack),
+            titleTextStyle: TextStyle(
+              color: ColorsApp.darkBlack,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+            centerTitle: true,
+          ),
           fontFamily: 'Poppins',
           primaryColor: ColorsApp.mainBlue,
           scaffoldBackgroundColor: ColorsApp.backGroundWhite,
