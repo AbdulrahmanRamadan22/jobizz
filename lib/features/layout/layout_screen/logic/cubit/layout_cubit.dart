@@ -4,6 +4,8 @@ import 'package:jobizz/core/di/dependancy_ingection.dart';
 import 'package:jobizz/features/home/logic/cubit/home_cubit.dart';
 import 'package:jobizz/features/layout/layout_screen/logic/cubit/layout_state.dart';
 
+import '../../../../companies/logic/cubit/company_cubit.dart';
+import '../../../../companies/ui/screens/compaies_screen.dart';
 import '../../../../home/ui/home_screen.dart';
 import '../../../../notifications/ui/notifications_screen.dart.dart';
 
@@ -14,6 +16,7 @@ class LayoutCubit extends Cubit<LayoutState> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   List<Widget> screensBottom = [
+    
     BlocProvider<HomeCubit>.value(
       value: HomeCubit(getIt())..emitGetHomeData(),
       child: const HomeScreen(),
@@ -21,7 +24,11 @@ class LayoutCubit extends Cubit<LayoutState> {
 
     const NotificationScreen(),
 
-    const HomeScreen(),
+    BlocProvider<CompanyCubit>.value(
+      value: CompanyCubit(getIt())..getAllCompany(),
+      child: const CompaniesScreen(),
+    ),
+
     const NotificationScreen(),
 
     // const MessagesScreen(),

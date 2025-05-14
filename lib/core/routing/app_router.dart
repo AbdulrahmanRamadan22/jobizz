@@ -17,6 +17,10 @@ import '../../features/auth/otp_screen/ui/otp_screen.dart';
 import '../../features/auth/register/ui/register_screen.dart';
 import '../../features/auth/reset_password_screen/ui/reset_password_conformation_screen.dart';
 import '../../features/auth/reset_password_screen/ui/reset_password_screen.dart';
+import '../../features/companies/data/model/company_response.dart';
+import '../../features/companies/ui/screens/compaies_screen.dart';
+import '../../features/companies/ui/screens/popular_company_screen.dart';
+import '../../features/companies/ui/screens/trending_company_screen.dart';
 import '../../features/home/data/model/home_response_model.dart';
 import '../../features/home/logic/cubit/home_cubit.dart';
 import '../../features/home/ui/home_screen.dart';
@@ -140,6 +144,11 @@ class AppRouter {
             child: const LayoutScreens(),
           ),
         );
+              case Routes.companiesScreen:
+        return MaterialPageRoute(
+          builder: (context) => CompaniesScreen(),
+        );
+
       case Routes.notificationsScreen:
         return MaterialPageRoute(
           builder: (context) => const NotificationScreen(),
@@ -177,6 +186,26 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => RecommendedJobsScreen(
             recommendedJobs: recommendedJobs,
+          ),
+        );
+
+
+
+        // popularCompany screen
+      case Routes.popularCompanyScreen:
+        final companyDataList = settings.arguments as List<Company?>? ?? [];
+
+        return MaterialPageRoute(
+          builder: (context) => PopularCompanyScreen(
+            companyDataList: companyDataList,
+          ),
+        );
+      // TrendingCompany screen
+      case Routes.trendingCompanyScreen:
+        final companyDataList = settings.arguments as List<Company?>? ?? [];
+        return MaterialPageRoute(
+          builder: (context) => TrendingCompanyScreen(
+            companyDataList: companyDataList,
           ),
         );
 
