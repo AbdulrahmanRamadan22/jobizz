@@ -16,28 +16,27 @@ class ListViewDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      physics: const BouncingScrollPhysics(),
-      padding: EdgeInsets.zero,
+    return Column(
       children: [
         // Header Section
         Container(
-          height: 305.h,
+          height: 270.h,
+          width: double.infinity,
           color: ColorsApp.darkBlue,
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Align(
-              //   alignment: Alignment.topRight,
-              //   child: IconButton(
-              //     icon: Icon(Icons.close, color: ColorsApp.whiteColor),
-              //     onPressed: () => context.pop(),
-              //   ),
-              // ),
-              verticalSpace(60),
+              verticalSpace(30),
+              Align(
+                alignment: Alignment.topRight,
+                child: IconButton(
+                  icon: Icon(Icons.close, color: ColorsApp.whiteColor),
+                  onPressed: () => context.pop(),
+                ),
+              ),
               CircleAvatar(
-                radius: 40.r,
+                radius: 30.r,
                 backgroundImage:
                     const AssetImage('assets/images/photo_person.png'),
               ),
@@ -69,77 +68,86 @@ class ListViewDrawer extends StatelessWidget {
         ),
 
         // Menu Items Section
-        Container(
-          color: ColorsApp.backGroundWhite,
-          padding: EdgeInsets.symmetric(horizontal: 16.w),
-          child: Column(
-            children: [
-              verticalSpace(16),
-              _buildMenuItem(
-                icon: Icons.person_outline,
-                title: 'Personal Info',
-                onTap: () => context.pushNamed(Routes.profileScreen),
-              ),
-              _buildMenuItem(
-                icon: Icons.work_outline,
-                title: 'Applications',
-                onTap: () {},
-              ),
-              _buildMenuItem(
-                icon: Icons.description_outlined,
-                title: 'Proposals',
-                onTap: () {},
-              ),
-              _buildMenuItem(
-                icon: Icons.assignment_outlined,
-                title: 'Resumes',
-                onTap: () {},
-              ),
-              _buildMenuItem(
-                icon: Icons.photo_library_outlined,
-                title: 'Portfolio',
-                onTap: () {},
-              ),
-              _buildMenuItem(
-                icon: Icons.email_outlined,
-                title: 'Cover Letters',
-                onTap: () {},
-              ),
-              _buildMenuItem(
-                icon: Icons.settings_outlined,
-                title: 'Settings',
-                onTap: () => context.pushNamed(Routes.settingsScreen),
-              ),
+        Expanded(
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Container(
+              color: ColorsApp.backGroundWhite,
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
+              child: Column(
+                children: [
+                  _buildMenuItem(
+                    icon: Icons.person_outline,
+                    title: 'Personal Info',
+                    onTap: () => context.pushNamed(Routes.profileScreen),
+                  ),
+                  _buildMenuItem(
+                    icon: Icons.work_outline,
+                    title: 'Applications',
+                    onTap: () {},
+                  ),
+                  _buildMenuItem(
+                    icon: Icons.bookmark_outline,
+                    title: 'Saved Jobs',
+                    onTap: () => context.pushNamed(Routes.profileScreen),
+                  ),
+                  _buildMenuItem(
+                    icon: Icons.description_outlined,
+                    title: 'Proposals',
+                    onTap: () {},
+                  ),
+                  _buildMenuItem(
+                    icon: Icons.assignment_outlined,
+                    title: 'Resumes',
+                    onTap: () {},
+                  ),
+                  _buildMenuItem(
+                    icon: Icons.photo_library_outlined,
+                    title: 'Portfolio',
+                    onTap: () {},
+                  ),
+                  _buildMenuItem(
+                    icon: Icons.email_outlined,
+                    title: 'Cover Letters',
+                    onTap: () {},
+                  ),
+                  _buildMenuItem(
+                    icon: Icons.settings_outlined,
+                    title: 'Settings',
+                    onTap: () => context.pushNamed(Routes.settingsScreen),
+                  ),
 
-              // Divider before actions
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 16.h),
-                child: Divider(height: 1.h, color: ColorsApp.lightGray),
-              ),
+                  // Divider before actions
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 16.h),
+                    child: Divider(height: 1.h, color: ColorsApp.lightGray),
+                  ),
 
-              // Action Buttons
-              _buildMenuItem(
-                icon: Icons.exit_to_app,
-                title: 'Logout',
-                color: ColorsApp.red,
-                iconColor: ColorsApp.red,
-                onTap: () => context.pushNamedAndRemoveUntil(
-                  Routes.loginScreen,
-                  predicate: (Route<dynamic> route) => false,
-                ),
+                  // Action Buttons
+                  _buildMenuItem(
+                    icon: Icons.exit_to_app,
+                    title: 'Logout',
+                    color: ColorsApp.red,
+                    iconColor: ColorsApp.red,
+                    onTap: () => context.pushNamedAndRemoveUntil(
+                      Routes.loginScreen,
+                      predicate: (Route<dynamic> route) => false,
+                    ),
+                  ),
+                  // verticalSpace(16),
+                  // AppTextButton(
+                  //   borderRadius: 8.r,
+                  //   buttonHeight: 50.h,
+                  //   buttonWidth: double.infinity,
+                  //   buttonText: 'Go Premium',
+                  //   textStyle: TextStyles.font16White,
+                  //   backgroundColor: ColorsApp.mainBlue,
+                  //   onPressed: () {},
+                  // ),
+                  // verticalSpace(24),
+                ],
               ),
-              // verticalSpace(16),
-              // AppTextButton(
-              //   borderRadius: 8.r,
-              //   buttonHeight: 50.h,
-              //   buttonWidth: double.infinity,
-              //   buttonText: 'Go Premium',
-              //   textStyle: TextStyles.font16White,
-              //   backgroundColor: ColorsApp.mainBlue,
-              //   onPressed: () {},
-              // ),
-              // verticalSpace(24),
-            ],
+            ),
           ),
         ),
       ],
