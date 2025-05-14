@@ -17,6 +17,7 @@ import '../../features/auth/register/data/model/sign_up_request.dart';
 import '../../features/auth/register/data/model/sign_up_response.dart';
 import '../../features/auth/reset_password_screen/data/model/reset_passwoed_response.dart';
 import '../../features/auth/reset_password_screen/data/model/reset_password_requast.dart';
+import '../../features/category/data/model/category_response.dart';
 import '../../features/companies/data/model/company_response.dart';
 import '../../features/home/data/model/home_response_model.dart';
 
@@ -30,7 +31,7 @@ abstract class ApisServices {
   Future<SignUpResponse> signUp(
     @Body() SignUpRequest signUpRequest,
   );
-    @POST(ApiConstant.googleAuth)
+  @POST(ApiConstant.googleAuth)
   Future<SignUpResponse> googleAuthSignUp(
     @Body() Map<String, dynamic> data,
   );
@@ -61,7 +62,6 @@ abstract class ApisServices {
     @Header("Authorization") String token,
     @Body() ResetPasswordRequest resetPasswordRequest,
   );
-
 
 //   // change password service
   @POST(ApiConstant.changePassword)
@@ -97,6 +97,10 @@ abstract class ApisServices {
     @Header("Authorization") String token,
   );
 
+  @GET(ApiConstant.getCategories)
+  Future<CategoryResponse> getCategories(
+    @Header("Authorization") String token,
+  );
 
   @GET(ApiConstant.home)
   Future<HomeResponseModel> homeData(

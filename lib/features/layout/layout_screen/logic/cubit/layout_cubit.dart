@@ -4,6 +4,8 @@ import 'package:jobizz/core/di/dependancy_ingection.dart';
 import 'package:jobizz/features/home/logic/cubit/home_cubit.dart';
 import 'package:jobizz/features/layout/layout_screen/logic/cubit/layout_state.dart';
 
+import '../../../../category/cubit/category_cubit.dart';
+import '../../../../category/ui/screens/category_screen.dart';
 import '../../../../companies/logic/cubit/company_cubit.dart';
 import '../../../../companies/ui/screens/compaies_screen.dart';
 import '../../../../home/ui/home_screen.dart';
@@ -16,18 +18,26 @@ class LayoutCubit extends Cubit<LayoutState> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   List<Widget> screensBottom = [
-    
-    BlocProvider<HomeCubit>.value(
-      value: HomeCubit(getIt())..emitGetHomeData(),
+    BlocProvider<HomeCubit>(
+      create: (context) => HomeCubit(getIt())..emitGetHomeData(),
       child: const HomeScreen(),
     ),
 
-    const NotificationScreen(),
-
-    BlocProvider<CompanyCubit>.value(
-      value: CompanyCubit(getIt())..getAllCompany(),
-      child: const CompaniesScreen(),
+    BlocProvider<CategoryCubit>(
+      create: (context) => CategoryCubit(getIt())..getAllCategories(),
+      child: const CategoryScreen(),
     ),
+
+    BlocProvider(
+      create: (context) => CompanyCubit(getIt())..getAllCompany(),
+      child: CompaniesScreen(),
+    ),
+    // CategoryScreen(),
+
+    // BlocProvider<CompanyCubit>.value(
+    //   value: CompanyCubit(getIt())..getAllCompany(),
+    //   child: const CompaniesScreen(),
+    // ),
 
     const NotificationScreen(),
 
@@ -40,10 +50,7 @@ class LayoutCubit extends Cubit<LayoutState> {
 
   void changeIndex(int index) {
     currentIndex = index;
-
-    // if (index == 0) {
-    //   HomeCubit(getIt()).emitGetHomeData();
-    // }
+ 
     // emit state because we need to change the index
     emit(LayoutChangeBottomNavState());
   }

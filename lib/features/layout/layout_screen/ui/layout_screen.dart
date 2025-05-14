@@ -35,7 +35,7 @@ class LayoutScreens extends StatelessWidget {
             selectedLabelStyle: TextStyles.font12DarkBlack,
             unselectedLabelStyle: TextStyles.font12Gray,
             items: const [
-              BottomNavigationBarItem(
+             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.home,
                   size: 30,
