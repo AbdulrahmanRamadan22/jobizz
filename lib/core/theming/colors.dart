@@ -4,6 +4,9 @@ class ColorsApp {
   static const Color darkBlue = Color(0xFF2C557D);
   static const Color mainBlue = Color(0xff356899);
   static const Color lightBlue = Color(0xFF5386E4);
+
+  static const Color lightBlue2 = Color(0xFFEDF3FC);
+
   static const Color backGroundWhite = Color(0xffFAFAFD);
   static const Color green = Color(0xFF0E9D57);
   static const Color lightGray = Color(0xFFCACBCE);
