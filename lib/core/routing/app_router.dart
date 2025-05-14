@@ -25,6 +25,7 @@ import '../../features/jobs/screens/popular_jobs_screen.dart';
 import '../../features/jobs/screens/recommended_jobs_screen.dart';
 import '../../features/layout/layout_screen/logic/cubit/layout_cubit.dart';
 import '../../features/layout/layout_screen/ui/layout_screen.dart';
+import '../../features/profile/ui/profile_screen.dart';
 import '../di/dependancy_ingection.dart';
 
 // import '../../features/auth/login/ui/login_screen.dart';
@@ -114,6 +115,12 @@ class AppRouter {
             create: (context) => LayoutCubit(),
             child: const LayoutScreens(),
           ),
+        );
+
+      // Profile screen
+      case Routes.profileScreen:
+        return MaterialPageRoute(
+          builder: (context) => const ProfileScreen(),
         );
 
       // case Routes.homeScreen:

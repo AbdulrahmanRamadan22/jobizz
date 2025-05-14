@@ -20,7 +20,7 @@ class ListViewDrawer extends StatelessWidget {
       children: [
         // Header Section
         Container(
-          height: 270.h,
+          height: 280.h,
           width: double.infinity,
           color: ColorsApp.darkBlue,
           padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -36,7 +36,7 @@ class ListViewDrawer extends StatelessWidget {
                 ),
               ),
               CircleAvatar(
-                radius: 30.r,
+                radius: 35.r,
                 backgroundImage:
                     const AssetImage('assets/images/photo_person.png'),
               ),
@@ -89,7 +89,7 @@ class ListViewDrawer extends StatelessWidget {
                   _buildMenuItem(
                     icon: Icons.bookmark_outline,
                     title: 'Saved Jobs',
-                    onTap: () => context.pushNamed(Routes.profileScreen),
+                    onTap: () => context.pushNamed(Routes.savedScreen),
                   ),
                   _buildMenuItem(
                     icon: Icons.description_outlined,
