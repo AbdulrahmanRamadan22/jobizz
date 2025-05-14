@@ -26,4 +26,11 @@ class Routes {
   static const String resumeAndProtfolioScreen = '/resumeAndProtfolioScreen';
   static const String changePasswordScreen = '/changePasswordScreen';
   static const String termsAndConditionsScreen = '/termsAndConditionsScreen';
+
+
+  static const String featuredJobsScreen = '/featuredJobsScreen';
+  static const String popularJobsScreen = '/popularJobsScreen';
+  static const String  recommendedJobsScreen= '/recommendedJobsScreen';
+
+
 }
