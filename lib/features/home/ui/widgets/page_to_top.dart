@@ -24,7 +24,10 @@ class PageTopBar extends StatelessWidget {
           verticalSpace(20),
           GestureDetector(
             onTap: () {
+              print("open drawer");
               Scaffold.of(context).openDrawer();
+
+              // _scaffoldKey.currentState!.openDrawer();
             },
             child: Icon(Icons.filter_list_rounded,
                 color: ColorsApp.darkBlue, size: 30.sp),

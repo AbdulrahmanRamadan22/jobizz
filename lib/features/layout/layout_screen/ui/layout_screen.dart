@@ -17,6 +17,7 @@ class LayoutScreens extends StatelessWidget {
         final cubit = context.read<LayoutCubit>();
 
         return Scaffold(
+          key: cubit.scaffoldKey,
           drawer: const DrawerWidget(), // Mark as const
           backgroundColor: ColorsApp.backGroundWhite,
           body: cubit.screensBottom[cubit.currentIndex],

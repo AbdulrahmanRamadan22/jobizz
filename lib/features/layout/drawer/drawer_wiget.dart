@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../core/theming/colors.dart';
 import 'list_view_drawer.dart';
 
 class DrawerWidget extends StatelessWidget {
@@ -11,6 +12,7 @@ class DrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: ColorsApp.backGroundWhite,
       semanticLabel: 'Drawer',
       elevation: 0,
       width: 300.w,
@@ -18,4 +20,3 @@ class DrawerWidget extends StatelessWidget {
     );
   }
 }
-
