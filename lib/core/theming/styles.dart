@@ -37,6 +37,13 @@ class TextStyles {
     fontSize: 14.sp,
     color: ColorsApp.mainBlue,
   );
+
+    static final TextStyle font13LightBlueMedium = TextStyle(
+    fontSize: 13.sp,
+    color: ColorsApp.lightBlue,
+    fontWeight: FontWeightHelper.medium
+
+  );
   static final TextStyle font22MainBlue = TextStyle(
     fontSize: 22.sp,
     fontWeight: FontWeightHelper.semiBold,
@@ -145,6 +152,10 @@ class TextStyles {
   );
   static final TextStyle font13White = TextStyle(
     fontSize: 13.sp,
+    color: ColorsApp.whiteColor,
+  );
+  static final TextStyle font14White = TextStyle(
+    fontSize: 14.sp,
     color: ColorsApp.whiteColor,
   );
   static final TextStyle font20WhiteBold = TextStyle(
