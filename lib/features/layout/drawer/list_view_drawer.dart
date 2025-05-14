@@ -125,15 +125,19 @@ class ListViewDrawer extends StatelessWidget {
 
                   // Action Buttons
                   _buildMenuItem(
-                    icon: Icons.exit_to_app,
-                    title: 'Logout',
-                    color: ColorsApp.red,
-                    iconColor: ColorsApp.red,
-                    onTap: () => context.pushNamedAndRemoveUntil(
-                      Routes.loginScreen,
-                      predicate: (Route<dynamic> route) => false,
-                    ),
-                  ),
+                      icon: Icons.exit_to_app,
+                      title: 'Logout',
+                      color: ColorsApp.red,
+                      iconColor: ColorsApp.red,
+                      onTap: () {
+                        SharedPrefHelper.clearAllSecuredData().then((value) {
+                          SharedPrefValues.token = '';
+                          context.pushNamedAndRemoveUntil(
+                            Routes.loginScreen,
+                            predicate: (Route<dynamic> route) => false,
+                          );
+                        });
+                      }),
                   // verticalSpace(16),
                   // AppTextButton(
                   //   borderRadius: 8.r,

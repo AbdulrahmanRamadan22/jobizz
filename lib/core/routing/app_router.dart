@@ -26,7 +26,9 @@ import '../../features/jobs/screens/recommended_jobs_screen.dart';
 import '../../features/layout/layout_screen/logic/cubit/layout_cubit.dart';
 import '../../features/layout/layout_screen/ui/layout_screen.dart';
 import '../../features/profile/ui/profile_screen.dart';
-import '../../features/saved_screen/ui/saved_screen.dart';
+import '../../features/saved_jobs/ui/saved_screen.dart';
+import '../../features/settings/ui/screens/settings_screen.dart';
+import '../../features/settings/ui/screens/terms_and_conditions.dart';
 import '../di/dependancy_ingection.dart';
 
 // import '../../features/auth/login/ui/login_screen.dart';
@@ -109,6 +111,26 @@ class AppRouter {
           ),
         );
 
+      // Drawer Screens
+      case Routes.profileScreen:
+        return MaterialPageRoute(
+          builder: (context) => const ProfileScreen(),
+        );
+
+      case Routes.savedJobsScreen:
+        return MaterialPageRoute(
+          builder: (context) => const SavedJobsScreen(),
+        );
+      // settings screen
+      case Routes.settingsScreen:
+        return MaterialPageRoute(
+          builder: (context) => const SettingScreen(),
+        );
+      // termsAndConditionsScreen
+      case Routes.termsAndConditionsScreen:
+        return MaterialPageRoute(
+          builder: (context) => const TermsAndConditionsScreen(),
+        );
       // layout screen
       case Routes.layoutScreen:
         return MaterialPageRoute(
@@ -119,15 +141,6 @@ class AppRouter {
         );
 
       // Profile screen
-      case Routes.profileScreen:
-        return MaterialPageRoute(
-          builder: (context) => const ProfileScreen(),
-        );
-
-      case Routes.savedJobsScreen:
-        return MaterialPageRoute(
-          builder: (context) => const SavedJobsScreen(),
-        );
 
       // case Routes.homeScreen:
       //   return MaterialPageRoute(
