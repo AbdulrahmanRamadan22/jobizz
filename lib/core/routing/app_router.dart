@@ -17,8 +17,12 @@ import '../../features/auth/otp_screen/ui/otp_screen.dart';
 import '../../features/auth/register/ui/register_screen.dart';
 import '../../features/auth/reset_password_screen/ui/reset_password_conformation_screen.dart';
 import '../../features/auth/reset_password_screen/ui/reset_password_screen.dart';
+import '../../features/home/data/model/home_response_model.dart';
 import '../../features/home/logic/cubit/home_cubit.dart';
 import '../../features/home/ui/home_screen.dart';
+import '../../features/jobs/screens/featured_jobs_screen.dart';
+import '../../features/jobs/screens/popular_jobs_screen.dart';
+import '../../features/jobs/screens/recommended_jobs_screen.dart';
 import '../../features/layout/layout_screen/logic/cubit/layout_cubit.dart';
 import '../../features/layout/layout_screen/ui/layout_screen.dart';
 import '../di/dependancy_ingection.dart';
@@ -116,6 +120,31 @@ class AppRouter {
       //   return MaterialPageRoute(
       //     builder: (context) => HomeScreen(),
       //   );
+
+      // Jobs Screen
+      case Routes.popularJobsScreen:
+        final popularJobs = settings.arguments as List<Jop?>? ?? [];
+        return MaterialPageRoute(
+          builder: (_) => PopularJobsScreen(
+            popularJobs: popularJobs,
+          ),
+        );
+
+      case Routes.featuredJobsScreen:
+        final featuredJobs = settings.arguments as List<Jop?>? ?? [];
+        return MaterialPageRoute(
+          builder: (_) => FeaturedJobsScreen(
+            featuredJobs: featuredJobs,
+          ),
+        );
+
+      case Routes.recommendedJobsScreen:
+        final recommendedJobs = settings.arguments as List<Jop?>? ?? [];
+        return MaterialPageRoute(
+          builder: (_) => RecommendedJobsScreen(
+            recommendedJobs: recommendedJobs,
+          ),
+        );
 
       default:
         return null;
