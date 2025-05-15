@@ -1,11 +1,7 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:jobizz/core/helper/extensions.dart';
 import 'package:jobizz/features/home/ui/widgets/featured_jobs/salary_and_location.dart';
-
-import '../../../../../core/routing/routers_string.dart';
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/theming/styles.dart';
 import '../../../data/model/home_response_model.dart';

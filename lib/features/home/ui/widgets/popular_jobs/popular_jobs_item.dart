@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobizz/core/helper/extensions.dart';
 import 'package:jobizz/features/home/data/model/home_response_model.dart';
 
