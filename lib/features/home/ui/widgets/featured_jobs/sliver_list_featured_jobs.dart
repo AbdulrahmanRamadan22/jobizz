@@ -24,7 +24,7 @@ class SliverListFeaturedJobs extends StatelessWidget {
           return Column(
             children: [
               SizedBox(
-                height: 183.h, // حجم PageView
+                height: 185.h, // حجم PageView
                 child: PageView.builder(
                   controller: _pageController,
                   physics: const BouncingScrollPhysics(),
