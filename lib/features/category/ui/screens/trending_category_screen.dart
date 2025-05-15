@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../data/model/category_response.dart';
 import '../widget/category_item.dart';
@@ -15,14 +16,13 @@ class TrendingCategoryScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: ColorsApp.backGroundWhite,
-
         title: Text(
           'Trending',
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 24.0,
+        padding:  EdgeInsets.symmetric(
+          horizontal: 18.w,
           vertical: 20,
         ),
         child: GridView.builder(

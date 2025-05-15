@@ -28,10 +28,10 @@ class SliverListFeaturedJobs extends StatelessWidget {
                 child: PageView.builder(
                   controller: _pageController,
                   physics: const BouncingScrollPhysics(),
-                  itemCount: 4,
+                  itemCount:4,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return  FeaturedJobsItem(
+                    return FeaturedJobsItem(
                       job: jobs?[index],
                     );
                   },
