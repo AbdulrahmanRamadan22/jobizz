@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../widgets/company_bloc_builder.dart';
+import 'package:jobizz/core/theming/colors.dart';
+import 'package:jobizz/core/theming/styles.dart';
+import 'package:jobizz/features/companies/ui/widgets/company_bloc_builder.dart';
 
 class CompaniesScreen extends StatelessWidget {
   const CompaniesScreen({super.key});
@@ -10,15 +11,15 @@ class CompaniesScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text(
-          'Companies',
-        ),
+        backgroundColor: ColorsApp.backGroundWhite,
+        centerTitle: true,
+        scrolledUnderElevation: 0,
+        title: Text('Companies', style: TextStyles.font16Black),
       ),
       body: Padding(
-        padding: EdgeInsets.only(
-          bottom: 20.h,
-          left: 20.w,
-          right: 20.w,
+        padding: EdgeInsets.symmetric(
+          horizontal: 20.0.w,
+          vertical: 20.h,
         ),
         child: CompanyBlocBuilder(),
       ),

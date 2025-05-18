@@ -49,6 +49,9 @@ Category _$CategoryFromJson(Map<String, dynamic> json) => Category(
       (json['jobs'] as List<dynamic>?)
           ?.map((e) => Job.fromJson(e as Map<String, dynamic>))
           .toList(),
+      (json['jobs_count'] as num?)?.toInt(),
+      (json['companies_count'] as num?)?.toInt(),
+      json['description'] as String?,
     );
 
 Map<String, dynamic> _$CategoryToJson(Category instance) => <String, dynamic>{
@@ -56,8 +59,11 @@ Map<String, dynamic> _$CategoryToJson(Category instance) => <String, dynamic>{
       'name': instance.name,
       'slug': instance.slug,
       'image': instance.image,
+      'jobs_count': instance.jobsCount,
+      'companies_count': instance.companiesCount,
       'created_at': instance.createdAt,
       'updated_at': instance.updatedAt,
+      'description': instance.description,
       'jobs': instance.jobs,
     };
 
@@ -76,6 +82,8 @@ Job _$JobFromJson(Map<String, dynamic> json) => Job(
       json['category_name'] as String?,
       json['created_at'] as String?,
       json['updated_at'] as String?,
+      json['companyName'] as String?,
+      json['companyLogo'] as String?,
     );
 
 Map<String, dynamic> _$JobToJson(Job instance) => <String, dynamic>{
@@ -91,6 +99,8 @@ Map<String, dynamic> _$JobToJson(Job instance) => <String, dynamic>{
       'position': instance.position,
       'benefits': instance.benefits,
       'category_name': instance.categoryName,
+      'companyName': instance.companyName,
+      'companyLogo': instance.companyLogo,
       'created_at': instance.createdAt,
       'updated_at': instance.updatedAt,
     };

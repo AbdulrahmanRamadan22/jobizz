@@ -41,6 +41,8 @@ class Company {
   final int? adminId;
   final String? logo;
   final String? description;
+  @JsonKey(name: 'jobs_count')
+  final int? jobsCount;
   final String? location;
   final String? website;
   final String? size;
@@ -65,6 +67,7 @@ class Company {
     this.createdAt,
     this.updatedAt,
     this.jobs,
+    this.jobsCount,
   );
 
   factory Company.fromJson(Map<String, dynamic> json) =>
@@ -79,12 +82,15 @@ class Job {
   final String? title;
   @JsonKey(name: 'job_status')
   final String? jobStatus;
+  @JsonKey(name: 'job_salary')
+  final String? jobSalary;
 
   Job(
     this.id,
     this.companyId,
     this.title,
     this.jobStatus,
+    this.jobSalary,
   );
 
   factory Job.fromJson(Map<String, dynamic> json) => _$JobFromJson(json);

@@ -44,4 +44,11 @@ class Routes {
   static const String trendingCompanyScreen = '/trendingCompanyScreen';
   static const String popularCategoryScreen = '/popularCategoryScreen';
   static const String trendingCategoryScreen = '/trendingCategoryScreen';
+  // category of jobs 
+  static const String categoryOfJobsScreen = '/categoryOfJobsScreen';
+  // profile company
+  static const String profileCompanyScreen = '/profileCompanyScreen';
+  // company of jobs 
+  static const String companyOfJobsScreen = '/companyOfJobsScreen';
+
 }

@@ -53,6 +53,7 @@ Company _$CompanyFromJson(Map<String, dynamic> json) => Company(
       (json['jobs'] as List<dynamic>?)
           ?.map((e) => Job.fromJson(e as Map<String, dynamic>))
           .toList(),
+      (json['jobs_count'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$CompanyToJson(Company instance) => <String, dynamic>{
@@ -61,6 +62,7 @@ Map<String, dynamic> _$CompanyToJson(Company instance) => <String, dynamic>{
       'admin_id': instance.adminId,
       'logo': instance.logo,
       'description': instance.description,
+      'jobs_count': instance.jobsCount,
       'location': instance.location,
       'website': instance.website,
       'size': instance.size,
@@ -75,6 +77,7 @@ Job _$JobFromJson(Map<String, dynamic> json) => Job(
       (json['company_id'] as num?)?.toInt(),
       json['title'] as String?,
       json['job_status'] as String?,
+      json['job_salary'] as String?,
     );
 
 Map<String, dynamic> _$JobToJson(Job instance) => <String, dynamic>{
@@ -82,4 +85,5 @@ Map<String, dynamic> _$JobToJson(Job instance) => <String, dynamic>{
       'company_id': instance.companyId,
       'title': instance.title,
       'job_status': instance.jobStatus,
+      'job_salary': instance.jobSalary,
     };

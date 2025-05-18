@@ -13,20 +13,22 @@ void main() async {
   // debugRepaintRainbowEnabled = true;
 
   WidgetsFlutterBinding.ensureInitialized();
-   setupGetIt();
+  setupGetIt();
   await ScreenUtil.ensureScreenSize();
 
   // Initialize shared preferences
   await SharedPrefHelper.init();
 
   Bloc.observer = MyBlocObserver();
-  
+
   // Check login status
   // final bool isLoggedIn = SharedPrefHelper.isLoggedIn();
   // // final String initialRoute =
   // isLoggedIn ? Routes.homeScreen : Routes.loginScreen;
 
-  runApp(JobizzApp(
-    appRouter: AppRouter(),
-  ));
+  runApp(
+    JobizzApp(
+      appRouter: AppRouter(),
+    ),
+  );
 }

@@ -2,7 +2,7 @@ name: jobizz
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -53,6 +53,7 @@ dependencies:
   retrofit_generator: ^9.1.9
   shared_preferences: ^2.5.3
   shimmer: ^3.0.0
+  skeletonizer: ^1.4.3
   smooth_page_indicator: ^1.2.1
 
 dev_dependencies:
@@ -67,7 +68,6 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
