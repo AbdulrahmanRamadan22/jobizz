@@ -18,8 +18,11 @@ class RowHaveAccountAndButtonLogin extends StatelessWidget {
           'Have an account? ',
           style: TextStyles.font14Gray,
         ),
+
+        // Text("Login"),
         TextButton(
-          style: TextButton.styleFrom(padding: EdgeInsets.zero),
+          style: TextButton.styleFrom(
+              padding: EdgeInsets.zero, minimumSize: Size.zero),
           child: Text(
             'Login',
             style: TextStyles.font14MainBlue,

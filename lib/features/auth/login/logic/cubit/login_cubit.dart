@@ -113,7 +113,7 @@ class LoginCubit extends Cubit<LoginState> {
     try {
       await SharedPrefHelper.saveSecuredString(
         key: SharedPrefKeys.token,
-        value: loginResponse.data.token ?? "",
+        value: loginResponse.data.token,
       );
       await SharedPrefHelper.saveData(
         key: SharedPrefKeys.email,
@@ -124,7 +124,7 @@ class LoginCubit extends Cubit<LoginState> {
         value: loginResponse.data.fullName,
       );
       //  SharedPrefHelper.isLoggedIn();
-      SharedPrefValues.token = loginResponse.data.token ?? "";
+      SharedPrefValues.token = loginResponse.data.token;
       SharedPrefValues.fullName = loginResponse.data.fullName;
     } catch (e) {
       log('Error saving user data: $e');

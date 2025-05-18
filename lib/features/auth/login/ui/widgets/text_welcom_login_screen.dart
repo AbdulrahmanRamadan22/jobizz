@@ -28,7 +28,7 @@ class TextWelcomeLoginScreen extends StatelessWidget {
               TextSpan(
                 text: '👋',
                 style: TextStyle(
-                  fontSize: 28.0, 
+                  fontSize: 28.0,
                 ),
               ),
             ],

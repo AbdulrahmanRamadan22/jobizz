@@ -87,4 +87,3 @@ class FeaturedJobsItem extends StatelessWidget {
     );
   }
 }
-

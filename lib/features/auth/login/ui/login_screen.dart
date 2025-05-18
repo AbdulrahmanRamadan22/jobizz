@@ -34,9 +34,8 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             spacing: 20.h,
             crossAxisAlignment: CrossAxisAlignment.start,
-
             children: [
-              const TextWelcomeLoginScreen(),
+              TextWelcomeLoginScreen(),
               const FormLogin(),
               // update
               AppTextButton(
