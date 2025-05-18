@@ -4,8 +4,11 @@ import 'package:jobizz/core/routing/routers_string.dart';
 import 'package:jobizz/features/auth/change_password/ui/change_password_screen.dart';
 import 'package:jobizz/features/auth/register/logic/cubit/sign_up_cubit.dart';
 import 'package:jobizz/features/auth/reset_password_screen/logic/cubit/resetpassword_cubit.dart';
+import 'package:jobizz/features/category/ui/screens/category_of_jobs_screen.dart';
 import 'package:jobizz/features/category/ui/screens/popular_category_screen.dart';
 import 'package:jobizz/features/category/ui/screens/trending_category_screen.dart';
+import 'package:jobizz/features/companies/ui/screens/company_of_jobs_screen.dart';
+import 'package:jobizz/features/companies/ui/screens/profile_company_screen.dart';
 
 import 'package:jobizz/features/onboarding/ui/onboarding_screen.dart';
 
@@ -19,7 +22,6 @@ import '../../features/auth/otp_screen/ui/otp_screen.dart';
 import '../../features/auth/register/ui/register_screen.dart';
 import '../../features/auth/reset_password_screen/ui/reset_password_conformation_screen.dart';
 import '../../features/auth/reset_password_screen/ui/reset_password_screen.dart';
-import '../../features/category/cubit/category_cubit.dart';
 import '../../features/category/data/model/category_response.dart';
 import '../../features/category/ui/screens/category_screen.dart';
 import '../../features/companies/data/model/company_response.dart';
@@ -27,7 +29,6 @@ import '../../features/companies/ui/screens/compaies_screen.dart';
 import '../../features/companies/ui/screens/popular_company_screen.dart';
 import '../../features/companies/ui/screens/trending_company_screen.dart';
 import '../../features/home/data/model/home_response_model.dart';
-import '../../features/home/logic/cubit/home_cubit.dart';
 import '../../features/home/ui/home_screen.dart';
 import '../../features/jobs/screens/featured_jobs_screen.dart';
 import '../../features/jobs/screens/popular_jobs_screen.dart';
@@ -228,6 +229,31 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => TrendingCategoryScreen(
             categoryDataList: categoryDataList,
+          ),
+        );
+      // jobs Of Category screen
+      case Routes.categoryOfJobsScreen:
+        final categoryItemJobs = settings.arguments as Category?;
+        return MaterialPageRoute(
+          builder: (context) => CategoryOfJobsScreen(
+            categoryItem: categoryItemJobs,
+          ),
+        );
+      // Jobs Of Company screen
+      case Routes.companyOfJobsScreen:
+        final companyItemJobs = settings.arguments as Company?;
+        return MaterialPageRoute(
+          builder: (context) => CompanyOfJobsScreen(
+            companyItem: companyItemJobs,
+          ),
+        );
+
+      // profile CompanyScreen
+      case Routes.profileCompanyScreen:
+        final companyItemitem = settings.arguments as Company;
+        return MaterialPageRoute(
+          builder: (context) => ProfileCompanyScreen(
+            companyItem: companyItemitem,
           ),
         );
 

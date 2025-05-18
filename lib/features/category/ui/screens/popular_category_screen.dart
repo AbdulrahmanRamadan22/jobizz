@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors.dart';
 import '../../data/model/category_response.dart';
 import '../widget/category_item.dart';
 

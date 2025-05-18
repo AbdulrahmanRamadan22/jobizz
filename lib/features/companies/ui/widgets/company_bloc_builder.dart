@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobizz/core/helper/extensions.dart';
+import 'package:jobizz/core/helper/size_box.dart';
+import 'package:jobizz/core/routing/routers_string.dart';
+import 'package:jobizz/core/theming/colors.dart';
+import 'package:jobizz/core/theming/styles.dart';
+import 'package:jobizz/core/widgets/row_text_and_see_all.dart';
+import 'package:jobizz/features/companies/logic/cubit/company_cubit.dart';
+import 'package:jobizz/features/companies/logic/cubit/company_state.dart';
 import 'package:jobizz/features/companies/ui/widgets/popular/sliver_grid_companies_popular.dart';
 import 'package:jobizz/features/companies/ui/widgets/trending/sliver_grid_companies_trending.dart';
-
-import '../../../../core/helper/size_box.dart';
-import '../../../../core/routing/routers_string.dart';
-import '../../../../core/widgets/row_text_and_see_all.dart';
-import '../../logic/cubit/company_cubit.dart';
-import '../../logic/cubit/company_state.dart';
 
 class CompanyBlocBuilder extends StatelessWidget {
   const CompanyBlocBuilder({super.key});
@@ -28,46 +29,55 @@ class CompanyBlocBuilder extends StatelessWidget {
                 SliverToBoxAdapter(
                   child: RowTextAndSeeAll(
                     text: 'Popular Now',
+                    textStyle: TextStyles.font16Black,
+                    seeAllTextStyle: TextStyles.font12Gray,
                     onPressed: () {},
                   ),
                 ),
-                const SliverGridCompaniesPopular(companyDataList: null),
+                SliverGridCompaniesPopular(
+                  companyDataList: null,
+                ),
                 SliverToBoxAdapter(
                   child: RowTextAndSeeAll(
                     text: 'Trending Now',
+                    textStyle: TextStyles.font16Black,
+                    seeAllTextStyle: TextStyles.font12Gray,
                     onPressed: () {},
                   ),
                 ),
-                SliverToBoxAdapter(child: verticalSpace(10)),
-                const SliverGridCompaniesTrending(companyDataList: null),
+                SliverGridCompaniesTrending(
+                  companyDataList: null,
+                ),
               ],
             );
           },
           companySuccess: (response) {
             final trendingList = response.data?.trending;
-            final popularList = response.data?.popular;
+            final populedList = response.data?.popular;
 
             return CustomScrollView(
               slivers: [
                 SliverToBoxAdapter(
                   child: RowTextAndSeeAll(
                     text: 'Popular Now',
-                 
+                    textStyle: TextStyles.font16Black,
+                    seeAllTextStyle: TextStyles.font12Gray,
                     onPressed: () {
                       context.pushNamed(
                         Routes.popularCompanyScreen,
-                        arguments: popularList,
+                        arguments: populedList,
                       );
                     },
                   ),
                 ),
                 SliverGridCompaniesPopular(
-                  companyDataList: popularList,
+                  companyDataList: populedList,
                 ),
                 SliverToBoxAdapter(
                   child: RowTextAndSeeAll(
                     text: 'Trending Now',
-                   
+                    textStyle: TextStyles.font16Black,
+                    seeAllTextStyle: TextStyles.font12Gray,
                     onPressed: () {
                       context.pushNamed(
                         Routes.trendingCompanyScreen,
@@ -88,7 +98,13 @@ class CompanyBlocBuilder extends StatelessWidget {
               child: Text(error.message.toString()),
             );
           },
-          orElse: () => const SizedBox.shrink(),
+          orElse: () {
+            return Center(
+              child: CircularProgressIndicator(
+                color: ColorsApp.darkBlue,
+              ),
+            );
+          },
         );
       },
     );

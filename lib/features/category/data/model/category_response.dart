@@ -41,10 +41,15 @@ class Category {
   final String? name;
   final String? slug;
   final String? image;
+  @JsonKey(name: 'jobs_count')
+  final int? jobsCount;
+  @JsonKey(name: 'companies_count')
+  final int? companiesCount;
   @JsonKey(name: 'created_at')
   final String? createdAt;
   @JsonKey(name: 'updated_at')
   final String? updatedAt;
+  final String? description;
   final List<Job>? jobs;
   Category(
     this.id,
@@ -54,6 +59,9 @@ class Category {
     this.createdAt,
     this.updatedAt,
     this.jobs,
+    this.jobsCount,
+    this.companiesCount,
+    this.description,
   );
 
   factory Category.fromJson(Map<String, dynamic> json) =>
@@ -78,6 +86,8 @@ class Job {
   final String? benefits;
   @JsonKey(name: 'category_name')
   final String? categoryName;
+  final String? companyName;
+  final String? companyLogo;
   @JsonKey(name: 'created_at')
   final String? createdAt;
   @JsonKey(name: 'updated_at')
@@ -98,6 +108,8 @@ class Job {
     this.categoryName,
     this.createdAt,
     this.updatedAt,
+    this.companyName,
+    this.companyLogo,
   );
 
   factory Job.fromJson(Map<String, dynamic> json) => _$JobFromJson(json);

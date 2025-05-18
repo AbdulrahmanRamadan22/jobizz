@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:jobizz/core/networking/api_error_model.dart';
+import 'package:jobizz/features/companies/data/model/company_response.dart';
 
-import '../../../../core/networking/api_error_model.dart';
-import '../../data/model/company_response.dart';
 part 'company_state.freezed.dart';
 
 @freezed

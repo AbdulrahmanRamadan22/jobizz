@@ -44,7 +44,11 @@ class LoginCubit extends Cubit<LoginState> {
         emit(LoginState.success(loginResponse));
       },
       failure: (error) {
-        emit(LoginState.failure(error));
+        emit(
+          LoginState.failure(
+            ApiErrorModel(message: error.message),
+          ),
+        );
       },
     );
   }
@@ -58,8 +62,7 @@ class LoginCubit extends Cubit<LoginState> {
 
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
       if (googleUser == null) {
-        emit(LoginState.googleAuthenticationFailure(
-            ApiErrorModel(message: 'Google sign-in aborted by user')));
+        emit(LoginState.googleAuthenticationFailure(ApiErrorModel()));
         return;
       }
 
@@ -73,9 +76,10 @@ class LoginCubit extends Cubit<LoginState> {
       if (googleAuth.idToken == null) {
         emit(
           LoginState.googleAuthenticationFailure(
-            ApiErrorModel(message: 'No ID token received from Google'),
+            ApiErrorModel(message: 'Google ID Token is null'),
           ),
         );
+      
         return;
       }
 
@@ -90,7 +94,9 @@ class LoginCubit extends Cubit<LoginState> {
           emit(LoginState.googleAuthenticationSuccess(loginResponse));
         },
         failure: (error) {
-          emit(LoginState.googleAuthenticationFailure(error));
+          emit(LoginState.googleAuthenticationFailure(
+            ApiErrorModel(message: error.message),
+          ));
         },
       );
     } catch (error) {
@@ -101,8 +107,6 @@ class LoginCubit extends Cubit<LoginState> {
         ),
       ));
     }
-    print('googleAuth.idToken #############');
-    // print('Google SignIn Client ID: $clientId');
   }
 
   Future<void> _saveUserData(LoginResponse loginResponse) async {

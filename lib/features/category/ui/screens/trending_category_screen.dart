@@ -21,7 +21,7 @@ class TrendingCategoryScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding:  EdgeInsets.symmetric(
+        padding: EdgeInsets.symmetric(
           horizontal: 18.w,
           vertical: 20,
         ),
