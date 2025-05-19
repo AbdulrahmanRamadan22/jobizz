@@ -51,4 +51,7 @@ class Routes {
   // company of jobs 
   static const String companyOfJobsScreen = '/companyOfJobsScreen';
 
+  static const String switchProfileScreen = '/switchProfileScreen';
+
+
 }

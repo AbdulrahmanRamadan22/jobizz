@@ -15,6 +15,7 @@ import 'package:jobizz/features/onboarding/ui/onboarding_screen.dart';
 import '../../features/auth/change_password/logic/cubit/change_password_cubit.dart';
 import '../../features/auth/forget_password_screen/logic/cubit/forget_pass_cubit.dart';
 import '../../features/auth/forget_password_screen/ui/forget_pass_screen.dart';
+import '../../features/auth/login/data/model/login_response.dart';
 import '../../features/auth/login/logic/cubit/login_cubit.dart';
 import '../../features/auth/login/ui/login_screen.dart';
 import '../../features/auth/otp_screen/logic/cubit/otp_cubit.dart';
@@ -144,10 +145,15 @@ class AppRouter {
         );
       // layout screen
       case Routes.layoutScreen:
+          //  final profiles = settings.arguments as  List<Profile?>? ?? [];
+
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
             create: (context) => LayoutCubit(),
-            child: const LayoutScreens(),
+            child:  LayoutScreens(
+
+
+            ),
           ),
         );
       case Routes.companiesScreen:
@@ -169,7 +175,9 @@ class AppRouter {
 
       case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (context) => HomeScreen(),
+          builder: (context) => HomeScreen(
+
+          ),
         );
 
       // Jobs Screen

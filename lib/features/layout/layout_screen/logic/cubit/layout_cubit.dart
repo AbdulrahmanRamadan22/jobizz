@@ -17,10 +17,14 @@ class LayoutCubit extends Cubit<LayoutState> {
   int currentIndex = 0;
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
+
+
   List<Widget> screensBottom = [
     BlocProvider<HomeCubit>.value(
       value: HomeCubit(getIt())..emitGetHomeData(),
-      child: const HomeScreen(),
+      child: const HomeScreen(
+
+      ),
     ),
 
     BlocProvider<CategoryCubit>(
@@ -50,6 +54,9 @@ class LayoutCubit extends Cubit<LayoutState> {
 
   void changeIndex(int index) {
     currentIndex = index;
+
+   
+    
 
     // emit state because we need to change the index
     emit(LayoutChangeBottomNavState());

@@ -7,10 +7,13 @@ class SharedPrefKeys {
   static String isLoggedInUser = "isLoggedInUser";
   static String tokenResetPassword = "token";
   static String emailResetPassword = "emailResetPassword";
+  static String idProfile = "idProfile";
+  static String profileImage = "profileImage";
+  static String titleJob = "titleJob";
 }
 
 class SharedPrefValues {
-  static String token="";
+  static String token = "";
   static String username = "";
   static String fullName = "";
   static String email = "";
@@ -19,4 +22,6 @@ class SharedPrefValues {
   static bool? isLoggedInUser = false;
   static String? tokenResetPassword = "";
   static String? emailResetPassword = "";
+  static int? idProfile;
+  static String profileImage = "";
 }

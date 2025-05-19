@@ -77,6 +77,11 @@ class ListViewDrawer extends StatelessWidget {
               child: Column(
                 children: [
                   _buildMenuItem(
+                    icon: Icons.switch_account,
+                    title: 'Switch Profile',
+                    onTap: () => context.pushNamed(Routes.switchProfileScreen),
+                  ),
+                  _buildMenuItem(
                     icon: Icons.person_outline,
                     title: 'Personal Info',
                     onTap: () => context.pushNamed(Routes.profileScreen),

@@ -19,7 +19,7 @@ class LayoutScreens extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           key: cubit.scaffoldKey,
-          drawer: const DrawerWidget(), // Mark as const
+          drawer: DrawerWidget(), // Mark as const
           backgroundColor: ColorsApp.backGroundWhite,
           body: cubit.screensBottom[cubit.currentIndex],
 
@@ -35,7 +35,7 @@ class LayoutScreens extends StatelessWidget {
             selectedLabelStyle: TextStyles.font12DarkBlack,
             unselectedLabelStyle: TextStyles.font12Gray,
             items: const [
-             BottomNavigationBarItem(
+              BottomNavigationBarItem(
                 icon: Icon(
                   Icons.home,
                   size: 30,

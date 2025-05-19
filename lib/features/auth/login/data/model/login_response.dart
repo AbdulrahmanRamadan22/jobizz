@@ -24,13 +24,14 @@ class UserData {
   String email;
   int id;
 
-  List<Profile?>? profiles;
+  List<Profile?> profiles;
 
   UserData({
     required this.token,
     required this.fullName,
     required this.email,
     required this.id,
+    required this.profiles,
   });
   factory UserData.fromJson(Map<String, dynamic> json) =>
       _$UserDataFromJson(json);
@@ -60,12 +61,11 @@ class Profile {
     this.userId,
     this.titleJob,
     this.jobPosition,
-     this.isDefault,
+    this.isDefault,
     this.profileImage,
     this.createdAt,
     this.updatedAt,
   });
-
 
   factory Profile.fromJson(Map<String, dynamic> json) =>
       _$ProfileFromJson(json);

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/helper/extensions.dart';
@@ -16,6 +18,7 @@ class PageTopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+  
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 18.w),
       child: Column(
@@ -26,7 +29,6 @@ class PageTopBar extends StatelessWidget {
             onTap: () {
               print("open drawer");
               Scaffold.of(context).openDrawer();
-
               // _scaffoldKey.currentState!.openDrawer();
             },
             child: Icon(Icons.filter_list_rounded,
@@ -41,14 +43,12 @@ class PageTopBar extends StatelessWidget {
               '${SharedPrefHelper.getData(key: SharedPrefKeys.fullName) ?? ''} 👋',
               style: TextStyles.font22DarkBlackBold,
             ),
-            trailing: CircleAvatar(
-              backgroundColor: ColorsApp.lightGray,
-              radius: 30.r,
-              child: GestureDetector(
-                onTap: () {
-                  context.pushNamed(Routes.profileScreen);
-                },
-                child: Image.asset(
+            trailing: GestureDetector(
+              onTap: () => context.pushNamed(Routes.profileScreen),
+              child: CircleAvatar(
+                radius: 25.r,
+                backgroundColor: ColorsApp.lightGray,
+                backgroundImage: const AssetImage(
                   'assets/images/photo_person.png',
                 ),
               ),

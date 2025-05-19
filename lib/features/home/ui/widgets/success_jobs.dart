@@ -40,13 +40,15 @@ class SuccessJobs extends StatelessWidget {
         SliverListFeaturedJobs(
           jobs: listFeaturedJobs,
         ),
-        SliverToBoxAdapter(child: verticalSpace(10)),
-        SliverToBoxAdapter(child: RecommendedJobsSeeAll(
-          onPressed: () {
-            context.pushNamed(Routes.recommendedJobsScreen,
-                arguments: listRecommendedJobs);
-          },
-        )),
+        if (listRecommendedJobs != null && listRecommendedJobs!.isNotEmpty)
+          SliverToBoxAdapter(child: verticalSpace(10)),
+        if (listRecommendedJobs != null && listRecommendedJobs!.isNotEmpty)
+          SliverToBoxAdapter(child: RecommendedJobsSeeAll(
+            onPressed: () {
+              context.pushNamed(Routes.recommendedJobsScreen,
+                  arguments: listRecommendedJobs);
+            },
+          )),
         SliverGridRecommendedJobs(
           recommendedJobs: listRecommendedJobs,
         ),

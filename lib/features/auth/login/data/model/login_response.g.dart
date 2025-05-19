@@ -25,10 +25,11 @@ UserData _$UserDataFromJson(Map<String, dynamic> json) => UserData(
       fullName: json['fullName'] as String,
       email: json['email'] as String,
       id: (json['id'] as num).toInt(),
-    )..profiles = (json['profiles'] as List<dynamic>?)
-        ?.map((e) =>
-            e == null ? null : Profile.fromJson(e as Map<String, dynamic>))
-        .toList();
+      profiles: (json['profiles'] as List<dynamic>)
+          .map((e) =>
+              e == null ? null : Profile.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
 Map<String, dynamic> _$UserDataToJson(UserData instance) => <String, dynamic>{
       'token': instance.token,
