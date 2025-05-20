@@ -50,6 +50,8 @@ class Routes {
   static const String profileCompanyScreen = '/profileCompanyScreen';
   // company of jobs 
   static const String companyOfJobsScreen = '/companyOfJobsScreen';
+  // chat bot screen 
+  static const String geminiChatScreen = '/geminiChatScreen';
 
   static const String switchProfileScreen = '/switchProfileScreen';
 

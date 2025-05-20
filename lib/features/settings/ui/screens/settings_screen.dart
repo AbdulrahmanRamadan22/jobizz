@@ -93,6 +93,21 @@ class SettingScreen extends StatelessWidget {
                 ),
                 onTap: () {},
               ),
+              ListTile(
+                contentPadding: EdgeInsets.zero,
+                leading: Icon(
+                  Icons.chat_bubble_rounded,
+                  color: ColorsApp.lightBlueGray,
+                  size: 30.0,
+                ),
+                title: Text(
+                  'Chat Bot',
+                  style: TextStyles.font16Black,
+                ),
+                onTap: () {
+                  context.pushNamed(Routes.geminiChatScreen);
+                },
+              ),
             ],
           ),
         ),

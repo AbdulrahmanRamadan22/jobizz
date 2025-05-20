@@ -5,7 +5,6 @@ import 'package:jobizz/core/theming/styles.dart';
 
 import '../theming/colors.dart';
 
-
 class AppTextFormField extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
   final InputBorder? focusedBorder;
@@ -18,6 +17,7 @@ class AppTextFormField extends StatelessWidget {
   final Widget? prefixIcon;
   final Color? backgroundColor;
   final TextInputType? keyboardType;
+  final TextDirection? textDirection;
   final TextEditingController? controller;
   final Function(String?) validator;
 
@@ -36,6 +36,7 @@ class AppTextFormField extends StatelessWidget {
     this.keyboardType,
     this.controller,
     required this.validator,
+    this.textDirection,
   });
 
   @override
@@ -48,6 +49,8 @@ class AppTextFormField extends StatelessWidget {
       ],
       keyboardType: keyboardType,
       controller: controller,
+      textDirection: textDirection,
+
       decoration: InputDecoration(
         border: InputBorder.none,
         isDense: true,

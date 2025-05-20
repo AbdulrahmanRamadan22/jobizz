@@ -4,6 +4,7 @@ import 'package:jobizz/core/routing/routers_string.dart';
 import 'package:jobizz/features/auth/change_password/ui/change_password_screen.dart';
 import 'package:jobizz/features/auth/register/logic/cubit/sign_up_cubit.dart';
 import 'package:jobizz/features/auth/reset_password_screen/logic/cubit/resetpassword_cubit.dart';
+import 'package:jobizz/features/bot_chat/ui/chat_bot_screen.dart';
 import 'package:jobizz/features/category/ui/screens/category_of_jobs_screen.dart';
 import 'package:jobizz/features/category/ui/screens/popular_category_screen.dart';
 import 'package:jobizz/features/category/ui/screens/trending_category_screen.dart';
@@ -263,6 +264,11 @@ class AppRouter {
           builder: (context) => ProfileCompanyScreen(
             companyItem: companyItemitem,
           ),
+        );
+      // chat bot ai screen
+      case Routes.geminiChatScreen:
+        return MaterialPageRoute(
+          builder: (context) => GeminiChatScreen(),
         );
 
       default:

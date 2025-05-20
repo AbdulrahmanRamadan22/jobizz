@@ -46,64 +46,44 @@ abstract class ApisServices {
   Future<LoginResponse> googleAuth(
     @Body() Map<String, dynamic> data,
   );
-//   // forgot password service
+  // forgot password service
   @POST(ApiConstant.forgetPassword)
   Future<ForgetPasswordResponse> forgetpassword(
     @Body() ForgetPassRequest forgetPassRequest,
   );
-//   // otp valid service
+   // otp valid service
   @POST(ApiConstant.otpCode)
   Future<OtpResponse> otpValid(
     @Body() OtpRequestCode otpRequestCode,
   );
-//   // reset password service otp
+  // reset password service otp
   @POST(ApiConstant.resetPassword)
   Future<ResetPasswordResponse> resetPasswordValid(
     @Header("Authorization") String token,
     @Body() ResetPasswordRequest resetPasswordRequest,
   );
 
-//   // change password service
+ // change password service
   @POST(ApiConstant.changePassword)
   Future<ChangePasswordResponse> changePassword(
     @Header("Authorization") String token,
     @Body() ChangePasswordRequest changePasswordRequest,
   );
-// // get company info
-//   @GET(ApiConstant.getCompanyInfo)
-//   Future<GetCompanyResponse> getCompanyInfo(
-//     @Header("Authorization") String token,
-//   );
-//   // google auth service
-//   @POST(ApiConstant.googleAuth)
-//   Future<LoginResponse> googleAuth(
-//     @Body() Map<String, dynamic> data,
-//   );
-//   @POST(ApiConstant.googleAuth)
-//   Future<SignUpResponse> googleAuthSignUp(
-//     @Body() Map<String, dynamic> data,
-//   );
-
-//   // change password service
-//   @POST(ApiConstant.changePassword)
-//   Future<ChangePasswordResponse> changePassword(
-//     @Header("Authorization") String token,
-//     @Body() ChangePasswordRequest changePasswordRequest,
-//   );
 
 // get company info
   @GET(ApiConstant.getCompanyInfo)
   Future<CompanyResponse> getCompanyInfo(
     @Header("Authorization") String token,
   );
-
+// get categories
   @GET(ApiConstant.getCategories)
   Future<CategoryResponse> getCategories(
     @Header("Authorization") String token,
   );
-
+// get home data
   @GET(ApiConstant.home)
   Future<HomeResponseModel> homeData(
     @Header("Authorization") String token,
   );
+  // 
 }
