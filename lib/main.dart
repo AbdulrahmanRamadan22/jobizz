@@ -26,6 +26,8 @@ void main() async {
   // // final String initialRoute =
   // isLoggedIn ? Routes.homeScreen : Routes.loginScreen;
 
+  
+
   runApp(
     JobizzApp(
       appRouter: AppRouter(),

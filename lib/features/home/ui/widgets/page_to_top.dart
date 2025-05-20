@@ -1,8 +1,11 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/helper/extensions.dart';
+import 'package:jobizz/features/home/logic/cubit/home_cubit.dart';
+import 'package:jobizz/features/home/logic/cubit/home_state.dart';
 
 import '../../../../core/cache/constants.dart';
 import '../../../../core/cache/shared_pref.dart';
@@ -18,7 +21,6 @@ class PageTopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 18.w),
       child: Column(
@@ -34,25 +36,41 @@ class PageTopBar extends StatelessWidget {
             child: Icon(Icons.filter_list_rounded,
                 color: ColorsApp.darkBlue, size: 30.sp),
           ),
-          ListTile(
-            visualDensity: VisualDensity.compact,
-            dense: false,
-            title: Text('Welcome Back! ', style: TextStyles.font14Gray),
-            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
-            subtitle: Text(
-              '${SharedPrefHelper.getData(key: SharedPrefKeys.fullName) ?? ''} 👋',
-              style: TextStyles.font22DarkBlackBold,
-            ),
-            trailing: GestureDetector(
-              onTap: () => context.pushNamed(Routes.profileScreen),
-              child: CircleAvatar(
-                radius: 25.r,
-                backgroundColor: ColorsApp.lightGray,
-                backgroundImage: const AssetImage(
-                  'assets/images/photo_person.png',
+          BlocBuilder<HomeCubit, HomeState>(
+            buildWhen: (previous, current) =>
+                current is GetProfileDetailsSuccess ||
+                current is GetProfileDetailsError ||
+                current is GetProfileDetailsLoading,
+            builder: (context, state) {
+              return state.maybeWhen(
+                orElse: () => SizedBox.shrink(),
+                getProfileDetailsFailure: (apiErrorModel) =>
+                    Text(apiErrorModel.message ?? "Unknown error"),
+                getProfileDetailsLoading: () => CircularProgressIndicator(),
+                getProfileDetailsSuccess: (profileDetails) => ListTile(
+                  visualDensity: VisualDensity.compact,
+                  dense: false,
+                  title: Text('Welcome Back! ', style: TextStyles.font14Gray),
+                  contentPadding:
+                      EdgeInsets.symmetric(vertical: 0, horizontal: 0),
+                  subtitle: Text(
+                    '${SharedPrefHelper.getData(key: SharedPrefKeys.fullName) ?? ''} 👋',
+                    style: TextStyles.font22DarkBlackBold,
+                  ),
+                  trailing: GestureDetector(
+                    onTap: () => context.pushNamed(Routes.profileScreen),
+                    child: CircleAvatar(
+                      radius: 25.r,
+                      backgroundColor: ColorsApp.lightGray,
+                      backgroundImage: NetworkImage(
+                        // ignore: unnecessary_string_interpolations
+                        '${profileDetails.data.profileImage}',
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-            ),
+              );
+            },
           ),
         ],
       ),

@@ -37,6 +37,7 @@ Future<void> setupGetIt() async {
 
   getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
 
+
   // company info
   getIt.registerLazySingleton<CompanyInfoRepo>(() => CompanyInfoRepo(getIt()));
 

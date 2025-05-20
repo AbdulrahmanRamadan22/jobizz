@@ -5,19 +5,32 @@ import 'package:jobizz/features/home/data/model/home_response_model.dart';
 import '../../../../../core/networking/api_error_handler.dart';
 import '../../../../../core/networking/api_result.dart';
 import '../../../../../core/networking/api_services.dart';
+import '../../../profile/data/models/profile_response_model.dart';
 
 class HomeRepo {
-  final ApisServices apisServices;
+  final ApisServices _apisServices;
   HomeRepo(
-    this.apisServices,
+    this._apisServices,
   );
   Future<ApiResult<HomeResponseModel>> getHomeData(
       {required String token}) async {
     try {
-      final response = await apisServices.homeData(token);
+      final response = await _apisServices.homeData(token);
       return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));
     }
   }
+
+  Future<ApiResult<ProfileResponseModel>> getProfileDetails(
+      {required String token, required int id}) async {
+    try {
+      final response = await _apisServices.getProfileDetails(id, token);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
 }
+
+

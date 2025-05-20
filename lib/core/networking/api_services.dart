@@ -20,6 +20,7 @@ import '../../features/auth/reset_password_screen/data/model/reset_password_requ
 import '../../features/category/data/model/category_response.dart';
 import '../../features/companies/data/model/company_response.dart';
 import '../../features/home/data/model/home_response_model.dart';
+import '../../features/profile/data/models/profile_response_model.dart';
 
 part 'api_services.g.dart';
 
@@ -105,5 +106,13 @@ abstract class ApisServices {
   @GET(ApiConstant.home)
   Future<HomeResponseModel> homeData(
     @Header("Authorization") String token,
+  );
+
+
+  
+  @GET("${ApiConstant.getProfileById}/{id}")
+  Future<ProfileResponseModel> getProfileDetails(
+    @Path('id') int id,
+    @Header('Authorization') String token,
   );
 }
