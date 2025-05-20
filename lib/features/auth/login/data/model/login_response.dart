@@ -19,19 +19,19 @@ class LoginResponse {
 
 @JsonSerializable()
 class UserData {
-  String token;
-  String fullName;
-  String email;
-  int id;
+  final String token;
+  final String fullName;
+  final String email;
+  final int id;
 
-  List<Profile?> profiles;
+  final Profile? profile;
 
-  UserData({
+const  UserData({
     required this.token,
     required this.fullName,
     required this.email,
     required this.id,
-    required this.profiles,
+    required this.profile,
   });
   factory UserData.fromJson(Map<String, dynamic> json) =>
       _$UserDataFromJson(json);

@@ -26,7 +26,7 @@ class LoginBlocListener extends StatelessWidget {
           },
           success: (loginResponse) {
             context.pop();
-            context.pushNamed(Routes.layoutScreen,arguments:loginResponse.data.profiles);
+            context.pushNamed(Routes.layoutScreen,);
           },
           failure: (apiErrorModel) {
             context.pop();

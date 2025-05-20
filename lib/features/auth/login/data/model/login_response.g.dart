@@ -25,10 +25,9 @@ UserData _$UserDataFromJson(Map<String, dynamic> json) => UserData(
       fullName: json['fullName'] as String,
       email: json['email'] as String,
       id: (json['id'] as num).toInt(),
-      profiles: (json['profiles'] as List<dynamic>)
-          .map((e) =>
-              e == null ? null : Profile.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      profile: json['profile'] == null
+          ? null
+          : Profile.fromJson(json['profile'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$UserDataToJson(UserData instance) => <String, dynamic>{
@@ -36,7 +35,7 @@ Map<String, dynamic> _$UserDataToJson(UserData instance) => <String, dynamic>{
       'fullName': instance.fullName,
       'email': instance.email,
       'id': instance.id,
-      'profiles': instance.profiles,
+      'profile': instance.profile,
     };
 
 Profile _$ProfileFromJson(Map<String, dynamic> json) => Profile(

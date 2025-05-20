@@ -124,7 +124,7 @@ class LoginCubit extends Cubit<LoginState> {
         key: SharedPrefKeys.fullName,
         value: loginResponse.data.fullName,
       );
-      await handelSaveProfileId(loginResponse);
+      await saveProfile(loginResponse);
       //  SharedPrefHelper.isLoggedIn();
       SharedPrefValues.token = loginResponse.data.token;
       SharedPrefValues.fullName = loginResponse.data.fullName;
@@ -133,31 +133,17 @@ class LoginCubit extends Cubit<LoginState> {
     }
   }
 
-/*************  ✨ Windsurf Command ⭐  *************/
-  /// Saves the profile ID to shared preferences based on the login response.
-  ///
-  /// If there is only one profile in the login response or no profile ID is
-  /// currently stored, it saves the first profile's ID. Otherwise, it retains
-  /// the existing profile ID.
-  ///
-  /// This ensures that the user's selected profile is correctly maintained
-  /// across sessions.
-
-  Future<void> handelSaveProfileId(LoginResponse loginResponse) async {
-    // Check if there is only one profile or if no profile ID is currently stored
-    if (loginResponse.data.profiles.length == 1 ||
-        SharedPrefHelper.getData(key: SharedPrefKeys.idProfile) == null) {
-      // Save the first profile's ID
+  Future<void> saveProfile(LoginResponse loginResponse) async {
+   
       await SharedPrefHelper.saveData(
         key: SharedPrefKeys.idProfile,
-        value: loginResponse.data.profiles.first?.id,
+        value: loginResponse.data.profile?.id,
       );
-    } else {
-      // Retain the existing profile ID
+    
       await SharedPrefHelper.saveData(
-        key: SharedPrefKeys.idProfile,
-        value: await SharedPrefHelper.getData(key: SharedPrefKeys.idProfile),
+        key: SharedPrefKeys.profileImage,
+        value: loginResponse.data.profile?.profileImage,
       );
     }
-  }
+  
 }

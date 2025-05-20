@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:jobizz/features/home/ui/widgets/page_to_top.dart';
 
 import '../../../core/helper/size_box.dart';
 import '../../../core/theming/colors.dart';
@@ -20,7 +21,7 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             
-            // PageTopBar(),
+            PageTopBar(),
             verticalSpace(10),
             SearchAndFilter(),
             verticalSpace(9),

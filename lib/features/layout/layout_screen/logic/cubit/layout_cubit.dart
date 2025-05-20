@@ -34,10 +34,6 @@ class LayoutCubit extends Cubit<LayoutState> {
     ),
     // CategoryScreen(),
 
-    // BlocProvider<CompanyCubit>.value(
-    //   value: CompanyCubit(getIt())..getAllCompany(),
-    //   child: const CompaniesScreen(),
-    // ),
 
     const NotificationScreen(),
 
