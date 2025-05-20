@@ -15,5 +15,8 @@ class ApiConstant {
     static const String getCompanyInfo = "auth/companies";
   static const String getCategories = "auth/categories";
 
+  static const String getProfileById = "auth/profiles";
+
+
 
 }
