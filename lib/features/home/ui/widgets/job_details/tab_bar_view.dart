@@ -19,8 +19,7 @@ class TabBarViewDesign extends StatelessWidget {
           children: [
             Text('${job?.description}'),
             Text('${job?.requirement}'),
-            Text('About '),
-            Text('Reviews '),
+            Text('${job?.benefits}'),
             //    Text('${job?.}'),
             //  Text('hhhh'),
             // Description Tab

@@ -53,7 +53,7 @@ class CompanyItemJobs extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           Text(
-            '${jobOFCompany?.jobSalary} \$',
+            '\$${jobOFCompany?.jobSalary}/y',
             style: TextStyles.font12DarkBlack,
           ),
         ],

@@ -44,7 +44,6 @@ class JobDetailsScreen extends StatelessWidget {
               indicator: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.r),
               ),
-              labelPadding: EdgeInsets.only(right: 15.w),
               unselectedLabelColor: ColorsApp.lightBlueGray,
               tabs: [
                 Tab(
@@ -59,9 +58,6 @@ class JobDetailsScreen extends StatelessWidget {
                 ),
                 Tab(
                   child: Text('About'),
-                ),
-                Tab(
-                  child: Text('Reviews'),
                 ),
               ],
             ),
