@@ -33,73 +33,62 @@ class FeaturedJobsItem extends StatelessWidget {
             color: ColorsApp.darkBlue,
             borderRadius: BorderRadius.circular(16.r),
           ),
-          child: Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
-                  child: ListTile(
-                    contentPadding: EdgeInsets.zero,
-                    title: Text(
-                      '${job?.title}',
-                      style: TextStyles.font16WhiteSemiBold,
-                      maxLines: 1,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
+                child: ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: Text(
+                    '${job?.title}',
+                    style: TextStyles.font16WhiteSemiBold,
+                    maxLines: 1,
+                  ),
+                  subtitle: Text('${job?.companyName}',
+                      style: TextStyles.font13White),
+                  leading: Container(
+                    height: 50.h,
+                    width: 50.w,
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: ColorsApp.backGroundWhite,
+                      borderRadius: BorderRadius.circular(16.r),
                     ),
-                    subtitle: Text('${job?.companyName}',
-                        style: TextStyles.font13White),
-                    leading: Container(
-                      height: 50.h,
-                      width: 50.w,
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: ColorsApp.backGroundWhite,
-                        borderRadius: BorderRadius.circular(16.r),
-                      ),
-                      child: Image.network(
-                        '${job?.companyLogo}',
-                        fit: BoxFit.cover,
-                      ),
+                    child: Image.network(
+                      '${job?.companyLogo}',
+                      fit: BoxFit.cover,
                     ),
-                    trailing: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.bookmark_add,
-                        color: ColorsApp.lightGray,
-                      ),
+                  ),
+                  trailing: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.bookmark_add,
+                      color: ColorsApp.lightGray,
                     ),
                   ),
                 ),
-                // Buttons
-                // ThreeButtonsInPageView(),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    spacing: 8.w,
-                    children: [
-                      ButtonCardFeaturedJob(title: '${job?.categoryName}'),
-                      ButtonCardFeaturedJob(title: '${job?.jobType}'),
-                      ButtonCardFeaturedJob(title: '${job?.position}'),
-                    ],
-                  ),
+              ),
+              // Buttons
+              // ThreeButtonsInPageView(),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12.w),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  spacing: 8.w,
+                  children: [
+                    ButtonCardFeaturedJob(title: '${job?.categoryName}'),
+                    ButtonCardFeaturedJob(title: '${job?.jobType}'),
+                    ButtonCardFeaturedJob(title: '${job?.position}'),
+                  ],
                 ),
-                SalaryAndLocation(
-                  location: job?.location,
-                  salary: job?.salary,
-                ),
-              ],
-            ),
-
               ),
               verticalSpace(16),
               SalaryAndLocation(
                 location: job?.location,
                 salary: job?.salary,
               ),
-
-            ], 
+            ],
           ),
         ),
       ),
