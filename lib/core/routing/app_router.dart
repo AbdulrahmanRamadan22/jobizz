@@ -10,6 +10,7 @@ import 'package:jobizz/features/category/ui/screens/popular_category_screen.dart
 import 'package:jobizz/features/category/ui/screens/trending_category_screen.dart';
 import 'package:jobizz/features/companies/ui/screens/company_of_jobs_screen.dart';
 import 'package:jobizz/features/companies/ui/screens/profile_company_screen.dart';
+import 'package:jobizz/features/home/ui/screens/job_details_screen.dart';
 
 import 'package:jobizz/features/onboarding/ui/onboarding_screen.dart';
 
@@ -30,7 +31,7 @@ import '../../features/companies/ui/screens/compaies_screen.dart';
 import '../../features/companies/ui/screens/popular_company_screen.dart';
 import '../../features/companies/ui/screens/trending_company_screen.dart';
 import '../../features/home/data/model/home_response_model.dart';
-import '../../features/home/ui/home_screen.dart';
+import '../../features/home/ui/screens/home_screen.dart';
 import '../../features/jobs/screens/featured_jobs_screen.dart';
 import '../../features/jobs/screens/popular_jobs_screen.dart';
 import '../../features/jobs/screens/recommended_jobs_screen.dart';
@@ -183,6 +184,15 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => PopularJobsScreen(
             popularJobs: popularJobs,
+          ),
+        );
+      // Jobs Details Screen
+
+      case Routes.jobDetailsScreen:
+        final jobDetails = settings.arguments as Jop?;
+        return MaterialPageRoute(
+          builder: (_) => JobDetailsScreen(
+            job: jobDetails,
           ),
         );
 

@@ -17,7 +17,10 @@ class PopularJobsItem extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 4.h),
       child: GestureDetector(
-        onTap: () => context.pushNamed(Routes.jobDetailsScreen),
+        onTap: () => context.pushNamed(
+          Routes.jobDetailsScreen,
+          arguments: jop,
+        ),
         child: Container(
           decoration: BoxDecoration(
             color: ColorsApp.whiteColor,
