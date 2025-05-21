@@ -144,6 +144,14 @@ class LoginCubit extends Cubit<LoginState> {
         key: SharedPrefKeys.profileImage,
         value: loginResponse.data.profile?.profileImage,
       );
+
+       await SharedPrefHelper.saveData(
+        key: SharedPrefKeys.titleJob,
+        value: loginResponse.data.profile?.titleJob,
+      );
+
+
+      
     }
   
 }
