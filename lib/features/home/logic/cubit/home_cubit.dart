@@ -26,20 +26,20 @@ class HomeCubit extends Cubit<HomeState> {
     );
   }
 
-  void emitGetProfileDetails() async {
-    emit(const HomeState.getProfileDetailsLoading());
+  // void emitGetProfileDetails() async {
+  //   emit(const HomeState.getProfileDetailsLoading());
 
-    final response = await _homeRepo.getProfileDetails(
-      id: await SharedPrefHelper.getData(key: SharedPrefKeys.idProfile),
-      token: "Bearer ${SharedPrefValues.token}",
-    );
-    response.when(
-      success: (profileResponse) {
-        emit(HomeState.getProfileDetailsSuccess(profileResponse));
-      },
-      failure: (error) {
-        emit(HomeState.getProfileDetailsFailure(error));
-      },
-    );
-  }
+  //   final response = await _homeRepo.getProfileDetails(
+  //     id: await SharedPrefHelper.getData(key: SharedPrefKeys.idProfile),
+  //     token: "Bearer ${SharedPrefValues.token}",
+  //   );
+  //   response.when(
+  //     success: (profileResponse) {
+  //       emit(HomeState.getProfileDetailsSuccess(profileResponse));
+  //     },
+  //     failure: (error) {
+  //       emit(HomeState.getProfileDetailsFailure(error));
+  //     },
+  //   );
+  // }
 }

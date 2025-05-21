@@ -90,9 +90,13 @@ abstract class ApisServices {
 
   
   @GET("${ApiConstant.getProfileById}/{id}")
-  Future<ProfileResponseModel> getProfileDetails(
+  Future<ProfileResponseModel> getProfileDetailsById(
     @Path('id') int id,
     @Header('Authorization') String token,
   );
   
+   @GET(ApiConstant.getProfilesDetails)
+  Future<ProfileResponseModel> getProfilesDetails(
+    @Header('Authorization') String token,
+  );
 }

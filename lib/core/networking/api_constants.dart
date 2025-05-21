@@ -5,18 +5,17 @@ class ApiConstant {
   static const String login = "auth/login";
   static const String googleAuth = "auth/google-login";
   static const String forgetPassword = "auth/password/reset-request";
-  static const String otpCode = "auth/password/verify-pin";  
+  static const String otpCode = "auth/password/verify-pin";
   static const String resetPassword = "auth/password/reset";
   static const String changePassword = "auth/password/change-password";
   // static const String getCompanyInfo = "auth/companies";
 
   static const String home = "auth/home";
 
-    static const String getCompanyInfo = "auth/companies";
+  static const String getCompanyInfo = "auth/companies";
   static const String getCategories = "auth/categories";
 
   static const String getProfileById = "auth/profiles";
 
-
-
+  static const String getProfilesDetails = "auth/profiles/details";
 }

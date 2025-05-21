@@ -338,7 +338,10 @@ class _ApisServices implements ApisServices {
   }
 
   @override
-  Future<ProfileResponseModel> getProfileDetails(int id, String token) async {
+  Future<ProfileResponseModel> getProfileDetailsById(
+    int id,
+    String token,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': token};
@@ -349,6 +352,34 @@ class _ApisServices implements ApisServices {
           .compose(
             _dio.options,
             'auth/profiles/${id}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ProfileResponseModel _value;
+    try {
+      _value = ProfileResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<ProfileResponseModel> getProfilesDetails(String token) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<ProfileResponseModel>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'auth/profiles/details',
             queryParameters: queryParameters,
             data: _data,
           )
