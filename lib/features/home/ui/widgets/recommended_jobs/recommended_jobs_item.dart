@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobizz/core/helper/extensions.dart';
+import 'package:jobizz/core/routing/routers_string.dart';
 import 'package:jobizz/features/home/data/model/home_response_model.dart';
 
 import '../../../../../core/theming/colors.dart';
@@ -13,7 +15,9 @@ class RecommendedJobsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // context.pushNamed(Routes.jobDetailsScreen);
+        context.pushNamed(
+          Routes.jobDetailsScreen,
+        );
       },
       child: Container(
         decoration: BoxDecoration(

@@ -29,9 +29,10 @@ class JobsBlocBuilder extends StatelessWidget {
             final listRecommendedJobs = homeResponse.data?.recommended;
 
             return SuccessJobs(
-                listFeaturedJobs: listFeaturedJobs,
-                listRecommendedJobs: listRecommendedJobs,
-                listPopularJobs: listPopularJobs);
+              listFeaturedJobs: listFeaturedJobs,
+              listRecommendedJobs: listRecommendedJobs,
+              listPopularJobs: listPopularJobs,
+            );
           },
           failure: (error) {
             return Center(child: Text(error.message ?? "Unknown error"));
