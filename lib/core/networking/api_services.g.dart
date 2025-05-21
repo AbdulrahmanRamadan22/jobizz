@@ -369,13 +369,13 @@ class _ApisServices implements ApisServices {
   }
 
   @override
-  Future<ProfileResponseModel> getProfilesDetails(String token) async {
+  Future<ProfilesResponseModel> getProfilesDetails(String token) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<ProfileResponseModel>(
+    final _options = _setStreamType<ProfilesResponseModel>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -386,9 +386,9 @@ class _ApisServices implements ApisServices {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ProfileResponseModel _value;
+    late ProfilesResponseModel _value;
     try {
-      _value = ProfileResponseModel.fromJson(_result.data!);
+      _value = ProfilesResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

@@ -37,14 +37,16 @@ class ListViewDrawer extends StatelessWidget {
               ),
               CircleAvatar(
                 radius: 35.r,
-                backgroundImage:
-                    const AssetImage('assets/images/photo_person.png'),
+                backgroundImage: NetworkImage(
+                    '${SharedPrefHelper.getData(key: SharedPrefKeys.profileImage)}'),
               ),
               verticalSpace(16),
               Text('${SharedPrefHelper.getData(key: SharedPrefKeys.fullName)}',
                   style: TextStyles.font16White),
               verticalSpace(4),
-              Text('HR', style: TextStyles.font14LightGray),
+              Text(
+                  '${SharedPrefHelper.getData(key: SharedPrefKeys.titleJob) ?? ""}',
+                  style: TextStyles.font14LightGray),
               verticalSpace(16),
               OutlinedButton(
                 onPressed: () => context.pushNamed(Routes.profileScreen),

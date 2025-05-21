@@ -16,7 +16,7 @@ class SalaryAndLocation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 18.h),
+      padding: EdgeInsets.symmetric(horizontal: 12.w,),
       child: Row(
         children: [
           Text('\$${salary ?? ''}/year', style: TextStyles.font13White),
