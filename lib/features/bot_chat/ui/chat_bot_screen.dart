@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/cache/constants.dart';
-import 'package:jobizz/core/cache/shared_pref.dart';
 import 'package:jobizz/core/helper/size_box.dart';
 import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
@@ -44,6 +43,14 @@ class _GeminiChatScreenState extends State<GeminiChatScreen> {
         "text": "Hello, ${SharedPrefValues.fullName}. How can I help you?",
       },
     );
+  }
+
+  void _startNewChat() {
+    setState(() {
+      _messages.clear();
+      //  _addWelcomeMessage();
+      _controller.clear();
+    });
   }
 
   Future<void> _sendMessage() async {
@@ -103,6 +110,15 @@ class _GeminiChatScreenState extends State<GeminiChatScreen> {
         backgroundColor: ColorsApp.backGroundWhite,
         scrolledUnderElevation: 0,
         elevation: 0,
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.refresh,
+              color: ColorsApp.mainBlue,
+            ),
+            onPressed: _startNewChat,
+          ),
+        ],
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(
@@ -151,7 +167,6 @@ class _GeminiChatScreenState extends State<GeminiChatScreen> {
                 children: [
                   Expanded(
                     child: AppTextFormField(
-                      
                       hintStyle: TextStyles.font14LightGray,
                       keyboardType: TextInputType.text,
                       controller: _controller,
