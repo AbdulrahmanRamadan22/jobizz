@@ -20,8 +20,10 @@ class AppTextFormField extends StatelessWidget {
   final TextDirection? textDirection;
   final TextEditingController? controller;
   final Function(String?) validator;
+  // maxLines
+  int? maxLines;
 
-  const AppTextFormField({
+  AppTextFormField({
     super.key,
     this.contentPadding,
     this.focusedBorder,
@@ -37,12 +39,16 @@ class AppTextFormField extends StatelessWidget {
     this.controller,
     required this.validator,
     this.textDirection,
+    this.maxLines,
   });
 
   @override
   Widget build(BuildContext context) {
+    final bool isObscure = isObscureText ?? false;
+    final int safeMaxLines = isObscure ? 1 : (maxLines ?? 1);
     return TextFormField(
       autovalidateMode: AutovalidateMode.onUserInteraction,
+      maxLines: safeMaxLines,
 
       autofillHints: [
         AutofillHints.email,
