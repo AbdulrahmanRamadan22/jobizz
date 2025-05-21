@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 import '../../../../../core/helper/app_regex.dart';
 import '../../../../../core/helper/size_box.dart';
 import '../../../../../core/theming/colors.dart';
@@ -49,7 +48,7 @@ class _FormLoginState extends State<FormLogin> {
 
   @override
   Widget build(BuildContext context) {
-    return  Form(
+    return Form(
       key: context.read<LoginCubit>().formKey,
       child: Column(
         children: [
