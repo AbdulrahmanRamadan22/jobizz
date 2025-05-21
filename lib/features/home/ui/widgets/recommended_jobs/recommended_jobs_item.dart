@@ -17,6 +17,7 @@ class RecommendedJobsItem extends StatelessWidget {
       onTap: () {
         context.pushNamed(
           Routes.jobDetailsScreen,
+          arguments: jop,
         );
       },
       child: Container(

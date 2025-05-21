@@ -52,7 +52,7 @@ class JobCategoryItem extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           Text(
-            '${job?.salary}/y',
+            '\$${job?.salary}/y',
             style: TextStyles.font12DarkBlack,
           ),
         ],
