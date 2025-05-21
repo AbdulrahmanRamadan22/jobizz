@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:jobizz/core/theming/colors.dart';
 
 import '../../home/data/model/home_response_model.dart';
 import '../widgets/grid_view_jobs.dart';

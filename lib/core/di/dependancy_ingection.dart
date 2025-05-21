@@ -10,6 +10,7 @@ import '../../features/auth/otp_screen/data/repo/otp_repo.dart';
 import '../../features/auth/register/data/repo/sign_up_repo.dart';
 import '../../features/auth/reset_password_screen/data/repo/reset_password_repo.dart';
 import '../../features/category/data/repo/category_repo.dart';
+import '../../features/switch_profile/data/repo/profiles_repo.dart';
 import '../networking/api_factory.dart';
 import '../networking/api_services.dart';
 
@@ -42,6 +43,10 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<CompanyInfoRepo>(() => CompanyInfoRepo(getIt()));
 
   getIt.registerLazySingleton<CategoryRepo>(() => CategoryRepo(getIt()));
+
+
+  getIt.registerLazySingleton<ProfilesRepo>(() => ProfilesRepo(getIt()));
+
 
   // // reset password
 

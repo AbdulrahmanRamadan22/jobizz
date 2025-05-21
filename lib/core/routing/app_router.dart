@@ -41,6 +41,8 @@ import '../../features/profile/ui/profile_screen.dart';
 import '../../features/saved_jobs/ui/saved_screen.dart';
 import '../../features/settings/ui/screens/settings_screen.dart';
 import '../../features/settings/ui/screens/terms_and_conditions.dart';
+import '../../features/switch_profile/logic/switch_profile_cubit.dart';
+import '../../features/switch_profile/ui/switch_profile_screen.dart';
 import '../di/dependancy_ingection.dart';
 
 // import '../../features/auth/login/ui/login_screen.dart';
@@ -145,13 +147,12 @@ class AppRouter {
         );
       // layout screen
       case Routes.layoutScreen:
-          //  final profiles = settings.arguments as  List<Profile?>? ?? [];
+        //  final profiles = settings.arguments as  List<Profile?>? ?? [];
 
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
             create: (context) => LayoutCubit(),
-            child:  LayoutScreens(),
-
+            child: LayoutScreens(),
           ),
         );
       case Routes.companiesScreen:
@@ -173,9 +174,7 @@ class AppRouter {
 
       case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (context) => HomeScreen(
-
-          ),
+          builder: (context) => HomeScreen(),
         );
 
       // Jobs Screen
@@ -266,6 +265,14 @@ class AppRouter {
       case Routes.geminiChatScreen:
         return MaterialPageRoute(
           builder: (context) => GeminiChatScreen(),
+        );
+
+      case Routes.switchProfileScreen:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => SwitchProfileCubit(getIt())..emitGetProfilesDetailsData(),
+            child: const SwitchProfileScreen(),
+          ),
         );
 
       default:

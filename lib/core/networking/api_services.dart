@@ -21,6 +21,7 @@ import '../../features/category/data/model/category_response.dart';
 import '../../features/companies/data/model/company_response.dart';
 import '../../features/home/data/model/home_response_model.dart';
 import '../../features/profile/data/models/profile_response_model.dart';
+import '../../features/switch_profile/data/models/profile_response_model.dart';
 
 part 'api_services.g.dart';
 
@@ -96,7 +97,7 @@ abstract class ApisServices {
   );
   
    @GET(ApiConstant.getProfilesDetails)
-  Future<ProfileResponseModel> getProfilesDetails(
+  Future<ProfilesResponseModel> getProfilesDetails(
     @Header('Authorization') String token,
   );
 }
