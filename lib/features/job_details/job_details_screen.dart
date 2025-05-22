@@ -7,8 +7,8 @@ import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
 import 'package:jobizz/core/widgets/button_app_text.dart';
 import 'package:jobizz/features/home/data/model/home_response_model.dart';
-import 'package:jobizz/features/home/ui/widgets/job_details/stack_image_title_buttons.dart';
-import 'package:jobizz/features/home/ui/widgets/job_details/tab_bar_view.dart';
+import 'package:jobizz/features/job_details/widgets/stack_image_title_buttons.dart';
+import 'package:jobizz/features/job_details/widgets/tab_bar_view.dart';
 
 class JobDetailsScreen extends StatelessWidget {
   const JobDetailsScreen({
@@ -20,7 +20,7 @@ class JobDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 3,
       child: Scaffold(
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
