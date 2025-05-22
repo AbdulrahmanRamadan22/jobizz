@@ -17,6 +17,16 @@ class StackImageTitleButtons extends StatelessWidget {
       children: [
         // Background container
         ContainerBackGround(),
+        // Positioned image
+        Positioned(
+          top: 0,
+          left: 0,
+          right: 0,
+          child: Image.asset(
+            'assets/images/Mask Group.png',
+            fit: BoxFit.cover,
+          ),
+        ),
         Positioned(
           top: 60.h,
           left: 15.w,

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobizz/features/home/ui/widgets/page_to_top.dart';
 
-import '../../../../core/helper/size_box.dart';
-import '../../../../core/theming/colors.dart';
-import '../../../layout/drawer/drawer_wiget.dart';
-import '../../logic/cubit/home_cubit.dart';
-import '../widgets/jobs_bloc_builder.dart';
-import '../widgets/search_and_filter.dart';
+import '../../../core/helper/size_box.dart';
+import '../../../core/theming/colors.dart';
+import '../../layout/drawer/drawer_wiget.dart';
+import '../logic/cubit/home_cubit.dart';
+import 'widgets/jobs_bloc_builder.dart';
+import 'widgets/search_and_filter.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({

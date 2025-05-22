@@ -8,7 +8,7 @@ import '../../../../category/cubit/category_cubit.dart';
 import '../../../../category/ui/screens/category_screen.dart';
 import '../../../../companies/logic/cubit/company_cubit.dart';
 import '../../../../companies/ui/screens/compaies_screen.dart';
-import '../../../../home/ui/screens/home_screen.dart';
+import '../../../../home/ui/home_screen.dart';
 import '../../../../notifications/ui/notifications_screen.dart.dart';
 
 class LayoutCubit extends Cubit<LayoutState> {

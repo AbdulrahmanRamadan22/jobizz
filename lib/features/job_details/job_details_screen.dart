@@ -66,7 +66,6 @@ class JobDetailsScreen extends StatelessWidget {
               job: job,
             ),
             verticalSpace(8),
-
             AppTextButton(
               borderRadius: 5.r,
               buttonWidth: 327.w,
