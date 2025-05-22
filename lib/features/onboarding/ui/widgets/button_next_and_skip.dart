@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/helper/extensions.dart';
 
+import '../../../../core/cache/constants.dart';
+import '../../../../core/cache/shared_pref.dart';
 import '../../../../core/routing/routers_string.dart';
 import '../../../../core/theming/styles.dart';
 import '../../../../core/widgets/button_app_text.dart';
@@ -47,7 +49,12 @@ class ButtonNextAndSkip extends StatelessWidget {
                   duration: const Duration(milliseconds: 500),
                   curve: Curves.linear,
                 );
+                SharedPrefHelper.saveData(
+                    key: SharedPrefKeys.onBoardingIsDone, value: false);
               } else {
+                SharedPrefHelper.saveData(
+                    key: SharedPrefKeys.onBoardingIsDone, value: true);
+
                 context.pushNamedAndRemoveUntil(Routes.loginScreen,
                     predicate: (Route<dynamic> route) {
                   return false;

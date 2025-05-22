@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobizz/features/auth/change_password/logic/cubit/change_password_state.dart';
 
 import '../../../../../core/cache/constants.dart';
+import '../../../../../core/cache/shared_pref.dart';
 import '../../data/model/change_password_request.dart';
 import '../../data/repo/change_password_repo.dart';
 
@@ -21,7 +22,8 @@ class ChangePasswordCubit extends Cubit<ChangePasswordState> {
   Future<void> emitChangePassword() async {
     emit(ChangePasswordState.changePasswordLoading());
     final response = await _changePasswordRepo.changePassword(
-      "Bearer ${SharedPrefValues.token}",
+       "Bearer ${await SharedPrefHelper.getSecuredString(key: SharedPrefKeys.token)}",
+
       ChangePasswordRequest(
         oldPassword: oldPasswordController.text.trim(),
         newPassword: newPasswordConfirmation.text.trim(),

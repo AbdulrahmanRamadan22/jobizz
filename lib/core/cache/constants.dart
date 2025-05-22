@@ -10,6 +10,7 @@ class SharedPrefKeys {
   static String idProfile = "idProfile";
   static String profileImage = "profileImage";
   static String titleJob = "titleJob";
+  static String onBoardingIsDone = "onBoardingIsDone";
 }
 
 class SharedPrefValues {
@@ -19,9 +20,10 @@ class SharedPrefValues {
   static String email = "";
   static String phone = "";
   static String status = "";
-  static bool? isLoggedInUser = false;
+  // static bool isLoggedInUser = false;
   static String? tokenResetPassword = "";
   static String? emailResetPassword = "";
   static int? idProfile;
   static String profileImage = "";
+  static String? initialRoute;
 }

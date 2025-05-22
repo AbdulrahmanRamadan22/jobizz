@@ -14,7 +14,7 @@ class HomeCubit extends Cubit<HomeState> {
     emit(const HomeState.loading());
 
     final response = await _homeRepo.getHomeData(
-      token: "Bearer ${SharedPrefValues.token}",
+      token: "Bearer ${await SharedPrefHelper.getSecuredString(key: SharedPrefKeys.token)}",
     );
     response.when(
       success: (homeResponse) {

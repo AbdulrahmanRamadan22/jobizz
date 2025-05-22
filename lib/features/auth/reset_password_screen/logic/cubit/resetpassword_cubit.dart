@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:jobizz/features/auth/reset_password_screen/logic/cubit/resetpassword_state.dart';
 
 import '../../../../../core/cache/constants.dart';
+import '../../../../../core/cache/shared_pref.dart';
 import '../../data/model/reset_password_requast.dart';
 import '../../data/repo/reset_password_repo.dart';
-
 
 class ResetPasswordCubit extends Cubit<ResetPasswordState> {
   final ResetPasswordRepo _resetPasswordRepo;
@@ -25,7 +25,8 @@ class ResetPasswordCubit extends Cubit<ResetPasswordState> {
 
           // new_password: newPasswordController.text,
         ),
-        token: 'Bearer ${SharedPrefValues.tokenResetPassword}');
+        token:
+            "Bearer ${await SharedPrefHelper.getSecuredString(key: SharedPrefKeys.token)}");
     response.when(success: (response) {
       emit(ResetPasswordState.success(response));
     }, failure: (error) {

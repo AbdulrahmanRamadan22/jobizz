@@ -3,13 +3,16 @@ import 'package:jobizz/core/cache/constants.dart';
 import 'package:jobizz/features/companies/data/repo/company_info_repo.dart';
 import 'package:jobizz/features/companies/logic/cubit/company_state.dart';
 
+import '../../../../core/cache/shared_pref.dart';
+
 class CompanyCubit extends Cubit<CompanyState> {
   CompanyCubit(this.companyInfoRepo) : super(const CompanyState.initial());
   CompanyInfoRepo companyInfoRepo;
   void getAllCompany() async {
     emit(const CompanyState.companyLoading());
     final response = await companyInfoRepo.getCompanyInfo(
-      token: 'Bearer ${SharedPrefValues.token}',
+      token:
+          "Bearer ${await SharedPrefHelper.getSecuredString(key: SharedPrefKeys.token)}",
     );
     response.when(
       success: (data) {
