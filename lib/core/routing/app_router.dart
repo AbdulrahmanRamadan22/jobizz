@@ -31,7 +31,7 @@ import '../../features/companies/ui/screens/compaies_screen.dart';
 import '../../features/companies/ui/screens/popular_company_screen.dart';
 import '../../features/companies/ui/screens/trending_company_screen.dart';
 import '../../features/home/data/model/home_response_model.dart';
-import '../../features/home/ui/screens/home_screen.dart';
+import '../../features/home/ui/home_screen.dart';
 import '../../features/jobs/screens/featured_jobs_screen.dart';
 import '../../features/jobs/screens/popular_jobs_screen.dart';
 import '../../features/jobs/screens/recommended_jobs_screen.dart';
