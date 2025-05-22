@@ -12,24 +12,15 @@ class TabBarViewDesign extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
+        padding: EdgeInsets.symmetric(
           horizontal: 24,
         ),
         child: TabBarView(
+          physics: const BouncingScrollPhysics(),
           children: [
             Text('${job?.description}'),
             Text('${job?.requirement}'),
             Text('${job?.benefits}'),
-            //    Text('${job?.}'),
-            //  Text('hhhh'),
-            // Description Tab
-            //   DescriptionContent(),
-            // Requirements Tab
-            // RequirementContent(),
-            // About Company Tab
-            //  AboutContent(),
-            // Reviews Tab
-            //  ReviewsContent(),
           ],
         ),
       ),

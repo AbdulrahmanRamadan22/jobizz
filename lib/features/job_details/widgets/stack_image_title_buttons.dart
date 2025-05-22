@@ -5,8 +5,8 @@ import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
 import 'package:jobizz/features/home/data/model/home_response_model.dart';
 import 'package:jobizz/features/home/ui/widgets/featured_jobs/button_card_feature_job.dart';
-import 'package:jobizz/features/home/ui/widgets/job_details/container_back_ground.dart';
-import 'package:jobizz/features/home/ui/widgets/job_details/row_icons.dart';
+import 'package:jobizz/features/job_details/widgets/container_back_ground.dart';
+import 'package:jobizz/features/job_details/widgets/row_icons.dart';
 
 class StackImageTitleButtons extends StatelessWidget {
   const StackImageTitleButtons({super.key, this.job});
