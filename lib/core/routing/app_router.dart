@@ -10,7 +10,7 @@ import 'package:jobizz/features/category/ui/screens/popular_category_screen.dart
 import 'package:jobizz/features/category/ui/screens/trending_category_screen.dart';
 import 'package:jobizz/features/companies/ui/screens/company_of_jobs_screen.dart';
 import 'package:jobizz/features/companies/ui/screens/profile_company_screen.dart';
-import 'package:jobizz/features/home/ui/screens/job_details_screen.dart';
+import 'package:jobizz/features/job_details/job_details_screen.dart';
 
 import 'package:jobizz/features/onboarding/ui/onboarding_screen.dart';
 
