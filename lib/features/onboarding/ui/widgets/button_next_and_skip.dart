@@ -26,6 +26,8 @@ class ButtonNextAndSkip extends StatelessWidget {
         Expanded(
           child: TextButton(
             onPressed: () {
+              SharedPrefHelper.saveData(
+                  key: SharedPrefKeys.onBoardingIsDone, value: true);
               context.pushReplacementNamed(Routes.loginScreen);
             },
             child: Align(

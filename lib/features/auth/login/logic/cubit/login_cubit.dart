@@ -150,8 +150,6 @@ class LoginCubit extends Cubit<LoginState> {
         value: loginResponse.data.profile?.titleJob,
       );
 
-
-      
     }
   
 }

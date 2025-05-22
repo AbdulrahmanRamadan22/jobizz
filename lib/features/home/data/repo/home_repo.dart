@@ -21,15 +21,6 @@ class HomeRepo {
     }
   }
 
-  // Future<ApiResult<ProfileResponseModel>> getProfileDetails(
-  //     {required String token, required int id}) async {
-  //   try {
-  //     final response = await _apisServices.getProfileDetails(id, token);
-  //     return ApiResult.success(response);
-  //   } catch (error) {
-  //     return ApiResult.failure(ApiErrorHandler.handle(error));
-  //   }
-  // }
 
 
 }

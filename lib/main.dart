@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/cache/constants.dart';
 // import 'package:flutter/rendering.dart';
@@ -31,8 +32,10 @@ void main() async {
   await handelInitialRoute();
 
   runApp(
-    JobizzApp(
-      appRouter: AppRouter(),
+    Phoenix(
+      child: JobizzApp(
+        appRouter: AppRouter(),
+      ),
     ),
   );
 }

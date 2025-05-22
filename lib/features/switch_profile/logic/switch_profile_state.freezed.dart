@@ -24,6 +24,11 @@ mixin _$SwitchProfileState<T> {
     required TResult Function(ApiErrorModel apiErrorModel)
         getProfileDetailsFailure,
     required TResult Function() getProfilesDetailsLoading,
+    required TResult Function(ProfileResponseModel profileResponseModel)
+        profileDetailsByIdSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsByIdFailure,
+    required TResult Function() profileDetailsByIdLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,6 +38,10 @@ mixin _$SwitchProfileState<T> {
         getProfilesDetailsSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
     TResult? Function()? getProfilesDetailsLoading,
+    TResult? Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsByIdSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
+    TResult? Function()? profileDetailsByIdLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +51,10 @@ mixin _$SwitchProfileState<T> {
         getProfilesDetailsSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
     TResult Function()? getProfilesDetailsLoading,
+    TResult Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsByIdSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
+    TResult Function()? profileDetailsByIdLoading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +67,12 @@ mixin _$SwitchProfileState<T> {
         getProfileDetailsFailure,
     required TResult Function(GetProfilesDetailsLoading<T> value)
         getProfilesDetailsLoading,
+    required TResult Function(ProfileDetailsByIdSuccess<T> value)
+        profileDetailsByIdSuccess,
+    required TResult Function(ProfileDetailsByIdFailure<T> value)
+        profileDetailsByIdFailure,
+    required TResult Function(ProfileDetailsByIdLoading<T> value)
+        profileDetailsByIdLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +84,12 @@ mixin _$SwitchProfileState<T> {
         getProfileDetailsFailure,
     TResult? Function(GetProfilesDetailsLoading<T> value)?
         getProfilesDetailsLoading,
+    TResult? Function(ProfileDetailsByIdSuccess<T> value)?
+        profileDetailsByIdSuccess,
+    TResult? Function(ProfileDetailsByIdFailure<T> value)?
+        profileDetailsByIdFailure,
+    TResult? Function(ProfileDetailsByIdLoading<T> value)?
+        profileDetailsByIdLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,6 +101,12 @@ mixin _$SwitchProfileState<T> {
         getProfileDetailsFailure,
     TResult Function(GetProfilesDetailsLoading<T> value)?
         getProfilesDetailsLoading,
+    TResult Function(ProfileDetailsByIdSuccess<T> value)?
+        profileDetailsByIdSuccess,
+    TResult Function(ProfileDetailsByIdFailure<T> value)?
+        profileDetailsByIdFailure,
+    TResult Function(ProfileDetailsByIdLoading<T> value)?
+        profileDetailsByIdLoading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -150,6 +181,11 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(ApiErrorModel apiErrorModel)
         getProfileDetailsFailure,
     required TResult Function() getProfilesDetailsLoading,
+    required TResult Function(ProfileResponseModel profileResponseModel)
+        profileDetailsByIdSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsByIdFailure,
+    required TResult Function() profileDetailsByIdLoading,
   }) {
     return initial();
   }
@@ -162,6 +198,10 @@ class _$InitialImpl<T> implements _Initial<T> {
         getProfilesDetailsSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
     TResult? Function()? getProfilesDetailsLoading,
+    TResult? Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsByIdSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
+    TResult? Function()? profileDetailsByIdLoading,
   }) {
     return initial?.call();
   }
@@ -174,6 +214,10 @@ class _$InitialImpl<T> implements _Initial<T> {
         getProfilesDetailsSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
     TResult Function()? getProfilesDetailsLoading,
+    TResult Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsByIdSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
+    TResult Function()? profileDetailsByIdLoading,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -192,6 +236,12 @@ class _$InitialImpl<T> implements _Initial<T> {
         getProfileDetailsFailure,
     required TResult Function(GetProfilesDetailsLoading<T> value)
         getProfilesDetailsLoading,
+    required TResult Function(ProfileDetailsByIdSuccess<T> value)
+        profileDetailsByIdSuccess,
+    required TResult Function(ProfileDetailsByIdFailure<T> value)
+        profileDetailsByIdFailure,
+    required TResult Function(ProfileDetailsByIdLoading<T> value)
+        profileDetailsByIdLoading,
   }) {
     return initial(this);
   }
@@ -206,6 +256,12 @@ class _$InitialImpl<T> implements _Initial<T> {
         getProfileDetailsFailure,
     TResult? Function(GetProfilesDetailsLoading<T> value)?
         getProfilesDetailsLoading,
+    TResult? Function(ProfileDetailsByIdSuccess<T> value)?
+        profileDetailsByIdSuccess,
+    TResult? Function(ProfileDetailsByIdFailure<T> value)?
+        profileDetailsByIdFailure,
+    TResult? Function(ProfileDetailsByIdLoading<T> value)?
+        profileDetailsByIdLoading,
   }) {
     return initial?.call(this);
   }
@@ -220,6 +276,12 @@ class _$InitialImpl<T> implements _Initial<T> {
         getProfileDetailsFailure,
     TResult Function(GetProfilesDetailsLoading<T> value)?
         getProfilesDetailsLoading,
+    TResult Function(ProfileDetailsByIdSuccess<T> value)?
+        profileDetailsByIdSuccess,
+    TResult Function(ProfileDetailsByIdFailure<T> value)?
+        profileDetailsByIdFailure,
+    TResult Function(ProfileDetailsByIdLoading<T> value)?
+        profileDetailsByIdLoading,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -314,6 +376,11 @@ class _$GetProfilesDetailsSuccessImpl<T>
     required TResult Function(ApiErrorModel apiErrorModel)
         getProfileDetailsFailure,
     required TResult Function() getProfilesDetailsLoading,
+    required TResult Function(ProfileResponseModel profileResponseModel)
+        profileDetailsByIdSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsByIdFailure,
+    required TResult Function() profileDetailsByIdLoading,
   }) {
     return getProfilesDetailsSuccess(profilesResponseModel);
   }
@@ -326,6 +393,10 @@ class _$GetProfilesDetailsSuccessImpl<T>
         getProfilesDetailsSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
     TResult? Function()? getProfilesDetailsLoading,
+    TResult? Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsByIdSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
+    TResult? Function()? profileDetailsByIdLoading,
   }) {
     return getProfilesDetailsSuccess?.call(profilesResponseModel);
   }
@@ -338,6 +409,10 @@ class _$GetProfilesDetailsSuccessImpl<T>
         getProfilesDetailsSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
     TResult Function()? getProfilesDetailsLoading,
+    TResult Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsByIdSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
+    TResult Function()? profileDetailsByIdLoading,
     required TResult orElse(),
   }) {
     if (getProfilesDetailsSuccess != null) {
@@ -356,6 +431,12 @@ class _$GetProfilesDetailsSuccessImpl<T>
         getProfileDetailsFailure,
     required TResult Function(GetProfilesDetailsLoading<T> value)
         getProfilesDetailsLoading,
+    required TResult Function(ProfileDetailsByIdSuccess<T> value)
+        profileDetailsByIdSuccess,
+    required TResult Function(ProfileDetailsByIdFailure<T> value)
+        profileDetailsByIdFailure,
+    required TResult Function(ProfileDetailsByIdLoading<T> value)
+        profileDetailsByIdLoading,
   }) {
     return getProfilesDetailsSuccess(this);
   }
@@ -370,6 +451,12 @@ class _$GetProfilesDetailsSuccessImpl<T>
         getProfileDetailsFailure,
     TResult? Function(GetProfilesDetailsLoading<T> value)?
         getProfilesDetailsLoading,
+    TResult? Function(ProfileDetailsByIdSuccess<T> value)?
+        profileDetailsByIdSuccess,
+    TResult? Function(ProfileDetailsByIdFailure<T> value)?
+        profileDetailsByIdFailure,
+    TResult? Function(ProfileDetailsByIdLoading<T> value)?
+        profileDetailsByIdLoading,
   }) {
     return getProfilesDetailsSuccess?.call(this);
   }
@@ -384,6 +471,12 @@ class _$GetProfilesDetailsSuccessImpl<T>
         getProfileDetailsFailure,
     TResult Function(GetProfilesDetailsLoading<T> value)?
         getProfilesDetailsLoading,
+    TResult Function(ProfileDetailsByIdSuccess<T> value)?
+        profileDetailsByIdSuccess,
+    TResult Function(ProfileDetailsByIdFailure<T> value)?
+        profileDetailsByIdFailure,
+    TResult Function(ProfileDetailsByIdLoading<T> value)?
+        profileDetailsByIdLoading,
     required TResult orElse(),
   }) {
     if (getProfilesDetailsSuccess != null) {
@@ -489,6 +582,11 @@ class _$GetProfilesDetailsFailureImpl<T>
     required TResult Function(ApiErrorModel apiErrorModel)
         getProfileDetailsFailure,
     required TResult Function() getProfilesDetailsLoading,
+    required TResult Function(ProfileResponseModel profileResponseModel)
+        profileDetailsByIdSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsByIdFailure,
+    required TResult Function() profileDetailsByIdLoading,
   }) {
     return getProfileDetailsFailure(apiErrorModel);
   }
@@ -501,6 +599,10 @@ class _$GetProfilesDetailsFailureImpl<T>
         getProfilesDetailsSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
     TResult? Function()? getProfilesDetailsLoading,
+    TResult? Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsByIdSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
+    TResult? Function()? profileDetailsByIdLoading,
   }) {
     return getProfileDetailsFailure?.call(apiErrorModel);
   }
@@ -513,6 +615,10 @@ class _$GetProfilesDetailsFailureImpl<T>
         getProfilesDetailsSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
     TResult Function()? getProfilesDetailsLoading,
+    TResult Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsByIdSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
+    TResult Function()? profileDetailsByIdLoading,
     required TResult orElse(),
   }) {
     if (getProfileDetailsFailure != null) {
@@ -531,6 +637,12 @@ class _$GetProfilesDetailsFailureImpl<T>
         getProfileDetailsFailure,
     required TResult Function(GetProfilesDetailsLoading<T> value)
         getProfilesDetailsLoading,
+    required TResult Function(ProfileDetailsByIdSuccess<T> value)
+        profileDetailsByIdSuccess,
+    required TResult Function(ProfileDetailsByIdFailure<T> value)
+        profileDetailsByIdFailure,
+    required TResult Function(ProfileDetailsByIdLoading<T> value)
+        profileDetailsByIdLoading,
   }) {
     return getProfileDetailsFailure(this);
   }
@@ -545,6 +657,12 @@ class _$GetProfilesDetailsFailureImpl<T>
         getProfileDetailsFailure,
     TResult? Function(GetProfilesDetailsLoading<T> value)?
         getProfilesDetailsLoading,
+    TResult? Function(ProfileDetailsByIdSuccess<T> value)?
+        profileDetailsByIdSuccess,
+    TResult? Function(ProfileDetailsByIdFailure<T> value)?
+        profileDetailsByIdFailure,
+    TResult? Function(ProfileDetailsByIdLoading<T> value)?
+        profileDetailsByIdLoading,
   }) {
     return getProfileDetailsFailure?.call(this);
   }
@@ -559,6 +677,12 @@ class _$GetProfilesDetailsFailureImpl<T>
         getProfileDetailsFailure,
     TResult Function(GetProfilesDetailsLoading<T> value)?
         getProfilesDetailsLoading,
+    TResult Function(ProfileDetailsByIdSuccess<T> value)?
+        profileDetailsByIdSuccess,
+    TResult Function(ProfileDetailsByIdFailure<T> value)?
+        profileDetailsByIdFailure,
+    TResult Function(ProfileDetailsByIdLoading<T> value)?
+        profileDetailsByIdLoading,
     required TResult orElse(),
   }) {
     if (getProfileDetailsFailure != null) {
@@ -634,6 +758,11 @@ class _$GetProfilesDetailsLoadingImpl<T>
     required TResult Function(ApiErrorModel apiErrorModel)
         getProfileDetailsFailure,
     required TResult Function() getProfilesDetailsLoading,
+    required TResult Function(ProfileResponseModel profileResponseModel)
+        profileDetailsByIdSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsByIdFailure,
+    required TResult Function() profileDetailsByIdLoading,
   }) {
     return getProfilesDetailsLoading();
   }
@@ -646,6 +775,10 @@ class _$GetProfilesDetailsLoadingImpl<T>
         getProfilesDetailsSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
     TResult? Function()? getProfilesDetailsLoading,
+    TResult? Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsByIdSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
+    TResult? Function()? profileDetailsByIdLoading,
   }) {
     return getProfilesDetailsLoading?.call();
   }
@@ -658,6 +791,10 @@ class _$GetProfilesDetailsLoadingImpl<T>
         getProfilesDetailsSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
     TResult Function()? getProfilesDetailsLoading,
+    TResult Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsByIdSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
+    TResult Function()? profileDetailsByIdLoading,
     required TResult orElse(),
   }) {
     if (getProfilesDetailsLoading != null) {
@@ -676,6 +813,12 @@ class _$GetProfilesDetailsLoadingImpl<T>
         getProfileDetailsFailure,
     required TResult Function(GetProfilesDetailsLoading<T> value)
         getProfilesDetailsLoading,
+    required TResult Function(ProfileDetailsByIdSuccess<T> value)
+        profileDetailsByIdSuccess,
+    required TResult Function(ProfileDetailsByIdFailure<T> value)
+        profileDetailsByIdFailure,
+    required TResult Function(ProfileDetailsByIdLoading<T> value)
+        profileDetailsByIdLoading,
   }) {
     return getProfilesDetailsLoading(this);
   }
@@ -690,6 +833,12 @@ class _$GetProfilesDetailsLoadingImpl<T>
         getProfileDetailsFailure,
     TResult? Function(GetProfilesDetailsLoading<T> value)?
         getProfilesDetailsLoading,
+    TResult? Function(ProfileDetailsByIdSuccess<T> value)?
+        profileDetailsByIdSuccess,
+    TResult? Function(ProfileDetailsByIdFailure<T> value)?
+        profileDetailsByIdFailure,
+    TResult? Function(ProfileDetailsByIdLoading<T> value)?
+        profileDetailsByIdLoading,
   }) {
     return getProfilesDetailsLoading?.call(this);
   }
@@ -704,6 +853,12 @@ class _$GetProfilesDetailsLoadingImpl<T>
         getProfileDetailsFailure,
     TResult Function(GetProfilesDetailsLoading<T> value)?
         getProfilesDetailsLoading,
+    TResult Function(ProfileDetailsByIdSuccess<T> value)?
+        profileDetailsByIdSuccess,
+    TResult Function(ProfileDetailsByIdFailure<T> value)?
+        profileDetailsByIdFailure,
+    TResult Function(ProfileDetailsByIdLoading<T> value)?
+        profileDetailsByIdLoading,
     required TResult orElse(),
   }) {
     if (getProfilesDetailsLoading != null) {
@@ -716,4 +871,582 @@ class _$GetProfilesDetailsLoadingImpl<T>
 abstract class GetProfilesDetailsLoading<T> implements SwitchProfileState<T> {
   const factory GetProfilesDetailsLoading() =
       _$GetProfilesDetailsLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$ProfileDetailsByIdSuccessImplCopyWith<T, $Res> {
+  factory _$$ProfileDetailsByIdSuccessImplCopyWith(
+          _$ProfileDetailsByIdSuccessImpl<T> value,
+          $Res Function(_$ProfileDetailsByIdSuccessImpl<T>) then) =
+      __$$ProfileDetailsByIdSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ProfileResponseModel profileResponseModel});
+}
+
+/// @nodoc
+class __$$ProfileDetailsByIdSuccessImplCopyWithImpl<T, $Res>
+    extends _$SwitchProfileStateCopyWithImpl<T, $Res,
+        _$ProfileDetailsByIdSuccessImpl<T>>
+    implements _$$ProfileDetailsByIdSuccessImplCopyWith<T, $Res> {
+  __$$ProfileDetailsByIdSuccessImplCopyWithImpl(
+      _$ProfileDetailsByIdSuccessImpl<T> _value,
+      $Res Function(_$ProfileDetailsByIdSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SwitchProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? profileResponseModel = null,
+  }) {
+    return _then(_$ProfileDetailsByIdSuccessImpl<T>(
+      null == profileResponseModel
+          ? _value.profileResponseModel
+          : profileResponseModel // ignore: cast_nullable_to_non_nullable
+              as ProfileResponseModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProfileDetailsByIdSuccessImpl<T>
+    implements ProfileDetailsByIdSuccess<T> {
+  const _$ProfileDetailsByIdSuccessImpl(this.profileResponseModel);
+
+  @override
+  final ProfileResponseModel profileResponseModel;
+
+  @override
+  String toString() {
+    return 'SwitchProfileState<$T>.profileDetailsByIdSuccess(profileResponseModel: $profileResponseModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProfileDetailsByIdSuccessImpl<T> &&
+            (identical(other.profileResponseModel, profileResponseModel) ||
+                other.profileResponseModel == profileResponseModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, profileResponseModel);
+
+  /// Create a copy of SwitchProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProfileDetailsByIdSuccessImplCopyWith<T,
+          _$ProfileDetailsByIdSuccessImpl<T>>
+      get copyWith => __$$ProfileDetailsByIdSuccessImplCopyWithImpl<T,
+          _$ProfileDetailsByIdSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(ProfilesResponseModel profilesResponseModel)
+        getProfilesDetailsSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getProfileDetailsFailure,
+    required TResult Function() getProfilesDetailsLoading,
+    required TResult Function(ProfileResponseModel profileResponseModel)
+        profileDetailsByIdSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsByIdFailure,
+    required TResult Function() profileDetailsByIdLoading,
+  }) {
+    return profileDetailsByIdSuccess(profileResponseModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(ProfilesResponseModel profilesResponseModel)?
+        getProfilesDetailsSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
+    TResult? Function()? getProfilesDetailsLoading,
+    TResult? Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsByIdSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
+    TResult? Function()? profileDetailsByIdLoading,
+  }) {
+    return profileDetailsByIdSuccess?.call(profileResponseModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(ProfilesResponseModel profilesResponseModel)?
+        getProfilesDetailsSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
+    TResult Function()? getProfilesDetailsLoading,
+    TResult Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsByIdSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
+    TResult Function()? profileDetailsByIdLoading,
+    required TResult orElse(),
+  }) {
+    if (profileDetailsByIdSuccess != null) {
+      return profileDetailsByIdSuccess(profileResponseModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProfilesDetailsSuccess<T> value)
+        getProfilesDetailsSuccess,
+    required TResult Function(GetProfilesDetailsFailure<T> value)
+        getProfileDetailsFailure,
+    required TResult Function(GetProfilesDetailsLoading<T> value)
+        getProfilesDetailsLoading,
+    required TResult Function(ProfileDetailsByIdSuccess<T> value)
+        profileDetailsByIdSuccess,
+    required TResult Function(ProfileDetailsByIdFailure<T> value)
+        profileDetailsByIdFailure,
+    required TResult Function(ProfileDetailsByIdLoading<T> value)
+        profileDetailsByIdLoading,
+  }) {
+    return profileDetailsByIdSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProfilesDetailsSuccess<T> value)?
+        getProfilesDetailsSuccess,
+    TResult? Function(GetProfilesDetailsFailure<T> value)?
+        getProfileDetailsFailure,
+    TResult? Function(GetProfilesDetailsLoading<T> value)?
+        getProfilesDetailsLoading,
+    TResult? Function(ProfileDetailsByIdSuccess<T> value)?
+        profileDetailsByIdSuccess,
+    TResult? Function(ProfileDetailsByIdFailure<T> value)?
+        profileDetailsByIdFailure,
+    TResult? Function(ProfileDetailsByIdLoading<T> value)?
+        profileDetailsByIdLoading,
+  }) {
+    return profileDetailsByIdSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProfilesDetailsSuccess<T> value)?
+        getProfilesDetailsSuccess,
+    TResult Function(GetProfilesDetailsFailure<T> value)?
+        getProfileDetailsFailure,
+    TResult Function(GetProfilesDetailsLoading<T> value)?
+        getProfilesDetailsLoading,
+    TResult Function(ProfileDetailsByIdSuccess<T> value)?
+        profileDetailsByIdSuccess,
+    TResult Function(ProfileDetailsByIdFailure<T> value)?
+        profileDetailsByIdFailure,
+    TResult Function(ProfileDetailsByIdLoading<T> value)?
+        profileDetailsByIdLoading,
+    required TResult orElse(),
+  }) {
+    if (profileDetailsByIdSuccess != null) {
+      return profileDetailsByIdSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProfileDetailsByIdSuccess<T> implements SwitchProfileState<T> {
+  const factory ProfileDetailsByIdSuccess(
+          final ProfileResponseModel profileResponseModel) =
+      _$ProfileDetailsByIdSuccessImpl<T>;
+
+  ProfileResponseModel get profileResponseModel;
+
+  /// Create a copy of SwitchProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ProfileDetailsByIdSuccessImplCopyWith<T,
+          _$ProfileDetailsByIdSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProfileDetailsByIdFailureImplCopyWith<T, $Res> {
+  factory _$$ProfileDetailsByIdFailureImplCopyWith(
+          _$ProfileDetailsByIdFailureImpl<T> value,
+          $Res Function(_$ProfileDetailsByIdFailureImpl<T>) then) =
+      __$$ProfileDetailsByIdFailureImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ApiErrorModel apiErrorModel});
+}
+
+/// @nodoc
+class __$$ProfileDetailsByIdFailureImplCopyWithImpl<T, $Res>
+    extends _$SwitchProfileStateCopyWithImpl<T, $Res,
+        _$ProfileDetailsByIdFailureImpl<T>>
+    implements _$$ProfileDetailsByIdFailureImplCopyWith<T, $Res> {
+  __$$ProfileDetailsByIdFailureImplCopyWithImpl(
+      _$ProfileDetailsByIdFailureImpl<T> _value,
+      $Res Function(_$ProfileDetailsByIdFailureImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SwitchProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? apiErrorModel = null,
+  }) {
+    return _then(_$ProfileDetailsByIdFailureImpl<T>(
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProfileDetailsByIdFailureImpl<T>
+    implements ProfileDetailsByIdFailure<T> {
+  const _$ProfileDetailsByIdFailureImpl(this.apiErrorModel);
+
+  @override
+  final ApiErrorModel apiErrorModel;
+
+  @override
+  String toString() {
+    return 'SwitchProfileState<$T>.profileDetailsByIdFailure(apiErrorModel: $apiErrorModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProfileDetailsByIdFailureImpl<T> &&
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
+
+  /// Create a copy of SwitchProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProfileDetailsByIdFailureImplCopyWith<T,
+          _$ProfileDetailsByIdFailureImpl<T>>
+      get copyWith => __$$ProfileDetailsByIdFailureImplCopyWithImpl<T,
+          _$ProfileDetailsByIdFailureImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(ProfilesResponseModel profilesResponseModel)
+        getProfilesDetailsSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getProfileDetailsFailure,
+    required TResult Function() getProfilesDetailsLoading,
+    required TResult Function(ProfileResponseModel profileResponseModel)
+        profileDetailsByIdSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsByIdFailure,
+    required TResult Function() profileDetailsByIdLoading,
+  }) {
+    return profileDetailsByIdFailure(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(ProfilesResponseModel profilesResponseModel)?
+        getProfilesDetailsSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
+    TResult? Function()? getProfilesDetailsLoading,
+    TResult? Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsByIdSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
+    TResult? Function()? profileDetailsByIdLoading,
+  }) {
+    return profileDetailsByIdFailure?.call(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(ProfilesResponseModel profilesResponseModel)?
+        getProfilesDetailsSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
+    TResult Function()? getProfilesDetailsLoading,
+    TResult Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsByIdSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
+    TResult Function()? profileDetailsByIdLoading,
+    required TResult orElse(),
+  }) {
+    if (profileDetailsByIdFailure != null) {
+      return profileDetailsByIdFailure(apiErrorModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProfilesDetailsSuccess<T> value)
+        getProfilesDetailsSuccess,
+    required TResult Function(GetProfilesDetailsFailure<T> value)
+        getProfileDetailsFailure,
+    required TResult Function(GetProfilesDetailsLoading<T> value)
+        getProfilesDetailsLoading,
+    required TResult Function(ProfileDetailsByIdSuccess<T> value)
+        profileDetailsByIdSuccess,
+    required TResult Function(ProfileDetailsByIdFailure<T> value)
+        profileDetailsByIdFailure,
+    required TResult Function(ProfileDetailsByIdLoading<T> value)
+        profileDetailsByIdLoading,
+  }) {
+    return profileDetailsByIdFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProfilesDetailsSuccess<T> value)?
+        getProfilesDetailsSuccess,
+    TResult? Function(GetProfilesDetailsFailure<T> value)?
+        getProfileDetailsFailure,
+    TResult? Function(GetProfilesDetailsLoading<T> value)?
+        getProfilesDetailsLoading,
+    TResult? Function(ProfileDetailsByIdSuccess<T> value)?
+        profileDetailsByIdSuccess,
+    TResult? Function(ProfileDetailsByIdFailure<T> value)?
+        profileDetailsByIdFailure,
+    TResult? Function(ProfileDetailsByIdLoading<T> value)?
+        profileDetailsByIdLoading,
+  }) {
+    return profileDetailsByIdFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProfilesDetailsSuccess<T> value)?
+        getProfilesDetailsSuccess,
+    TResult Function(GetProfilesDetailsFailure<T> value)?
+        getProfileDetailsFailure,
+    TResult Function(GetProfilesDetailsLoading<T> value)?
+        getProfilesDetailsLoading,
+    TResult Function(ProfileDetailsByIdSuccess<T> value)?
+        profileDetailsByIdSuccess,
+    TResult Function(ProfileDetailsByIdFailure<T> value)?
+        profileDetailsByIdFailure,
+    TResult Function(ProfileDetailsByIdLoading<T> value)?
+        profileDetailsByIdLoading,
+    required TResult orElse(),
+  }) {
+    if (profileDetailsByIdFailure != null) {
+      return profileDetailsByIdFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProfileDetailsByIdFailure<T> implements SwitchProfileState<T> {
+  const factory ProfileDetailsByIdFailure(final ApiErrorModel apiErrorModel) =
+      _$ProfileDetailsByIdFailureImpl<T>;
+
+  ApiErrorModel get apiErrorModel;
+
+  /// Create a copy of SwitchProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ProfileDetailsByIdFailureImplCopyWith<T,
+          _$ProfileDetailsByIdFailureImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProfileDetailsByIdLoadingImplCopyWith<T, $Res> {
+  factory _$$ProfileDetailsByIdLoadingImplCopyWith(
+          _$ProfileDetailsByIdLoadingImpl<T> value,
+          $Res Function(_$ProfileDetailsByIdLoadingImpl<T>) then) =
+      __$$ProfileDetailsByIdLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ProfileDetailsByIdLoadingImplCopyWithImpl<T, $Res>
+    extends _$SwitchProfileStateCopyWithImpl<T, $Res,
+        _$ProfileDetailsByIdLoadingImpl<T>>
+    implements _$$ProfileDetailsByIdLoadingImplCopyWith<T, $Res> {
+  __$$ProfileDetailsByIdLoadingImplCopyWithImpl(
+      _$ProfileDetailsByIdLoadingImpl<T> _value,
+      $Res Function(_$ProfileDetailsByIdLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SwitchProfileState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ProfileDetailsByIdLoadingImpl<T>
+    implements ProfileDetailsByIdLoading<T> {
+  const _$ProfileDetailsByIdLoadingImpl();
+
+  @override
+  String toString() {
+    return 'SwitchProfileState<$T>.profileDetailsByIdLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProfileDetailsByIdLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(ProfilesResponseModel profilesResponseModel)
+        getProfilesDetailsSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getProfileDetailsFailure,
+    required TResult Function() getProfilesDetailsLoading,
+    required TResult Function(ProfileResponseModel profileResponseModel)
+        profileDetailsByIdSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsByIdFailure,
+    required TResult Function() profileDetailsByIdLoading,
+  }) {
+    return profileDetailsByIdLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(ProfilesResponseModel profilesResponseModel)?
+        getProfilesDetailsSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
+    TResult? Function()? getProfilesDetailsLoading,
+    TResult? Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsByIdSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
+    TResult? Function()? profileDetailsByIdLoading,
+  }) {
+    return profileDetailsByIdLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(ProfilesResponseModel profilesResponseModel)?
+        getProfilesDetailsSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
+    TResult Function()? getProfilesDetailsLoading,
+    TResult Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsByIdSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
+    TResult Function()? profileDetailsByIdLoading,
+    required TResult orElse(),
+  }) {
+    if (profileDetailsByIdLoading != null) {
+      return profileDetailsByIdLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProfilesDetailsSuccess<T> value)
+        getProfilesDetailsSuccess,
+    required TResult Function(GetProfilesDetailsFailure<T> value)
+        getProfileDetailsFailure,
+    required TResult Function(GetProfilesDetailsLoading<T> value)
+        getProfilesDetailsLoading,
+    required TResult Function(ProfileDetailsByIdSuccess<T> value)
+        profileDetailsByIdSuccess,
+    required TResult Function(ProfileDetailsByIdFailure<T> value)
+        profileDetailsByIdFailure,
+    required TResult Function(ProfileDetailsByIdLoading<T> value)
+        profileDetailsByIdLoading,
+  }) {
+    return profileDetailsByIdLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProfilesDetailsSuccess<T> value)?
+        getProfilesDetailsSuccess,
+    TResult? Function(GetProfilesDetailsFailure<T> value)?
+        getProfileDetailsFailure,
+    TResult? Function(GetProfilesDetailsLoading<T> value)?
+        getProfilesDetailsLoading,
+    TResult? Function(ProfileDetailsByIdSuccess<T> value)?
+        profileDetailsByIdSuccess,
+    TResult? Function(ProfileDetailsByIdFailure<T> value)?
+        profileDetailsByIdFailure,
+    TResult? Function(ProfileDetailsByIdLoading<T> value)?
+        profileDetailsByIdLoading,
+  }) {
+    return profileDetailsByIdLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProfilesDetailsSuccess<T> value)?
+        getProfilesDetailsSuccess,
+    TResult Function(GetProfilesDetailsFailure<T> value)?
+        getProfileDetailsFailure,
+    TResult Function(GetProfilesDetailsLoading<T> value)?
+        getProfilesDetailsLoading,
+    TResult Function(ProfileDetailsByIdSuccess<T> value)?
+        profileDetailsByIdSuccess,
+    TResult Function(ProfileDetailsByIdFailure<T> value)?
+        profileDetailsByIdFailure,
+    TResult Function(ProfileDetailsByIdLoading<T> value)?
+        profileDetailsByIdLoading,
+    required TResult orElse(),
+  }) {
+    if (profileDetailsByIdLoading != null) {
+      return profileDetailsByIdLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProfileDetailsByIdLoading<T> implements SwitchProfileState<T> {
+  const factory ProfileDetailsByIdLoading() =
+      _$ProfileDetailsByIdLoadingImpl<T>;
 }
