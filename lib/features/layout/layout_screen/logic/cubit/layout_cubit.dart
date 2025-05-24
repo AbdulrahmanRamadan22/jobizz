@@ -4,6 +4,7 @@ import 'package:jobizz/core/di/dependancy_ingection.dart';
 import 'package:jobizz/features/home/logic/cubit/home_cubit.dart';
 import 'package:jobizz/features/layout/layout_screen/logic/cubit/layout_state.dart';
 
+import '../../../../bot_chat/ui/chat_bot_screen.dart';
 import '../../../../category/cubit/category_cubit.dart';
 import '../../../../category/ui/screens/category_screen.dart';
 import '../../../../companies/logic/cubit/company_cubit.dart';
@@ -34,6 +35,7 @@ class LayoutCubit extends Cubit<LayoutState> {
     ),
     // CategoryScreen(),
 
+    const GeminiChatScreen(),
 
     const NotificationScreen(),
 

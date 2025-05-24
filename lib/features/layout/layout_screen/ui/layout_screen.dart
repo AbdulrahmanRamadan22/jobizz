@@ -56,6 +56,13 @@ class LayoutScreens extends StatelessWidget {
                 ),
                 label: 'Companies',
               ),
+               BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.chat_bubble,
+                  size: 30,
+                ),
+                label: 'ChatBot',
+              ),
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.notifications,

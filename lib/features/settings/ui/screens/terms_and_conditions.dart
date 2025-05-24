@@ -140,7 +140,7 @@ class _TermsAndConditionsScreenState extends State<TermsAndConditionsScreen> {
                 onPressed: _hasAccepted
                     ? () {
                         // Navigate back or proceed
-                        context.pushNamed(Routes.onBoardingScreen);
+                        // context.pushNamed(Routes.onBoardingScreen);
                       }
                     : null,
                 child: Text(
