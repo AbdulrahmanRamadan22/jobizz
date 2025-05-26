@@ -5,10 +5,10 @@ import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/api_services.dart';
 import '../../../profile/data/models/profile_response_model.dart';
 
-class ProfilesRepo {
+class SwitchProfilesRepo {
   final ApisServices _apisServices;
 
-  ProfilesRepo(this._apisServices);
+  SwitchProfilesRepo(this._apisServices);
 
   Future<ApiResult<ProfilesResponseModel>> getProfileDetails({
     required String token,

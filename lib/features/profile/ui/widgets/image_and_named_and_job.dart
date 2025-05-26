@@ -8,10 +8,14 @@ import '../../../../core/helper/size_box.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
 
-
 class ImageAndNamedAndJob extends StatelessWidget {
+  final String? profileImage;
+  final String? jobTitle;
+
   const ImageAndNamedAndJob({
     super.key,
+    this.profileImage,
+    this.jobTitle,
   });
 
   @override
@@ -23,10 +27,8 @@ class ImageAndNamedAndJob extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 58.r,
-            child: Image.asset(
-              'assets/images/photo_person.png',
-              fit: BoxFit.cover,
-              width: 120.w,
+            backgroundImage: NetworkImage(
+              profileImage ?? '',
             ),
           ),
           verticalSpace(12),
@@ -34,12 +36,11 @@ class ImageAndNamedAndJob extends StatelessWidget {
             '${SharedPrefHelper.getData(key: SharedPrefKeys.fullName) ?? ''} ',
             style: TextStyles.font22BlackBold,
           ),
+          verticalSpace(8),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                  '${SharedPrefHelper.getData(key: SharedPrefKeys.fullName) ?? 'Flutter Developer'} ',
-                  style: TextStyles.font12Gray),
+              Text('${jobTitle ?? ""} ', style: TextStyles.font12Gray),
               horizontalSpace(4),
               Icon(
                 Icons.check_circle,

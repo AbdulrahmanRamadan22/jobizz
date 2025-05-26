@@ -3,23 +3,27 @@ import 'package:jobizz/features/switch_profile/logic/switch_profile_state.dart';
 
 import '../../../core/cache/constants.dart';
 import '../../../core/cache/shared_pref.dart';
-import '../../profile/data/models/profile_response_model.dart';
+import '../../profile/data/function/save_profile_cache.dart';
 import '../data/repo/profiles_repo.dart';
 
 class SwitchProfileCubit extends Cubit<SwitchProfileState> {
-  SwitchProfileCubit(this._profilesRepo) : super(SwitchProfileState.initial());
+  SwitchProfileCubit(this._switchProfilesRepo) : super(SwitchProfileState.initial());
 
-  final ProfilesRepo _profilesRepo;
+  final SwitchProfilesRepo _switchProfilesRepo;
+
+  bool isFirstLoad = false;
 
   void emitGetProfilesDetailsData() async {
+    if (isFirstLoad) return;
     emit(const SwitchProfileState.getProfilesDetailsLoading());
 
-    final response = await _profilesRepo.getProfileDetails(
+    final response = await _switchProfilesRepo.getProfileDetails(
       token:
           "Bearer ${await SharedPrefHelper.getSecuredString(key: SharedPrefKeys.token)}",
     );
     response.when(
       success: (homeResponse) {
+        isFirstLoad = true;
         emit(SwitchProfileState.getProfilesDetailsSuccess(homeResponse));
       },
       failure: (error) {
@@ -31,7 +35,7 @@ class SwitchProfileCubit extends Cubit<SwitchProfileState> {
   void emitGetProfileByIdDetails({required int id}) async {
     emit(const SwitchProfileState.profileDetailsByIdLoading());
 
-    final response = await _profilesRepo.getProfileDetailsById(
+    final response = await _switchProfilesRepo.getProfileDetailsById(
       id: id,
       token: "Bearer ${await SharedPrefHelper.getSecuredString(key: SharedPrefKeys.token)}",
     );
@@ -52,29 +56,7 @@ class SwitchProfileCubit extends Cubit<SwitchProfileState> {
 
 
 
-  Future<void> saveProfile(ProfileResponseModel profileResponse) async {
-   
-      await SharedPrefHelper.saveData(
-        key: SharedPrefKeys.idProfile,
-        value: profileResponse.data.id,
-      );
-    
-      await SharedPrefHelper.saveData(
-        key: SharedPrefKeys.profileImage,
-        value: profileResponse.data.profileImage,
-      );
-
-       await SharedPrefHelper.saveData(
-        key: SharedPrefKeys.titleJob,
-        value: profileResponse.data.titleJob,
-      );
-
-    }
-
-
-
-
-
-
-
 }
+
+
+

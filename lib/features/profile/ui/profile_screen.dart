@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/helper/extensions.dart';
+import 'package:jobizz/features/profile/logic/profile_cubit.dart';
+import 'package:jobizz/features/profile/logic/profile_state.dart';
 import 'package:jobizz/features/profile/ui/widgets/image_and_named_and_job.dart';
 import 'package:jobizz/features/profile/ui/widgets/sliver_list_experience.dart';
 
@@ -11,7 +14,6 @@ import '../../../core/widgets/row_text_and_see_all.dart';
 import 'widgets/sliver_grid_portfolio.dart';
 import 'widgets/sliver_list_education.dart';
 import 'widgets/sliver_list_resume.dart';
-
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -33,50 +35,112 @@ class ProfileScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: ImageAndNamedAndJob(),
+      body: BlocBuilder<ProfileCubit, ProfileState>(
+        buildWhen: (previous, current) =>
+            current is ProfileDetailsLoading ||
+            current is ProfileDetailsFailure ||
+            current is ProfileDetailsSuccess,
+        builder: (context, state) {
+          return state.maybeWhen(
+            profileDetailsLoading: () => const Center(
+              child: CircularProgressIndicator(),
             ),
-            SliverToBoxAdapter(
-              child: RowTextAndSeeAll(
-                text: 'Experience',
-                onPressed: () {},
-             
-           
-              ),
-            ),
-            SliverListExperience(),
-       
-            SliverToBoxAdapter(
-              child: RowTextAndSeeAll(
-                text: 'Education',
-                onPressed: () {},
+            profileDetailsFailure: (error) =>
+                Center(child: Text(error.message ?? "Unknown error")),
+            profileDetailsSuccess: (profile) => Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
+              child: CustomScrollView(
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: ImageAndNamedAndJob(
+                      jobTitle: profile.data.titleJob,
+                      profileImage: profile.data.profileImage,
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: RowTextAndSeeAll(
+                      text: 'Experience',
+                      onPressed: () {},
+                    ),
+                  ),
+                  SliverListExperience(),
 
+                  SliverToBoxAdapter(
+                    child: RowTextAndSeeAll(
+                      text: 'Education',
+                      onPressed: () {},
+                    ),
+                  ),
+                  SliverListEducation(),
+                  SliverToBoxAdapter(
+                    child: RowTextAndSeeAll(
+                      text: 'Resume',
+                      onPressed: () {
+                        context.pushNamed(Routes.resumeAndProtfolioScreen);
+                      },
+                    ),
+                  ),
+                  SliverListResume(),
+                  // قسم portfolio
+                  SliverToBoxAdapter(
+                    child: RowTextAndSeeAll(
+                      text: 'Portfolio',
+                      onPressed: () {},
+                    ),
+                  ),
+                  SliverGridPortfolio(),
+                ],
               ),
             ),
-            SliverListEducation(),
-            SliverToBoxAdapter(
-              child: RowTextAndSeeAll(
-                text: 'Resume',
-                onPressed: () {
-                  context.pushNamed(Routes.resumeAndProtfolioScreen);
-                },
-              ),
-            ),
-            SliverListResume(),
-            // قسم portfolio
-            SliverToBoxAdapter(
-              child: RowTextAndSeeAll(
-                text: 'Portfolio',
-                onPressed: () {},
-              ),
-            ),
-            SliverGridPortfolio(),
-          ],
-        ),
+            orElse: () => SizedBox.shrink(),
+          );
+
+          // if (state is ProfileDetailsSuccess) {
+          //   return Padding(
+          //     padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
+          //     child: CustomScrollView(
+          //       slivers: [
+          //         SliverToBoxAdapter(
+          //           child: ImageAndNamedAndJob(),
+          //         ),
+          //         SliverToBoxAdapter(
+          //           child: RowTextAndSeeAll(
+          //             text: 'Experience',
+          //             onPressed: () {},
+          //           ),
+          //         ),
+          //         SliverListExperience(),
+
+          //         SliverToBoxAdapter(
+          //           child: RowTextAndSeeAll(
+          //             text: 'Education',
+          //             onPressed: () {},
+          //           ),
+          //         ),
+          //         SliverListEducation(),
+          //         SliverToBoxAdapter(
+          //           child: RowTextAndSeeAll(
+          //             text: 'Resume',
+          //             onPressed: () {
+          //               context.pushNamed(Routes.resumeAndProtfolioScreen);
+          //             },
+          //           ),
+          //         ),
+          //         SliverListResume(),
+          //         // قسم portfolio
+          //         SliverToBoxAdapter(
+          //           child: RowTextAndSeeAll(
+          //             text: 'Portfolio',
+          //             onPressed: () {},
+          //           ),
+          //         ),
+          //         SliverGridPortfolio(),
+          //       ],
+          //     ),
+          //   );
+          // }
+          // return SizedBox.shrink();
+        },
       ),
     );
   }

@@ -10,14 +10,19 @@ class HomeCubit extends Cubit<HomeState> {
 
   HomeCubit(this._homeRepo) : super(const HomeState.initial());
 
+  bool isFirstLoad = false;
+
   void emitGetHomeData() async {
+    if (isFirstLoad) return;
     emit(const HomeState.loading());
 
     final response = await _homeRepo.getHomeData(
-      token: "Bearer ${await SharedPrefHelper.getSecuredString(key: SharedPrefKeys.token)}",
+      token:
+          "Bearer ${await SharedPrefHelper.getSecuredString(key: SharedPrefKeys.token)}",
     );
     response.when(
       success: (homeResponse) {
+        isFirstLoad = true;
         emit(HomeState.success(homeResponse));
       },
       failure: (error) {
@@ -26,5 +31,10 @@ class HomeCubit extends Cubit<HomeState> {
     );
   }
 
+  void emitRefreshGetHomeData() async {
+    emit(const HomeState.loading());
+    isFirstLoad = false;
 
+    emitGetHomeData();
+  }
 }

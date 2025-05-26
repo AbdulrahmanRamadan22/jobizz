@@ -28,10 +28,6 @@ class SwitchProfileState<T> with _$SwitchProfileState<T> {
   const factory SwitchProfileState.profileDetailsByIdLoading() = ProfileDetailsByIdLoading;
 
 
-
-
-
-
 }
 
 
