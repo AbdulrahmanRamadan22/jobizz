@@ -1,4 +1,3 @@
-
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
@@ -14,7 +13,10 @@ class ProfileCubit extends Cubit<ProfileState> {
 
   final ProfileRepo _profileRepo;
 
+  bool firstLoadedData = false;
+
   void emitGetProfileDetails() async {
+    if (firstLoadedData) return;
     emit(const ProfileState.profileDetailsLoading());
 
     final response = await _profileRepo.getProfileDetails(
@@ -24,8 +26,7 @@ class ProfileCubit extends Cubit<ProfileState> {
     );
     response.when(
       success: (profileResponse) async {
-
-        log(profileResponse.toString());
+        firstLoadedData = true;
         await saveProfile(profileResponse);
         emit(ProfileState.profileDetailsSuccess(profileResponse));
         //  await SharedPrefHelper.saveData(key: SharedPrefKeys.idProfile, value: id);

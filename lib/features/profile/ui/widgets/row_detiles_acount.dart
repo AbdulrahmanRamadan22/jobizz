@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/theming/styles.dart';
+import '../../data/models/profile_response_model.dart';
 
 class RowDetailsAccount extends StatelessWidget {
-  const RowDetailsAccount({
-    super.key,
-  });
+  const RowDetailsAccount({super.key, this.profileData});
+  final ProfileData? profileData;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class RowDetailsAccount extends StatelessWidget {
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              '25',
+              '${profileData?.appliedApplications}',
               style: TextStyles.font16Black,
             ),
             Text(
@@ -29,7 +29,7 @@ class RowDetailsAccount extends StatelessWidget {
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              '15',
+              '${profileData?.reviewedApplications}',
               style: TextStyles.font16Black,
             ),
             Text(
@@ -42,7 +42,7 @@ class RowDetailsAccount extends StatelessWidget {
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              '14',
+              '${profileData?.interviewApplications}',
               style: TextStyles.font16Black,
             ),
             Text(

@@ -92,6 +92,7 @@ class SwitchProfileItem extends StatelessWidget {
             showDialogLoading(context);
           },
           profileDetailsByIdSuccess: (profileResponse) {
+            context.read<SwitchProfileCubit>().isFirstLoad = false;
             context.pop();
             Phoenix.rebirth(context);
           },
@@ -106,16 +107,12 @@ class SwitchProfileItem extends StatelessWidget {
         child: GestureDetector(
           onTap: () {
             if (profileModel?.isDefault == 1) {
-              // context.pushNamedAndRemoveUntil(
-              //   Routes.layoutScreen,
-              //   predicate: (route) => false,
-              // );
+             
 
-              ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    backgroundColor: ColorsApp.mainBlue,
-                    duration: const Duration(milliseconds: 500),
-                    content: Text("You are already on this profile")));
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  backgroundColor: ColorsApp.mainBlue,
+                  duration: const Duration(seconds: 1),
+                  content: Text("You are already on this profile")));
 
               context.pop();
             } else {
