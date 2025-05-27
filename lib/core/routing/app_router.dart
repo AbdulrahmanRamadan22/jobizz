@@ -31,6 +31,7 @@ import '../../features/companies/ui/screens/compaies_screen.dart';
 import '../../features/companies/ui/screens/popular_company_screen.dart';
 import '../../features/companies/ui/screens/trending_company_screen.dart';
 import '../../features/home/data/model/home_response_model.dart';
+import '../../features/home/logic/cubit/home_cubit.dart';
 import '../../features/home/ui/home_screen.dart';
 import '../../features/jobs/screens/featured_jobs_screen.dart';
 import '../../features/jobs/screens/popular_jobs_screen.dart';
@@ -38,6 +39,7 @@ import '../../features/jobs/screens/recommended_jobs_screen.dart';
 import '../../features/layout/layout_screen/logic/cubit/layout_cubit.dart';
 import '../../features/layout/layout_screen/ui/layout_screen.dart';
 import '../../features/notifications/ui/notifications_screen.dart.dart';
+import '../../features/profile/logic/profile_cubit.dart';
 import '../../features/profile/ui/profile_screen.dart';
 import '../../features/saved_jobs/ui/saved_screen.dart';
 import '../../features/settings/ui/screens/settings_screen.dart';
@@ -129,7 +131,10 @@ class AppRouter {
       // Drawer Screens
       case Routes.profileScreen:
         return MaterialPageRoute(
-          builder: (context) => const ProfileScreen(),
+          builder: (context) => BlocProvider<ProfileCubit>(
+            create: (context) => ProfileCubit(getIt())..emitGetProfileDetails(),
+            child: const ProfileScreen(),
+          ),
         );
 
       case Routes.savedJobsScreen:
@@ -278,9 +283,10 @@ class AppRouter {
         );
 
       case Routes.switchProfileScreen:
+        final switchProfileCubit = getIt<SwitchProfileCubit>()..emitGetProfilesDetailsData();
         return MaterialPageRoute(
-          builder: (context) => BlocProvider(
-            create: (context) => SwitchProfileCubit(getIt())..emitGetProfilesDetailsData(),
+          builder: (context) => BlocProvider.value(
+            value: switchProfileCubit,
             child: const SwitchProfileScreen(),
           ),
         );

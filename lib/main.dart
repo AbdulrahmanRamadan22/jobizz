@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/cache/constants.dart';
 // import 'package:flutter/rendering.dart';
 import 'package:jobizz/core/helper/bloc_observer.dart';
+import 'package:jobizz/core/networking/internet_connection_service.dart';
 import 'package:jobizz/core/routing/app_router.dart';
 import 'package:jobizz/core/helper/extensions.dart';
 
@@ -19,6 +20,7 @@ void main() async {
   // debugRepaintRainbowEnabled = true;
 
   WidgetsFlutterBinding.ensureInitialized();
+  InternetConnectionService();
   setupGetIt();
 
   // To fix texts being hidden bug in flutter_screenutil in release mode.
@@ -41,11 +43,10 @@ void main() async {
 }
 
 handelInitialRoute() async {
-
   String? userToken = await SharedPrefHelper.getSecuredString(
     key: SharedPrefKeys.token,
   );
-   bool? onBoardingIsDone = await SharedPrefHelper.getData(
+  bool? onBoardingIsDone = await SharedPrefHelper.getData(
     key: SharedPrefKeys.onBoardingIsDone,
   );
 
@@ -58,5 +59,4 @@ handelInitialRoute() async {
   } else {
     SharedPrefValues.initialRoute = Routes.onBoardingScreen;
   }
-
 }

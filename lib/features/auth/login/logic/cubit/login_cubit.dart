@@ -47,7 +47,7 @@ class LoginCubit extends Cubit<LoginState> {
       failure: (error) {
         emit(
           LoginState.failure(
-            ApiErrorModel(message: error.message),
+            error,
           ),
         );
       },
@@ -126,30 +126,25 @@ class LoginCubit extends Cubit<LoginState> {
       );
       await saveProfile(loginResponse);
       //  SharedPrefHelper.isLoggedIn();
-      SharedPrefValues.token = loginResponse.data.token;
-      SharedPrefValues.fullName = loginResponse.data.fullName;
     } catch (e) {
       log('Error saving user data: $e');
     }
   }
 
   Future<void> saveProfile(LoginResponse loginResponse) async {
-   
-      await SharedPrefHelper.saveData(
-        key: SharedPrefKeys.idProfile,
-        value: loginResponse.data.profile?.id,
-      );
-    
-      await SharedPrefHelper.saveData(
-        key: SharedPrefKeys.profileImage,
-        value: loginResponse.data.profile?.profileImage,
-      );
+    await SharedPrefHelper.saveData(
+      key: SharedPrefKeys.idProfile,
+      value: loginResponse.data.profile?.id,
+    );
 
-       await SharedPrefHelper.saveData(
-        key: SharedPrefKeys.titleJob,
-        value: loginResponse.data.profile?.titleJob,
-      );
+    await SharedPrefHelper.saveData(
+      key: SharedPrefKeys.profileImage,
+      value: loginResponse.data.profile?.profileImage,
+    );
 
-    }
-  
+    await SharedPrefHelper.saveData(
+      key: SharedPrefKeys.titleJob,
+      value: loginResponse.data.profile?.titleJob,
+    );
+  }
 }

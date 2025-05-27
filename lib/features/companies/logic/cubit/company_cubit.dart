@@ -8,7 +8,11 @@ import '../../../../core/cache/shared_pref.dart';
 class CompanyCubit extends Cubit<CompanyState> {
   CompanyCubit(this.companyInfoRepo) : super(const CompanyState.initial());
   CompanyInfoRepo companyInfoRepo;
+
+    bool isFirstLoad = false;
+
   void getAllCompany() async {
+    if (isFirstLoad) return;
     emit(const CompanyState.companyLoading());
     final response = await companyInfoRepo.getCompanyInfo(
       token:
@@ -16,6 +20,7 @@ class CompanyCubit extends Cubit<CompanyState> {
     );
     response.when(
       success: (data) {
+        isFirstLoad=true;
         emit(CompanyState.companySuccess(data));
       },
       failure: (error) {

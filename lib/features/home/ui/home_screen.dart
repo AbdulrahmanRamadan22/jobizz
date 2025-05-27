@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobizz/features/home/ui/widgets/page_to_top.dart';
 
+import '../../../core/di/dependancy_ingection.dart';
 import '../../../core/helper/size_box.dart';
 import '../../../core/theming/colors.dart';
 import '../../layout/drawer/drawer_wiget.dart';
@@ -36,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                   // HomeCubit(getIt()).emitGetHomeData();
 
                   // ignore: use_build_context_synchronously
-                  context.read<HomeCubit>().emitGetHomeData();
+                  context.read<HomeCubit>().emitRefreshGetHomeData();
                 },
                 child: JobsBlocBuilder(),
               ),

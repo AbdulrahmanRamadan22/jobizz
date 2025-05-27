@@ -93,8 +93,7 @@ class SwitchProfileItem extends StatelessWidget {
           },
           profileDetailsByIdSuccess: (profileResponse) {
             context.pop();
-          Phoenix.rebirth(context);
-
+            Phoenix.rebirth(context);
           },
           profileDetailsByIdFailure: (apiErrorModel) {
             context.pop();
@@ -106,11 +105,24 @@ class SwitchProfileItem extends StatelessWidget {
         padding: EdgeInsets.only(bottom: 12.h),
         child: GestureDetector(
           onTap: () {
+            if (profileModel?.isDefault == 1) {
+              // context.pushNamedAndRemoveUntil(
+              //   Routes.layoutScreen,
+              //   predicate: (route) => false,
+              // );
 
-            
-            context
-                .read<SwitchProfileCubit>()
-                .emitGetProfileByIdDetails(id: profileModel?.id ?? 0);
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    backgroundColor: ColorsApp.mainBlue,
+                    duration: const Duration(milliseconds: 500),
+                    content: Text("You are already on this profile")));
+
+              context.pop();
+            } else {
+              context
+                  .read<SwitchProfileCubit>()
+                  .emitGetProfileByIdDetails(id: profileModel?.id ?? 0);
+            }
           },
           child: Card(
             elevation: 0,

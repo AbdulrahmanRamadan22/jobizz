@@ -1,9 +1,12 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import '../networking/api_error_model.dart';
 import '../theming/colors.dart';
 
 void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
+  log("apiErrorModel.errors.toString(): ${apiErrorModel.errors.toString()}");
   showDialog(
     context: context,
     barrierDismissible: false, // Prevent dismissing by tapping outside
@@ -13,7 +16,8 @@ void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
       ),
       child: ConstrainedBox(
         constraints: BoxConstraints(
-          maxWidth: MediaQuery.of(context).size.width * 0.85, // Responsive width
+          maxWidth:
+              MediaQuery.of(context).size.width * 0.85, // Responsive width
         ),
         child: Container(
           padding: const EdgeInsets.all(20),
@@ -37,7 +41,7 @@ void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
               ),
               const SizedBox(height: 8),
               Text(
-                apiErrorModel.getErrorMessage() ?? 'Unknown error',
+                apiErrorModel.getErrorMessage(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 14,

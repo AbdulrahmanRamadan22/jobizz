@@ -4,6 +4,7 @@ import 'package:jobizz/core/di/dependancy_ingection.dart';
 import 'package:jobizz/features/home/logic/cubit/home_cubit.dart';
 import 'package:jobizz/features/layout/layout_screen/logic/cubit/layout_state.dart';
 
+import '../../../../bot_chat/ui/chat_bot_screen.dart';
 import '../../../../category/cubit/category_cubit.dart';
 import '../../../../category/ui/screens/category_screen.dart';
 import '../../../../companies/logic/cubit/company_cubit.dart';
@@ -12,28 +13,37 @@ import '../../../../home/ui/home_screen.dart';
 import '../../../../notifications/ui/notifications_screen.dart.dart';
 
 class LayoutCubit extends Cubit<LayoutState> {
-  LayoutCubit() : super(LayoutInitialState());
-  static LayoutCubit get(context) => BlocProvider.of(context);
+  LayoutCubit() : super(LayoutInitialState()) {
+    _initializeCubits();
+  }
+  // static LayoutCubit get(context) => BlocProvider.of(context);
+
+  // Instantiate Cubits as properties to ensure single instances
+  final HomeCubit homeCubit = HomeCubit(getIt());
+  final CategoryCubit categoryCubit = CategoryCubit(getIt());
+  final CompanyCubit companyCubit = CompanyCubit(getIt());
+
   int currentIndex = 0;
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
-  List<Widget> screensBottom = [
-    BlocProvider<HomeCubit>.value(
-      value: HomeCubit(getIt())..emitGetHomeData(),
+  late final List<Widget> screensBottom = [
+    BlocProvider.value(
+      value: homeCubit,
       child: const HomeScreen(),
     ),
 
-    BlocProvider<CategoryCubit>(
-      create: (context) => CategoryCubit(getIt())..getAllCategories(),
+    BlocProvider.value(
+      value: categoryCubit,
       child: const CategoryScreen(),
     ),
 
-    BlocProvider(
-      create: (context) => CompanyCubit(getIt())..getAllCompany(),
+    BlocProvider.value(
+      value: companyCubit,
       child: CompaniesScreen(),
     ),
     // CategoryScreen(),
 
+    const GeminiChatScreen(),
 
     const NotificationScreen(),
 
@@ -42,10 +52,22 @@ class LayoutCubit extends Cubit<LayoutState> {
     // const NotificationScreen(),
     // CategoryScreen()
   ];
+  void _initializeCubits() {
+    // Fetch initial data for home screen
+    homeCubit.emitGetHomeData();
+  }
   // required method to change the index
 
   void changeIndex(int index) {
     currentIndex = index;
+
+    if (index == 0) {
+      homeCubit.emitGetHomeData();
+    } else if (index == 1) {
+      categoryCubit.getAllCategories();
+    } else if (index == 2) {
+      companyCubit.getAllCompany();
+    }
 
     // emit state because we need to change the index
     emit(LayoutChangeBottomNavState());

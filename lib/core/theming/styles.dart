@@ -121,6 +121,7 @@ class TextStyles {
     fontWeight: FontWeightHelper.semiBold,
     color: ColorsApp.darkBlack,
   );
+
   static final TextStyle font16White = TextStyle(
     fontSize: 16.sp,
     // fontWeight: FontWeightHelper.light,

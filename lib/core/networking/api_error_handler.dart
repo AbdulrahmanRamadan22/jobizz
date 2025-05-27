@@ -1,4 +1,3 @@
-
 import 'package:dio/dio.dart';
 import 'api_error_model.dart';
 
@@ -33,9 +32,10 @@ class ApiErrorHandler {
   }
 }
 
-ApiErrorModel _handleError(dynamic data) {
+ApiErrorModel _handleError(dynamic error) {
   return ApiErrorModel(
-      message: data['message'] ?? "Unknown error occurred",
-      status: data['status'] ?? "0",
-      data: data['data']);
+    message: error['message'] ?? "Unknown error occurred",
+    status: error['status'] ?? "0",
+    errors: error['data'],
+  );
 }

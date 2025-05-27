@@ -8,7 +8,10 @@ import '../data/repo/category_repo.dart';
 class CategoryCubit extends Cubit<CategoryState> {
   CategoryCubit(this.categoryRepo) : super(const CategoryState.initial());
   CategoryRepo categoryRepo;
+
+  bool isFirstLoad = false;
   void getAllCategories() async {
+    if (isFirstLoad) return;
     emit(CategoryState.categoryLoading());
     final response = await categoryRepo.getCategories(
       token:
@@ -16,6 +19,7 @@ class CategoryCubit extends Cubit<CategoryState> {
     );
     response.when(
       success: (data) {
+        isFirstLoad = true;
         emit(CategoryState.categorySuccess(data));
       },
       failure: (error) {

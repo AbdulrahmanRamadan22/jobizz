@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/cache/constants.dart';
 import 'core/routing/app_router.dart';
-import 'core/routing/routers_string.dart';
 import 'core/theming/colors.dart';
 
 class JobizzApp extends StatelessWidget {
