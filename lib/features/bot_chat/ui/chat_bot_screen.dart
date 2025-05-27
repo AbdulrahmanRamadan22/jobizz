@@ -37,12 +37,12 @@ class _GeminiChatScreenState extends State<GeminiChatScreen> {
         logPrint: (value) => print(value),
       ),
     );
-
+  
     _api = GeminiAPI(dio);
     _messages.add(
       {
         "role": "bot",
-        "text": "Hello, ${SharedPrefValues.fullName}. How can I help you?",
+        "text": "Hello, ${SharedPrefHelper.getData(key: SharedPrefKeys.fullName)}aHow can I help you?",
       },
     );
   }
