@@ -130,9 +130,11 @@ class AppRouter {
 
       // Drawer Screens
       case Routes.profileScreen:
+        final profileCubit = getIt<ProfileCubit>()..emitGetProfileDetails();
+
         return MaterialPageRoute(
-          builder: (context) => BlocProvider<ProfileCubit>(
-            create: (context) => ProfileCubit(getIt())..emitGetProfileDetails(),
+          builder: (context) => BlocProvider<ProfileCubit>.value(
+            value: profileCubit,
             child: const ProfileScreen(),
           ),
         );
@@ -283,7 +285,8 @@ class AppRouter {
         );
 
       case Routes.switchProfileScreen:
-        final switchProfileCubit = getIt<SwitchProfileCubit>()..emitGetProfilesDetailsData();
+        final switchProfileCubit = getIt<SwitchProfileCubit>()
+          ..emitGetProfilesDetailsData();
         return MaterialPageRoute(
           builder: (context) => BlocProvider.value(
             value: switchProfileCubit,

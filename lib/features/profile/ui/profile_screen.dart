@@ -5,7 +5,7 @@ import 'package:jobizz/core/helper/extensions.dart';
 import 'package:jobizz/features/profile/logic/profile_cubit.dart';
 import 'package:jobizz/features/profile/logic/profile_state.dart';
 import 'package:jobizz/features/profile/ui/widgets/image_and_named_and_job.dart';
-import 'package:jobizz/features/profile/ui/widgets/sliver_list_experience.dart';
+import 'package:jobizz/features/profile/ui/widgets/experience/sliver_list_experience.dart';
 
 import '../../../core/routing/routers_string.dart';
 import '../../../core/theming/colors.dart';
@@ -48,13 +48,12 @@ class ProfileScreen extends StatelessWidget {
             profileDetailsFailure: (error) =>
                 Center(child: Text(error.message ?? "Unknown error")),
             profileDetailsSuccess: (profile) => Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
+              padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 10.h),
               child: CustomScrollView(
                 slivers: [
                   SliverToBoxAdapter(
                     child: ImageAndNamedAndJob(
-                      jobTitle: profile.data.titleJob,
-                      profileImage: profile.data.profileImage,
+                   profileData: profile.profileData,
                     ),
                   ),
                   SliverToBoxAdapter(
@@ -63,7 +62,9 @@ class ProfileScreen extends StatelessWidget {
                       onPressed: () {},
                     ),
                   ),
-                  SliverListExperience(),
+                  SliverListExperience(
+                     experiences: profile.profileData?.experiences??[],
+                  ),
 
                   SliverToBoxAdapter(
                     child: RowTextAndSeeAll(
@@ -71,7 +72,9 @@ class ProfileScreen extends StatelessWidget {
                       onPressed: () {},
                     ),
                   ),
-                  SliverListEducation(),
+                  SliverListEducation(
+                     educations: profile.profileData?.educations??[],
+                  ),
                   SliverToBoxAdapter(
                     child: RowTextAndSeeAll(
                       text: 'Resume',

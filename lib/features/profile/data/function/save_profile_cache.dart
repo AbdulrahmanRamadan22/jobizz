@@ -8,17 +8,17 @@ Future<void> saveProfile(ProfileResponseModel profileResponse) async {
    
       await SharedPrefHelper.saveData(
         key: SharedPrefKeys.idProfile,
-        value: profileResponse.data.id,
+        value: profileResponse.profileData?.id,
       );
     
       await SharedPrefHelper.saveData(
         key: SharedPrefKeys.profileImage,
-        value: profileResponse.data.profileImage,
+        value: profileResponse.profileData?.profileImage,
       );
 
        await SharedPrefHelper.saveData(
         key: SharedPrefKeys.titleJob,
-        value: profileResponse.data.titleJob,
+        value: profileResponse.profileData?.titleJob,
       );
 
     }

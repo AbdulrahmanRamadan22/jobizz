@@ -20,10 +20,9 @@ mixin _$SwitchProfileState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(ProfilesResponseModel profilesResponseModel)
-        getProfilesDetailsSuccess,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getProfileDetailsFailure,
-    required TResult Function() getProfilesDetailsLoading,
+        getProfilesSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) getProfilesFailure,
+    required TResult Function() getProfilesLoading,
     required TResult Function(ProfileResponseModel profileResponseModel)
         profileDetailsByIdSuccess,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -35,9 +34,9 @@ mixin _$SwitchProfileState<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(ProfilesResponseModel profilesResponseModel)?
-        getProfilesDetailsSuccess,
-    TResult? Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
-    TResult? Function()? getProfilesDetailsLoading,
+        getProfilesSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProfilesFailure,
+    TResult? Function()? getProfilesLoading,
     TResult? Function(ProfileResponseModel profileResponseModel)?
         profileDetailsByIdSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
@@ -48,9 +47,9 @@ mixin _$SwitchProfileState<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(ProfilesResponseModel profilesResponseModel)?
-        getProfilesDetailsSuccess,
-    TResult Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
-    TResult Function()? getProfilesDetailsLoading,
+        getProfilesSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? getProfilesFailure,
+    TResult Function()? getProfilesLoading,
     TResult Function(ProfileResponseModel profileResponseModel)?
         profileDetailsByIdSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
@@ -61,12 +60,9 @@ mixin _$SwitchProfileState<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProfilesDetailsSuccess<T> value)
-        getProfilesDetailsSuccess,
-    required TResult Function(GetProfilesDetailsFailure<T> value)
-        getProfileDetailsFailure,
-    required TResult Function(GetProfilesDetailsLoading<T> value)
-        getProfilesDetailsLoading,
+    required TResult Function(GetProfilesSuccess<T> value) getProfilesSuccess,
+    required TResult Function(GetProfilesFailure<T> value) getProfilesFailure,
+    required TResult Function(GetProfilesLoading<T> value) getProfilesLoading,
     required TResult Function(ProfileDetailsByIdSuccess<T> value)
         profileDetailsByIdSuccess,
     required TResult Function(ProfileDetailsByIdFailure<T> value)
@@ -78,12 +74,9 @@ mixin _$SwitchProfileState<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProfilesDetailsSuccess<T> value)?
-        getProfilesDetailsSuccess,
-    TResult? Function(GetProfilesDetailsFailure<T> value)?
-        getProfileDetailsFailure,
-    TResult? Function(GetProfilesDetailsLoading<T> value)?
-        getProfilesDetailsLoading,
+    TResult? Function(GetProfilesSuccess<T> value)? getProfilesSuccess,
+    TResult? Function(GetProfilesFailure<T> value)? getProfilesFailure,
+    TResult? Function(GetProfilesLoading<T> value)? getProfilesLoading,
     TResult? Function(ProfileDetailsByIdSuccess<T> value)?
         profileDetailsByIdSuccess,
     TResult? Function(ProfileDetailsByIdFailure<T> value)?
@@ -95,12 +88,9 @@ mixin _$SwitchProfileState<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProfilesDetailsSuccess<T> value)?
-        getProfilesDetailsSuccess,
-    TResult Function(GetProfilesDetailsFailure<T> value)?
-        getProfileDetailsFailure,
-    TResult Function(GetProfilesDetailsLoading<T> value)?
-        getProfilesDetailsLoading,
+    TResult Function(GetProfilesSuccess<T> value)? getProfilesSuccess,
+    TResult Function(GetProfilesFailure<T> value)? getProfilesFailure,
+    TResult Function(GetProfilesLoading<T> value)? getProfilesLoading,
     TResult Function(ProfileDetailsByIdSuccess<T> value)?
         profileDetailsByIdSuccess,
     TResult Function(ProfileDetailsByIdFailure<T> value)?
@@ -177,10 +167,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(ProfilesResponseModel profilesResponseModel)
-        getProfilesDetailsSuccess,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getProfileDetailsFailure,
-    required TResult Function() getProfilesDetailsLoading,
+        getProfilesSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) getProfilesFailure,
+    required TResult Function() getProfilesLoading,
     required TResult Function(ProfileResponseModel profileResponseModel)
         profileDetailsByIdSuccess,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -195,9 +184,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(ProfilesResponseModel profilesResponseModel)?
-        getProfilesDetailsSuccess,
-    TResult? Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
-    TResult? Function()? getProfilesDetailsLoading,
+        getProfilesSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProfilesFailure,
+    TResult? Function()? getProfilesLoading,
     TResult? Function(ProfileResponseModel profileResponseModel)?
         profileDetailsByIdSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
@@ -211,9 +200,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(ProfilesResponseModel profilesResponseModel)?
-        getProfilesDetailsSuccess,
-    TResult Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
-    TResult Function()? getProfilesDetailsLoading,
+        getProfilesSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? getProfilesFailure,
+    TResult Function()? getProfilesLoading,
     TResult Function(ProfileResponseModel profileResponseModel)?
         profileDetailsByIdSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
@@ -230,12 +219,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProfilesDetailsSuccess<T> value)
-        getProfilesDetailsSuccess,
-    required TResult Function(GetProfilesDetailsFailure<T> value)
-        getProfileDetailsFailure,
-    required TResult Function(GetProfilesDetailsLoading<T> value)
-        getProfilesDetailsLoading,
+    required TResult Function(GetProfilesSuccess<T> value) getProfilesSuccess,
+    required TResult Function(GetProfilesFailure<T> value) getProfilesFailure,
+    required TResult Function(GetProfilesLoading<T> value) getProfilesLoading,
     required TResult Function(ProfileDetailsByIdSuccess<T> value)
         profileDetailsByIdSuccess,
     required TResult Function(ProfileDetailsByIdFailure<T> value)
@@ -250,12 +236,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProfilesDetailsSuccess<T> value)?
-        getProfilesDetailsSuccess,
-    TResult? Function(GetProfilesDetailsFailure<T> value)?
-        getProfileDetailsFailure,
-    TResult? Function(GetProfilesDetailsLoading<T> value)?
-        getProfilesDetailsLoading,
+    TResult? Function(GetProfilesSuccess<T> value)? getProfilesSuccess,
+    TResult? Function(GetProfilesFailure<T> value)? getProfilesFailure,
+    TResult? Function(GetProfilesLoading<T> value)? getProfilesLoading,
     TResult? Function(ProfileDetailsByIdSuccess<T> value)?
         profileDetailsByIdSuccess,
     TResult? Function(ProfileDetailsByIdFailure<T> value)?
@@ -270,12 +253,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProfilesDetailsSuccess<T> value)?
-        getProfilesDetailsSuccess,
-    TResult Function(GetProfilesDetailsFailure<T> value)?
-        getProfileDetailsFailure,
-    TResult Function(GetProfilesDetailsLoading<T> value)?
-        getProfilesDetailsLoading,
+    TResult Function(GetProfilesSuccess<T> value)? getProfilesSuccess,
+    TResult Function(GetProfilesFailure<T> value)? getProfilesFailure,
+    TResult Function(GetProfilesLoading<T> value)? getProfilesLoading,
     TResult Function(ProfileDetailsByIdSuccess<T> value)?
         profileDetailsByIdSuccess,
     TResult Function(ProfileDetailsByIdFailure<T> value)?
@@ -296,23 +276,21 @@ abstract class _Initial<T> implements SwitchProfileState<T> {
 }
 
 /// @nodoc
-abstract class _$$GetProfilesDetailsSuccessImplCopyWith<T, $Res> {
-  factory _$$GetProfilesDetailsSuccessImplCopyWith(
-          _$GetProfilesDetailsSuccessImpl<T> value,
-          $Res Function(_$GetProfilesDetailsSuccessImpl<T>) then) =
-      __$$GetProfilesDetailsSuccessImplCopyWithImpl<T, $Res>;
+abstract class _$$GetProfilesSuccessImplCopyWith<T, $Res> {
+  factory _$$GetProfilesSuccessImplCopyWith(_$GetProfilesSuccessImpl<T> value,
+          $Res Function(_$GetProfilesSuccessImpl<T>) then) =
+      __$$GetProfilesSuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({ProfilesResponseModel profilesResponseModel});
 }
 
 /// @nodoc
-class __$$GetProfilesDetailsSuccessImplCopyWithImpl<T, $Res>
+class __$$GetProfilesSuccessImplCopyWithImpl<T, $Res>
     extends _$SwitchProfileStateCopyWithImpl<T, $Res,
-        _$GetProfilesDetailsSuccessImpl<T>>
-    implements _$$GetProfilesDetailsSuccessImplCopyWith<T, $Res> {
-  __$$GetProfilesDetailsSuccessImplCopyWithImpl(
-      _$GetProfilesDetailsSuccessImpl<T> _value,
-      $Res Function(_$GetProfilesDetailsSuccessImpl<T>) _then)
+        _$GetProfilesSuccessImpl<T>>
+    implements _$$GetProfilesSuccessImplCopyWith<T, $Res> {
+  __$$GetProfilesSuccessImplCopyWithImpl(_$GetProfilesSuccessImpl<T> _value,
+      $Res Function(_$GetProfilesSuccessImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of SwitchProfileState
@@ -322,7 +300,7 @@ class __$$GetProfilesDetailsSuccessImplCopyWithImpl<T, $Res>
   $Res call({
     Object? profilesResponseModel = null,
   }) {
-    return _then(_$GetProfilesDetailsSuccessImpl<T>(
+    return _then(_$GetProfilesSuccessImpl<T>(
       null == profilesResponseModel
           ? _value.profilesResponseModel
           : profilesResponseModel // ignore: cast_nullable_to_non_nullable
@@ -333,23 +311,22 @@ class __$$GetProfilesDetailsSuccessImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$GetProfilesDetailsSuccessImpl<T>
-    implements GetProfilesDetailsSuccess<T> {
-  const _$GetProfilesDetailsSuccessImpl(this.profilesResponseModel);
+class _$GetProfilesSuccessImpl<T> implements GetProfilesSuccess<T> {
+  const _$GetProfilesSuccessImpl(this.profilesResponseModel);
 
   @override
   final ProfilesResponseModel profilesResponseModel;
 
   @override
   String toString() {
-    return 'SwitchProfileState<$T>.getProfilesDetailsSuccess(profilesResponseModel: $profilesResponseModel)';
+    return 'SwitchProfileState<$T>.getProfilesSuccess(profilesResponseModel: $profilesResponseModel)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetProfilesDetailsSuccessImpl<T> &&
+            other is _$GetProfilesSuccessImpl<T> &&
             (identical(other.profilesResponseModel, profilesResponseModel) ||
                 other.profilesResponseModel == profilesResponseModel));
   }
@@ -362,27 +339,25 @@ class _$GetProfilesDetailsSuccessImpl<T>
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetProfilesDetailsSuccessImplCopyWith<T,
-          _$GetProfilesDetailsSuccessImpl<T>>
-      get copyWith => __$$GetProfilesDetailsSuccessImplCopyWithImpl<T,
-          _$GetProfilesDetailsSuccessImpl<T>>(this, _$identity);
+  _$$GetProfilesSuccessImplCopyWith<T, _$GetProfilesSuccessImpl<T>>
+      get copyWith => __$$GetProfilesSuccessImplCopyWithImpl<T,
+          _$GetProfilesSuccessImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(ProfilesResponseModel profilesResponseModel)
-        getProfilesDetailsSuccess,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getProfileDetailsFailure,
-    required TResult Function() getProfilesDetailsLoading,
+        getProfilesSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) getProfilesFailure,
+    required TResult Function() getProfilesLoading,
     required TResult Function(ProfileResponseModel profileResponseModel)
         profileDetailsByIdSuccess,
     required TResult Function(ApiErrorModel apiErrorModel)
         profileDetailsByIdFailure,
     required TResult Function() profileDetailsByIdLoading,
   }) {
-    return getProfilesDetailsSuccess(profilesResponseModel);
+    return getProfilesSuccess(profilesResponseModel);
   }
 
   @override
@@ -390,15 +365,15 @@ class _$GetProfilesDetailsSuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(ProfilesResponseModel profilesResponseModel)?
-        getProfilesDetailsSuccess,
-    TResult? Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
-    TResult? Function()? getProfilesDetailsLoading,
+        getProfilesSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProfilesFailure,
+    TResult? Function()? getProfilesLoading,
     TResult? Function(ProfileResponseModel profileResponseModel)?
         profileDetailsByIdSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
     TResult? Function()? profileDetailsByIdLoading,
   }) {
-    return getProfilesDetailsSuccess?.call(profilesResponseModel);
+    return getProfilesSuccess?.call(profilesResponseModel);
   }
 
   @override
@@ -406,17 +381,17 @@ class _$GetProfilesDetailsSuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(ProfilesResponseModel profilesResponseModel)?
-        getProfilesDetailsSuccess,
-    TResult Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
-    TResult Function()? getProfilesDetailsLoading,
+        getProfilesSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? getProfilesFailure,
+    TResult Function()? getProfilesLoading,
     TResult Function(ProfileResponseModel profileResponseModel)?
         profileDetailsByIdSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
     TResult Function()? profileDetailsByIdLoading,
     required TResult orElse(),
   }) {
-    if (getProfilesDetailsSuccess != null) {
-      return getProfilesDetailsSuccess(profilesResponseModel);
+    if (getProfilesSuccess != null) {
+      return getProfilesSuccess(profilesResponseModel);
     }
     return orElse();
   }
@@ -425,12 +400,9 @@ class _$GetProfilesDetailsSuccessImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProfilesDetailsSuccess<T> value)
-        getProfilesDetailsSuccess,
-    required TResult Function(GetProfilesDetailsFailure<T> value)
-        getProfileDetailsFailure,
-    required TResult Function(GetProfilesDetailsLoading<T> value)
-        getProfilesDetailsLoading,
+    required TResult Function(GetProfilesSuccess<T> value) getProfilesSuccess,
+    required TResult Function(GetProfilesFailure<T> value) getProfilesFailure,
+    required TResult Function(GetProfilesLoading<T> value) getProfilesLoading,
     required TResult Function(ProfileDetailsByIdSuccess<T> value)
         profileDetailsByIdSuccess,
     required TResult Function(ProfileDetailsByIdFailure<T> value)
@@ -438,19 +410,16 @@ class _$GetProfilesDetailsSuccessImpl<T>
     required TResult Function(ProfileDetailsByIdLoading<T> value)
         profileDetailsByIdLoading,
   }) {
-    return getProfilesDetailsSuccess(this);
+    return getProfilesSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProfilesDetailsSuccess<T> value)?
-        getProfilesDetailsSuccess,
-    TResult? Function(GetProfilesDetailsFailure<T> value)?
-        getProfileDetailsFailure,
-    TResult? Function(GetProfilesDetailsLoading<T> value)?
-        getProfilesDetailsLoading,
+    TResult? Function(GetProfilesSuccess<T> value)? getProfilesSuccess,
+    TResult? Function(GetProfilesFailure<T> value)? getProfilesFailure,
+    TResult? Function(GetProfilesLoading<T> value)? getProfilesLoading,
     TResult? Function(ProfileDetailsByIdSuccess<T> value)?
         profileDetailsByIdSuccess,
     TResult? Function(ProfileDetailsByIdFailure<T> value)?
@@ -458,19 +427,16 @@ class _$GetProfilesDetailsSuccessImpl<T>
     TResult? Function(ProfileDetailsByIdLoading<T> value)?
         profileDetailsByIdLoading,
   }) {
-    return getProfilesDetailsSuccess?.call(this);
+    return getProfilesSuccess?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProfilesDetailsSuccess<T> value)?
-        getProfilesDetailsSuccess,
-    TResult Function(GetProfilesDetailsFailure<T> value)?
-        getProfileDetailsFailure,
-    TResult Function(GetProfilesDetailsLoading<T> value)?
-        getProfilesDetailsLoading,
+    TResult Function(GetProfilesSuccess<T> value)? getProfilesSuccess,
+    TResult Function(GetProfilesFailure<T> value)? getProfilesFailure,
+    TResult Function(GetProfilesLoading<T> value)? getProfilesLoading,
     TResult Function(ProfileDetailsByIdSuccess<T> value)?
         profileDetailsByIdSuccess,
     TResult Function(ProfileDetailsByIdFailure<T> value)?
@@ -479,46 +445,43 @@ class _$GetProfilesDetailsSuccessImpl<T>
         profileDetailsByIdLoading,
     required TResult orElse(),
   }) {
-    if (getProfilesDetailsSuccess != null) {
-      return getProfilesDetailsSuccess(this);
+    if (getProfilesSuccess != null) {
+      return getProfilesSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class GetProfilesDetailsSuccess<T> implements SwitchProfileState<T> {
-  const factory GetProfilesDetailsSuccess(
+abstract class GetProfilesSuccess<T> implements SwitchProfileState<T> {
+  const factory GetProfilesSuccess(
           final ProfilesResponseModel profilesResponseModel) =
-      _$GetProfilesDetailsSuccessImpl<T>;
+      _$GetProfilesSuccessImpl<T>;
 
   ProfilesResponseModel get profilesResponseModel;
 
   /// Create a copy of SwitchProfileState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetProfilesDetailsSuccessImplCopyWith<T,
-          _$GetProfilesDetailsSuccessImpl<T>>
+  _$$GetProfilesSuccessImplCopyWith<T, _$GetProfilesSuccessImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetProfilesDetailsFailureImplCopyWith<T, $Res> {
-  factory _$$GetProfilesDetailsFailureImplCopyWith(
-          _$GetProfilesDetailsFailureImpl<T> value,
-          $Res Function(_$GetProfilesDetailsFailureImpl<T>) then) =
-      __$$GetProfilesDetailsFailureImplCopyWithImpl<T, $Res>;
+abstract class _$$GetProfilesFailureImplCopyWith<T, $Res> {
+  factory _$$GetProfilesFailureImplCopyWith(_$GetProfilesFailureImpl<T> value,
+          $Res Function(_$GetProfilesFailureImpl<T>) then) =
+      __$$GetProfilesFailureImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
-class __$$GetProfilesDetailsFailureImplCopyWithImpl<T, $Res>
+class __$$GetProfilesFailureImplCopyWithImpl<T, $Res>
     extends _$SwitchProfileStateCopyWithImpl<T, $Res,
-        _$GetProfilesDetailsFailureImpl<T>>
-    implements _$$GetProfilesDetailsFailureImplCopyWith<T, $Res> {
-  __$$GetProfilesDetailsFailureImplCopyWithImpl(
-      _$GetProfilesDetailsFailureImpl<T> _value,
-      $Res Function(_$GetProfilesDetailsFailureImpl<T>) _then)
+        _$GetProfilesFailureImpl<T>>
+    implements _$$GetProfilesFailureImplCopyWith<T, $Res> {
+  __$$GetProfilesFailureImplCopyWithImpl(_$GetProfilesFailureImpl<T> _value,
+      $Res Function(_$GetProfilesFailureImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of SwitchProfileState
@@ -528,7 +491,7 @@ class __$$GetProfilesDetailsFailureImplCopyWithImpl<T, $Res>
   $Res call({
     Object? apiErrorModel = null,
   }) {
-    return _then(_$GetProfilesDetailsFailureImpl<T>(
+    return _then(_$GetProfilesFailureImpl<T>(
       null == apiErrorModel
           ? _value.apiErrorModel
           : apiErrorModel // ignore: cast_nullable_to_non_nullable
@@ -539,23 +502,22 @@ class __$$GetProfilesDetailsFailureImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$GetProfilesDetailsFailureImpl<T>
-    implements GetProfilesDetailsFailure<T> {
-  const _$GetProfilesDetailsFailureImpl(this.apiErrorModel);
+class _$GetProfilesFailureImpl<T> implements GetProfilesFailure<T> {
+  const _$GetProfilesFailureImpl(this.apiErrorModel);
 
   @override
   final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'SwitchProfileState<$T>.getProfileDetailsFailure(apiErrorModel: $apiErrorModel)';
+    return 'SwitchProfileState<$T>.getProfilesFailure(apiErrorModel: $apiErrorModel)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetProfilesDetailsFailureImpl<T> &&
+            other is _$GetProfilesFailureImpl<T> &&
             (identical(other.apiErrorModel, apiErrorModel) ||
                 other.apiErrorModel == apiErrorModel));
   }
@@ -568,27 +530,25 @@ class _$GetProfilesDetailsFailureImpl<T>
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetProfilesDetailsFailureImplCopyWith<T,
-          _$GetProfilesDetailsFailureImpl<T>>
-      get copyWith => __$$GetProfilesDetailsFailureImplCopyWithImpl<T,
-          _$GetProfilesDetailsFailureImpl<T>>(this, _$identity);
+  _$$GetProfilesFailureImplCopyWith<T, _$GetProfilesFailureImpl<T>>
+      get copyWith => __$$GetProfilesFailureImplCopyWithImpl<T,
+          _$GetProfilesFailureImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(ProfilesResponseModel profilesResponseModel)
-        getProfilesDetailsSuccess,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getProfileDetailsFailure,
-    required TResult Function() getProfilesDetailsLoading,
+        getProfilesSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) getProfilesFailure,
+    required TResult Function() getProfilesLoading,
     required TResult Function(ProfileResponseModel profileResponseModel)
         profileDetailsByIdSuccess,
     required TResult Function(ApiErrorModel apiErrorModel)
         profileDetailsByIdFailure,
     required TResult Function() profileDetailsByIdLoading,
   }) {
-    return getProfileDetailsFailure(apiErrorModel);
+    return getProfilesFailure(apiErrorModel);
   }
 
   @override
@@ -596,15 +556,15 @@ class _$GetProfilesDetailsFailureImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(ProfilesResponseModel profilesResponseModel)?
-        getProfilesDetailsSuccess,
-    TResult? Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
-    TResult? Function()? getProfilesDetailsLoading,
+        getProfilesSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProfilesFailure,
+    TResult? Function()? getProfilesLoading,
     TResult? Function(ProfileResponseModel profileResponseModel)?
         profileDetailsByIdSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
     TResult? Function()? profileDetailsByIdLoading,
   }) {
-    return getProfileDetailsFailure?.call(apiErrorModel);
+    return getProfilesFailure?.call(apiErrorModel);
   }
 
   @override
@@ -612,17 +572,17 @@ class _$GetProfilesDetailsFailureImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(ProfilesResponseModel profilesResponseModel)?
-        getProfilesDetailsSuccess,
-    TResult Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
-    TResult Function()? getProfilesDetailsLoading,
+        getProfilesSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? getProfilesFailure,
+    TResult Function()? getProfilesLoading,
     TResult Function(ProfileResponseModel profileResponseModel)?
         profileDetailsByIdSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
     TResult Function()? profileDetailsByIdLoading,
     required TResult orElse(),
   }) {
-    if (getProfileDetailsFailure != null) {
-      return getProfileDetailsFailure(apiErrorModel);
+    if (getProfilesFailure != null) {
+      return getProfilesFailure(apiErrorModel);
     }
     return orElse();
   }
@@ -631,12 +591,9 @@ class _$GetProfilesDetailsFailureImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProfilesDetailsSuccess<T> value)
-        getProfilesDetailsSuccess,
-    required TResult Function(GetProfilesDetailsFailure<T> value)
-        getProfileDetailsFailure,
-    required TResult Function(GetProfilesDetailsLoading<T> value)
-        getProfilesDetailsLoading,
+    required TResult Function(GetProfilesSuccess<T> value) getProfilesSuccess,
+    required TResult Function(GetProfilesFailure<T> value) getProfilesFailure,
+    required TResult Function(GetProfilesLoading<T> value) getProfilesLoading,
     required TResult Function(ProfileDetailsByIdSuccess<T> value)
         profileDetailsByIdSuccess,
     required TResult Function(ProfileDetailsByIdFailure<T> value)
@@ -644,19 +601,16 @@ class _$GetProfilesDetailsFailureImpl<T>
     required TResult Function(ProfileDetailsByIdLoading<T> value)
         profileDetailsByIdLoading,
   }) {
-    return getProfileDetailsFailure(this);
+    return getProfilesFailure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProfilesDetailsSuccess<T> value)?
-        getProfilesDetailsSuccess,
-    TResult? Function(GetProfilesDetailsFailure<T> value)?
-        getProfileDetailsFailure,
-    TResult? Function(GetProfilesDetailsLoading<T> value)?
-        getProfilesDetailsLoading,
+    TResult? Function(GetProfilesSuccess<T> value)? getProfilesSuccess,
+    TResult? Function(GetProfilesFailure<T> value)? getProfilesFailure,
+    TResult? Function(GetProfilesLoading<T> value)? getProfilesLoading,
     TResult? Function(ProfileDetailsByIdSuccess<T> value)?
         profileDetailsByIdSuccess,
     TResult? Function(ProfileDetailsByIdFailure<T> value)?
@@ -664,19 +618,16 @@ class _$GetProfilesDetailsFailureImpl<T>
     TResult? Function(ProfileDetailsByIdLoading<T> value)?
         profileDetailsByIdLoading,
   }) {
-    return getProfileDetailsFailure?.call(this);
+    return getProfilesFailure?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProfilesDetailsSuccess<T> value)?
-        getProfilesDetailsSuccess,
-    TResult Function(GetProfilesDetailsFailure<T> value)?
-        getProfileDetailsFailure,
-    TResult Function(GetProfilesDetailsLoading<T> value)?
-        getProfilesDetailsLoading,
+    TResult Function(GetProfilesSuccess<T> value)? getProfilesSuccess,
+    TResult Function(GetProfilesFailure<T> value)? getProfilesFailure,
+    TResult Function(GetProfilesLoading<T> value)? getProfilesLoading,
     TResult Function(ProfileDetailsByIdSuccess<T> value)?
         profileDetailsByIdSuccess,
     TResult Function(ProfileDetailsByIdFailure<T> value)?
@@ -685,43 +636,40 @@ class _$GetProfilesDetailsFailureImpl<T>
         profileDetailsByIdLoading,
     required TResult orElse(),
   }) {
-    if (getProfileDetailsFailure != null) {
-      return getProfileDetailsFailure(this);
+    if (getProfilesFailure != null) {
+      return getProfilesFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class GetProfilesDetailsFailure<T> implements SwitchProfileState<T> {
-  const factory GetProfilesDetailsFailure(final ApiErrorModel apiErrorModel) =
-      _$GetProfilesDetailsFailureImpl<T>;
+abstract class GetProfilesFailure<T> implements SwitchProfileState<T> {
+  const factory GetProfilesFailure(final ApiErrorModel apiErrorModel) =
+      _$GetProfilesFailureImpl<T>;
 
   ApiErrorModel get apiErrorModel;
 
   /// Create a copy of SwitchProfileState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetProfilesDetailsFailureImplCopyWith<T,
-          _$GetProfilesDetailsFailureImpl<T>>
+  _$$GetProfilesFailureImplCopyWith<T, _$GetProfilesFailureImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetProfilesDetailsLoadingImplCopyWith<T, $Res> {
-  factory _$$GetProfilesDetailsLoadingImplCopyWith(
-          _$GetProfilesDetailsLoadingImpl<T> value,
-          $Res Function(_$GetProfilesDetailsLoadingImpl<T>) then) =
-      __$$GetProfilesDetailsLoadingImplCopyWithImpl<T, $Res>;
+abstract class _$$GetProfilesLoadingImplCopyWith<T, $Res> {
+  factory _$$GetProfilesLoadingImplCopyWith(_$GetProfilesLoadingImpl<T> value,
+          $Res Function(_$GetProfilesLoadingImpl<T>) then) =
+      __$$GetProfilesLoadingImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$GetProfilesDetailsLoadingImplCopyWithImpl<T, $Res>
+class __$$GetProfilesLoadingImplCopyWithImpl<T, $Res>
     extends _$SwitchProfileStateCopyWithImpl<T, $Res,
-        _$GetProfilesDetailsLoadingImpl<T>>
-    implements _$$GetProfilesDetailsLoadingImplCopyWith<T, $Res> {
-  __$$GetProfilesDetailsLoadingImplCopyWithImpl(
-      _$GetProfilesDetailsLoadingImpl<T> _value,
-      $Res Function(_$GetProfilesDetailsLoadingImpl<T>) _then)
+        _$GetProfilesLoadingImpl<T>>
+    implements _$$GetProfilesLoadingImplCopyWith<T, $Res> {
+  __$$GetProfilesLoadingImplCopyWithImpl(_$GetProfilesLoadingImpl<T> _value,
+      $Res Function(_$GetProfilesLoadingImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of SwitchProfileState
@@ -730,20 +678,19 @@ class __$$GetProfilesDetailsLoadingImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$GetProfilesDetailsLoadingImpl<T>
-    implements GetProfilesDetailsLoading<T> {
-  const _$GetProfilesDetailsLoadingImpl();
+class _$GetProfilesLoadingImpl<T> implements GetProfilesLoading<T> {
+  const _$GetProfilesLoadingImpl();
 
   @override
   String toString() {
-    return 'SwitchProfileState<$T>.getProfilesDetailsLoading()';
+    return 'SwitchProfileState<$T>.getProfilesLoading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetProfilesDetailsLoadingImpl<T>);
+            other is _$GetProfilesLoadingImpl<T>);
   }
 
   @override
@@ -754,17 +701,16 @@ class _$GetProfilesDetailsLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(ProfilesResponseModel profilesResponseModel)
-        getProfilesDetailsSuccess,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getProfileDetailsFailure,
-    required TResult Function() getProfilesDetailsLoading,
+        getProfilesSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) getProfilesFailure,
+    required TResult Function() getProfilesLoading,
     required TResult Function(ProfileResponseModel profileResponseModel)
         profileDetailsByIdSuccess,
     required TResult Function(ApiErrorModel apiErrorModel)
         profileDetailsByIdFailure,
     required TResult Function() profileDetailsByIdLoading,
   }) {
-    return getProfilesDetailsLoading();
+    return getProfilesLoading();
   }
 
   @override
@@ -772,15 +718,15 @@ class _$GetProfilesDetailsLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(ProfilesResponseModel profilesResponseModel)?
-        getProfilesDetailsSuccess,
-    TResult? Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
-    TResult? Function()? getProfilesDetailsLoading,
+        getProfilesSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProfilesFailure,
+    TResult? Function()? getProfilesLoading,
     TResult? Function(ProfileResponseModel profileResponseModel)?
         profileDetailsByIdSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
     TResult? Function()? profileDetailsByIdLoading,
   }) {
-    return getProfilesDetailsLoading?.call();
+    return getProfilesLoading?.call();
   }
 
   @override
@@ -788,17 +734,17 @@ class _$GetProfilesDetailsLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(ProfilesResponseModel profilesResponseModel)?
-        getProfilesDetailsSuccess,
-    TResult Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
-    TResult Function()? getProfilesDetailsLoading,
+        getProfilesSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? getProfilesFailure,
+    TResult Function()? getProfilesLoading,
     TResult Function(ProfileResponseModel profileResponseModel)?
         profileDetailsByIdSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
     TResult Function()? profileDetailsByIdLoading,
     required TResult orElse(),
   }) {
-    if (getProfilesDetailsLoading != null) {
-      return getProfilesDetailsLoading();
+    if (getProfilesLoading != null) {
+      return getProfilesLoading();
     }
     return orElse();
   }
@@ -807,12 +753,9 @@ class _$GetProfilesDetailsLoadingImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProfilesDetailsSuccess<T> value)
-        getProfilesDetailsSuccess,
-    required TResult Function(GetProfilesDetailsFailure<T> value)
-        getProfileDetailsFailure,
-    required TResult Function(GetProfilesDetailsLoading<T> value)
-        getProfilesDetailsLoading,
+    required TResult Function(GetProfilesSuccess<T> value) getProfilesSuccess,
+    required TResult Function(GetProfilesFailure<T> value) getProfilesFailure,
+    required TResult Function(GetProfilesLoading<T> value) getProfilesLoading,
     required TResult Function(ProfileDetailsByIdSuccess<T> value)
         profileDetailsByIdSuccess,
     required TResult Function(ProfileDetailsByIdFailure<T> value)
@@ -820,19 +763,16 @@ class _$GetProfilesDetailsLoadingImpl<T>
     required TResult Function(ProfileDetailsByIdLoading<T> value)
         profileDetailsByIdLoading,
   }) {
-    return getProfilesDetailsLoading(this);
+    return getProfilesLoading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProfilesDetailsSuccess<T> value)?
-        getProfilesDetailsSuccess,
-    TResult? Function(GetProfilesDetailsFailure<T> value)?
-        getProfileDetailsFailure,
-    TResult? Function(GetProfilesDetailsLoading<T> value)?
-        getProfilesDetailsLoading,
+    TResult? Function(GetProfilesSuccess<T> value)? getProfilesSuccess,
+    TResult? Function(GetProfilesFailure<T> value)? getProfilesFailure,
+    TResult? Function(GetProfilesLoading<T> value)? getProfilesLoading,
     TResult? Function(ProfileDetailsByIdSuccess<T> value)?
         profileDetailsByIdSuccess,
     TResult? Function(ProfileDetailsByIdFailure<T> value)?
@@ -840,19 +780,16 @@ class _$GetProfilesDetailsLoadingImpl<T>
     TResult? Function(ProfileDetailsByIdLoading<T> value)?
         profileDetailsByIdLoading,
   }) {
-    return getProfilesDetailsLoading?.call(this);
+    return getProfilesLoading?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProfilesDetailsSuccess<T> value)?
-        getProfilesDetailsSuccess,
-    TResult Function(GetProfilesDetailsFailure<T> value)?
-        getProfileDetailsFailure,
-    TResult Function(GetProfilesDetailsLoading<T> value)?
-        getProfilesDetailsLoading,
+    TResult Function(GetProfilesSuccess<T> value)? getProfilesSuccess,
+    TResult Function(GetProfilesFailure<T> value)? getProfilesFailure,
+    TResult Function(GetProfilesLoading<T> value)? getProfilesLoading,
     TResult Function(ProfileDetailsByIdSuccess<T> value)?
         profileDetailsByIdSuccess,
     TResult Function(ProfileDetailsByIdFailure<T> value)?
@@ -861,16 +798,15 @@ class _$GetProfilesDetailsLoadingImpl<T>
         profileDetailsByIdLoading,
     required TResult orElse(),
   }) {
-    if (getProfilesDetailsLoading != null) {
-      return getProfilesDetailsLoading(this);
+    if (getProfilesLoading != null) {
+      return getProfilesLoading(this);
     }
     return orElse();
   }
 }
 
-abstract class GetProfilesDetailsLoading<T> implements SwitchProfileState<T> {
-  const factory GetProfilesDetailsLoading() =
-      _$GetProfilesDetailsLoadingImpl<T>;
+abstract class GetProfilesLoading<T> implements SwitchProfileState<T> {
+  const factory GetProfilesLoading() = _$GetProfilesLoadingImpl<T>;
 }
 
 /// @nodoc
@@ -950,10 +886,9 @@ class _$ProfileDetailsByIdSuccessImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(ProfilesResponseModel profilesResponseModel)
-        getProfilesDetailsSuccess,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getProfileDetailsFailure,
-    required TResult Function() getProfilesDetailsLoading,
+        getProfilesSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) getProfilesFailure,
+    required TResult Function() getProfilesLoading,
     required TResult Function(ProfileResponseModel profileResponseModel)
         profileDetailsByIdSuccess,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -968,9 +903,9 @@ class _$ProfileDetailsByIdSuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(ProfilesResponseModel profilesResponseModel)?
-        getProfilesDetailsSuccess,
-    TResult? Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
-    TResult? Function()? getProfilesDetailsLoading,
+        getProfilesSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProfilesFailure,
+    TResult? Function()? getProfilesLoading,
     TResult? Function(ProfileResponseModel profileResponseModel)?
         profileDetailsByIdSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
@@ -984,9 +919,9 @@ class _$ProfileDetailsByIdSuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(ProfilesResponseModel profilesResponseModel)?
-        getProfilesDetailsSuccess,
-    TResult Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
-    TResult Function()? getProfilesDetailsLoading,
+        getProfilesSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? getProfilesFailure,
+    TResult Function()? getProfilesLoading,
     TResult Function(ProfileResponseModel profileResponseModel)?
         profileDetailsByIdSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
@@ -1003,12 +938,9 @@ class _$ProfileDetailsByIdSuccessImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProfilesDetailsSuccess<T> value)
-        getProfilesDetailsSuccess,
-    required TResult Function(GetProfilesDetailsFailure<T> value)
-        getProfileDetailsFailure,
-    required TResult Function(GetProfilesDetailsLoading<T> value)
-        getProfilesDetailsLoading,
+    required TResult Function(GetProfilesSuccess<T> value) getProfilesSuccess,
+    required TResult Function(GetProfilesFailure<T> value) getProfilesFailure,
+    required TResult Function(GetProfilesLoading<T> value) getProfilesLoading,
     required TResult Function(ProfileDetailsByIdSuccess<T> value)
         profileDetailsByIdSuccess,
     required TResult Function(ProfileDetailsByIdFailure<T> value)
@@ -1023,12 +955,9 @@ class _$ProfileDetailsByIdSuccessImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProfilesDetailsSuccess<T> value)?
-        getProfilesDetailsSuccess,
-    TResult? Function(GetProfilesDetailsFailure<T> value)?
-        getProfileDetailsFailure,
-    TResult? Function(GetProfilesDetailsLoading<T> value)?
-        getProfilesDetailsLoading,
+    TResult? Function(GetProfilesSuccess<T> value)? getProfilesSuccess,
+    TResult? Function(GetProfilesFailure<T> value)? getProfilesFailure,
+    TResult? Function(GetProfilesLoading<T> value)? getProfilesLoading,
     TResult? Function(ProfileDetailsByIdSuccess<T> value)?
         profileDetailsByIdSuccess,
     TResult? Function(ProfileDetailsByIdFailure<T> value)?
@@ -1043,12 +972,9 @@ class _$ProfileDetailsByIdSuccessImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProfilesDetailsSuccess<T> value)?
-        getProfilesDetailsSuccess,
-    TResult Function(GetProfilesDetailsFailure<T> value)?
-        getProfileDetailsFailure,
-    TResult Function(GetProfilesDetailsLoading<T> value)?
-        getProfilesDetailsLoading,
+    TResult Function(GetProfilesSuccess<T> value)? getProfilesSuccess,
+    TResult Function(GetProfilesFailure<T> value)? getProfilesFailure,
+    TResult Function(GetProfilesLoading<T> value)? getProfilesLoading,
     TResult Function(ProfileDetailsByIdSuccess<T> value)?
         profileDetailsByIdSuccess,
     TResult Function(ProfileDetailsByIdFailure<T> value)?
@@ -1156,10 +1082,9 @@ class _$ProfileDetailsByIdFailureImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(ProfilesResponseModel profilesResponseModel)
-        getProfilesDetailsSuccess,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getProfileDetailsFailure,
-    required TResult Function() getProfilesDetailsLoading,
+        getProfilesSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) getProfilesFailure,
+    required TResult Function() getProfilesLoading,
     required TResult Function(ProfileResponseModel profileResponseModel)
         profileDetailsByIdSuccess,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -1174,9 +1099,9 @@ class _$ProfileDetailsByIdFailureImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(ProfilesResponseModel profilesResponseModel)?
-        getProfilesDetailsSuccess,
-    TResult? Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
-    TResult? Function()? getProfilesDetailsLoading,
+        getProfilesSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProfilesFailure,
+    TResult? Function()? getProfilesLoading,
     TResult? Function(ProfileResponseModel profileResponseModel)?
         profileDetailsByIdSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
@@ -1190,9 +1115,9 @@ class _$ProfileDetailsByIdFailureImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(ProfilesResponseModel profilesResponseModel)?
-        getProfilesDetailsSuccess,
-    TResult Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
-    TResult Function()? getProfilesDetailsLoading,
+        getProfilesSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? getProfilesFailure,
+    TResult Function()? getProfilesLoading,
     TResult Function(ProfileResponseModel profileResponseModel)?
         profileDetailsByIdSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
@@ -1209,12 +1134,9 @@ class _$ProfileDetailsByIdFailureImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProfilesDetailsSuccess<T> value)
-        getProfilesDetailsSuccess,
-    required TResult Function(GetProfilesDetailsFailure<T> value)
-        getProfileDetailsFailure,
-    required TResult Function(GetProfilesDetailsLoading<T> value)
-        getProfilesDetailsLoading,
+    required TResult Function(GetProfilesSuccess<T> value) getProfilesSuccess,
+    required TResult Function(GetProfilesFailure<T> value) getProfilesFailure,
+    required TResult Function(GetProfilesLoading<T> value) getProfilesLoading,
     required TResult Function(ProfileDetailsByIdSuccess<T> value)
         profileDetailsByIdSuccess,
     required TResult Function(ProfileDetailsByIdFailure<T> value)
@@ -1229,12 +1151,9 @@ class _$ProfileDetailsByIdFailureImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProfilesDetailsSuccess<T> value)?
-        getProfilesDetailsSuccess,
-    TResult? Function(GetProfilesDetailsFailure<T> value)?
-        getProfileDetailsFailure,
-    TResult? Function(GetProfilesDetailsLoading<T> value)?
-        getProfilesDetailsLoading,
+    TResult? Function(GetProfilesSuccess<T> value)? getProfilesSuccess,
+    TResult? Function(GetProfilesFailure<T> value)? getProfilesFailure,
+    TResult? Function(GetProfilesLoading<T> value)? getProfilesLoading,
     TResult? Function(ProfileDetailsByIdSuccess<T> value)?
         profileDetailsByIdSuccess,
     TResult? Function(ProfileDetailsByIdFailure<T> value)?
@@ -1249,12 +1168,9 @@ class _$ProfileDetailsByIdFailureImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProfilesDetailsSuccess<T> value)?
-        getProfilesDetailsSuccess,
-    TResult Function(GetProfilesDetailsFailure<T> value)?
-        getProfileDetailsFailure,
-    TResult Function(GetProfilesDetailsLoading<T> value)?
-        getProfilesDetailsLoading,
+    TResult Function(GetProfilesSuccess<T> value)? getProfilesSuccess,
+    TResult Function(GetProfilesFailure<T> value)? getProfilesFailure,
+    TResult Function(GetProfilesLoading<T> value)? getProfilesLoading,
     TResult Function(ProfileDetailsByIdSuccess<T> value)?
         profileDetailsByIdSuccess,
     TResult Function(ProfileDetailsByIdFailure<T> value)?
@@ -1332,10 +1248,9 @@ class _$ProfileDetailsByIdLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(ProfilesResponseModel profilesResponseModel)
-        getProfilesDetailsSuccess,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getProfileDetailsFailure,
-    required TResult Function() getProfilesDetailsLoading,
+        getProfilesSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) getProfilesFailure,
+    required TResult Function() getProfilesLoading,
     required TResult Function(ProfileResponseModel profileResponseModel)
         profileDetailsByIdSuccess,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -1350,9 +1265,9 @@ class _$ProfileDetailsByIdLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(ProfilesResponseModel profilesResponseModel)?
-        getProfilesDetailsSuccess,
-    TResult? Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
-    TResult? Function()? getProfilesDetailsLoading,
+        getProfilesSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProfilesFailure,
+    TResult? Function()? getProfilesLoading,
     TResult? Function(ProfileResponseModel profileResponseModel)?
         profileDetailsByIdSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
@@ -1366,9 +1281,9 @@ class _$ProfileDetailsByIdLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(ProfilesResponseModel profilesResponseModel)?
-        getProfilesDetailsSuccess,
-    TResult Function(ApiErrorModel apiErrorModel)? getProfileDetailsFailure,
-    TResult Function()? getProfilesDetailsLoading,
+        getProfilesSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? getProfilesFailure,
+    TResult Function()? getProfilesLoading,
     TResult Function(ProfileResponseModel profileResponseModel)?
         profileDetailsByIdSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? profileDetailsByIdFailure,
@@ -1385,12 +1300,9 @@ class _$ProfileDetailsByIdLoadingImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetProfilesDetailsSuccess<T> value)
-        getProfilesDetailsSuccess,
-    required TResult Function(GetProfilesDetailsFailure<T> value)
-        getProfileDetailsFailure,
-    required TResult Function(GetProfilesDetailsLoading<T> value)
-        getProfilesDetailsLoading,
+    required TResult Function(GetProfilesSuccess<T> value) getProfilesSuccess,
+    required TResult Function(GetProfilesFailure<T> value) getProfilesFailure,
+    required TResult Function(GetProfilesLoading<T> value) getProfilesLoading,
     required TResult Function(ProfileDetailsByIdSuccess<T> value)
         profileDetailsByIdSuccess,
     required TResult Function(ProfileDetailsByIdFailure<T> value)
@@ -1405,12 +1317,9 @@ class _$ProfileDetailsByIdLoadingImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetProfilesDetailsSuccess<T> value)?
-        getProfilesDetailsSuccess,
-    TResult? Function(GetProfilesDetailsFailure<T> value)?
-        getProfileDetailsFailure,
-    TResult? Function(GetProfilesDetailsLoading<T> value)?
-        getProfilesDetailsLoading,
+    TResult? Function(GetProfilesSuccess<T> value)? getProfilesSuccess,
+    TResult? Function(GetProfilesFailure<T> value)? getProfilesFailure,
+    TResult? Function(GetProfilesLoading<T> value)? getProfilesLoading,
     TResult? Function(ProfileDetailsByIdSuccess<T> value)?
         profileDetailsByIdSuccess,
     TResult? Function(ProfileDetailsByIdFailure<T> value)?
@@ -1425,12 +1334,9 @@ class _$ProfileDetailsByIdLoadingImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetProfilesDetailsSuccess<T> value)?
-        getProfilesDetailsSuccess,
-    TResult Function(GetProfilesDetailsFailure<T> value)?
-        getProfileDetailsFailure,
-    TResult Function(GetProfilesDetailsLoading<T> value)?
-        getProfilesDetailsLoading,
+    TResult Function(GetProfilesSuccess<T> value)? getProfilesSuccess,
+    TResult Function(GetProfilesFailure<T> value)? getProfilesFailure,
+    TResult Function(GetProfilesLoading<T> value)? getProfilesLoading,
     TResult Function(ProfileDetailsByIdSuccess<T> value)?
         profileDetailsByIdSuccess,
     TResult Function(ProfileDetailsByIdFailure<T> value)?

@@ -9,6 +9,7 @@ import 'package:jobizz/core/widgets/form_field_app_text.dart';
 import 'package:jobizz/features/bot_chat/data/api_services/chat_services.dart';
 import 'package:jobizz/features/bot_chat/data/model/chat_request.dart';
 import 'package:jobizz/features/bot_chat/ui/widgets/ttping_indecator.dart';
+import 'package:jobizz/core/cache/shared_pref.dart';
 
 class GeminiChatScreen extends StatefulWidget {
   const GeminiChatScreen({super.key});

@@ -7,15 +7,16 @@ import '../../../../core/cache/shared_pref.dart';
 import '../../../../core/helper/size_box.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
+import '../../../../core/widgets/cached_network_image_widget.dart';
+import '../../data/models/profile_response_model.dart';
 
 class ImageAndNamedAndJob extends StatelessWidget {
-  final String? profileImage;
-  final String? jobTitle;
+
+    final ProfileData? profileData;
 
   const ImageAndNamedAndJob({
     super.key,
-    this.profileImage,
-    this.jobTitle,
+    this.profileData,
   });
 
   @override
@@ -25,11 +26,18 @@ class ImageAndNamedAndJob extends StatelessWidget {
       child: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CircleAvatar(
-            radius: 58.r,
-            backgroundImage: NetworkImage(
-              profileImage ?? '',
+          ClipRRect(
+            borderRadius: BorderRadius.circular(55.r),
+            child: CachedNetworkImageWidget(
+              imageUrl: profileData?.profileImage ?? '',
+              imageKey: 'profileImage',
+              width: 110.w,
+              height: 110.h,
+              fit: BoxFit.cover,
             ),
+            // backgroundImage: NetworkImage(
+            //   profileImage ?? '',
+            // ),
           ),
           verticalSpace(12),
           Text(
@@ -40,7 +48,7 @@ class ImageAndNamedAndJob extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('${jobTitle ?? ""} ', style: TextStyles.font12Gray),
+              Text('${profileData?.titleJob ?? ""} ', style: TextStyles.font12Gray),
               horizontalSpace(4),
               Icon(
                 Icons.check_circle,
@@ -50,7 +58,9 @@ class ImageAndNamedAndJob extends StatelessWidget {
             ],
           ),
           verticalSpace(40),
-          RowDetailsAccount(),
+          RowDetailsAccount(
+            profileData: profileData,
+          ),
         ],
       ),
     );

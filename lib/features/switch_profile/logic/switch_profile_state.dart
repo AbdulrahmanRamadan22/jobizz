@@ -12,11 +12,11 @@ part  'switch_profile_state.freezed.dart';
 class SwitchProfileState<T> with _$SwitchProfileState<T> {
   const factory SwitchProfileState.initial() = _Initial;
 
-    const factory SwitchProfileState.getProfilesDetailsSuccess(ProfilesResponseModel profilesResponseModel) = GetProfilesDetailsSuccess;
+    const factory SwitchProfileState.getProfilesSuccess(ProfilesResponseModel profilesResponseModel) = GetProfilesSuccess;
 
-  const factory SwitchProfileState.getProfileDetailsFailure(ApiErrorModel apiErrorModel) = GetProfilesDetailsFailure;
+  const factory SwitchProfileState.getProfilesFailure(ApiErrorModel apiErrorModel) = GetProfilesFailure;
 
-  const factory SwitchProfileState.getProfilesDetailsLoading() = GetProfilesDetailsLoading;
+  const factory SwitchProfileState.getProfilesLoading() = GetProfilesLoading;
 
 
 

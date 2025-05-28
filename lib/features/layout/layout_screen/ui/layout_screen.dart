@@ -110,8 +110,6 @@ class _LayoutScreensState extends State<LayoutScreens> {
                   Lottie.asset(
                     'assets/lottie/offline.json',
                     width: double.infinity,
-
-                    // height: 250,
                     fit: BoxFit.cover,
                   ),
                   verticalSpace(40),
