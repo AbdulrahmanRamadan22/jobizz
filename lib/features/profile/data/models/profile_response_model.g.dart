@@ -116,7 +116,7 @@ Experience _$ExperienceFromJson(Map<String, dynamic> json) => Experience(
       isCurrent: json['is_current'] as bool,
       description: json['description'] as String,
       location: json['location'] as String,
-      image: json['image'] as String,
+      image: json['image'] as String?,
     );
 
 Map<String, dynamic> _$ExperienceToJson(Experience instance) =>

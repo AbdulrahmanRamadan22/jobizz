@@ -15,7 +15,7 @@ class SwitchProfileCubit extends Cubit<SwitchProfileState> {
 
   void emitGetProfilesDetailsData() async {
     if (isFirstLoad) return;
-    emit(const SwitchProfileState.getProfilesDetailsLoading());
+    emit(const SwitchProfileState.getProfilesLoading());
 
     final response = await _switchProfilesRepo.getProfileDetails(
       token:
@@ -24,10 +24,10 @@ class SwitchProfileCubit extends Cubit<SwitchProfileState> {
     response.when(
       success: (homeResponse) {
         isFirstLoad = true;
-        emit(SwitchProfileState.getProfilesDetailsSuccess(homeResponse));
+        emit(SwitchProfileState.getProfilesSuccess(homeResponse));
       },
       failure: (error) {
-        emit(SwitchProfileState.getProfileDetailsFailure(error));
+        emit(SwitchProfileState.getProfilesFailure(error));
       },
     );
   }
