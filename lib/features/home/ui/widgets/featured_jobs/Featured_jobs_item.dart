@@ -1,8 +1,10 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/helper/extensions.dart';
 import 'package:jobizz/core/routing/routers_string.dart';
+import 'package:jobizz/features/home/logic/cubit/home_cubit.dart';
 import 'package:jobizz/features/home/ui/widgets/featured_jobs/salary_and_location.dart';
 import '../../../../../core/helper/size_box.dart';
 import '../../../../../core/theming/colors.dart';
@@ -62,9 +64,15 @@ class FeaturedJobsItem extends StatelessWidget {
                   ),
                   trailing: IconButton(
                     onPressed: () {},
-                    icon: Icon(
-                      Icons.bookmark_add,
-                      color: ColorsApp.lightGray,
+                    icon: CircleAvatar(
+                      backgroundColor:
+                          context.read<HomeCubit>().savedJobs[job?.id] == true
+                              ? ColorsApp.darkBlack
+                              : ColorsApp.lightGray,
+                      child: Icon(
+                        Icons.bookmark_add,
+                        color: ColorsApp.whiteColor,
+                      ),
                     ),
                   ),
                 ),

@@ -6,16 +6,15 @@ import 'package:jobizz/core/routing/routers_string.dart';
 import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
 import 'package:jobizz/core/widgets/button_app_text.dart';
+import 'package:jobizz/features/category/data/model/category_response.dart';
 import 'package:jobizz/features/home/data/model/home_response_model.dart';
 import 'package:jobizz/features/job_details/widgets/stack_image_title_buttons.dart';
 import 'package:jobizz/features/job_details/widgets/tab_bar_view.dart';
 
 class JobDetailsScreen extends StatelessWidget {
-  const JobDetailsScreen({
-    super.key,
-    this.job,
-  });
+  const JobDetailsScreen({super.key, this.job, this.jobDetails});
   final Jop? job;
+  final Job? jobDetails;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +56,7 @@ class JobDetailsScreen extends StatelessWidget {
                   ),
                 ),
                 Tab(
-                  child: Text('About'),
+                  child: Text('Benefits'),
                 ),
               ],
             ),

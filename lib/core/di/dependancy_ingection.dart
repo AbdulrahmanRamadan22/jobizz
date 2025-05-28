@@ -22,34 +22,26 @@ Future<void> setupGetIt() async {
 
   // sign up
   getIt.registerLazySingleton<SignUpRepo>(() => SignUpRepo(getIt()));
-  // // login
+  // login
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
-  // // forget password
+  // forget password
   getIt.registerLazySingleton<ForgetPasswordRepo>(
       () => ForgetPasswordRepo(getIt()));
-  // // otp
+  // otp
   getIt.registerLazySingleton<OtpRepo>(() => OtpRepo(getIt()));
 
   getIt.registerLazySingleton<ResetPasswordRepo>(
       () => ResetPasswordRepo(getIt()));
-  // // change password
+  // change password
   getIt.registerLazySingleton<ChangePasswordRepo>(
       () => ChangePasswordRepo(getIt()));
 
   getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
 
-
   // company info
   getIt.registerLazySingleton<CompanyInfoRepo>(() => CompanyInfoRepo(getIt()));
-
+// Catregory repo
   getIt.registerLazySingleton<CategoryRepo>(() => CategoryRepo(getIt()));
-
-
-  getIt.registerLazySingleton<ProfilesRepo>(() => ProfilesRepo(getIt()));
-
-
-  // // reset password
-
-  // // company info
-  // getIt.registerLazySingleton<CompanyInfoRepo>(() => CompanyInfoRepo(getIt()));
+// Profiles repo
+  getIt.registerLazySingleton<ProfilesRepo>(() => ProfilesRepo(getIt())); 
 }

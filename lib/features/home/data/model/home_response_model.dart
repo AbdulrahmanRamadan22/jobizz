@@ -56,24 +56,27 @@ class Jop {
   final String? benefits;
   final String? companyName;
   final String? companyLogo;
+  final bool? isFavorite;
 
   // @JsonKey(name: "job_status")
   // final String? jobStatus;
 
-  Jop(
-      {this.id,
-      this.companyId,
-      this.title,
-      this.jobType,
-      this.salary,
-      this.description,
-      this.requirement,
-      this.location,
-      this.position,
-      this.benefits,
-      this.categoryName,
-      this.companyName,
-      this.companyLogo});
+  Jop({
+    this.id,
+    this.companyId,
+    this.title,
+    this.jobType,
+    this.salary,
+    this.description,
+    this.requirement,
+    this.location,
+    this.position,
+    this.benefits,
+    this.categoryName,
+    this.companyName,
+    this.companyLogo,
+    this.isFavorite,
+  });
 
   factory Jop.fromJson(Map<String, dynamic> json) => _$JopFromJson(json);
 

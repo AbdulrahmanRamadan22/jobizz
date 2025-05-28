@@ -100,4 +100,9 @@ abstract class ApisServices {
   Future<ProfilesResponseModel> getProfilesDetails(
     @Header('Authorization') String token,
   );
+  // Saved Jobs 
+  // @GET(ApiConstant)
+  // Future<> getSavedJobs(
+  //   @Header('Authorization') String token,
+  // );
 }
