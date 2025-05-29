@@ -11,8 +11,7 @@ import '../../../../core/widgets/cached_network_image_widget.dart';
 import '../../data/models/profile_response_model.dart';
 
 class ImageAndNamedAndJob extends StatelessWidget {
-
-    final ProfileData? profileData;
+  final ProfileData? profileData;
 
   const ImageAndNamedAndJob({
     super.key,
@@ -29,15 +28,13 @@ class ImageAndNamedAndJob extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(55.r),
             child: CachedNetworkImageWidget(
-              imageUrl: profileData?.profileImage ?? '',
-              imageKey: 'profileImage',
+              imageUrl: "${profileData?.profileImage}",
+              imageKey: '${profileData?.profileImage}',
               width: 110.w,
               height: 110.h,
               fit: BoxFit.cover,
             ),
-            // backgroundImage: NetworkImage(
-            //   profileImage ?? '',
-            // ),
+           
           ),
           verticalSpace(12),
           Text(
@@ -48,7 +45,8 @@ class ImageAndNamedAndJob extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('${profileData?.titleJob ?? ""} ', style: TextStyles.font12Gray),
+              Text('${profileData?.titleJob ?? ""} ',
+                  style: TextStyles.font12Gray),
               horizontalSpace(4),
               Icon(
                 Icons.check_circle,

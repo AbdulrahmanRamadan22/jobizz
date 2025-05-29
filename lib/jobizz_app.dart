@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobizz/core/cache/shared_pref.dart';
 
 import 'core/cache/constants.dart';
 import 'core/routing/app_router.dart';
@@ -36,7 +37,13 @@ class JobizzApp extends StatelessWidget {
           scaffoldBackgroundColor: ColorsApp.backGroundWhite,
         ),
         // home: Scaffold(body: Center(child: Text("Jobizz App"))),
-        initialRoute: SharedPrefValues.initialRoute,
+        initialRoute: () {
+          final route =
+              SharedPrefHelper.getData(key: SharedPrefKeys.initialRoute);
+          debugPrint('JobizzApp: initialRoute = $route');
+          return route;
+        }(),
+
         onGenerateRoute: AppRouter.generateRoute,
       ),
     );

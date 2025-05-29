@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
@@ -21,18 +20,16 @@ void main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
   InternetConnectionService();
-  setupGetIt();
-
+  await setupGetIt();
   // To fix texts being hidden bug in flutter_screenutil in release mode.
   await ScreenUtil.ensureScreenSize();
-
   // Initialize shared preferences
   await SharedPrefHelper.init();
-
+  // Initialize bloc
   Bloc.observer = MyBlocObserver();
-
   await handelInitialRoute();
 
+  debugPrint('🤞 main: App initialized, starting Phoenix');
   runApp(
     Phoenix(
       child: JobizzApp(
@@ -42,21 +39,28 @@ void main() async {
   );
 }
 
-handelInitialRoute() async {
+Future<void> handelInitialRoute() async {
   String? userToken = await SharedPrefHelper.getSecuredString(
     key: SharedPrefKeys.token,
   );
   bool? onBoardingIsDone = await SharedPrefHelper.getData(
     key: SharedPrefKeys.onBoardingIsDone,
   );
+  debugPrint('handelInitialRoute: onBoardingIsDone = $onBoardingIsDone');
+  debugPrint(
+      'handelInitialRoute: userToken = ${userToken != null ? "present" : "null/empty"}');
 
+  String initialRoute;
   if (onBoardingIsDone == true) {
     if (!userToken.isNullOrEmpty()) {
-      SharedPrefValues.initialRoute = Routes.layoutScreen;
+      initialRoute = Routes.layoutScreen;
     } else {
-      SharedPrefValues.initialRoute = Routes.loginScreen;
+      initialRoute = Routes.loginScreen;
     }
   } else {
-    SharedPrefValues.initialRoute = Routes.onBoardingScreen;
+    initialRoute = Routes.onBoardingScreen;
   }
+  await SharedPrefHelper.saveData(
+      key: SharedPrefKeys.initialRoute, value: initialRoute);
+  debugPrint('handelInitialRoute: initialRoute set to $initialRoute');
 }

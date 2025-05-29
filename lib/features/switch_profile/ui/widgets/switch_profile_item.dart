@@ -4,9 +4,15 @@ import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/helper/extensions.dart';
 
+import '../../../../core/cache/constants.dart';
+import '../../../../core/cache/shared_pref.dart';
+import '../../../../core/di/dependancy_ingection.dart';
+import '../../../../core/networking/api_services.dart';
+import '../../../../core/routing/routers_string.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/widgets/showdialog_errors.dart';
 import '../../../../core/widgets/showdialog_loadin.dart';
+import '../../../profile/data/models/profile_response_model.dart';
 import '../../data/models/profile_response_model.dart';
 import '../../logic/switch_profile_cubit.dart';
 import '../../logic/switch_profile_state.dart';
@@ -30,10 +36,8 @@ class SwitchProfileItem extends StatelessWidget {
           profileDetailsByIdLoading: () {
             showDialogLoading(context);
           },
-          profileDetailsByIdSuccess: (profileResponse) {
-            context.read<SwitchProfileCubit>().isFirstLoad = false;
-            context.pop();
-            Phoenix.rebirth(context);
+          profileDetailsByIdSuccess: (profileResponse) async {
+            await _handleProfileSwitchSuccess(context, profileResponse);
           },
           profileDetailsByIdFailure: (apiErrorModel) {
             context.pop();
@@ -93,5 +97,31 @@ class SwitchProfileItem extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _handleProfileSwitchSuccess(
+      BuildContext context, ProfileResponseModel profileResponse) async {
+    context.read<SwitchProfileCubit>().isFirstLoad = false;
+    context.pop();
+    // Ensure initialRoute is set for layout screen
+    await SharedPrefHelper.saveData(
+      key: SharedPrefKeys.initialRoute,
+      value: Routes.layoutScreen,
+    );
+    debugPrint(
+        '🤞 SwitchProfileItem: Set initialRoute to ${Routes.layoutScreen}');
+    // // Delay to ensure SharedPreferences commit
+    // await Future.delayed(const Duration(milliseconds: 100));
+
+
+    // Check if widget is still mounted
+    if (context.mounted) {
+      // Re-register all dependencies
+      debugPrint('🤞 SwitchProfileItem: Initiating Phoenix.rebirth');
+      Phoenix.rebirth(context);
+    } else {
+      debugPrint(
+          '🤞 SwitchProfileItem: Widget not mounted, skipping Phoenix.rebirth');
+    }
   }
 }

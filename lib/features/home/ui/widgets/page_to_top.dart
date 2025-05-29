@@ -13,6 +13,7 @@ import '../../../../core/helper/size_box.dart';
 import '../../../../core/routing/routers_string.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
+import '../../../../core/widgets/cached_network_image_widget.dart';
 
 class PageTopBar extends StatelessWidget {
   const PageTopBar({
@@ -48,13 +49,29 @@ class PageTopBar extends StatelessWidget {
             ),
             trailing: GestureDetector(
               onTap: () => context.pushNamed(Routes.profileScreen),
-              child: CircleAvatar(
-                radius: 25.r,
-                backgroundColor: ColorsApp.lightGray,
-                backgroundImage: NetworkImage(
-                    // ignore: unnecessary_string_interpolations
-                    '${SharedPrefHelper.getData(key: SharedPrefKeys.profileImage)}'),
-              ),
+              child: ClipRRect(
+            borderRadius: BorderRadius.circular(25.r),
+            child: CachedNetworkImageWidget(
+              imageUrl: "${SharedPrefHelper.getData(key: SharedPrefKeys.profileImage)}",
+              imageKey: '${SharedPrefHelper.getData(key: SharedPrefKeys.profileImage)}',
+              width: 50.w,
+              height: 50.h,
+              fit: BoxFit.cover,
+            ),
+           
+          ),
+              
+              
+              
+              
+              
+              //  CircleAvatar(
+              //   radius: 25.r,
+              //   backgroundColor: ColorsApp.lightGray,
+              //   backgroundImage: NetworkImage(
+              //       // ignore: unnecessary_string_interpolations
+              //       '${SharedPrefHelper.getData(key: SharedPrefKeys.profileImage)}'),
+              // ),
             ),
           ),
         ],

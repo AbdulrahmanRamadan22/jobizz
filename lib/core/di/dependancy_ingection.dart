@@ -20,43 +20,85 @@ import '../networking/api_services.dart';
 
 final getIt = GetIt.instance;
 Future<void> setupGetIt() async {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // dio and ApiServices
   Dio dio = DioFactory.getDio();
   getIt.registerLazySingleton<ApisServices>(() => ApisServices(dio));
 
-  // sign up
+//   // sign up
+//   getIt.registerLazySingleton<SignUpRepo>(() => SignUpRepo(getIt()));
+//   // // login
+//   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
+//   // // forget password
+//   getIt.registerLazySingleton<ForgetPasswordRepo>(
+//       () => ForgetPasswordRepo(getIt()));
+//   // // otp
+//   getIt.registerLazySingleton<OtpRepo>(() => OtpRepo(getIt()));
+
+//   getIt.registerLazySingleton<ResetPasswordRepo>(
+//       () => ResetPasswordRepo(getIt()));
+//   // // change password
+//   getIt.registerLazySingleton<ChangePasswordRepo>(
+//       () => ChangePasswordRepo(getIt()));
+
+//   getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
+
+//   // company info
+//   getIt.registerLazySingleton<CompanyInfoRepo>(() => CompanyInfoRepo(getIt()));
+
+//   getIt.registerLazySingleton<CategoryRepo>(() => CategoryRepo(getIt()));
+
+// // switch profile
+//   getIt.registerLazySingleton<SwitchProfilesRepo>(
+//       () => SwitchProfilesRepo(getIt()));
+
+//   getIt.registerLazySingleton<SwitchProfileCubit>(
+//       () => SwitchProfileCubit(getIt()));
+
+// // profile
+//   getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(getIt()));
+//   getIt.registerLazySingleton<ProfileCubit>(() => ProfileCubit(getIt()));
+
+
+
+
+
+
+
+  // Repositories (stateless, keep as singletons)
   getIt.registerLazySingleton<SignUpRepo>(() => SignUpRepo(getIt()));
-  // // login
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
-  // // forget password
-  getIt.registerLazySingleton<ForgetPasswordRepo>(
-      () => ForgetPasswordRepo(getIt()));
-  // // otp
+  getIt.registerLazySingleton<ForgetPasswordRepo>(() => ForgetPasswordRepo(getIt()));
   getIt.registerLazySingleton<OtpRepo>(() => OtpRepo(getIt()));
-
-  getIt.registerLazySingleton<ResetPasswordRepo>(
-      () => ResetPasswordRepo(getIt()));
-  // // change password
-  getIt.registerLazySingleton<ChangePasswordRepo>(
-      () => ChangePasswordRepo(getIt()));
-
+  getIt.registerLazySingleton<ResetPasswordRepo>(() => ResetPasswordRepo(getIt()));
+  getIt.registerLazySingleton<ChangePasswordRepo>(() => ChangePasswordRepo(getIt()));
   getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
-
-  // company info
   getIt.registerLazySingleton<CompanyInfoRepo>(() => CompanyInfoRepo(getIt()));
-
   getIt.registerLazySingleton<CategoryRepo>(() => CategoryRepo(getIt()));
-
-// switch profile
-  getIt.registerLazySingleton<SwitchProfilesRepo>(
-      () => SwitchProfilesRepo(getIt()));
-
-  getIt.registerLazySingleton<SwitchProfileCubit>(
-      () => SwitchProfileCubit(getIt()));
-
-// profile
+  getIt.registerLazySingleton<SwitchProfilesRepo>(() => SwitchProfilesRepo(getIt()));
   getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(getIt()));
-  getIt.registerLazySingleton<ProfileCubit>(() => ProfileCubit(getIt()));
+
+  // Cubits (stateful, register as factories)
+  getIt.registerLazySingleton<SwitchProfileCubit>(() => SwitchProfileCubit(getIt<SwitchProfilesRepo>()));
+  getIt.registerFactory<ProfileCubit>(() => ProfileCubit(getIt<ProfileRepo>()));
+
+
 
   // // reset password
 

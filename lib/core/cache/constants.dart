@@ -11,6 +11,7 @@ class SharedPrefKeys {
   static String profileImage = "profileImage";
   static String titleJob = "titleJob";
   static String onBoardingIsDone = "onBoardingIsDone";
+  static String initialRoute = "initialRoute";
 }
 
 class SharedPrefValues {
