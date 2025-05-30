@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 
-import '../../data/models/profile_response_model.dart';
-import 'education/education_item.dart';
+import '../../../data/models/profile_response_model.dart';
+import 'education_item.dart';
 
 class SliverListEducation extends StatelessWidget {
   const SliverListEducation({
@@ -15,9 +15,9 @@ class SliverListEducation extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
-        childCount: 2,
+        childCount: educations.length,
         (context, index) {
-          return EducationItem(
+          return  EducationItem(
              education: educations[index],
           );
         },

@@ -15,7 +15,7 @@ class PopularJobsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 4.h),
+      padding: EdgeInsets.only(bottom: 12.h),
       child: GestureDetector(
         onTap: () => context.pushNamed(
           Routes.jobDetailsScreen,

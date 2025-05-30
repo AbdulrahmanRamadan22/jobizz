@@ -19,7 +19,9 @@ class RowTextAndSeeAll extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 18.w),
+      padding: EdgeInsets.symmetric(
+        vertical: 10.h,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

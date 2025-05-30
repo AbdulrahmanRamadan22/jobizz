@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jobizz/features/profile/ui/widgets/row_detiles_acount.dart';
 
-import '../../../../core/cache/constants.dart';
-import '../../../../core/cache/shared_pref.dart';
-import '../../../../core/helper/size_box.dart';
-import '../../../../core/theming/colors.dart';
-import '../../../../core/theming/styles.dart';
-import '../../../../core/widgets/cached_network_image_widget.dart';
-import '../../data/models/profile_response_model.dart';
+import '../../../../../core/cache/constants.dart';
+import '../../../../../core/cache/shared_pref.dart';
+import '../../../../../core/helper/size_box.dart';
+import '../../../../../core/theming/colors.dart';
+import '../../../../../core/theming/styles.dart';
+import '../../../../../core/widgets/cached_network_image_widget.dart';
+import '../../../data/models/profile_response_model.dart';
 
 class ImageAndNamedAndJob extends StatelessWidget {
   final ProfileData? profileData;
@@ -34,7 +33,6 @@ class ImageAndNamedAndJob extends StatelessWidget {
               height: 110.h,
               fit: BoxFit.cover,
             ),
-           
           ),
           verticalSpace(12),
           Text(
@@ -55,12 +53,9 @@ class ImageAndNamedAndJob extends StatelessWidget {
               ),
             ],
           ),
-          verticalSpace(40),
-          RowDetailsAccount(
-            profileData: profileData,
-          ),
         ],
       ),
     );
   }
 }
+

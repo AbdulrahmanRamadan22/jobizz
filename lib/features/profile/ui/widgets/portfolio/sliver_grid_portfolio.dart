@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'portfolio_item.dart';
+
 class SliverGridPortfolio extends StatelessWidget {
   const SliverGridPortfolio({
     super.key,
@@ -11,17 +13,15 @@ class SliverGridPortfolio extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
         childCount: 4,
         (context, index) {
-          return Image.asset(
-            'assets/images/photo_person.png',
-            fit: BoxFit.cover,
-          );
+          return PortfolioItem();
         },
       ),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2, // عدد الأعمدة
-        crossAxisSpacing: 15, // المسافة بين الأعمدة
-        mainAxisSpacing: 10, // المسافة بين الصفوف
+        crossAxisCount: 3, 
+        crossAxisSpacing: 15, 
+        mainAxisSpacing: 10, 
       ),
     );
   }
 }
+

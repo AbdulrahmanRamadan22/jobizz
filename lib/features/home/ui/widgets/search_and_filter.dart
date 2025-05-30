@@ -14,44 +14,41 @@ class SearchAndFilter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 18.w),
-      child: Row(
-        children: [
-          Expanded(
-            child: AppTextFormField(
-              controller: TextEditingController(),
-              prefixIcon: Icon(
-                Icons.search,
-                color: ColorsApp.gray,
-                size: 25.sp,
-              ),
-              hintText: 'Search a job or position',
-              hintStyle: TextStyles.font14Gray,
-              validator: (value) {},
+    return Row(
+      children: [
+        Expanded(
+          child: AppTextFormField(
+            controller: TextEditingController(),
+            prefixIcon: Icon(
+              Icons.search,
+              color: ColorsApp.gray,
+              size: 25.sp,
+            ),
+            hintText: 'Search a job or position',
+            hintStyle: TextStyles.font14Gray,
+            validator: (value) {},
+          ),
+        ),
+        horizontalSpace(10),
+        GestureDetector(
+          onTap: () {
+            // Navigator.pushNamed(context, FilterScreen.routeName);
+          },
+          child: Container(
+            padding: EdgeInsets.all(8),
+            height: 55.h,
+            width: 55.w,
+            decoration: BoxDecoration(
+              border: Border.all(color: ColorsApp.lightGray),
+              color: ColorsApp.mistyGrey,
+              borderRadius: BorderRadius.circular(16.r),
+            ),
+            child: SvgPicture.asset(
+              "assets/svgs/filter_list_search.svg",
             ),
           ),
-          horizontalSpace(10),
-          GestureDetector(
-            onTap: () {
-              // Navigator.pushNamed(context, FilterScreen.routeName);
-            },
-            child: Container(
-              padding: EdgeInsets.all(8),
-              height: 55.h,
-              width: 55.w,
-              decoration: BoxDecoration(
-                border: Border.all(color: ColorsApp.lightGray),
-                color: ColorsApp.mistyGrey,
-                borderRadius: BorderRadius.circular(16.r),
-              ),
-              child: SvgPicture.asset(
-                "assets/svgs/filter_list_search.svg",
-              ),
-            ),
-          )
-        ],
-      ),
+        )
+      ],
     );
   }
 }

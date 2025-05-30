@@ -22,60 +22,57 @@ class PageTopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 18.w),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          verticalSpace(20),
-          GestureDetector(
-            onTap: () {
-              print("open drawer");
-              Scaffold.of(context).openDrawer();
-              // _scaffoldKey.currentState!.openDrawer();
-            },
-            child: Icon(Icons.filter_list_rounded,
-                color: ColorsApp.darkBlue, size: 30.sp),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        verticalSpace(20),
+        GestureDetector(
+          onTap: () {
+            print("open drawer");
+            Scaffold.of(context).openDrawer();
+            // _scaffoldKey.currentState!.openDrawer();
+          },
+          child: Icon(Icons.filter_list_rounded,
+              color: ColorsApp.darkBlue, size: 30.sp),
+        ),
+        ListTile(
+          visualDensity: VisualDensity.compact,
+          dense: false,
+          title: Text('Welcome Back! ', style: TextStyles.font14Gray),
+          contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
+          subtitle: Text(
+            '${SharedPrefHelper.getData(key: SharedPrefKeys.fullName) ?? ''} 👋',
+            maxLines: 2,
+            style: TextStyles.font22DarkBlackBold,
           ),
-          ListTile(
-            visualDensity: VisualDensity.compact,
-            dense: false,
-            title: Text('Welcome Back! ', style: TextStyles.font14Gray),
-            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
-            subtitle: Text(
-              '${SharedPrefHelper.getData(key: SharedPrefKeys.fullName) ?? ''} 👋',
-              maxLines: 2,
-              style: TextStyles.font22DarkBlackBold,
-            ),
-            trailing: GestureDetector(
-              onTap: () => context.pushNamed(Routes.profileScreen),
-              child: ClipRRect(
-            borderRadius: BorderRadius.circular(25.r),
-            child: CachedNetworkImageWidget(
-              imageUrl: "${SharedPrefHelper.getData(key: SharedPrefKeys.profileImage)}",
-              imageKey: '${SharedPrefHelper.getData(key: SharedPrefKeys.profileImage)}',
-              width: 50.w,
-              height: 50.h,
-              fit: BoxFit.cover,
-            ),
-           
+          trailing: GestureDetector(
+            onTap: () => context.pushNamed(Routes.profileScreen),
+            child: ClipRRect(
+          borderRadius: BorderRadius.circular(25.r),
+          child: CachedNetworkImageWidget(
+            imageUrl: "${SharedPrefHelper.getData(key: SharedPrefKeys.profileImage)}",
+            imageKey: '${SharedPrefHelper.getData(key: SharedPrefKeys.profileImage)}',
+            width: 50.w,
+            height: 50.h,
+            fit: BoxFit.cover,
           ),
-              
-              
-              
-              
-              
-              //  CircleAvatar(
-              //   radius: 25.r,
-              //   backgroundColor: ColorsApp.lightGray,
-              //   backgroundImage: NetworkImage(
-              //       // ignore: unnecessary_string_interpolations
-              //       '${SharedPrefHelper.getData(key: SharedPrefKeys.profileImage)}'),
-              // ),
-            ),
+         
+        ),
+            
+            
+            
+            
+            
+            //  CircleAvatar(
+            //   radius: 25.r,
+            //   backgroundColor: ColorsApp.lightGray,
+            //   backgroundImage: NetworkImage(
+            //       // ignore: unnecessary_string_interpolations
+            //       '${SharedPrefHelper.getData(key: SharedPrefKeys.profileImage)}'),
+            // ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
