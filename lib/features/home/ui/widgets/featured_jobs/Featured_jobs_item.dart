@@ -11,82 +11,88 @@ import '../../../data/model/home_response_model.dart';
 import 'button_card_feature_job.dart';
 
 class FeaturedJobsItem extends StatelessWidget {
-  const FeaturedJobsItem({super.key, required this.job});
+  const FeaturedJobsItem({
+    super.key,
+    required this.job,
+  });
 
   final Jop? job;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        context.pushNamed(
-          Routes.jobDetailsScreen,
-          arguments: job,
-        );
-        print('job id ${job?.title}');
-      },
-      child: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: ColorsApp.darkBlue,
-          borderRadius: BorderRadius.circular(16.r),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
-              child: ListTile(
-                contentPadding: EdgeInsets.zero,
-                title: Text(
-                  '${job?.title}',
-                  style: TextStyles.font16WhiteSemiBold,
-                  maxLines: 1,
-                ),
-                subtitle: Text('${job?.companyName}',
-                    style: TextStyles.font13White),
-                leading: Container(
-                  height: 50.h,
-                  width: 50.w,
-                  padding: EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: ColorsApp.backGroundWhite,
-                    borderRadius: BorderRadius.circular(16.r),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 4),
+      child: GestureDetector(
+        onTap: () {
+          context.pushNamed(
+            Routes.jobDetailsScreen,
+            arguments: job,
+          );
+          print('job id ${job?.title}');
+        },
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: ColorsApp.darkBlue,
+            borderRadius: BorderRadius.circular(16.r),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
+                child: ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: Text(
+                    '${job?.title}',
+                    style: TextStyles.font16WhiteSemiBold,
+                    maxLines: 1,
                   ),
-                  child: Image.network(
-                    '${job?.companyLogo}',
-                    fit: BoxFit.cover,
+                  subtitle: Text('${job?.companyName}',
+                      style: TextStyles.font13White),
+                  leading: Container(
+                    height: 50.h,
+                    width: 50.w,
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: ColorsApp.backGroundWhite,
+                      borderRadius: BorderRadius.circular(16.r),
+                    ),
+                    child: Image.network(
+                      '${job?.companyLogo}',
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                ),
-                trailing: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.bookmark_add,
-                    color: ColorsApp.lightGray,
+                  trailing: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.bookmark_add,
+                      color: ColorsApp.lightGray,
+                    ),
                   ),
                 ),
               ),
-            ),
-            // Buttons
-            // ThreeButtonsInPageView(),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12.w),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                spacing: 8.w,
-                children: [
-                  ButtonCardFeaturedJob(title: '${job?.categoryName}'),
-                  ButtonCardFeaturedJob(title: '${job?.jobType}'),
-                  ButtonCardFeaturedJob(title: '${job?.position}'),
-                ],
+              // Buttons
+              // ThreeButtonsInPageView(),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12.w),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  spacing: 8.w,
+                  children: [
+                    ButtonCardFeaturedJob(title: '${job?.categoryName}'),
+                    ButtonCardFeaturedJob(title: '${job?.jobType}'),
+                    ButtonCardFeaturedJob(title: '${job?.position}'),
+                  ],
+                ),
               ),
-            ),
-            verticalSpace(16),
-            SalaryAndLocation(
-              location: job?.location,
-              salary: job?.salary,
-            ),
-          ],
+              verticalSpace(16),
+              SalaryAndLocation(
+                location: job?.location,
+                salary: job?.salary,
+              ),
+            ],
+          ),
         ),
       ),
     );

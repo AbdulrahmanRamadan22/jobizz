@@ -19,4 +19,18 @@ class ProfileRepo {
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
+
+    Future<ApiResult<dynamic>> updateGeneralProfileData(
+      {required String token, required int id, required Map<String, dynamic> data}) async {
+    try {
+      final response = await _apisServices.updateGeneralProfileData(id, token,data);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+
+
+  
 }

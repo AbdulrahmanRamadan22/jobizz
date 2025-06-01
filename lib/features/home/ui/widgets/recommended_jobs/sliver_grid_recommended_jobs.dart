@@ -20,7 +20,7 @@ class SliverGridRecommendedJobs extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
         addAutomaticKeepAlives: true, // Preserves state
         addRepaintBoundaries: true, // Improves scrolling performance
-        childCount:recommendedJobs != null && recommendedJobs!.isNotEmpty?4:0,
+        childCount:recommendedJobs!.length >= 4? 4 : recommendedJobs!.length,
         (context, index) {
           return RecommendedJobsItem(
             jop: recommendedJobs?[index],

@@ -45,14 +45,16 @@ ProfileData _$ProfileDataFromJson(Map<String, dynamic> json) => ProfileData(
       cvs: (json['cvs'] as List<dynamic>)
           .map((e) => Cv.fromJson(e as Map<String, dynamic>))
           .toList(),
-      portfolios: (json['portfolios'] as List<dynamic>)
-          .map((e) => Portfolios.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      portfolios: json['portfolios'] == null
+          ? null
+          : Portfolios.fromJson(json['portfolios'] as Map<String, dynamic>),
+      fullName: json['full_name'] as String?,
     );
 
 Map<String, dynamic> _$ProfileDataToJson(ProfileData instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'full_name': instance.fullName,
       'user_id': instance.userId,
       'title_job': instance.titleJob,
       'job_position': instance.jobPosition,

@@ -20,7 +20,7 @@ class ProfileHeader extends StatelessWidget {
         ImageAndNamedAndJob(
           profileData: profileData,
         ),
-        verticalSpace(40),
+        verticalSpace(20),
         RowDetailsProfile(
           profileData: profileData,
         ),

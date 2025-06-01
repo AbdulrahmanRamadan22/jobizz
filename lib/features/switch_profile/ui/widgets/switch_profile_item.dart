@@ -10,6 +10,7 @@ import '../../../../core/di/dependancy_ingection.dart';
 import '../../../../core/networking/api_services.dart';
 import '../../../../core/routing/routers_string.dart';
 import '../../../../core/theming/colors.dart';
+import '../../../../core/widgets/cached_network_image_widget.dart';
 import '../../../../core/widgets/showdialog_errors.dart';
 import '../../../../core/widgets/showdialog_loadin.dart';
 import '../../../profile/data/models/profile_response_model.dart';
@@ -79,9 +80,19 @@ class SwitchProfileItem extends StatelessWidget {
             ),
             child: ListTile(
               contentPadding: const EdgeInsets.all(8),
-              leading: CircleAvatar(
-                radius: 25.r,
-                backgroundImage: NetworkImage("${profileModel?.profileImage}"),
+              leading: ClipRRect(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(25.r),
+                ),
+                child: CachedNetworkImageWidget(
+                  imageKey: "${profileModel?.profileImage}",
+                  imageUrl: "${profileModel?.profileImage}",
+                  width: 50.w,
+                  height: 50.h,
+
+                  // "${portfolioImageItem?.path}",
+                  fit: BoxFit.cover,
+                ),
               ),
               title: Text("${profileModel?.titleJob}"),
               subtitle: Text("${profileModel?.jobPosition}"),
@@ -112,7 +123,6 @@ class SwitchProfileItem extends StatelessWidget {
         '🤞 SwitchProfileItem: Set initialRoute to ${Routes.layoutScreen}');
     // // Delay to ensure SharedPreferences commit
     // await Future.delayed(const Duration(milliseconds: 100));
-
 
     // Check if widget is still mounted
     if (context.mounted) {

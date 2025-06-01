@@ -18,4 +18,10 @@ class ApiConstant {
   static const String getProfileById = "auth/profiles";
 
   static const String getProfilesDetails = "auth/profiles/details";
+
+  static const String editGeneralProfileData = "auth/profiles";
+
+
+
+
 }
