@@ -25,6 +25,8 @@ class ProfileResponseModel {
 class ProfileData {
   @JsonKey(name: "id")
   final int id;
+   @JsonKey(name: "full_name")
+  final String? fullName;
   @JsonKey(name: "user_id")
   final int userId;
   @JsonKey(name: "title_job")
@@ -50,7 +52,7 @@ class ProfileData {
   @JsonKey(name: "experiences")
   final List<Experience> experiences;
   final List<Cv> cvs;
-  final List<Portfolios> portfolios;
+  final Portfolios? portfolios;
 
   // @JsonKey(name: "documents")
   // final List<Document> documents;
@@ -70,7 +72,8 @@ class ProfileData {
       required this.educations,
       required this.experiences,
       required this.cvs,
-      required this.portfolios
+      required this.portfolios,
+      this.fullName
       // required this.documents,
       });
 
@@ -219,17 +222,23 @@ class PortfolioImages {
 
   final List<PortfolioImageItem>? images;
 
-  PortfolioImages({this.id, this.name, this.format, this.imageCount,this.images});
+  PortfolioImages(
+      {this.id, this.name, this.format, this.imageCount, this.images});
 
-  factory PortfolioImages.fromJson(Map<String, dynamic> json) => _$PortfolioImagesFromJson(json);
+  factory PortfolioImages.fromJson(Map<String, dynamic> json) =>
+      _$PortfolioImagesFromJson(json);
 }
 
 @JsonSerializable()
 class PortfolioImageItem {
   final int? id;
   final String? path;
- 
-  PortfolioImageItem({this.id, this.path, });
 
-  factory PortfolioImageItem.fromJson(Map<String, dynamic> json) => _$PortfolioImageItemFromJson(json);
+  PortfolioImageItem({
+    this.id,
+    this.path,
+  });
+
+  factory PortfolioImageItem.fromJson(Map<String, dynamic> json) =>
+      _$PortfolioImageItemFromJson(json);
 }

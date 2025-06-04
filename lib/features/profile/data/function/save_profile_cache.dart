@@ -23,6 +23,12 @@ Future<void> saveProfile(ProfileResponseModel profileResponse) async {
     value: profileResponse.profileData?.titleJob,
   );
 
+    await SharedPrefHelper.saveData(
+    key: SharedPrefKeys.fullName,
+    value: profileResponse.profileData?.fullName,
+  );
+
+
   // // bool? onBoardingIsDone =
   // //     await SharedPrefHelper.getData(key: SharedPrefKeys.onBoardingIsDone);
   // // debugPrint('saveProfile: onBoardingIsDone after save = $onBoardingIsDone');

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jobizz/features/profile/ui/widgets/profile_bloc_builder.dart';
-import '../../../core/theming/colors.dart';
-import '../../../core/theming/styles.dart';
+import '../../../../core/theming/colors.dart';
+import '../../../../core/theming/styles.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -21,11 +21,10 @@ class ProfileScreen extends StatelessWidget {
               style: TextStyles.font14Gray,
             ),
           ),
+          
         ],
       ),
       body: ProfileBlocBuilder(),
     );
   }
 }
-
-

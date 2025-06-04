@@ -55,5 +55,9 @@ class Routes {
 
   static const String switchProfileScreen = '/switchProfileScreen';
 
+  static const String jobTitleAndFullNameUpdateScreen = '/jobTitleAndFullNameUpdateScreen';
+
+
+
 
 }
