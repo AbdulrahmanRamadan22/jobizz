@@ -60,13 +60,6 @@ class PageTopBar extends StatelessWidget {
               ),
             ),
 
-            //  CircleAvatar(
-            //   radius: 25.r,
-            //   backgroundColor: ColorsApp.lightGray,
-            //   backgroundImage: NetworkImage(
-            //       // ignore: unnecessary_string_interpolations
-            //       '${SharedPrefHelper.getData(key: SharedPrefKeys.profileImage)}'),
-            // ),
           ),
         ),
       ],

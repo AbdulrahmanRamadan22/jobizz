@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jobizz/core/helper/extensions.dart';
 import '../../../../core/helper/size_box.dart';
-import '../../../../core/routing/routers_string.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
 import '../../../../core/widgets/button_app_text.dart';
@@ -23,11 +21,25 @@ class JobTitleAndFullNameUpdateScreen extends StatefulWidget {
 }
 
 class _JobTitleAndFullNameUpdateScreenState extends State<JobTitleAndFullNameUpdateScreen> {
+  late TextEditingController fullNameController;
+  late TextEditingController titleJobController;
+  late TextEditingController jobPositionController;
+  final formKey = GlobalKey<FormState>();
+
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    // Initialize controllers with profileData when the screen is first built
-    context.read<ProfileCubit>().initControllers(widget.profileData);
+  void initState() {
+    super.initState();
+    fullNameController = TextEditingController(text: widget.profileData?.fullName ?? '');
+    titleJobController = TextEditingController(text: widget.profileData?.titleJob ?? '');
+    jobPositionController = TextEditingController(text: widget.profileData?.jobPosition ?? '');
+  }
+
+  @override
+  void dispose() {
+    fullNameController.dispose();
+    titleJobController.dispose();
+    jobPositionController.dispose();
+    super.dispose();
   }
 
   @override
@@ -38,14 +50,10 @@ class _JobTitleAndFullNameUpdateScreenState extends State<JobTitleAndFullNameUpd
         listenWhen: (previous, current) =>
             current is UpdateGeneralProfileDataSuccess ||
             current is UpdateGeneralProfileDataFailure,
-
-          
         listener: (context, state) {
           state.whenOrNull(
             updateGeneralProfileDataSuccess: (data) {
-         
               Navigator.of(context).pop(true);
-              // context.pushNamed(Routes.layoutScreen);
             },
             updateGeneralProfileDataFailure: (error) {
               setupErrorState(context, error);
@@ -55,25 +63,32 @@ class _JobTitleAndFullNameUpdateScreenState extends State<JobTitleAndFullNameUpd
         builder: (context, state) {
           return Padding(
             padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 20.h),
-            child: Column(
-              children: [
-                if (state is UpdateGeneralProfileDataLoading)
-                  LinearProgressIndicator(
-                    color: ColorsApp.mainBlue,
-                    backgroundColor: ColorsApp.lightGray,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  if (state is UpdateGeneralProfileDataLoading)
+                    LinearProgressIndicator(
+                      color: ColorsApp.mainBlue,
+                      backgroundColor: ColorsApp.lightGray,
+                    ),
+                  verticalSpace(10),
+                  FormUpdateJobTitleAndFullName(
+                    formKey: formKey,
+                    fullNameController: fullNameController,
+                    titleJobController: titleJobController,
+                    jobPositionController: jobPositionController,
                   ),
-                verticalSpace(10),
-                FormUpdateJobTitleAndFullName(profileData: widget.profileData),
-                AppTextButton(
-                  borderRadius: 5.r,
-                  buttonHeight: 55.h,
-                  buttonText: 'Save',
-                  textStyle: TextStyles.font16White,
-                  onPressed: () {
-                    validateThenDoProfileScreen(context);
-                  },
-                ),
-              ],
+                  AppTextButton(
+                    borderRadius: 5.r,
+                    buttonHeight: 55.h,
+                    buttonText: 'Save',
+                    textStyle: TextStyles.font16White,
+                    onPressed: () {
+                      validateThenDoProfileScreen(context);
+                    },
+                  ),
+                ],
+              ),
             ),
           );
         },
@@ -82,8 +97,12 @@ class _JobTitleAndFullNameUpdateScreenState extends State<JobTitleAndFullNameUpd
   }
 
   void validateThenDoProfileScreen(BuildContext context) {
-    if (context.read<ProfileCubit>().formKey.currentState!.validate()) {
-      context.read<ProfileCubit>().updateGeneralProfileData();
+    if (formKey.currentState!.validate()) {
+      context.read<ProfileCubit>().updateGeneralProfileData(
+        fullName: fullNameController.text,
+        titleJob: titleJobController.text,
+        jobPosition: jobPositionController.text,
+      );
     }
   }
 }

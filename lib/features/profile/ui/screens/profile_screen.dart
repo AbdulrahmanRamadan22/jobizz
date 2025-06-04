@@ -21,6 +21,7 @@ class ProfileScreen extends StatelessWidget {
               style: TextStyles.font14Gray,
             ),
           ),
+          
         ],
       ),
       body: ProfileBlocBuilder(),
