@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jobizz/core/helper/size_box.dart';
-import 'package:lottie/lottie.dart';
-
 import '../../../../core/networking/internet_connection_service.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
