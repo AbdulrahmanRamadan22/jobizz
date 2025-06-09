@@ -38,61 +38,61 @@ class _LayoutScreensState extends State<LayoutScreens> {
     return isConnected
         ? BlocBuilder<LayoutCubit, LayoutState>(
             builder: (context, state) {
-              return SafeArea(
-                child: Scaffold(
-                  key: cubit.scaffoldKey,
-                  drawer: DrawerWidget(), // Mark as const
-                  backgroundColor: ColorsApp.backGroundWhite,
-                  body: cubit.screensBottom[cubit.currentIndex],
-                  bottomNavigationBar: BottomNavigationBar(
-                    backgroundColor: ColorsApp.whiteColor,
-                    elevation: 0,
-                    type: BottomNavigationBarType.fixed,
-                    selectedItemColor: ColorsApp.darkBlue,
-                    unselectedItemColor: ColorsApp.lightGray,
-                    showUnselectedLabels: false,
-                    currentIndex: cubit.currentIndex,
-                    onTap: cubit.changeIndex,
-                    selectedLabelStyle: TextStyles.font12DarkBlack,
-                    unselectedLabelStyle: TextStyles.font12Gray,
-                    items: const [
-                      BottomNavigationBarItem(
-                        icon: Icon(
-                          Icons.home,
-                          size: 30,
-                        ),
-                        label: 'Home',
+              return Scaffold(
+                key: cubit.scaffoldKey,
+                drawer: const DrawerWidget(), // Added const for optimization
+                backgroundColor: ColorsApp.backGroundWhite,
+                body: SafeArea(
+                  child: cubit.screensBottom[cubit.currentIndex],
+                ),
+                bottomNavigationBar: BottomNavigationBar(
+                  backgroundColor: ColorsApp.whiteColor,
+                  elevation: 0,
+                  type: BottomNavigationBarType.fixed,
+                  selectedItemColor: ColorsApp.darkBlue,
+                  unselectedItemColor: ColorsApp.lightGray,
+                  showUnselectedLabels: false,
+                  currentIndex: cubit.currentIndex,
+                  onTap: cubit.changeIndex,
+                  selectedLabelStyle: TextStyles.font12DarkBlack,
+                  unselectedLabelStyle: TextStyles.font12Gray,
+                  items: const [
+                    BottomNavigationBarItem(
+                      icon: Icon(
+                        Icons.home,
+                        size: 30,
                       ),
-                      BottomNavigationBarItem(
-                        icon: Icon(
-                          Icons.category_rounded,
-                          size: 30,
-                        ),
-                        label: 'Categories',
+                      label: 'Home',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(
+                        Icons.category_rounded,
+                        size: 30,
                       ),
-                      BottomNavigationBarItem(
-                        icon: Icon(
-                          Icons.apartment,
-                          size: 30,
-                        ),
-                        label: 'Companies',
+                      label: 'Categories',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(
+                        Icons.apartment,
+                        size: 30,
                       ),
-                      BottomNavigationBarItem(
-                        icon: Icon(
-                          Icons.chat_bubble,
-                          size: 30,
-                        ),
-                        label: 'ChatBot',
+                      label: 'Companies',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(
+                        Icons.chat_bubble,
+                        size: 30,
                       ),
-                      BottomNavigationBarItem(
-                        icon: Icon(
-                          Icons.notifications,
-                          size: 30,
-                        ),
-                        label: 'Notification',
+                      label: 'ChatBot',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(
+                        Icons.notifications,
+                        size: 30,
                       ),
-                    ],
-                  ),
+                      label: 'Notification',
+                    ),
+                  ],
                 ),
               );
             },
@@ -100,5 +100,3 @@ class _LayoutScreensState extends State<LayoutScreens> {
         : NoInternetConnection();
   }
 }
-
-

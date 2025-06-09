@@ -20,7 +20,7 @@ class JobizzApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Jobizz',
         theme: ThemeData(
-          useMaterial3: true,
+          // useMaterial3: true,
           
           appBarTheme: const AppBarTheme(
             backgroundColor: ColorsApp.whiteColor,

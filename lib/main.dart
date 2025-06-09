@@ -1,6 +1,6 @@
-
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/cache/constants.dart';
@@ -17,8 +17,20 @@ import 'jobizz_app.dart';
 
 void main() async {
   // debugRepaintRainbowEnabled = true;
-
   WidgetsFlutterBinding.ensureInitialized();
+  
+  // Set status bar style to match your app design
+  // SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+  //   statusBarColor: Colors.transparent, // Transparent status bar
+  //   statusBarIconBrightness: Brightness.dark, // Dark icons on light background
+  //   statusBarBrightness: Brightness.light, // iOS status bar brightness
+  //   systemNavigationBarColor: Colors.white, // Bottom navigation bar color
+  //   systemNavigationBarIconBrightness: Brightness.dark, // Bottom nav icons
+  // ));
+
+  // // Enable edge-to-edge layout
+  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+
   InternetConnectionService();
   await setupGetIt();
   // To fix texts being hidden bug in flutter_screenutil in release mode.
