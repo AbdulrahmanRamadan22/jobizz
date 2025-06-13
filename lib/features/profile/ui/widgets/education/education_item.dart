@@ -13,12 +13,12 @@ class EducationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomExperienceAndEducationCardItem(
-      titleText: "${education?.fieldOfStudy}",
+      titleText: "${education?.college}",
       subtitleText: "${education?.degree}",
       locationText: "${education?.location}",
       dateText:
-          "${education?.startDate.split("-").first} - ${education?.endDate?.split("-").first ?? ''}",
-      leadingImage:"${education?.image}",
+          "${education?.startDate.split("-").first} - ${education?.endDate?.split("-").first ?? "present"}",
+      leadingImage: "${education?.image}",
     );
   }
 }

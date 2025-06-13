@@ -5,7 +5,7 @@ import 'package:jobizz/core/cache/constants.dart';
 import 'package:jobizz/core/helper/size_box.dart';
 import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
-import 'package:jobizz/core/widgets/form_field_app_text.dart';
+import 'package:jobizz/core/widgets/app_text_form_field.dart';
 import 'package:jobizz/features/bot_chat/data/api_services/chat_services.dart';
 import 'package:jobizz/features/bot_chat/data/model/chat_request.dart';
 import 'package:jobizz/features/bot_chat/ui/widgets/ttping_indecator.dart';

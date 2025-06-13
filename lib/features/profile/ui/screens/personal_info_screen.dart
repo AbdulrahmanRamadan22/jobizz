@@ -10,17 +10,18 @@ import '../../data/models/profile_response_model.dart';
 import '../../logic/profile_cubit.dart';
 import '../../logic/profile_state.dart';
 import '../widgets/profile_header.dart/form_update_job_title_and_full_name.dart';
+import '../widgets/profile_header.dart/stack_profile_image.dart';
 
-class JobTitleAndFullNameUpdateScreen extends StatefulWidget {
+class PersonalInfoScreen extends StatefulWidget {
   final ProfileData? profileData;
 
-  const JobTitleAndFullNameUpdateScreen({super.key, this.profileData});
+  const PersonalInfoScreen({super.key, this.profileData});
 
   @override
-  State<JobTitleAndFullNameUpdateScreen> createState() => _JobTitleAndFullNameUpdateScreenState();
+  State<PersonalInfoScreen> createState() => _PersonalInfoState();
 }
 
-class _JobTitleAndFullNameUpdateScreenState extends State<JobTitleAndFullNameUpdateScreen> {
+class _PersonalInfoState extends State<PersonalInfoScreen> {
   late TextEditingController fullNameController;
   late TextEditingController titleJobController;
   late TextEditingController jobPositionController;
@@ -29,9 +30,12 @@ class _JobTitleAndFullNameUpdateScreenState extends State<JobTitleAndFullNameUpd
   @override
   void initState() {
     super.initState();
-    fullNameController = TextEditingController(text: widget.profileData?.fullName ?? '');
-    titleJobController = TextEditingController(text: widget.profileData?.titleJob ?? '');
-    jobPositionController = TextEditingController(text: widget.profileData?.jobPosition ?? '');
+    fullNameController =
+        TextEditingController(text: widget.profileData?.fullName ?? '');
+    titleJobController =
+        TextEditingController(text: widget.profileData?.titleJob ?? '');
+    jobPositionController =
+        TextEditingController(text: widget.profileData?.jobPosition ?? '');
   }
 
   @override
@@ -45,7 +49,7 @@ class _JobTitleAndFullNameUpdateScreenState extends State<JobTitleAndFullNameUpd
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Profile Updated')),
+      appBar: AppBar(title: const Text('Personal Info')),
       body: BlocConsumer<ProfileCubit, ProfileState>(
         listenWhen: (previous, current) =>
             current is UpdateGeneralProfileDataSuccess ||
@@ -71,7 +75,9 @@ class _JobTitleAndFullNameUpdateScreenState extends State<JobTitleAndFullNameUpd
                       color: ColorsApp.mainBlue,
                       backgroundColor: ColorsApp.lightGray,
                     ),
-                  verticalSpace(10),
+                  verticalSpace(20),
+                  StackProfileImage(profileData: widget.profileData),
+                  verticalSpace(30),
                   FormUpdateJobTitleAndFullName(
                     formKey: formKey,
                     fullNameController: fullNameController,
@@ -99,10 +105,10 @@ class _JobTitleAndFullNameUpdateScreenState extends State<JobTitleAndFullNameUpd
   void validateThenDoProfileScreen(BuildContext context) {
     if (formKey.currentState!.validate()) {
       context.read<ProfileCubit>().updateGeneralProfileData(
-        fullName: fullNameController.text,
-        titleJob: titleJobController.text,
-        jobPosition: jobPositionController.text,
-      );
+            fullName: fullNameController.text,
+            titleJob: titleJobController.text,
+            jobPosition: jobPositionController.text,
+          );
     }
   }
 }

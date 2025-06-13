@@ -5,6 +5,7 @@ import 'package:jobizz/core/theming/styles.dart';
 
 import '../theming/colors.dart';
 
+// ignore: must_be_immutable
 class AppTextFormField extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
   final InputBorder? focusedBorder;
@@ -12,6 +13,8 @@ class AppTextFormField extends StatelessWidget {
   final TextStyle? inputTextStyle;
   final TextStyle? hintStyle;
   final String hintText;
+  final String? labelText;
+
   final bool? isObscureText;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
@@ -20,6 +23,7 @@ class AppTextFormField extends StatelessWidget {
   final TextDirection? textDirection;
   final TextEditingController? controller;
   final Function(String?) validator;
+
   // maxLines
   int? maxLines;
 
@@ -31,6 +35,7 @@ class AppTextFormField extends StatelessWidget {
     this.inputTextStyle,
     this.hintStyle,
     required this.hintText,
+    this.labelText,
     this.isObscureText,
     this.suffixIcon,
     this.prefixIcon,
@@ -61,7 +66,7 @@ class AppTextFormField extends StatelessWidget {
         border: InputBorder.none,
         isDense: true,
         contentPadding: contentPadding ??
-            EdgeInsets.symmetric(horizontal: 25.w, vertical: 16.h),
+            EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
         focusedBorder: focusedBorder ??
             OutlineInputBorder(
               borderSide: const BorderSide(
@@ -93,12 +98,25 @@ class AppTextFormField extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.0),
         ),
 
+        // label: Text(
+        //   hintText,
+        //   style: hintStyle ??
+        //       TextStyles.font14Gray.copyWith(color: ColorsApp.lightBlueGray),
+        // ),
+
         /// ToDo >>  عدل هنا حسب لون الفورم
 
-        hintStyle: hintStyle ?? TextStyles.font16Black,
+ prefixStyle: TextStyles.font14Red,
+        hintStyle: hintStyle ??
+            TextStyles.font14Gray.copyWith(color: ColorsApp.lightBlueGray),
+            counterStyle: TextStyles.font14Red,
+        // labelStyle: TextStyles.font14Gray,
         hintText: hintText,
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
+        prefixIconColor: ColorsApp.gray,
+        suffixIconColor: ColorsApp.gray,
+        labelText: labelText,
 
         /// ToDo >> background عدل هنا حسب لون  الفورم
         fillColor: backgroundColor ?? ColorsApp.backGroundWhite,

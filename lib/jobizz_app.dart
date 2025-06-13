@@ -20,8 +20,14 @@ class JobizzApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Jobizz',
         theme: ThemeData(
-          // useMaterial3: true,
-          
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(seedColor: ColorsApp.mainBlue),
+          floatingActionButtonTheme: FloatingActionButtonThemeData(
+            backgroundColor: ColorsApp.mainBlue,
+            foregroundColor: ColorsApp.whiteColor,
+            iconSize: 26.sp,
+          ),
+          // colorScheme: ColorScheme.fromSeed(seedColor: ColorsApp.mainBlue),
           appBarTheme: const AppBarTheme(
             backgroundColor: ColorsApp.whiteColor,
             elevation: 0,
