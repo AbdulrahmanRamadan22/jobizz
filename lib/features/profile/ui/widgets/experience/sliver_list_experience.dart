@@ -8,22 +8,19 @@ class SliverListExperience extends StatelessWidget {
     super.key,
     required this.experiences,
   });
-    final List<Experience> experiences;
-
+  final List<Experience>? experiences;
 
   @override
   Widget build(BuildContext context) {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
-        childCount: experiences.length,
+        childCount: experiences!.isNotEmpty ? 1 : 0,
         (context, index) {
           return ExperienceItem(
-            experience: experiences[index],
+            experience: experiences?[index],
           );
         },
       ),
     );
   }
 }
-
-

@@ -20,5 +20,11 @@ class ApiConstant {
   static const String addFavorite =
       "auth/profile/{profileId}/favorites/control/{itemId}";
   static const String getFavorites = "auth/profile/{profileId}/favorites";
+
+  static const String editGeneralProfileData = "auth/profiles";
+
+
+
+
 }
 // ${SharedPrefHelper.getData(key: SharedPrefKeys.fullName) ?? ''}

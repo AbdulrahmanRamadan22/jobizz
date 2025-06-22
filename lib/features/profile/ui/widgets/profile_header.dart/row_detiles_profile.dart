@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:jobizz/features/profile/data/models/profile_response_model.dart';
 
-import '../../../../core/theming/styles.dart';
-import '../../data/models/profile_response_model.dart';
+import '../../../../../core/theming/styles.dart';
 
-class RowDetailsAccount extends StatelessWidget {
-  const RowDetailsAccount({super.key, this.profileData});
+class RowDetailsProfile extends StatelessWidget {
+  const RowDetailsProfile({super.key, this.profileData});
   final ProfileData? profileData;
 
   @override

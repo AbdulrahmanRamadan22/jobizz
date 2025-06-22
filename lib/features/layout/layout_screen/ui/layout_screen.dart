@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jobizz/core/helper/size_box.dart';
-import 'package:lottie/lottie.dart';
-
 import '../../../../core/networking/internet_connection_service.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
+import '../../../../core/widgets/no_internet_connection.dart';
 import '../../drawer/drawer_wiget.dart';
 import '../logic/cubit/layout_cubit.dart';
 import '../logic/cubit/layout_state.dart';
@@ -35,18 +33,25 @@ class _LayoutScreensState extends State<LayoutScreens> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    _connectionStream.drain();
+
+  }
+
+  @override
   Widget build(BuildContext context) {
     final cubit = context.read<LayoutCubit>();
-
     return isConnected
         ? BlocBuilder<LayoutCubit, LayoutState>(
             builder: (context, state) {
               return Scaffold(
                 key: cubit.scaffoldKey,
-                drawer: DrawerWidget(), // Mark as const
+                drawer: const DrawerWidget(), // Added const for optimization
                 backgroundColor: ColorsApp.backGroundWhite,
-                body: cubit.screensBottom[cubit.currentIndex],
-
+                body: SafeArea(
+                  child: cubit.screensBottom[cubit.currentIndex],
+                ),
                 bottomNavigationBar: BottomNavigationBar(
                   backgroundColor: ColorsApp.whiteColor,
                   elevation: 0,
@@ -99,31 +104,6 @@ class _LayoutScreensState extends State<LayoutScreens> {
               );
             },
           )
-        : Scaffold(
-            backgroundColor: ColorsApp.whiteColor,
-            body: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Lottie.asset(
-                    'assets/lottie/offline.json',
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                  verticalSpace(40),
-                  Text('No Internet Connection',
-                      style: TextStyles.font22BlackBold),
-                  verticalSpace(20),
-                  Text(
-                    'Please check your internet connection and try again.',
-                    style: TextStyles.font14Gray,
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-            ),
-          );
+        : NoInternetConnection();
   }
 }

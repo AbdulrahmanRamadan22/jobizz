@@ -31,6 +31,24 @@ class SliverGridRecommendedJobs extends StatelessWidget {
             );
           },
         ),
+
+    return SliverGrid(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2, // Number of columns
+        crossAxisSpacing: 10.w, // Horizontal spacing between items
+        mainAxisSpacing: 10.h, // Vertical spacing between items
+        // childAspectRatio: 0.9, // Width/height ratio of each item
+      ),
+      delegate: SliverChildBuilderDelegate(
+        addAutomaticKeepAlives: true, // Preserves state
+        addRepaintBoundaries: true, // Improves scrolling performance
+        childCount:recommendedJobs!.length >= 4? 4 : recommendedJobs!.length,
+        (context, index) {
+          return RecommendedJobsItem(
+            jop: recommendedJobs?[index],
+          );
+        },
+
       ),
     );
   }

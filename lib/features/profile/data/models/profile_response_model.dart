@@ -19,14 +19,14 @@ class ProfileResponseModel {
 
   factory ProfileResponseModel.fromJson(Map<String, dynamic> json) =>
       _$ProfileResponseModelFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ProfileResponseModelToJson(this);
 }
 
 @JsonSerializable()
 class ProfileData {
   @JsonKey(name: "id")
   final int id;
+   @JsonKey(name: "full_name")
+  final String? fullName;
   @JsonKey(name: "user_id")
   final int userId;
   @JsonKey(name: "title_job")
@@ -51,57 +51,34 @@ class ProfileData {
   final List<Education> educations;
   @JsonKey(name: "experiences")
   final List<Experience> experiences;
-  @JsonKey(name: "documents")
-  final List<Document> documents;
+  final List<Cv> cvs;
+  final Portfolios? portfolios;
 
-  ProfileData({
-    required this.id,
-    required this.userId,
-    required this.titleJob,
-    required this.jobPosition,
-    required this.isDefault,
-    required this.profileImage,
-    required this.appliedApplications,
-    required this.interviewApplications,
-    required this.reviewedApplications,
-    required this.createdAt,
-    required this.updatedAt,
-    required this.educations,
-    required this.experiences,
-    required this.documents,
-  });
+  // @JsonKey(name: "documents")
+  // final List<Document> documents;
+
+  ProfileData(
+      {required this.id,
+      required this.userId,
+      required this.titleJob,
+      required this.jobPosition,
+      required this.isDefault,
+      required this.profileImage,
+      required this.appliedApplications,
+      required this.interviewApplications,
+      required this.reviewedApplications,
+      required this.createdAt,
+      required this.updatedAt,
+      required this.educations,
+      required this.experiences,
+      required this.cvs,
+      required this.portfolios,
+      this.fullName
+      // required this.documents,
+      });
 
   factory ProfileData.fromJson(Map<String, dynamic> json) =>
       _$ProfileDataFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ProfileDataToJson(this);
-}
-
-@JsonSerializable()
-class Document {
-  @JsonKey(name: "id")
-  final int id;
-  @JsonKey(name: "name")
-  final String name;
-  @JsonKey(name: "type")
-  final String type;
-  @JsonKey(name: "format")
-  final String format;
-  @JsonKey(name: "url")
-  final String url;
-
-  Document({
-    required this.id,
-    required this.name,
-    required this.type,
-    required this.format,
-    required this.url,
-  });
-
-  factory Document.fromJson(Map<String, dynamic> json) =>
-      _$DocumentFromJson(json);
-
-  Map<String, dynamic> toJson() => _$DocumentToJson(this);
 }
 
 @JsonSerializable()
@@ -141,8 +118,6 @@ class Education {
 
   factory Education.fromJson(Map<String, dynamic> json) =>
       _$EducationFromJson(json);
-
-  Map<String, dynamic> toJson() => _$EducationToJson(this);
 }
 
 @JsonSerializable()
@@ -165,7 +140,6 @@ class Experience {
   final String location;
   final String? image;
 
-
   Experience({
     required this.id,
     required this.company,
@@ -175,11 +149,96 @@ class Experience {
     required this.isCurrent,
     required this.description,
     required this.location,
-     this.image,
+    this.image,
   });
 
   factory Experience.fromJson(Map<String, dynamic> json) =>
       _$ExperienceFromJson(json);
+}
 
-  Map<String, dynamic> toJson() => _$ExperienceToJson(this);
+@JsonSerializable()
+class Cv {
+  final int id;
+  final String name;
+  final String type;
+  final String path;
+  Cv({
+    required this.id,
+    required this.name,
+    required this.type,
+    required this.path,
+  });
+
+  factory Cv.fromJson(Map<String, dynamic> json) => _$CvFromJson(json);
+}
+
+@JsonSerializable()
+class Portfolios {
+  final List<Pdf?>? pdf;
+  final List<Url>? url;
+  final List<PortfolioImages>? images;
+
+  Portfolios({
+    this.pdf,
+    this.url,
+    this.images,
+  });
+
+  factory Portfolios.fromJson(Map<String, dynamic> json) =>
+      _$PortfoliosFromJson(json);
+}
+
+@JsonSerializable()
+class Pdf {
+  final int? id;
+  final String? name;
+  final String? format;
+  final String? path;
+
+  Pdf({this.id, this.name, this.format, this.path});
+
+  factory Pdf.fromJson(Map<String, dynamic> json) => _$PdfFromJson(json);
+}
+
+@JsonSerializable()
+class Url {
+  final int? id;
+  final String? name;
+  final String? format;
+  final String? url;
+
+  Url({this.id, this.name, this.format, this.url});
+
+  factory Url.fromJson(Map<String, dynamic> json) => _$UrlFromJson(json);
+}
+
+@JsonSerializable()
+class PortfolioImages {
+  final int? id;
+  final String? name;
+  final String? format;
+  @JsonKey(name: "image_count")
+  final int? imageCount;
+
+  final List<PortfolioImageItem>? images;
+
+  PortfolioImages(
+      {this.id, this.name, this.format, this.imageCount, this.images});
+
+  factory PortfolioImages.fromJson(Map<String, dynamic> json) =>
+      _$PortfolioImagesFromJson(json);
+}
+
+@JsonSerializable()
+class PortfolioImageItem {
+  final int? id;
+  final String? path;
+
+  PortfolioImageItem({
+    this.id,
+    this.path,
+  });
+
+  factory PortfolioImageItem.fromJson(Map<String, dynamic> json) =>
+      _$PortfolioImageItemFromJson(json);
 }

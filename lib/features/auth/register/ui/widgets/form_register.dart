@@ -7,7 +7,7 @@ import '../../../../../core/helper/app_regex.dart';
 import '../../../../../core/helper/size_box.dart';
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/theming/styles.dart';
-import '../../../../../core/widgets/form_field_app_text.dart';
+import '../../../../../core/widgets/app_text_form_field.dart';
 import '../../../../../core/widgets/password_validation.dart';
 
 

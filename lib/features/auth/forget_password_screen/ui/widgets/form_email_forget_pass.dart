@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/theming/styles.dart';
-import '../../../../../core/widgets/form_field_app_text.dart';
+import '../../../../../core/widgets/app_text_form_field.dart';
 import '../../logic/cubit/forget_pass_cubit.dart';
 
 

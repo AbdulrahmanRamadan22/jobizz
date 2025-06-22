@@ -13,14 +13,17 @@ import '../../../data/model/home_response_model.dart';
 import 'button_card_feature_job.dart';
 
 class FeaturedJobsItem extends StatelessWidget {
-  const FeaturedJobsItem({super.key, required this.job});
+  const FeaturedJobsItem({
+    super.key,
+    required this.job,
+  });
 
   final Jop? job;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 18.w),
+      padding: const EdgeInsets.symmetric(horizontal: 4),
       child: GestureDetector(
         onTap: () {
           context.pushNamed(

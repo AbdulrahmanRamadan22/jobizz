@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/helper/size_box.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
-import '../../../../core/widgets/form_field_app_text.dart';
+import '../../../../core/widgets/app_text_form_field.dart';
 
 class SearchAndFilter extends StatelessWidget {
   final VoidCallback onSearchTap;
@@ -19,6 +19,7 @@ class SearchAndFilter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 18.w),
       child: Row(
@@ -42,8 +43,7 @@ class SearchAndFilter extends StatelessWidget {
                   }, // الـ validator يجب أن يعيد String? أو null
                 ),
               ),
-            ),
-          ),
+
           horizontalSpace(10),
           // GestureDetector(
           //   onTap: onFilterTap, // استدعاء دالة الفلتر الممررة (إذا وجدت)
@@ -63,6 +63,11 @@ class SearchAndFilter extends StatelessWidget {
           // )
         ],
       ),
+
     );
   }
 }
+
+
+
+

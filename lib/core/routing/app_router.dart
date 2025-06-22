@@ -39,8 +39,12 @@ import '../../features/jobs/screens/recommended_jobs_screen.dart';
 import '../../features/layout/layout_screen/logic/cubit/layout_cubit.dart';
 import '../../features/layout/layout_screen/ui/layout_screen.dart';
 import '../../features/notifications/ui/notifications_screen.dart.dart';
+import '../../features/profile/data/models/profile_response_model.dart';
 import '../../features/profile/logic/profile_cubit.dart';
-import '../../features/profile/ui/profile_screen.dart';
+import '../../features/profile/ui/screens/edit_education_screen.dart';
+import '../../features/profile/ui/screens/educations_screen.dart';
+import '../../features/profile/ui/screens/profile_screen.dart';
+import '../../features/profile/ui/screens/personal_info_screen.dart';
 import '../../features/saved_jobs/ui/saved_screen.dart';
 import '../../features/settings/ui/screens/settings_screen.dart';
 import '../../features/settings/ui/screens/terms_and_conditions.dart';
@@ -130,7 +134,9 @@ class AppRouter {
 
       // Drawer Screens
       case Routes.profileScreen:
-        final profileCubit = getIt<ProfileCubit>()..emitGetProfileDetails();
+        final profileCubit = getIt<ProfileCubit>();
+        // Always refresh when entering profile screen
+        profileCubit.emitGetProfileDetails();
 
         return MaterialPageRoute(
           builder: (context) => BlocProvider<ProfileCubit>.value(
@@ -138,7 +144,41 @@ class AppRouter {
             child: const ProfileScreen(),
           ),
         );
+
 // saved jobs screen
+=======
+      case Routes.personalInfoScreen:
+        final profileCubit = getIt<ProfileCubit>();
+        final data = settings.arguments as ProfileData?;
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider<ProfileCubit>.value(
+            value: profileCubit,
+            child: PersonalInfoScreen(
+              profileData: data,
+            ),
+          ),
+        );
+
+      case Routes.educationsScreen:
+        final educations = settings.arguments as List<Education>;
+        return MaterialPageRoute(
+          builder: (context) => EducationsScreen(
+            educations: educations,
+          ),
+        );
+
+      case Routes.editEducationScreen:
+        final profileCubit = getIt<ProfileCubit>();
+        final education = settings.arguments as Education?;
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider.value(
+            value: profileCubit,
+            child: EditEducationScreen(
+              education: education,
+            ),
+          ),
+        );
+
 
       case Routes.savedJobsScreen:
 

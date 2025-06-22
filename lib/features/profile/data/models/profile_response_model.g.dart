@@ -42,14 +42,19 @@ ProfileData _$ProfileDataFromJson(Map<String, dynamic> json) => ProfileData(
       experiences: (json['experiences'] as List<dynamic>)
           .map((e) => Experience.fromJson(e as Map<String, dynamic>))
           .toList(),
-      documents: (json['documents'] as List<dynamic>)
-          .map((e) => Document.fromJson(e as Map<String, dynamic>))
+      cvs: (json['cvs'] as List<dynamic>)
+          .map((e) => Cv.fromJson(e as Map<String, dynamic>))
           .toList(),
+      portfolios: json['portfolios'] == null
+          ? null
+          : Portfolios.fromJson(json['portfolios'] as Map<String, dynamic>),
+      fullName: json['full_name'] as String?,
     );
 
 Map<String, dynamic> _$ProfileDataToJson(ProfileData instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'full_name': instance.fullName,
       'user_id': instance.userId,
       'title_job': instance.titleJob,
       'job_position': instance.jobPosition,
@@ -62,23 +67,8 @@ Map<String, dynamic> _$ProfileDataToJson(ProfileData instance) =>
       'updated_at': instance.updatedAt,
       'educations': instance.educations,
       'experiences': instance.experiences,
-      'documents': instance.documents,
-    };
-
-Document _$DocumentFromJson(Map<String, dynamic> json) => Document(
-      id: (json['id'] as num).toInt(),
-      name: json['name'] as String,
-      type: json['type'] as String,
-      format: json['format'] as String,
-      url: json['url'] as String,
-    );
-
-Map<String, dynamic> _$DocumentToJson(Document instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'type': instance.type,
-      'format': instance.format,
-      'url': instance.url,
+      'cvs': instance.cvs,
+      'portfolios': instance.portfolios,
     };
 
 Education _$EducationFromJson(Map<String, dynamic> json) => Education(
@@ -130,4 +120,98 @@ Map<String, dynamic> _$ExperienceToJson(Experience instance) =>
       'description': instance.description,
       'location': instance.location,
       'image': instance.image,
+    };
+
+Cv _$CvFromJson(Map<String, dynamic> json) => Cv(
+      id: (json['id'] as num).toInt(),
+      name: json['name'] as String,
+      type: json['type'] as String,
+      path: json['path'] as String,
+    );
+
+Map<String, dynamic> _$CvToJson(Cv instance) => <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'type': instance.type,
+      'path': instance.path,
+    };
+
+Portfolios _$PortfoliosFromJson(Map<String, dynamic> json) => Portfolios(
+      pdf: (json['pdf'] as List<dynamic>?)
+          ?.map(
+              (e) => e == null ? null : Pdf.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      url: (json['url'] as List<dynamic>?)
+          ?.map((e) => Url.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      images: (json['images'] as List<dynamic>?)
+          ?.map((e) => PortfolioImages.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$PortfoliosToJson(Portfolios instance) =>
+    <String, dynamic>{
+      'pdf': instance.pdf,
+      'url': instance.url,
+      'images': instance.images,
+    };
+
+Pdf _$PdfFromJson(Map<String, dynamic> json) => Pdf(
+      id: (json['id'] as num?)?.toInt(),
+      name: json['name'] as String?,
+      format: json['format'] as String?,
+      path: json['path'] as String?,
+    );
+
+Map<String, dynamic> _$PdfToJson(Pdf instance) => <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'format': instance.format,
+      'path': instance.path,
+    };
+
+Url _$UrlFromJson(Map<String, dynamic> json) => Url(
+      id: (json['id'] as num?)?.toInt(),
+      name: json['name'] as String?,
+      format: json['format'] as String?,
+      url: json['url'] as String?,
+    );
+
+Map<String, dynamic> _$UrlToJson(Url instance) => <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'format': instance.format,
+      'url': instance.url,
+    };
+
+PortfolioImages _$PortfolioImagesFromJson(Map<String, dynamic> json) =>
+    PortfolioImages(
+      id: (json['id'] as num?)?.toInt(),
+      name: json['name'] as String?,
+      format: json['format'] as String?,
+      imageCount: (json['image_count'] as num?)?.toInt(),
+      images: (json['images'] as List<dynamic>?)
+          ?.map((e) => PortfolioImageItem.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$PortfolioImagesToJson(PortfolioImages instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'format': instance.format,
+      'image_count': instance.imageCount,
+      'images': instance.images,
+    };
+
+PortfolioImageItem _$PortfolioImageItemFromJson(Map<String, dynamic> json) =>
+    PortfolioImageItem(
+      id: (json['id'] as num?)?.toInt(),
+      path: json['path'] as String?,
+    );
+
+Map<String, dynamic> _$PortfolioImageItemToJson(PortfolioImageItem instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'path': instance.path,
     };

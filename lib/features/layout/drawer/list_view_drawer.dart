@@ -9,6 +9,7 @@ import '../../../core/cache/shared_pref.dart';
 import '../../../core/routing/routers_string.dart';
 import '../../../core/theming/colors.dart';
 import '../../../core/theming/styles.dart';
+import '../../../core/widgets/cached_network_image_widget.dart';
 
 class ListViewDrawer extends StatelessWidget {
   const ListViewDrawer({
@@ -36,11 +37,19 @@ class ListViewDrawer extends StatelessWidget {
                   onPressed: () => context.pop(),
                 ),
               ),
-              CircleAvatar(
-                radius: 35.r,
-                backgroundImage: NetworkImage(
-                    '${SharedPrefHelper.getData(key: SharedPrefKeys.profileImage)}'),
-              ),
+              
+           ClipRRect(
+            borderRadius: BorderRadius.circular(35.r),
+            child: CachedNetworkImageWidget(
+              imageUrl: "${SharedPrefHelper.getData(key: SharedPrefKeys.profileImage)}",
+              imageKey: '${SharedPrefHelper.getData(key: SharedPrefKeys.profileImage)}',
+              width: 70.w,
+              height: 70.h,
+              fit: BoxFit.cover,
+            ),
+           
+          ),
+              
               verticalSpace(16),
               Text('${SharedPrefHelper.getData(key: SharedPrefKeys.fullName)}',
                   style: TextStyles.font16White),
