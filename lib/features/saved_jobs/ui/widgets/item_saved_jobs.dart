@@ -19,9 +19,9 @@ class ItemSavedJobs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color statusColor;
-    if (job?.jobStatus == 'Open') {
+    if (job?.jobStatus == 'Open || open') {
       statusColor = ColorsApp.lightBlue2;
-    } else if (job?.jobStatus == 'closed') {
+    } else if (job?.jobStatus == 'Closed || closed') {
       statusColor = ColorsApp.lightRed;
     } else {
       statusColor = ColorsApp.lightBlue2; // Default color for unknown status
