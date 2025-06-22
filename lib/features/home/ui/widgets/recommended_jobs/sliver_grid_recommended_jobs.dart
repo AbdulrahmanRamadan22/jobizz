@@ -10,28 +10,6 @@ class SliverGridRecommendedJobs extends StatelessWidget {
   final List<Jop?>? recommendedJobs;
   @override
   Widget build(BuildContext context) {
-    return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 18.w),
-      sliver: SliverGrid(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, // Number of columns
-          crossAxisSpacing: 10.w, // Horizontal spacing between items
-          mainAxisSpacing: 10.h, // Vertical spacing between items
-          // childAspectRatio: 0.9, // Width/height ratio of each item
-        ),
-        delegate: SliverChildBuilderDelegate(
-          addAutomaticKeepAlives: true, // Preserves state
-          addRepaintBoundaries: true, // Improves scrolling performance
-          childCount: (recommendedJobs?.length ?? 0) > 4
-              ? 4
-              : recommendedJobs?.length ?? 0,
-          (context, index) {
-            return RecommendedJobsItem(
-              jop: recommendedJobs?[index],
-            );
-          },
-        ),
-
     return SliverGrid(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // Number of columns
@@ -42,13 +20,14 @@ class SliverGridRecommendedJobs extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
         addAutomaticKeepAlives: true, // Preserves state
         addRepaintBoundaries: true, // Improves scrolling performance
-        childCount:recommendedJobs!.length >= 4? 4 : recommendedJobs!.length,
+        childCount: (recommendedJobs?.length ?? 0) > 4
+            ? 4
+            : recommendedJobs?.length ?? 0,
         (context, index) {
           return RecommendedJobsItem(
             jop: recommendedJobs?[index],
           );
         },
-
       ),
     );
   }

@@ -146,7 +146,7 @@ class AppRouter {
         );
 
 // saved jobs screen
-=======
+
       case Routes.personalInfoScreen:
         final profileCubit = getIt<ProfileCubit>();
         final data = settings.arguments as ProfileData?;

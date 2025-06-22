@@ -19,55 +19,49 @@ class SearchAndFilter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: GestureDetector(
+            onTap: onSearchTap,
+            child: AbsorbPointer(
+              child: AppTextFormField(
+                controller: TextEditingController(),
 
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 18.w),
-      child: Row(
-        children: [
-          Expanded(
-            child: GestureDetector(
-              onTap: onSearchTap,
-              child: AbsorbPointer(
-                child: AppTextFormField(
-                  controller: TextEditingController(),
-
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: ColorsApp.gray,
-                    size: 25.sp,
-                  ),
-                  hintText: 'Search a job or position',
-                  hintStyle: TextStyles.font14Gray,
-                  validator: (value) {
-                    return null;
-                  }, // الـ validator يجب أن يعيد String? أو null
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: ColorsApp.gray,
+                  size: 25.sp,
                 ),
+                hintText: 'Search a job or position',
+                hintStyle: TextStyles.font14Gray,
+                validator: (value) {
+                  return null;
+                }, // الـ validator يجب أن يعيد String? أو null
               ),
+            ),
+          ),
+        ),
 
-          horizontalSpace(10),
-          // GestureDetector(
-          //   onTap: onFilterTap, // استدعاء دالة الفلتر الممررة (إذا وجدت)
-          //   child: Container(
-          //     padding: EdgeInsets.all(8),
-          //     height: 55.h,
-          //     width: 55.w,
-          //     decoration: BoxDecoration(
-          //       border: Border.all(color: ColorsApp.lightGray),
-          //       color: ColorsApp.mistyGrey,
-          //       borderRadius: BorderRadius.circular(16.r),
-          //     ),
-          //     child: SvgPicture.asset(
-          //       "assets/svgs/filter_list_search.svg",
-          //     ),
-          //   ),
-          // )
-        ],
-      ),
+        horizontalSpace(10),
 
+        //  GestureDetector(
+        //   onTap: onFilterTap, // استدعاء دالة الفلتر الممررة (إذا وجدت)
+        //   child: Container(
+        //     padding: EdgeInsets.all(8),
+        //     height: 55.h,
+        //     width: 55.w,
+        //     decoration: BoxDecoration(
+        //       border: Border.all(color: ColorsApp.lightGray),
+        //       color: ColorsApp.mistyGrey,
+        //       borderRadius: BorderRadius.circular(16.r),
+        //     ),
+        //     child: SvgPicture.asset(
+        //       "assets/svgs/filter_list_search.svg",
+        //     ),
+        //   ),
+        // ),
+      ],
     );
   }
 }
-
-
-
-

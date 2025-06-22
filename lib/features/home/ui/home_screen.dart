@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,10 +20,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ColorsApp.backGroundWhite,
-      drawer: DrawerWidget(),
-      body: SafeArea(
+    return  Padding(
+        padding: EdgeInsets.symmetric(horizontal: 18.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -55,6 +51,7 @@ class HomeScreen extends StatelessWidget {
                     (jop) => jop.categoryName ?? '', // مسمى الوظيفة
                     (jop) => jop.companyName ?? '', // اسم الشركة
                     (jop) => jop.title ?? '',
+
                   ],
                   itemBuilder: (context, jop) {
                     return Padding(
@@ -70,41 +67,47 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             verticalSpace(9),
-            //-----------------
+         
             Expanded(
               child: RefreshIndicator(
                 backgroundColor: ColorsApp.mainBlue,
                 color: ColorsApp.whiteColor,
                 onRefresh: () async {
-                  await Future.delayed(const Duration(seconds: 1));
+                  // await Future.delayed(const Duration(seconds: 1));
                   context.read<HomeCubit>().emitRefreshGetHomeData();
                 },
                 child: JobsBlocBuilder(),
-
-    return  Padding(
-          padding: EdgeInsets.symmetric(horizontal: 18.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              PageTopBar(),
-              verticalSpace(10),
-              SearchAndFilter(),
-              verticalSpace(9),
-              Expanded(
-                child: RefreshIndicator(
-                  backgroundColor: ColorsApp.mainBlue,
-                  color: ColorsApp.whiteColor,
-                  onRefresh: () async {
-                    await Future.delayed(const Duration(seconds: 1));
-                    context.read<HomeCubit>().emitRefreshGetHomeData();
-                  },
-                  child: JobsBlocBuilder(),
-                ),
-
               ),
-            ],
-          ),
-     
+            ),
+          ],
+        ),
+    
     );
+
+    // return  Padding(
+    //       padding: EdgeInsets.symmetric(horizontal: 18.w),
+    //       child: Column(
+    //         crossAxisAlignment: CrossAxisAlignment.start,
+    //         children: [
+    //           PageTopBar(),
+    //           verticalSpace(10),
+    //           SearchAndFilter(),
+    //           verticalSpace(9),
+    //           Expanded(
+    //             child: RefreshIndicator(
+    //               backgroundColor: ColorsApp.mainBlue,
+    //               color: ColorsApp.whiteColor,
+    //               onRefresh: () async {
+    //                 await Future.delayed(const Duration(seconds: 1));
+    //                 context.read<HomeCubit>().emitRefreshGetHomeData();
+    //               },
+    //               child: JobsBlocBuilder(),
+    //             ),
+
+    //           ),
+    //         ],
+    //       ),
+
+    // );
   }
 }
