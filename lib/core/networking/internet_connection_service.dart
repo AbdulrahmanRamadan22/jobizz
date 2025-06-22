@@ -1,4 +1,3 @@
-
 import 'dart:async';
 import 'dart:io';
 
@@ -23,7 +22,8 @@ class InternetConnectionService {
     _hasConnection = await _hasInternetAccess();
     _connectionChangeController.add(_hasConnection);
 
-    _connectivity.onConnectivityChanged.listen((List<ConnectivityResult> results) async {
+    _connectivity.onConnectivityChanged
+        .listen((List<ConnectivityResult> results) async {
       if (results.isEmpty || results.contains(ConnectivityResult.none)) {
         _hasConnection = false;
       } else {

@@ -1,9 +1,11 @@
-// ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/helper/extensions.dart';
 import 'package:jobizz/core/routing/routers_string.dart';
 import 'package:jobizz/features/home/ui/widgets/featured_jobs/salary_and_location.dart';
+import 'package:jobizz/features/job_details/job_details_screen.dart';
+import 'package:jobizz/features/saved_jobs/cubit/saved_cubit.dart';
 import '../../../../../core/helper/size_box.dart';
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/theming/styles.dart';
@@ -28,7 +30,17 @@ class FeaturedJobsItem extends StatelessWidget {
             Routes.jobDetailsScreen,
             arguments: job,
           );
-          print('job id ${job?.title}');
+          // final savedCubit = context.read<SavedCubit>();
+
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (_) => BlocProvider.value(
+          //       value: savedCubit, // ← نفس الـ Cubit اللي في Home
+          //       child: JobDetailsScreen(job: job),
+          //     ),
+          //   ),
+          // );
         },
         child: Container(
           width: double.infinity,
@@ -63,13 +75,21 @@ class FeaturedJobsItem extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  trailing: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.bookmark_add,
-                      color: ColorsApp.lightGray,
-                    ),
-                  ),
+                  // trailing: IconButton(
+                  //   onPressed: () {},
+                  //   icon: CircleAvatar(
+                  //     radius: 20.r,
+                  //     backgroundColor:
+                  //         context.read<HomeCubit>().savedJobsMap[job?.id] ==
+                  //                 true
+                  //             ? ColorsApp.mainBlue
+                  //             : ColorsApp.whiteColor,
+                  //     child: Icon(
+                  //       Icons.bookmark_add,
+                  //       color: ColorsApp.lightGray,
+                  //     ),
+                  //   ),
+                  // ),
                 ),
               ),
               // Buttons

@@ -13,6 +13,7 @@ import 'package:jobizz/features/companies/ui/screens/profile_company_screen.dart
 import 'package:jobizz/features/job_details/job_details_screen.dart';
 
 import 'package:jobizz/features/onboarding/ui/onboarding_screen.dart';
+import 'package:jobizz/features/saved_jobs/cubit/saved_cubit.dart';
 
 import '../../features/auth/change_password/logic/cubit/change_password_cubit.dart';
 import '../../features/auth/forget_password_screen/logic/cubit/forget_pass_cubit.dart';
@@ -31,7 +32,6 @@ import '../../features/companies/ui/screens/compaies_screen.dart';
 import '../../features/companies/ui/screens/popular_company_screen.dart';
 import '../../features/companies/ui/screens/trending_company_screen.dart';
 import '../../features/home/data/model/home_response_model.dart';
-import '../../features/home/logic/cubit/home_cubit.dart';
 import '../../features/home/ui/home_screen.dart';
 import '../../features/jobs/screens/featured_jobs_screen.dart';
 import '../../features/jobs/screens/popular_jobs_screen.dart';
@@ -144,6 +144,9 @@ class AppRouter {
             child: const ProfileScreen(),
           ),
         );
+
+// saved jobs screen
+=======
       case Routes.personalInfoScreen:
         final profileCubit = getIt<ProfileCubit>();
         final data = settings.arguments as ProfileData?;
@@ -176,9 +179,15 @@ class AppRouter {
           ),
         );
 
+
       case Routes.savedJobsScreen:
+
+        //   final savedJobs = settings.arguments as List<SavedJob?>? ?? [];
         return MaterialPageRoute(
-          builder: (context) => const SavedJobsScreen(),
+          builder: (context) => BlocProvider(
+            create: (context) => SavedCubit(getIt())..getSavedJobs(),
+            child: const SavedJobsScreen(),
+          ),
         );
       // settings screen
       case Routes.settingsScreen:
@@ -200,11 +209,12 @@ class AppRouter {
             child: LayoutScreens(),
           ),
         );
+      // Companies Screen
       case Routes.companiesScreen:
         return MaterialPageRoute(
           builder: (context) => CompaniesScreen(),
         );
-
+// Categories Screen
       case Routes.categoryScreen:
         return MaterialPageRoute(
           builder: (context) => CategoryScreen(),
@@ -215,14 +225,13 @@ class AppRouter {
           builder: (context) => const NotificationScreen(),
         );
 
-      // Profile screen
-
+// Home Screen
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (context) => HomeScreen(),
         );
 
-      // Jobs Screen
+      // popularJobsScreen
       case Routes.popularJobsScreen:
         final popularJobs = settings.arguments as List<Jop?>? ?? [];
         return MaterialPageRoute(
@@ -230,16 +239,26 @@ class AppRouter {
             popularJobs: popularJobs,
           ),
         );
-      // Jobs Details Screen
+      //Jobs Details Screen
 
       case Routes.jobDetailsScreen:
         final jobDetails = settings.arguments as Jop?;
+
         return MaterialPageRoute(
-          builder: (_) => JobDetailsScreen(
-            job: jobDetails,
-          ),
+          builder: (context) {
+            final savedCubit = context.read<LayoutCubit>().savedCubit;
+            savedCubit.initSavedJob(jobDetails!);
+
+            return BlocProvider.value(
+              value: savedCubit,
+              child: JobDetailsScreen(
+                job: jobDetails,
+              ),
+            );
+          },
         );
 
+      // Featured Jobs Screen
       case Routes.featuredJobsScreen:
         final featuredJobs = settings.arguments as List<Jop?>? ?? [];
         return MaterialPageRoute(
@@ -247,7 +266,7 @@ class AppRouter {
             featuredJobs: featuredJobs,
           ),
         );
-
+// Recommended Jobs Screen
       case Routes.recommendedJobsScreen:
         final recommendedJobs = settings.arguments as List<Jop?>? ?? [];
         return MaterialPageRoute(
@@ -320,7 +339,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => GeminiChatScreen(),
         );
-
+// switch profile screen
       case Routes.switchProfileScreen:
         final switchProfileCubit = getIt<SwitchProfileCubit>()
           ..emitGetProfilesDetailsData();

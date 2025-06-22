@@ -4,7 +4,6 @@ import 'package:jobizz/features/category/ui/widget/category_item.dart';
 import '../../../../../core/widgets/shimmer_loading_custom.dart';
 import '../../../data/model/category_response.dart';
 
-
 class SliverGridCategoryTrending extends StatelessWidget {
   const SliverGridCategoryTrending({super.key, this.categoryDataList});
   final List<Category?>? categoryDataList;

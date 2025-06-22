@@ -1,46 +1,67 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobizz/core/widgets/show_generic_search_dialog.dart'; // هذا هو ملف الدالة العامة (showGenericSearchDialog)
 
-import '../../../core/helper/size_box.dart';
-import '../../../core/theming/colors.dart';
-import '../../../core/theming/styles.dart';
-import 'widgets/list_view_builder_card.dart';
-import 'widgets/list_view_separated_buttons.dart';
+import 'package:jobizz/features/saved_jobs/cubit/saved_cubit.dart'; // استيراد SavedCubit
+import 'package:jobizz/features/saved_jobs/data/model/saved_response.dart'; // نموذج SavedJob
+import 'package:jobizz/features/saved_jobs/ui/widgets/bloc_builder.dart'; // SavedJobsBlocBuilder
+import 'package:jobizz/features/saved_jobs/ui/widgets/item_saved_jobs.dart'; // ItemSavedJobs (أو ItelSavedJobs)
 
 class SavedJobsScreen extends StatelessWidget {
-  const SavedJobsScreen({super.key});
+  const SavedJobsScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // automaticallyImplyLeading: false,
-
-        scrolledUnderElevation: 0,
-        elevation: 0,
-        backgroundColor: ColorsApp.backGroundWhite,
-        centerTitle: true,
-        title: Text(
-          'Saved Jobs',
-          // style: TextStyles.font16Black,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_rounded, color: Colors.black),
+          onPressed: () => Navigator.pop(context),
         ),
+        title: Text('Saved Jobs', style: TextStyle(color: Colors.black)),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        // icon Button Search
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search,
+                color: Colors.black), // استخدام const هنا
+            onPressed: () {
+              final savedCubit = context.read<SavedCubit>();
+
+              final List<SavedJob> savedJobs = savedCubit.state.maybeWhen(
+                savedSuccess: (response) => response.data?.favoriteJobs ?? [],
+                orElse: () => <SavedJob>[],
+              );
+
+              showGenericSearchDialog<SavedJob>(
+                context: context,
+                items: savedJobs.whereType<SavedJob>().toList(),
+                searchFields: [
+                  (job) => job.categoryName ?? '',
+                  (job) => job.companyName ?? '',
+                  //  (job) => job.jobType ?? '',
+                  //  (job) => job.jobStatus ?? '',
+                ],
+                isGrid: false,
+                itemBuilder: (context, job) {
+                  return ItemSavedJobs(
+                    job: job,
+                  );
+                },
+              );
+            },
+          ),
+        ],
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 20.w,
-          vertical: 20.h,
-        ),
+        padding: EdgeInsets.symmetric(horizontal: 18.0.w),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'You saved 48 Jobs 👍',
-              style: TextStyles.font22BlackBold,
-            ),
-            verticalSpace(36),
-            const ListViewSeparated(),
-            verticalSpace(24),
-            ListViewBuilderCard(),
+            SavedJobsBlocBuilder(),
           ],
         ),
       ),

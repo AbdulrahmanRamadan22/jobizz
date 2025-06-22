@@ -40,7 +40,7 @@ class Data {
 
 @JsonSerializable()
 class Jop {
-  final int? id;
+  final int id;
   final String? title;
   @JsonKey(name: "company_id")
   final int? companyId;
@@ -56,24 +56,27 @@ class Jop {
   final String? benefits;
   final String? companyName;
   final String? companyLogo;
+  final bool isFavorite;
 
   // @JsonKey(name: "job_status")
   // final String? jobStatus;
 
-  Jop(
-      {this.id,
-      this.companyId,
-      this.title,
-      this.jobType,
-      this.salary,
-      this.description,
-      this.requirement,
-      this.location,
-      this.position,
-      this.benefits,
-      this.categoryName,
-      this.companyName,
-      this.companyLogo});
+  Jop({
+  required  this.id,
+    this.companyId,
+    this.title,
+    this.jobType,
+    this.salary,
+    this.description,
+    this.requirement,
+    this.location,
+    this.position,
+    this.benefits,
+    this.categoryName,
+    this.companyName,
+    this.companyLogo,
+    required this.isFavorite,
+  });
 
   factory Jop.fromJson(Map<String, dynamic> json) => _$JopFromJson(json);
 

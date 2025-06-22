@@ -4,7 +4,6 @@ import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
 import 'package:jobizz/features/companies/data/model/company_response.dart';
 
-import 'package:skeletonizer/skeletonizer.dart';
 
 class ContainerOfProfileCompany extends StatelessWidget {
   const ContainerOfProfileCompany({

@@ -4,6 +4,7 @@ import 'package:jobizz/features/auth/change_password/data/repo/change_password_r
 import 'package:jobizz/features/auth/login/data/model/login_response.dart';
 import 'package:jobizz/features/companies/data/repo/company_info_repo.dart';
 import 'package:jobizz/features/home/data/repo/home_repo.dart';
+import 'package:jobizz/features/saved_jobs/data/repo/repo_saved.dart';
 
 import '../../features/auth/forget_password_screen/data/repo/forget_pass.dart';
 import '../../features/auth/login/data/repo/login_repo.dart';
@@ -102,6 +103,6 @@ Future<void> setupGetIt() async {
 
   // // reset password
 
-  // // company info
-  // getIt.registerLazySingleton<CompanyInfoRepo>(() => CompanyInfoRepo(getIt()));
+  // company info
+  getIt.registerLazySingleton<RepoSaved>(() => RepoSaved(getIt()));
 }

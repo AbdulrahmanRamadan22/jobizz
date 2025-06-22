@@ -6,7 +6,6 @@ import '../../../../core/routing/routers_string.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
 
-
 class TermsAndConditionsScreen extends StatefulWidget {
   const TermsAndConditionsScreen({super.key});
 
@@ -17,7 +16,7 @@ class TermsAndConditionsScreen extends StatefulWidget {
 
 class _TermsAndConditionsScreenState extends State<TermsAndConditionsScreen> {
   bool _isEnglish = true;
-  bool _hasAccepted = false;
+  final bool _hasAccepted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -94,61 +93,61 @@ class _TermsAndConditionsScreenState extends State<TermsAndConditionsScreen> {
             verticalSpace(20),
 
             // Acceptance Checkbox
-            Row(
-              children: [
-                Checkbox(
-                  value: _hasAccepted,
-                  activeColor: ColorsApp.darkBlue,
-                  onChanged: (value) {
-                    setState(() {
-                      _hasAccepted = value ?? false;
-                    });
-                  },
-                ),
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {
-                      setState(() {
-                        _hasAccepted = !_hasAccepted;
-                      });
-                    },
-                    child: Text(
-                      _isEnglish
-                          ? 'I have read and accept the Terms & Conditions'
-                          : 'لقد قرأت الشروط والأحكام وأوافق عليها',
-                      style: TextStyles.font14Black,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            // Row(
+            //   children: [
+            //     Checkbox(
+            //       value: _hasAccepted,
+            //       activeColor: ColorsApp.darkBlue,
+            //       onChanged: (value) {
+            //         setState(() {
+            //           _hasAccepted = value ?? false;
+            //         });
+            //       },
+            //     ),
+            //     Expanded(
+            //       child: TextButton(
+            //         onPressed: () {
+            //           setState(() {
+            //             _hasAccepted = !_hasAccepted;
+            //           });
+            //         },
+            //         child: Text(
+            //           _isEnglish
+            //               ? 'I have read and accept the Terms & Conditions'
+            //               : 'لقد قرأت الشروط والأحكام وأوافق عليها',
+            //           style: TextStyles.font14Black,
+            //         ),
+            //       ),
+            //     ),
+            //   ],
+            // ),
 
             verticalSpace(20),
 
             // Accept Button
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                      _hasAccepted ? ColorsApp.darkBlue : ColorsApp.gray,
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
-                onPressed: _hasAccepted
-                    ? () {
-                        // Navigate back or proceed
-                        // context.pushNamed(Routes.onBoardingScreen);
-                      }
-                    : null,
-                child: Text(
-                  _isEnglish ? 'Accept & Continue' : 'موافق ومتابعة',
-                  style: TextStyles.font16White,
-                ),
-              ),
-            ),
+            // SizedBox(
+            //   width: double.infinity,
+            //   child: ElevatedButton(
+            //     style: ElevatedButton.styleFrom(
+            //       backgroundColor:
+            //           _hasAccepted ? ColorsApp.darkBlue : ColorsApp.gray,
+            //       padding: const EdgeInsets.symmetric(vertical: 16),
+            //       shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(8),
+            //       ),
+            //     ),
+            //     onPressed: _hasAccepted
+            //         ? () {
+            //             // Navigate back or proceed
+            //             // context.pushNamed(Routes.onBoardingScreen);
+            //           }
+            //         : null,
+            //     child: Text(
+            //       _isEnglish ? 'Accept & Continue' : 'موافق ومتابعة',
+            //       style: TextStyles.font16White,
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),

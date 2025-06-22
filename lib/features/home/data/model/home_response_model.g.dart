@@ -44,7 +44,7 @@ Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
     };
 
 Jop _$JopFromJson(Map<String, dynamic> json) => Jop(
-      id: (json['id'] as num?)?.toInt(),
+      id: (json['id'] as num).toInt(),
       companyId: (json['company_id'] as num?)?.toInt(),
       title: json['title'] as String?,
       jobType: json['job_type'] as String?,
@@ -57,6 +57,7 @@ Jop _$JopFromJson(Map<String, dynamic> json) => Jop(
       categoryName: json['category_name'] as String?,
       companyName: json['companyName'] as String?,
       companyLogo: json['companyLogo'] as String?,
+      isFavorite: json['isFavorite'] as bool,
     );
 
 Map<String, dynamic> _$JopToJson(Jop instance) => <String, dynamic>{
@@ -73,4 +74,5 @@ Map<String, dynamic> _$JopToJson(Jop instance) => <String, dynamic>{
       'benefits': instance.benefits,
       'companyName': instance.companyName,
       'companyLogo': instance.companyLogo,
+      'isFavorite': instance.isFavorite,
     };

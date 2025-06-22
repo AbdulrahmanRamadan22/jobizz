@@ -27,10 +27,7 @@ class CategoryBlocBuilder extends StatelessWidget {
                   SliverToBoxAdapter(
                     child: RowTextAndSeeAll(
                       text: 'Popular now',
-
-                      onPressed: () {
-                       
-                      },
+                      onPressed: () {},
                     ),
                   ),
                   SliverGridCategoryPopular(
@@ -39,10 +36,7 @@ class CategoryBlocBuilder extends StatelessWidget {
                   SliverToBoxAdapter(
                     child: RowTextAndSeeAll(
                       text: 'Trending now',
-                     
-                      onPressed: () {
-                       
-                      },
+                      onPressed: () {},
                     ),
                   ),
                   SliverGridCategoryTrending(
@@ -59,7 +53,6 @@ class CategoryBlocBuilder extends StatelessWidget {
                   SliverToBoxAdapter(
                     child: RowTextAndSeeAll(
                       text: 'Popular now',
-                     
                       onPressed: () {
                         context.pushNamed(
                           Routes.popularCategoryScreen,
@@ -74,7 +67,6 @@ class CategoryBlocBuilder extends StatelessWidget {
                   SliverToBoxAdapter(
                     child: RowTextAndSeeAll(
                       text: 'Trending now',
-                      
                       onPressed: () {
                         context.pushNamed(
                           Routes.trendingCategoryScreen,

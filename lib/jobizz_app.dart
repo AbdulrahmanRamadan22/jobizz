@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jobizz/core/cache/shared_pref.dart';
+import 'package:jobizz/features/layout/layout_screen/logic/cubit/layout_cubit.dart';
+
 
 import 'core/cache/constants.dart';
 import 'core/routing/app_router.dart';
@@ -16,6 +18,25 @@ class JobizzApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,
+
+      builder: (context, child) => BlocProvider(
+        create: (context) => LayoutCubit(),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Jobizz',
+          theme: ThemeData(
+            appBarTheme: const AppBarTheme(
+              backgroundColor: ColorsApp.whiteColor,
+              elevation: 0,
+              scrolledUnderElevation: 0,
+              iconTheme: IconThemeData(color: ColorsApp.darkBlack),
+              titleTextStyle: TextStyle(
+                color: ColorsApp.darkBlack,
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+              ),
+              centerTitle: true,
+
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Jobizz',
@@ -27,7 +48,7 @@ class JobizzApp extends StatelessWidget {
             foregroundColor: ColorsApp.whiteColor,
             iconSize: 26.sp,
           ),
-          // colorScheme: ColorScheme.fromSeed(seedColor: ColorsApp.mainBlue),
+          //colorScheme: ColorScheme.fromSeed(seedColor: ColorsApp.mainBlue),
           appBarTheme: const AppBarTheme(
             backgroundColor: ColorsApp.whiteColor,
             elevation: 0,
@@ -38,12 +59,15 @@ class JobizzApp extends StatelessWidget {
               fontSize: 18,
               fontWeight: FontWeight.w600,
             ),
-            centerTitle: true,
+            fontFamily: 'Poppins',
+            primaryColor: ColorsApp.mainBlue,
+            scaffoldBackgroundColor: ColorsApp.backGroundWhite,
           ),
-          fontFamily: 'Poppins',
-          primaryColor: ColorsApp.mainBlue,
-          scaffoldBackgroundColor: ColorsApp.backGroundWhite,
+          // home: Scaffold(body: Center(child: Text("Jobizz App"))),
+          initialRoute: SharedPrefValues.initialRoute,
+          onGenerateRoute: AppRouter.generateRoute,
         ),
+
         // home: Scaffold(body: Center(child: Text("Jobizz App"))),
         initialRoute: () {
           final route =
@@ -53,6 +77,7 @@ class JobizzApp extends StatelessWidget {
         }(),
 
         onGenerateRoute: AppRouter.generateRoute,
+
       ),
     );
   }
