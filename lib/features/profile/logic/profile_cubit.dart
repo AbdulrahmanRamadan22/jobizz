@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
-import 'package:flutter/material.dart';
 import 'package:jobizz/features/profile/logic/profile_state.dart';
 
 import '../../../core/cache/constants.dart';
 import '../../../core/cache/shared_pref.dart';
 import '../data/function/save_profile_cache.dart';
+import '../data/models/profile_response_model.dart';
 import '../data/repo/profile_repo.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
@@ -13,6 +13,9 @@ class ProfileCubit extends Cubit<ProfileState> {
   final ProfileRepo _profileRepo;
 
   bool firstLoadedData = false;
+
+
+    var profileData;
 
   void resetProfileData() async {
     firstLoadedData = false;
@@ -33,6 +36,7 @@ class ProfileCubit extends Cubit<ProfileState> {
         firstLoadedData = true;
         await saveProfile(profileResponse);
         emit(ProfileState.profileDetailsSuccess(profileResponse));
+        profileData = profileResponse.profileData;
         //  await SharedPrefHelper.saveData(key: SharedPrefKeys.idProfile, value: id);
       },
       failure: (error) {

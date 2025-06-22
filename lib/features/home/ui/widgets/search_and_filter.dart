@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../core/helper/size_box.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
-import '../../../../core/widgets/form_field_app_text.dart';
+import '../../../../core/widgets/app_text_form_field.dart';
 
 class SearchAndFilter extends StatelessWidget {
   const SearchAndFilter({

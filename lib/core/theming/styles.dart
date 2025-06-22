@@ -20,6 +20,8 @@ class TextStyles {
     fontSize: 14.sp,
     color: ColorsApp.gray,
   );
+
+  
   static final TextStyle font16Gray = TextStyle(
     fontSize: 16.sp,
     color: ColorsApp.gray,

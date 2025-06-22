@@ -6,7 +6,7 @@ import '../../../../../core/helper/app_regex.dart';
 import '../../../../../core/helper/size_box.dart';
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/theming/styles.dart';
-import '../../../../../core/widgets/form_field_app_text.dart';
+import '../../../../../core/widgets/app_text_form_field.dart';
 import '../../../../../core/widgets/password_validation.dart';
 import '../../logic/cubit/login_cubit.dart';
 
@@ -56,14 +56,12 @@ class _FormLoginState extends State<FormLogin> {
           AppTextFormField(
             controller: context.read<LoginCubit>().emailController,
             keyboardType: TextInputType.emailAddress,
-            contentPadding: EdgeInsets.symmetric(vertical: 20.h),
             prefixIcon: Icon(
               Icons.email_outlined,
-              color: ColorsApp.gray,
-              size: 23.sp,
+              size: 24.sp,
             ),
-            hintText: 'Email',
-            hintStyle: TextStyles.font14Gray,
+            hintText: 'Email Address',
+            labelText: 'Email',
             validator: (value) {
               if (value == null ||
                   value.isEmpty ||
@@ -79,11 +77,10 @@ class _FormLoginState extends State<FormLogin> {
             isObscureText: isObscureText,
             controller: context.read<LoginCubit>().passwordController,
             keyboardType: TextInputType.visiblePassword,
-            contentPadding: EdgeInsets.symmetric(vertical: 20.h),
             prefixIcon: Icon(
               Icons.lock_outline,
-              color: ColorsApp.gray,
-              size: 25.sp,
+              // color: ColorsApp.gray,
+              size: 24.sp,
             ),
             suffixIcon: GestureDetector(
               onTap: () {
@@ -95,8 +92,8 @@ class _FormLoginState extends State<FormLogin> {
                 isObscureText
                     ? Icons.visibility_off_outlined
                     : Icons.visibility_outlined,
-                color: ColorsApp.gray,
-                size: 25.sp,
+                // color: ColorsApp.gray,
+                size: 24.sp,
               ),
             ),
             hintText: 'Password',

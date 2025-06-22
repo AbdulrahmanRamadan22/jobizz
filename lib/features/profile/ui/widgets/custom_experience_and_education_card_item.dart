@@ -14,7 +14,6 @@ class CustomExperienceAndEducationCardItem extends StatelessWidget {
     required this.subtitleText,
     required this.locationText,
     required this.dateText,
-    this.description,
   });
 
   final String leadingImage;
@@ -22,7 +21,6 @@ class CustomExperienceAndEducationCardItem extends StatelessWidget {
   final String subtitleText;
   final String locationText;
   final String dateText;
-  final String? description;
 
   @override
   Widget build(BuildContext context) {
@@ -71,22 +69,31 @@ class CustomExperienceAndEducationCardItem extends StatelessWidget {
                   style: TextStyles.font12DarkBlack,
                 ),
                 verticalSpace(4),
-                Text(
-                  dateText,
-                  style: TextStyles.font12Gray,
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 8.w,
+                    vertical: 4.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: ColorsApp.lightBlueGray.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  child: Text(
+                    dateText,
+                    style: TextStyles.font12Gray.copyWith(
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w500,
+                      color: ColorsApp.mainBlue,
+                    ),
+                  ),
                 ),
+                // Text(
+                //   dateText,
+                //   style: TextStyles.font12Gray,
+                // ),
               ],
             ),
           ),
-          description == null
-              ? const SizedBox.shrink()
-              : Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12.w),
-                  child: Text(
-                    description ?? '',
-                    style: TextStyles.font12Gray,
-                  ),
-                ),
         ],
       ),
     );

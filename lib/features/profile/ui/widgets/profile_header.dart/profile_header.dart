@@ -3,7 +3,7 @@ import 'package:jobizz/features/profile/data/models/profile_response_model.dart'
 import 'package:jobizz/features/profile/ui/widgets/profile_header.dart/row_detiles_profile.dart';
 
 import '../../../../../core/helper/size_box.dart';
-import 'image_and_named_and_job.dart';
+import 'personal_info.dart';
 
 class ProfileHeader extends StatelessWidget {
   final ProfileData? profileData;
@@ -17,7 +17,7 @@ class ProfileHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ImageAndNamedAndJob(
+        PersonalInfoData(
           profileData: profileData,
         ),
         verticalSpace(20),
