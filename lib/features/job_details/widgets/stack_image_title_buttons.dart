@@ -34,7 +34,10 @@ class StackImageTitleButtons extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              RowIcons(),
+              RowIcons(
+                job: job,
+                
+              ),
               CircleAvatar(
                 backgroundColor: ColorsApp.whiteColor,
                 radius: 42.r,

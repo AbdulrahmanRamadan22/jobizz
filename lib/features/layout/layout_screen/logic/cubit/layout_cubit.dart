@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobizz/core/di/dependancy_ingection.dart';
 import 'package:jobizz/features/home/logic/cubit/home_cubit.dart';
 import 'package:jobizz/features/layout/layout_screen/logic/cubit/layout_state.dart';
+import 'package:jobizz/features/saved_jobs/cubit/saved_cubit.dart';
 
 import '../../../../bot_chat/ui/chat_bot_screen.dart';
 import '../../../../category/cubit/category_cubit.dart';
@@ -22,13 +23,21 @@ class LayoutCubit extends Cubit<LayoutState> {
   final HomeCubit homeCubit = HomeCubit(getIt());
   final CategoryCubit categoryCubit = CategoryCubit(getIt());
   final CompanyCubit companyCubit = CompanyCubit(getIt());
+  final SavedCubit savedCubit = SavedCubit(getIt());
 
   int currentIndex = 0;
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   late final List<Widget> screensBottom = [
-    BlocProvider.value(
-      value: homeCubit,
+    // BlocProvider.value(
+    //   value: homeCubit,
+    //   child: const HomeScreen(),
+    // ),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider.value(value: homeCubit),
+        BlocProvider.value(value: savedCubit),
+      ],
       child: const HomeScreen(),
     ),
 

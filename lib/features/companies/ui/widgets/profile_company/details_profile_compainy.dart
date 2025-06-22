@@ -6,8 +6,6 @@ import 'package:jobizz/core/theming/styles.dart';
 import 'package:jobizz/features/companies/data/model/company_response.dart';
 import 'package:jobizz/features/companies/ui/widgets/profile_company/container_of_profile_company.dart';
 
-import 'package:skeletonizer/skeletonizer.dart';
-
 class CompanyDetails extends StatelessWidget {
   const CompanyDetails({super.key, this.companyItem});
 

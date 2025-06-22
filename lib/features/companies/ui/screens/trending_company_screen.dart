@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
+import 'package:jobizz/core/widgets/show_generic_search_dialog.dart';
 import 'package:jobizz/features/companies/data/model/company_response.dart';
 import 'package:jobizz/features/companies/ui/widgets/company_item.dart';
 
@@ -20,6 +21,36 @@ class TrendingCompanyScreen extends StatelessWidget {
           'Trending',
           style: TextStyles.font16Black,
         ),
+        // icon Button Search
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.search,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              final List<Company> companies =
+                  companyDataList?.whereType<Company>().toList() ?? [];
+              showGenericSearchDialog<Company>(
+                context: context,
+                items: companies, // تمرير قائمة الفئات
+                searchFields: [
+                  (company) => company.name ?? '', // حقل البحث للفئة (الاسم)
+                ],
+                itemBuilder: (context, company) {
+                  return Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10.0.w,
+                        vertical: 7.h,
+                      ),
+                      child: CompanyItem(
+                        companyItem: company,
+                      ));
+                },
+              );
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),

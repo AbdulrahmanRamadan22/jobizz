@@ -1,10 +1,8 @@
-//
 import 'package:dio/dio.dart';
 import 'package:jobizz/core/networking/api_constants.dart';
-
+import 'package:jobizz/features/saved_jobs/data/model/saved_response.dart';
 import 'package:retrofit/http.dart';
 import 'package:retrofit/error_logger.dart';
-
 import '../../features/auth/change_password/data/model/change_password_request.dart';
 import '../../features/auth/change_password/data/model/change_password_response.dart';
 import '../../features/auth/forget_password_screen/data/models/forget_pass_request.dart';
@@ -53,7 +51,7 @@ abstract class ApisServices {
   Future<ForgetPasswordResponse> forgetpassword(
     @Body() ForgetPassRequest forgetPassRequest,
   );
-   // otp valid service
+  // otp valid service
   @POST(ApiConstant.otpCode)
   Future<OtpResponse> otpValid(
     @Body() OtpRequestCode otpRequestCode,
@@ -65,7 +63,7 @@ abstract class ApisServices {
     @Body() ResetPasswordRequest resetPasswordRequest,
   );
 
- // change password service
+  // change password service
   @POST(ApiConstant.changePassword)
   Future<ChangePasswordResponse> changePassword(
     @Header("Authorization") String token,
@@ -88,16 +86,26 @@ abstract class ApisServices {
     @Header("Authorization") String token,
   );
 
-
-  
   @GET("${ApiConstant.getProfileById}/{id}")
   Future<ProfileResponseModel> getProfileDetailsById(
     @Path('id') int id,
     @Header('Authorization') String token,
   );
-  
-   @GET(ApiConstant.getProfilesDetails)
+
+  @GET(ApiConstant.getProfilesDetails)
   Future<ProfilesResponseModel> getProfilesDetails(
     @Header('Authorization') String token,
+  );
+
+  @POST(ApiConstant.addFavorite)
+  Future<dynamic> addFavorite(
+    @Header('Authorization') String token,
+    @Path('profileId') int profileId,
+    @Path('itemId') int itemId,
+  );
+  @GET(ApiConstant.getFavorites)
+  Future<SavedResponse> getFavorites(
+    @Header('Authorization') String token,
+    @Path('profileId') int profileId,
   );
 }

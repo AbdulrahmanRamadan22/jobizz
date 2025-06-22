@@ -8,14 +8,11 @@ import '../../../../../core/widgets/showdialog_loadin.dart';
 import '../../logic/cubit/login_cubit.dart';
 import '../../logic/cubit/login_state.dart';
 
-
 class LoginBlocListener extends StatelessWidget {
   const LoginBlocListener({super.key});
 
   @override
-
   Widget build(BuildContext context) {
-    
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
           current is Loading || current is Success || current is Error,
@@ -26,7 +23,8 @@ class LoginBlocListener extends StatelessWidget {
           },
           success: (loginResponse) {
             context.pop();
-            context.pushNamedAndRemoveUntil(Routes.layoutScreen, predicate: (route) => false);
+            context.pushNamedAndRemoveUntil(Routes.layoutScreen,
+                predicate: (route) => false);
           },
           failure: (apiErrorModel) {
             context.pop();

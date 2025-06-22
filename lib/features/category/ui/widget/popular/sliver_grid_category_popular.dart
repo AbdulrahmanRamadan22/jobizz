@@ -4,7 +4,6 @@ import '../../../../../core/widgets/shimmer_loading_custom.dart';
 import '../../../data/model/category_response.dart';
 import '../category_item.dart';
 
-
 class SliverGridCategoryPopular extends StatelessWidget {
   const SliverGridCategoryPopular({super.key, this.categoryDataList});
   final List<Category?>? categoryDataList;

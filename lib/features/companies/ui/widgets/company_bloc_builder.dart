@@ -34,8 +34,8 @@ class CompanyBlocBuilder extends StatelessWidget {
                     onPressed: () {},
                   ),
                 ),
-                SliverGridCompaniesPopular(
-                  companyDataList: null,
+                const SliverGridCompaniesPopular(
+                  companyDataList: null, // Placeholder for loading state
                 ),
                 SliverToBoxAdapter(
                   child: RowTextAndSeeAll(
@@ -45,8 +45,8 @@ class CompanyBlocBuilder extends StatelessWidget {
                     onPressed: () {},
                   ),
                 ),
-                SliverGridCompaniesTrending(
-                  companyDataList: null,
+                const SliverGridCompaniesTrending(
+                  companyDataList: null, // Placeholder for loading state
                 ),
               ],
             );

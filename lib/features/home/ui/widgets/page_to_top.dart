@@ -1,12 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/helper/extensions.dart';
-import 'package:jobizz/features/home/logic/cubit/home_cubit.dart';
-import 'package:jobizz/features/home/logic/cubit/home_state.dart';
-
 import '../../../../core/cache/constants.dart';
 import '../../../../core/cache/shared_pref.dart';
 import '../../../../core/helper/size_box.dart';

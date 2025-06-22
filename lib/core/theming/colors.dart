@@ -17,4 +17,5 @@ class ColorsApp {
   static const Color darkBlack = Color(0xFF0D0D26);
   static const Color whiteColor = Color(0xffFFFFFF);
   static const Color red = Color(0xFFE74C3C);
+  static const Color lightRed = Color(0xFFFFEDED);
 }
