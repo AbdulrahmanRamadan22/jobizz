@@ -33,6 +33,13 @@ class _LayoutScreensState extends State<LayoutScreens> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    _connectionStream.drain();
+
+  }
+
+  @override
   Widget build(BuildContext context) {
     final cubit = context.read<LayoutCubit>();
     return isConnected
