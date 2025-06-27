@@ -54,14 +54,12 @@ class AppTextFormField extends StatelessWidget {
     return TextFormField(
       autovalidateMode: AutovalidateMode.onUserInteraction,
       maxLines: safeMaxLines,
-
       autofillHints: [
         AutofillHints.email,
       ],
       keyboardType: keyboardType,
       controller: controller,
       textDirection: textDirection,
-
       decoration: InputDecoration(
         border: InputBorder.none,
         isDense: true,
@@ -97,19 +95,11 @@ class AppTextFormField extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(10.0),
         ),
-
-        // label: Text(
-        //   hintText,
-        //   style: hintStyle ??
-        //       TextStyles.font14Gray.copyWith(color: ColorsApp.lightBlueGray),
-        // ),
-
-        /// ToDo >>  عدل هنا حسب لون الفورم
-
- prefixStyle: TextStyles.font14Red,
-        hintStyle: hintStyle ??
-            TextStyles.font14Gray.copyWith(color: ColorsApp.lightBlueGray),
-            counterStyle: TextStyles.font14Red,
+        // errorStyle: TextStyles.font14Red,
+        prefixStyle: TextStyles.font14Red,
+        hintStyle: hintStyle ?? TextStyles.font14Gray,
+        // .copyWith(color: ColorsApp.lightBlueGray),
+        counterStyle: TextStyles.font14Red,
         // labelStyle: TextStyles.font14Gray,
         hintText: hintText,
         suffixIcon: suffixIcon,
@@ -118,15 +108,11 @@ class AppTextFormField extends StatelessWidget {
         suffixIconColor: ColorsApp.gray,
         labelText: labelText,
 
-        /// ToDo >> background عدل هنا حسب لون  الفورم
         fillColor: backgroundColor ?? ColorsApp.backGroundWhite,
         filled: true,
       ),
       obscureText: isObscureText ?? false,
-
-      /// ToDo >> text عدل هنا حسب لون  الفورم
       style: TextStyles.font14Black,
-
       validator: (value) => validator(value),
     );
   }

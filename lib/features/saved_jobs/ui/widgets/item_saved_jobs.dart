@@ -98,7 +98,7 @@ class ItemSavedJobs extends StatelessWidget {
                   ),
                 ),
                 verticalSpace(16),
-                JobStatusAndSallary(statusColor: statusColor, job: job),
+                JobStatusAndSalary(statusColor: statusColor, job: job),
               ],
             ),
           ),

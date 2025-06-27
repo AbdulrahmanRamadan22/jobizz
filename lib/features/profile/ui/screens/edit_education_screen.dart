@@ -7,6 +7,7 @@ import '../../../../core/helper/size_box.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
 import '../../../../core/widgets/app_text_form_field.dart';
+import '../../../../core/widgets/button_app_text.dart';
 import '../../data/models/profile_response_model.dart';
 import '../../logic/profile_state.dart';
 
@@ -43,77 +44,63 @@ class EditEducationScreen extends StatelessWidget {
           endDateController.text = education?.endDate ?? '';
           descriptionController.text = education?.description ?? '';
 
-          return Padding(
-            padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 20.h),
-            child: SingleChildScrollView(
+          return SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 20.h),
               child: Form(
                 key: formKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('School*', style: TextStyles.font16DarkBlackSemiBold),
                     verticalSpace(8),
                     AppTextFormField(
+                      labelText: 'School',
                       controller: schoolController,
                       keyboardType: TextInputType.text,
-                      contentPadding: EdgeInsets.symmetric(vertical: 20.h),
                       prefixIcon: Icon(Icons.school_outlined,
                           color: ColorsApp.gray, size: 25.sp),
                       hintText: 'Ex:Cairo University',
-                      hintStyle: TextStyles.font14Gray,
                       validator: (value) => value?.isEmpty == true
                           ? 'Please enter your School'
                           : null,
                     ),
-                    verticalSpace(16),
-                    Text('Degree', style: TextStyles.font16DarkBlackSemiBold),
-                    verticalSpace(8),
+                    verticalSpace(18),
                     AppTextFormField(
+                      labelText: 'Degree',
                       controller: degreeController,
                       keyboardType: TextInputType.text,
-                      contentPadding: EdgeInsets.symmetric(vertical: 20.h),
                       prefixIcon: Icon(Icons.rotate_90_degrees_ccw,
                           color: ColorsApp.gray, size: 23.sp),
                       hintText: 'Ex: Bachelors',
-                      hintStyle: TextStyles.font14Gray,
                       validator: (value) => value?.isEmpty == true
                           ? 'Please enter your Degree'
                           : null,
                     ),
-                    verticalSpace(16),
-                    Text('Field of Study',
-                        style: TextStyles.font16DarkBlackSemiBold),
-                    verticalSpace(8),
+                    verticalSpace(18),
                     AppTextFormField(
+                      labelText: 'Field of Study',
                       controller: fieldOfStudyController,
                       keyboardType: TextInputType.text,
-                      contentPadding: EdgeInsets.symmetric(vertical: 20.h),
                       prefixIcon: Icon(Icons.work_outline,
                           color: ColorsApp.gray, size: 23.sp),
                       hintText: 'Ex: Computer Science',
-                      hintStyle: TextStyles.font14Gray,
                       validator: (value) => value?.isEmpty == true
                           ? 'Please enter your Field of Study'
                           : null,
                     ),
-                    verticalSpace(16),
+                    verticalSpace(18),
                     Row(children: [
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Start Date',
-                                style: TextStyles.font16DarkBlackSemiBold),
-                            verticalSpace(8),
                             AppTextFormField(
+                              labelText: 'Start Date',
                               controller: startDateController,
                               keyboardType: TextInputType.text,
-                              contentPadding:
-                                  EdgeInsets.symmetric(vertical: 20.h),
                               prefixIcon: Icon(Icons.calendar_month_outlined,
                                   color: ColorsApp.gray, size: 23.sp),
-                              hintText: 'Ex: 2020',
-                              hintStyle: TextStyles.font14Gray,
+                              hintText: 'Ex: 2020-09-30',
                               validator: (value) => value?.isEmpty == true
                                   ? 'Please enter your Start Date'
                                   : null,
@@ -121,68 +108,56 @@ class EditEducationScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      horizontalSpace(16),
+                      horizontalSpace(18),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('End Date',
-                                style: TextStyles.font16DarkBlackSemiBold),
-                            verticalSpace(8),
                             AppTextFormField(
+                              labelText: 'End Date (Optional)',
                               controller: endDateController,
                               keyboardType: TextInputType.text,
-                              contentPadding:
-                                  EdgeInsets.symmetric(vertical: 20.h),
                               prefixIcon: Icon(Icons.calendar_month_outlined,
                                   color: ColorsApp.gray, size: 23.sp),
-                              hintText: 'Ex: 2022',
-                              hintStyle: TextStyles.font14Gray,
-                              validator: (value) => value?.isEmpty == true
-                                  ? 'Please enter your End Date'
-                                  : null,
+                              hintText: 'Ex: 2022-09-30',
+                              validator: (value) => null,
                             ),
                           ],
                         ),
                       ),
                     ]),
-                    verticalSpace(16),
-                    Text('Location', style: TextStyles.font16DarkBlackSemiBold),
-                    verticalSpace(8),
+                    verticalSpace(18),
                     AppTextFormField(
+                      labelText: 'Location',
                       controller: locationController,
                       keyboardType: TextInputType.text,
-                      contentPadding: EdgeInsets.symmetric(vertical: 20.h),
                       prefixIcon: Icon(
                         Icons.location_on_outlined,
                         color: ColorsApp.gray,
                       ),
                       hintText: 'Ex: Cairo, Egypt',
-                      hintStyle: TextStyles.font14Gray,
                       validator: (value) => value?.isEmpty == true
                           ? 'Please enter your Location'
                           : null,
                     ),
-                    verticalSpace(16),
-                    Text('Description',
-                        style: TextStyles.font16DarkBlackSemiBold),
-                    verticalSpace(8),
+                    verticalSpace(18),
                     AppTextFormField(
+                      labelText: 'Description (Optional)',
                       controller: descriptionController,
                       keyboardType: TextInputType.multiline,
                       maxLines: 5,
-                      contentPadding: EdgeInsets.symmetric(
-                          vertical: 20.h, horizontal: 16.w),
-                      // prefixIcon: Icon(Icons.description_outlined,
-                      //     color: ColorsApp.gray, size: 23.sp),
                       hintText: 'Ex: Description',
-                      hintStyle: TextStyles.font14Gray,
-                      validator: (value) => value?.isEmpty == true
-                          ? 'Please enter your Description'
-                          : null,
+                      validator: (value) =>
+                          null, // Always returns null (no validation)
+                      // No validator needed
                     ),
-                    verticalSpace(16),
-                    // AppButton(title: 'Save', onPressed: (){}),
+                    verticalSpace(40),
+                    AppTextButton(
+                      buttonText: 'Save',
+                      onPressed: () {},
+                      textStyle: TextStyles.font16White,
+                      borderRadius: 8,
+                    ),
                   ],
                 ),
               ),
