@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobizz/core/theming/colors.dart';
-import 'package:jobizz/features/home/data/model/home_response_model.dart';
 import 'package:jobizz/features/saved_jobs/cubit/saved_cubit.dart';
 import 'package:jobizz/features/saved_jobs/cubit/saved_state.dart';
+
+import '../../jobs/data/models/job.dart';
 
 class RowIcons extends StatelessWidget {
   const RowIcons({
@@ -11,7 +12,7 @@ class RowIcons extends StatelessWidget {
     this.job,
   });
 
-  final Jop? job;
+  final Job? job;
 
   @override
   Widget build(BuildContext context) {

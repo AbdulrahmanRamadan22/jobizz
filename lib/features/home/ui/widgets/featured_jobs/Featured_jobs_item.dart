@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/helper/extensions.dart';
 import 'package:jobizz/core/routing/routers_string.dart';
 import 'package:jobizz/features/home/ui/widgets/featured_jobs/salary_and_location.dart';
-import 'package:jobizz/features/job_details/job_details_screen.dart';
-import 'package:jobizz/features/saved_jobs/cubit/saved_cubit.dart';
+
 import '../../../../../core/helper/size_box.dart';
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/theming/styles.dart';
-import '../../../data/model/home_response_model.dart';
+import '../../../../jobs/data/models/job.dart';
 import 'button_card_feature_job.dart';
 
 class FeaturedJobsItem extends StatelessWidget {
@@ -18,7 +16,7 @@ class FeaturedJobsItem extends StatelessWidget {
     required this.job,
   });
 
-  final Jop? job;
+  final Job? job;
 
   @override
   Widget build(BuildContext context) {

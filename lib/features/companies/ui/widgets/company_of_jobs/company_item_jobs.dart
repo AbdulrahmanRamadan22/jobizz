@@ -13,7 +13,7 @@ class CompanyItemJobs extends StatelessWidget {
     this.jobOFCompany,
   });
   final Company? companyItem;
-  final Job? jobOFCompany;
+  final JobInCompany? jobOFCompany;
 
   @override
   Widget build(BuildContext context) {

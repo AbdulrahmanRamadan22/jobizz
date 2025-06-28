@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../home/data/model/home_response_model.dart';
+import '../../data/models/job.dart';
 import '../widgets/grid_view_jobs.dart';
 import '../widgets/job_fond_length.dart';
 
 class PopularJobsScreen extends StatelessWidget {
   const PopularJobsScreen({super.key, this.popularJobs});
 
-  final List<Jop?>? popularJobs;
+  final List<Job?>? popularJobs;
 
   @override
   Widget build(BuildContext context) {

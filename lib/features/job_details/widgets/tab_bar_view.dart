@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:jobizz/features/home/data/model/home_response_model.dart';
+
+import '../../jobs/data/models/job.dart';
 
 class TabBarViewDesign extends StatelessWidget {
   const TabBarViewDesign({
     super.key,
     this.job,
   });
-  final Jop? job;
+  final Job? job;
 
   @override
   Widget build(BuildContext context) {

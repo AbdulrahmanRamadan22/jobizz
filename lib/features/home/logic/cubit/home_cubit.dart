@@ -1,15 +1,15 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobizz/core/cache/shared_pref.dart';
-import 'package:jobizz/features/home/data/model/home_response_model.dart';
 import 'package:jobizz/features/home/data/repo/home_repo.dart';
 
 import '../../../../core/cache/constants.dart';
+import '../../../jobs/data/models/job.dart';
 import 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   final HomeRepo _homeRepo;
   // List of All jobs
-  List<Jop?>? allJobsList = [];
+  List<Job?>? allJobsList = [];
   // is Saved Jobs
   Map<int, bool> savedJobsMap = {};
 

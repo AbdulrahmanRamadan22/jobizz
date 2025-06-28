@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../widget/category_bloc_builder.dart';
 
-
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({super.key});
 
@@ -13,16 +12,14 @@ class CategoryScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         // backgroundColor: ColorsApp.backGroundWhite,
-    
+
         title: Text('Category'),
       ),
       body: Padding(
         padding: EdgeInsets.only(
           bottom: 20.h,
-
-          left: 20.w,
-          right: 20.w,
-       
+          left: 18.w,
+          right: 18.w,
         ),
         child: CategoryBlocBuilder(),
       ),

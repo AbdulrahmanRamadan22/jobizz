@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
+import 'package:jobizz/features/profile/data/models/profile_response_model.dart';
 import 'package:jobizz/features/profile/logic/profile_state.dart';
 
 import '../../../core/cache/constants.dart';
 import '../../../core/cache/shared_pref.dart';
 import '../data/function/save_profile_cache.dart';
-import '../data/models/profile_response_model.dart';
 import '../data/repo/profile_repo.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
@@ -14,8 +14,7 @@ class ProfileCubit extends Cubit<ProfileState> {
 
   bool firstLoadedData = false;
 
-
-    var profileData;
+  var profileData;
 
   void resetProfileData() async {
     firstLoadedData = false;
@@ -46,7 +45,7 @@ class ProfileCubit extends Cubit<ProfileState> {
   }
 
   void updateGeneralProfileData({
-   required String fullName,
+    required String fullName,
     required String titleJob,
     String? jobPosition,
   }) async {
@@ -70,6 +69,30 @@ class ProfileCubit extends Cubit<ProfileState> {
       },
       failure: (error) {
         emit(ProfileState.updateGeneralProfileDataFailure(error));
+      },
+    );
+  }
+
+  void updateEducation({
+    required int educationId,
+    Education? education,
+  }) async {
+    emit(const ProfileState.updateEducationLoading());
+
+    final response = await _profileRepo.updateEducation(
+      educationId: educationId,
+      profileId: await SharedPrefHelper.getData(key: SharedPrefKeys.idProfile),
+      token:
+          "Bearer ${await SharedPrefHelper.getSecuredString(key: SharedPrefKeys.token)}",
+      education: education,
+    );
+    response.when(
+      success: (profileResponse) async {
+        // await saveProfile(profileResponse);
+        emit(ProfileState.updateEducationSuccess());
+      },
+      failure: (error) {
+        emit(ProfileState.updateEducationFailure(error));
       },
     );
   }

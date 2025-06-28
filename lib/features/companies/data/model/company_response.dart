@@ -52,7 +52,7 @@ class Company {
   final String? createdAt;
   @JsonKey(name: 'updated_at')
   final String? updatedAt;
-  final List<Job>? jobs;
+  final List<JobInCompany>? jobs;
 
   Company(
     this.id,
@@ -75,7 +75,7 @@ class Company {
 }
 
 @JsonSerializable()
-class Job {
+class JobInCompany {
   final int? id;
   @JsonKey(name: 'company_id')
   final int? companyId;
@@ -85,7 +85,7 @@ class Job {
   @JsonKey(name: 'job_salary')
   final String? jobSalary;
 
-  Job(
+  JobInCompany(
     this.id,
     this.companyId,
     this.title,
@@ -93,5 +93,5 @@ class Job {
     this.jobSalary,
   );
 
-  factory Job.fromJson(Map<String, dynamic> json) => _$JobFromJson(json);
+  factory JobInCompany.fromJson(Map<String, dynamic> json) => _$JobInCompanyFromJson(json);
 }

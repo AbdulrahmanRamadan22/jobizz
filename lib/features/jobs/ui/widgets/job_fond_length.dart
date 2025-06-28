@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/theming/colors.dart';
-import '../../../core/theming/styles.dart';
-import '../../home/data/model/home_response_model.dart';
+import '../../../../core/theming/colors.dart';
+import '../../../../core/theming/styles.dart';
+import '../../data/models/job.dart';
 
 class JobFondLength extends StatelessWidget {
   const JobFondLength({
@@ -10,7 +10,7 @@ class JobFondLength extends StatelessWidget {
     required this.jobs,
   });
 
-  final List<Jop?>? jobs;
+  final List<Job?>? jobs;
 
   @override
   Widget build(BuildContext context) {

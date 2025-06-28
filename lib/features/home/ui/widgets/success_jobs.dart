@@ -7,6 +7,7 @@ import 'package:jobizz/features/home/ui/widgets/recommended_jobs/recommended_job
 
 import '../../../../core/helper/size_box.dart';
 import '../../../../core/routing/routers_string.dart';
+import '../../../jobs/data/models/job.dart';
 import '../../data/model/home_response_model.dart';
 import 'featured_jobs/sliver_list_featured_jobs.dart';
 import 'recommended_jobs/sliver_grid_recommended_jobs.dart';
@@ -19,9 +20,9 @@ class SuccessJobs extends StatelessWidget {
     required this.listPopularJobs,
   });
 
-  final List<Jop?>? listFeaturedJobs;
-  final List<Jop?>? listRecommendedJobs;
-  final List<Jop?>? listPopularJobs;
+  final List<Job?>? listFeaturedJobs;
+  final List<Job?>? listRecommendedJobs;
+  final List<Job?>? listPopularJobs;
 
   @override
   Widget build(BuildContext context) {

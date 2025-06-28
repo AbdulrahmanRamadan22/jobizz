@@ -33,6 +33,34 @@ abstract class ProfileState<T> with _$ProfileState<T> {
   const factory ProfileState.profileDetailPortfoliosLoading() = ProfileDetailPortfoliosLoading;
 
 
+  // education
+
+    const factory ProfileState.updateEducationSuccess() = UpdateEducationSuccess;
+
+  const factory ProfileState.updateEducationFailure(ApiErrorModel apiErrorModel) = UpdateEducationFailure;
+
+  const factory ProfileState.updateEducationLoading() = UpdateEducationLoading;
+
+
+
+      const factory ProfileState.addEducationSuccess() = AddEducationSuccess;
+
+  const factory ProfileState.addEducationFailure(ApiErrorModel apiErrorModel) = AddEducationFailure;
+
+  const factory ProfileState.addEducationLoading() = AddEducationLoading;
+
+
+
+
+      const factory ProfileState.deleteEducationSuccess() = DeleteEducationSuccess;
+
+  const factory ProfileState.deleteEducationFailure(ApiErrorModel apiErrorModel) = DeleteEducationFailure;
+
+  const factory ProfileState.deleteEducationLoading() = DeleteEducationLoading;
+
+
+
+
 }
 
 

@@ -3,14 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/helper/size_box.dart';
 import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
-import 'package:jobizz/features/home/data/model/home_response_model.dart';
 import 'package:jobizz/features/home/ui/widgets/featured_jobs/button_card_feature_job.dart';
 import 'package:jobizz/features/job_details/widgets/container_back_ground.dart';
 import 'package:jobizz/features/job_details/widgets/row_icons.dart';
 
+import '../../jobs/data/models/job.dart';
+
 class StackImageTitleButtons extends StatelessWidget {
   const StackImageTitleButtons({super.key, this.job});
-  final Jop? job;
+  final Job? job;
   @override
   Widget build(BuildContext context) {
     return Stack(

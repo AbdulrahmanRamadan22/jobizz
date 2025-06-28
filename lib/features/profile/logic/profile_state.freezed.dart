@@ -34,6 +34,17 @@ mixin _$ProfileState<T> {
     required TResult Function(ApiErrorModel apiErrorModel)
         profileDetailsPortfolioFailure,
     required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +63,15 @@ mixin _$ProfileState<T> {
     TResult? Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +90,15 @@ mixin _$ProfileState<T> {
     TResult Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -94,6 +123,21 @@ mixin _$ProfileState<T> {
         profileDetailsPortfolioFailure,
     required TResult Function(ProfileDetailPortfoliosLoading<T> value)
         profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -114,6 +158,15 @@ mixin _$ProfileState<T> {
         profileDetailsPortfolioFailure,
     TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -134,6 +187,15 @@ mixin _$ProfileState<T> {
         profileDetailsPortfolioFailure,
     TResult Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -217,6 +279,17 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(ApiErrorModel apiErrorModel)
         profileDetailsPortfolioFailure,
     required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
   }) {
     return initial();
   }
@@ -238,6 +311,15 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
   }) {
     return initial?.call();
   }
@@ -259,6 +341,15 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -289,6 +380,21 @@ class _$InitialImpl<T> implements _Initial<T> {
         profileDetailsPortfolioFailure,
     required TResult Function(ProfileDetailPortfoliosLoading<T> value)
         profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
   }) {
     return initial(this);
   }
@@ -312,6 +418,15 @@ class _$InitialImpl<T> implements _Initial<T> {
         profileDetailsPortfolioFailure,
     TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
   }) {
     return initial?.call(this);
   }
@@ -335,6 +450,15 @@ class _$InitialImpl<T> implements _Initial<T> {
         profileDetailsPortfolioFailure,
     TResult Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -436,6 +560,17 @@ class _$ProfileDetailsSuccessImpl<T> implements ProfileDetailsSuccess<T> {
     required TResult Function(ApiErrorModel apiErrorModel)
         profileDetailsPortfolioFailure,
     required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
   }) {
     return profileDetailsSuccess(profileResponseModel);
   }
@@ -457,6 +592,15 @@ class _$ProfileDetailsSuccessImpl<T> implements ProfileDetailsSuccess<T> {
     TResult? Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
   }) {
     return profileDetailsSuccess?.call(profileResponseModel);
   }
@@ -478,6 +622,15 @@ class _$ProfileDetailsSuccessImpl<T> implements ProfileDetailsSuccess<T> {
     TResult Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (profileDetailsSuccess != null) {
@@ -508,6 +661,21 @@ class _$ProfileDetailsSuccessImpl<T> implements ProfileDetailsSuccess<T> {
         profileDetailsPortfolioFailure,
     required TResult Function(ProfileDetailPortfoliosLoading<T> value)
         profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
   }) {
     return profileDetailsSuccess(this);
   }
@@ -531,6 +699,15 @@ class _$ProfileDetailsSuccessImpl<T> implements ProfileDetailsSuccess<T> {
         profileDetailsPortfolioFailure,
     TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
   }) {
     return profileDetailsSuccess?.call(this);
   }
@@ -554,6 +731,15 @@ class _$ProfileDetailsSuccessImpl<T> implements ProfileDetailsSuccess<T> {
         profileDetailsPortfolioFailure,
     TResult Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (profileDetailsSuccess != null) {
@@ -665,6 +851,17 @@ class _$ProfileDetailsFailureImpl<T> implements ProfileDetailsFailure<T> {
     required TResult Function(ApiErrorModel apiErrorModel)
         profileDetailsPortfolioFailure,
     required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
   }) {
     return profileDetailsFailure(apiErrorModel);
   }
@@ -686,6 +883,15 @@ class _$ProfileDetailsFailureImpl<T> implements ProfileDetailsFailure<T> {
     TResult? Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
   }) {
     return profileDetailsFailure?.call(apiErrorModel);
   }
@@ -707,6 +913,15 @@ class _$ProfileDetailsFailureImpl<T> implements ProfileDetailsFailure<T> {
     TResult Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (profileDetailsFailure != null) {
@@ -737,6 +952,21 @@ class _$ProfileDetailsFailureImpl<T> implements ProfileDetailsFailure<T> {
         profileDetailsPortfolioFailure,
     required TResult Function(ProfileDetailPortfoliosLoading<T> value)
         profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
   }) {
     return profileDetailsFailure(this);
   }
@@ -760,6 +990,15 @@ class _$ProfileDetailsFailureImpl<T> implements ProfileDetailsFailure<T> {
         profileDetailsPortfolioFailure,
     TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
   }) {
     return profileDetailsFailure?.call(this);
   }
@@ -783,6 +1022,15 @@ class _$ProfileDetailsFailureImpl<T> implements ProfileDetailsFailure<T> {
         profileDetailsPortfolioFailure,
     TResult Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (profileDetailsFailure != null) {
@@ -865,6 +1113,17 @@ class _$ProfileDetailsLoadingImpl<T> implements ProfileDetailsLoading<T> {
     required TResult Function(ApiErrorModel apiErrorModel)
         profileDetailsPortfolioFailure,
     required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
   }) {
     return profileDetailsLoading();
   }
@@ -886,6 +1145,15 @@ class _$ProfileDetailsLoadingImpl<T> implements ProfileDetailsLoading<T> {
     TResult? Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
   }) {
     return profileDetailsLoading?.call();
   }
@@ -907,6 +1175,15 @@ class _$ProfileDetailsLoadingImpl<T> implements ProfileDetailsLoading<T> {
     TResult Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (profileDetailsLoading != null) {
@@ -937,6 +1214,21 @@ class _$ProfileDetailsLoadingImpl<T> implements ProfileDetailsLoading<T> {
         profileDetailsPortfolioFailure,
     required TResult Function(ProfileDetailPortfoliosLoading<T> value)
         profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
   }) {
     return profileDetailsLoading(this);
   }
@@ -960,6 +1252,15 @@ class _$ProfileDetailsLoadingImpl<T> implements ProfileDetailsLoading<T> {
         profileDetailsPortfolioFailure,
     TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
   }) {
     return profileDetailsLoading?.call(this);
   }
@@ -983,6 +1284,15 @@ class _$ProfileDetailsLoadingImpl<T> implements ProfileDetailsLoading<T> {
         profileDetailsPortfolioFailure,
     TResult Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (profileDetailsLoading != null) {
@@ -1088,6 +1398,17 @@ class _$UpdateGeneralProfileDataSuccessImpl<T>
     required TResult Function(ApiErrorModel apiErrorModel)
         profileDetailsPortfolioFailure,
     required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
   }) {
     return updateGeneralProfileDataSuccess(profileResponseModel);
   }
@@ -1109,6 +1430,15 @@ class _$UpdateGeneralProfileDataSuccessImpl<T>
     TResult? Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
   }) {
     return updateGeneralProfileDataSuccess?.call(profileResponseModel);
   }
@@ -1130,6 +1460,15 @@ class _$UpdateGeneralProfileDataSuccessImpl<T>
     TResult Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (updateGeneralProfileDataSuccess != null) {
@@ -1160,6 +1499,21 @@ class _$UpdateGeneralProfileDataSuccessImpl<T>
         profileDetailsPortfolioFailure,
     required TResult Function(ProfileDetailPortfoliosLoading<T> value)
         profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
   }) {
     return updateGeneralProfileDataSuccess(this);
   }
@@ -1183,6 +1537,15 @@ class _$UpdateGeneralProfileDataSuccessImpl<T>
         profileDetailsPortfolioFailure,
     TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
   }) {
     return updateGeneralProfileDataSuccess?.call(this);
   }
@@ -1206,6 +1569,15 @@ class _$UpdateGeneralProfileDataSuccessImpl<T>
         profileDetailsPortfolioFailure,
     TResult Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (updateGeneralProfileDataSuccess != null) {
@@ -1320,6 +1692,17 @@ class _$UpdateGeneralProfileDataFailureImpl<T>
     required TResult Function(ApiErrorModel apiErrorModel)
         profileDetailsPortfolioFailure,
     required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
   }) {
     return updateGeneralProfileDataFailure(apiErrorModel);
   }
@@ -1341,6 +1724,15 @@ class _$UpdateGeneralProfileDataFailureImpl<T>
     TResult? Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
   }) {
     return updateGeneralProfileDataFailure?.call(apiErrorModel);
   }
@@ -1362,6 +1754,15 @@ class _$UpdateGeneralProfileDataFailureImpl<T>
     TResult Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (updateGeneralProfileDataFailure != null) {
@@ -1392,6 +1793,21 @@ class _$UpdateGeneralProfileDataFailureImpl<T>
         profileDetailsPortfolioFailure,
     required TResult Function(ProfileDetailPortfoliosLoading<T> value)
         profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
   }) {
     return updateGeneralProfileDataFailure(this);
   }
@@ -1415,6 +1831,15 @@ class _$UpdateGeneralProfileDataFailureImpl<T>
         profileDetailsPortfolioFailure,
     TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
   }) {
     return updateGeneralProfileDataFailure?.call(this);
   }
@@ -1438,6 +1863,15 @@ class _$UpdateGeneralProfileDataFailureImpl<T>
         profileDetailsPortfolioFailure,
     TResult Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (updateGeneralProfileDataFailure != null) {
@@ -1524,6 +1958,17 @@ class _$UpdateGeneralProfileDataLoadingImpl<T>
     required TResult Function(ApiErrorModel apiErrorModel)
         profileDetailsPortfolioFailure,
     required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
   }) {
     return updateGeneralProfileDataLoading();
   }
@@ -1545,6 +1990,15 @@ class _$UpdateGeneralProfileDataLoadingImpl<T>
     TResult? Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
   }) {
     return updateGeneralProfileDataLoading?.call();
   }
@@ -1566,6 +2020,15 @@ class _$UpdateGeneralProfileDataLoadingImpl<T>
     TResult Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (updateGeneralProfileDataLoading != null) {
@@ -1596,6 +2059,21 @@ class _$UpdateGeneralProfileDataLoadingImpl<T>
         profileDetailsPortfolioFailure,
     required TResult Function(ProfileDetailPortfoliosLoading<T> value)
         profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
   }) {
     return updateGeneralProfileDataLoading(this);
   }
@@ -1619,6 +2097,15 @@ class _$UpdateGeneralProfileDataLoadingImpl<T>
         profileDetailsPortfolioFailure,
     TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
   }) {
     return updateGeneralProfileDataLoading?.call(this);
   }
@@ -1642,6 +2129,15 @@ class _$UpdateGeneralProfileDataLoadingImpl<T>
         profileDetailsPortfolioFailure,
     TResult Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (updateGeneralProfileDataLoading != null) {
@@ -1754,6 +2250,17 @@ class _$ProfileDetailsPortfoliosSuccessImpl<T>
     required TResult Function(ApiErrorModel apiErrorModel)
         profileDetailsPortfolioFailure,
     required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
   }) {
     return profileDetailsPortfoliosSuccess(portfolios);
   }
@@ -1775,6 +2282,15 @@ class _$ProfileDetailsPortfoliosSuccessImpl<T>
     TResult? Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
   }) {
     return profileDetailsPortfoliosSuccess?.call(portfolios);
   }
@@ -1796,6 +2312,15 @@ class _$ProfileDetailsPortfoliosSuccessImpl<T>
     TResult Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (profileDetailsPortfoliosSuccess != null) {
@@ -1826,6 +2351,21 @@ class _$ProfileDetailsPortfoliosSuccessImpl<T>
         profileDetailsPortfolioFailure,
     required TResult Function(ProfileDetailPortfoliosLoading<T> value)
         profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
   }) {
     return profileDetailsPortfoliosSuccess(this);
   }
@@ -1849,6 +2389,15 @@ class _$ProfileDetailsPortfoliosSuccessImpl<T>
         profileDetailsPortfolioFailure,
     TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
   }) {
     return profileDetailsPortfoliosSuccess?.call(this);
   }
@@ -1872,6 +2421,15 @@ class _$ProfileDetailsPortfoliosSuccessImpl<T>
         profileDetailsPortfolioFailure,
     TResult Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (profileDetailsPortfoliosSuccess != null) {
@@ -1987,6 +2545,17 @@ class _$ProfileDetailsPortfolioFailureImpl<T>
     required TResult Function(ApiErrorModel apiErrorModel)
         profileDetailsPortfolioFailure,
     required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
   }) {
     return profileDetailsPortfolioFailure(apiErrorModel);
   }
@@ -2008,6 +2577,15 @@ class _$ProfileDetailsPortfolioFailureImpl<T>
     TResult? Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
   }) {
     return profileDetailsPortfolioFailure?.call(apiErrorModel);
   }
@@ -2029,6 +2607,15 @@ class _$ProfileDetailsPortfolioFailureImpl<T>
     TResult Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (profileDetailsPortfolioFailure != null) {
@@ -2059,6 +2646,21 @@ class _$ProfileDetailsPortfolioFailureImpl<T>
         profileDetailsPortfolioFailure,
     required TResult Function(ProfileDetailPortfoliosLoading<T> value)
         profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
   }) {
     return profileDetailsPortfolioFailure(this);
   }
@@ -2082,6 +2684,15 @@ class _$ProfileDetailsPortfolioFailureImpl<T>
         profileDetailsPortfolioFailure,
     TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
   }) {
     return profileDetailsPortfolioFailure?.call(this);
   }
@@ -2105,6 +2716,15 @@ class _$ProfileDetailsPortfolioFailureImpl<T>
         profileDetailsPortfolioFailure,
     TResult Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (profileDetailsPortfolioFailure != null) {
@@ -2191,6 +2811,17 @@ class _$ProfileDetailPortfoliosLoadingImpl<T>
     required TResult Function(ApiErrorModel apiErrorModel)
         profileDetailsPortfolioFailure,
     required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
   }) {
     return profileDetailPortfoliosLoading();
   }
@@ -2212,6 +2843,15 @@ class _$ProfileDetailPortfoliosLoadingImpl<T>
     TResult? Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
   }) {
     return profileDetailPortfoliosLoading?.call();
   }
@@ -2233,6 +2873,15 @@ class _$ProfileDetailPortfoliosLoadingImpl<T>
     TResult Function(ApiErrorModel apiErrorModel)?
         profileDetailsPortfolioFailure,
     TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (profileDetailPortfoliosLoading != null) {
@@ -2263,6 +2912,21 @@ class _$ProfileDetailPortfoliosLoadingImpl<T>
         profileDetailsPortfolioFailure,
     required TResult Function(ProfileDetailPortfoliosLoading<T> value)
         profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
   }) {
     return profileDetailPortfoliosLoading(this);
   }
@@ -2286,6 +2950,15 @@ class _$ProfileDetailPortfoliosLoadingImpl<T>
         profileDetailsPortfolioFailure,
     TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
   }) {
     return profileDetailPortfoliosLoading?.call(this);
   }
@@ -2309,6 +2982,15 @@ class _$ProfileDetailPortfoliosLoadingImpl<T>
         profileDetailsPortfolioFailure,
     TResult Function(ProfileDetailPortfoliosLoading<T> value)?
         profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
     required TResult orElse(),
   }) {
     if (profileDetailPortfoliosLoading != null) {
@@ -2321,4 +3003,2386 @@ class _$ProfileDetailPortfoliosLoadingImpl<T>
 abstract class ProfileDetailPortfoliosLoading<T> implements ProfileState<T> {
   const factory ProfileDetailPortfoliosLoading() =
       _$ProfileDetailPortfoliosLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$UpdateEducationSuccessImplCopyWith<T, $Res> {
+  factory _$$UpdateEducationSuccessImplCopyWith(
+          _$UpdateEducationSuccessImpl<T> value,
+          $Res Function(_$UpdateEducationSuccessImpl<T>) then) =
+      __$$UpdateEducationSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UpdateEducationSuccessImplCopyWithImpl<T, $Res>
+    extends _$ProfileStateCopyWithImpl<T, $Res, _$UpdateEducationSuccessImpl<T>>
+    implements _$$UpdateEducationSuccessImplCopyWith<T, $Res> {
+  __$$UpdateEducationSuccessImplCopyWithImpl(
+      _$UpdateEducationSuccessImpl<T> _value,
+      $Res Function(_$UpdateEducationSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$UpdateEducationSuccessImpl<T> implements UpdateEducationSuccess<T> {
+  const _$UpdateEducationSuccessImpl();
+
+  @override
+  String toString() {
+    return 'ProfileState<$T>.updateEducationSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateEducationSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(ProfileResponseModel profileResponseModel)
+        profileDetailsSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsFailure,
+    required TResult Function() profileDetailsLoading,
+    required TResult Function(T profileResponseModel)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateGeneralProfileDataFailure,
+    required TResult Function() updateGeneralProfileDataLoading,
+    required TResult Function(List<Portfolios> portfolios)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsPortfolioFailure,
+    required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
+  }) {
+    return updateEducationSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult? Function()? profileDetailsLoading,
+    TResult? Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult? Function()? updateGeneralProfileDataLoading,
+    TResult? Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
+  }) {
+    return updateEducationSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult Function()? profileDetailsLoading,
+    TResult Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult Function()? updateGeneralProfileDataLoading,
+    TResult Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (updateEducationSuccess != null) {
+      return updateEducationSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(ProfileDetailsSuccess<T> value)
+        profileDetailsSuccess,
+    required TResult Function(ProfileDetailsFailure<T> value)
+        profileDetailsFailure,
+    required TResult Function(ProfileDetailsLoading<T> value)
+        profileDetailsLoading,
+    required TResult Function(UpdateGeneralProfileDataSuccess<T> value)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(UpdateGeneralProfileDataFailure<T> value)
+        updateGeneralProfileDataFailure,
+    required TResult Function(UpdateGeneralProfileDataLoading<T> value)
+        updateGeneralProfileDataLoading,
+    required TResult Function(ProfileDetailsPortfoliosSuccess<T> value)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ProfileDetailsPortfolioFailure<T> value)
+        profileDetailsPortfolioFailure,
+    required TResult Function(ProfileDetailPortfoliosLoading<T> value)
+        profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
+  }) {
+    return updateEducationSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult? Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult? Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult? Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult? Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult? Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult? Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+  }) {
+    return updateEducationSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (updateEducationSuccess != null) {
+      return updateEducationSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateEducationSuccess<T> implements ProfileState<T> {
+  const factory UpdateEducationSuccess() = _$UpdateEducationSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$UpdateEducationFailureImplCopyWith<T, $Res> {
+  factory _$$UpdateEducationFailureImplCopyWith(
+          _$UpdateEducationFailureImpl<T> value,
+          $Res Function(_$UpdateEducationFailureImpl<T>) then) =
+      __$$UpdateEducationFailureImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ApiErrorModel apiErrorModel});
+}
+
+/// @nodoc
+class __$$UpdateEducationFailureImplCopyWithImpl<T, $Res>
+    extends _$ProfileStateCopyWithImpl<T, $Res, _$UpdateEducationFailureImpl<T>>
+    implements _$$UpdateEducationFailureImplCopyWith<T, $Res> {
+  __$$UpdateEducationFailureImplCopyWithImpl(
+      _$UpdateEducationFailureImpl<T> _value,
+      $Res Function(_$UpdateEducationFailureImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? apiErrorModel = null,
+  }) {
+    return _then(_$UpdateEducationFailureImpl<T>(
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateEducationFailureImpl<T> implements UpdateEducationFailure<T> {
+  const _$UpdateEducationFailureImpl(this.apiErrorModel);
+
+  @override
+  final ApiErrorModel apiErrorModel;
+
+  @override
+  String toString() {
+    return 'ProfileState<$T>.updateEducationFailure(apiErrorModel: $apiErrorModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateEducationFailureImpl<T> &&
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateEducationFailureImplCopyWith<T, _$UpdateEducationFailureImpl<T>>
+      get copyWith => __$$UpdateEducationFailureImplCopyWithImpl<T,
+          _$UpdateEducationFailureImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(ProfileResponseModel profileResponseModel)
+        profileDetailsSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsFailure,
+    required TResult Function() profileDetailsLoading,
+    required TResult Function(T profileResponseModel)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateGeneralProfileDataFailure,
+    required TResult Function() updateGeneralProfileDataLoading,
+    required TResult Function(List<Portfolios> portfolios)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsPortfolioFailure,
+    required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
+  }) {
+    return updateEducationFailure(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult? Function()? profileDetailsLoading,
+    TResult? Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult? Function()? updateGeneralProfileDataLoading,
+    TResult? Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
+  }) {
+    return updateEducationFailure?.call(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult Function()? profileDetailsLoading,
+    TResult Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult Function()? updateGeneralProfileDataLoading,
+    TResult Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (updateEducationFailure != null) {
+      return updateEducationFailure(apiErrorModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(ProfileDetailsSuccess<T> value)
+        profileDetailsSuccess,
+    required TResult Function(ProfileDetailsFailure<T> value)
+        profileDetailsFailure,
+    required TResult Function(ProfileDetailsLoading<T> value)
+        profileDetailsLoading,
+    required TResult Function(UpdateGeneralProfileDataSuccess<T> value)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(UpdateGeneralProfileDataFailure<T> value)
+        updateGeneralProfileDataFailure,
+    required TResult Function(UpdateGeneralProfileDataLoading<T> value)
+        updateGeneralProfileDataLoading,
+    required TResult Function(ProfileDetailsPortfoliosSuccess<T> value)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ProfileDetailsPortfolioFailure<T> value)
+        profileDetailsPortfolioFailure,
+    required TResult Function(ProfileDetailPortfoliosLoading<T> value)
+        profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
+  }) {
+    return updateEducationFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult? Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult? Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult? Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult? Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult? Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult? Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+  }) {
+    return updateEducationFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (updateEducationFailure != null) {
+      return updateEducationFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateEducationFailure<T> implements ProfileState<T> {
+  const factory UpdateEducationFailure(final ApiErrorModel apiErrorModel) =
+      _$UpdateEducationFailureImpl<T>;
+
+  ApiErrorModel get apiErrorModel;
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateEducationFailureImplCopyWith<T, _$UpdateEducationFailureImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateEducationLoadingImplCopyWith<T, $Res> {
+  factory _$$UpdateEducationLoadingImplCopyWith(
+          _$UpdateEducationLoadingImpl<T> value,
+          $Res Function(_$UpdateEducationLoadingImpl<T>) then) =
+      __$$UpdateEducationLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UpdateEducationLoadingImplCopyWithImpl<T, $Res>
+    extends _$ProfileStateCopyWithImpl<T, $Res, _$UpdateEducationLoadingImpl<T>>
+    implements _$$UpdateEducationLoadingImplCopyWith<T, $Res> {
+  __$$UpdateEducationLoadingImplCopyWithImpl(
+      _$UpdateEducationLoadingImpl<T> _value,
+      $Res Function(_$UpdateEducationLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$UpdateEducationLoadingImpl<T> implements UpdateEducationLoading<T> {
+  const _$UpdateEducationLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ProfileState<$T>.updateEducationLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateEducationLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(ProfileResponseModel profileResponseModel)
+        profileDetailsSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsFailure,
+    required TResult Function() profileDetailsLoading,
+    required TResult Function(T profileResponseModel)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateGeneralProfileDataFailure,
+    required TResult Function() updateGeneralProfileDataLoading,
+    required TResult Function(List<Portfolios> portfolios)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsPortfolioFailure,
+    required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
+  }) {
+    return updateEducationLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult? Function()? profileDetailsLoading,
+    TResult? Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult? Function()? updateGeneralProfileDataLoading,
+    TResult? Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
+  }) {
+    return updateEducationLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult Function()? profileDetailsLoading,
+    TResult Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult Function()? updateGeneralProfileDataLoading,
+    TResult Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (updateEducationLoading != null) {
+      return updateEducationLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(ProfileDetailsSuccess<T> value)
+        profileDetailsSuccess,
+    required TResult Function(ProfileDetailsFailure<T> value)
+        profileDetailsFailure,
+    required TResult Function(ProfileDetailsLoading<T> value)
+        profileDetailsLoading,
+    required TResult Function(UpdateGeneralProfileDataSuccess<T> value)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(UpdateGeneralProfileDataFailure<T> value)
+        updateGeneralProfileDataFailure,
+    required TResult Function(UpdateGeneralProfileDataLoading<T> value)
+        updateGeneralProfileDataLoading,
+    required TResult Function(ProfileDetailsPortfoliosSuccess<T> value)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ProfileDetailsPortfolioFailure<T> value)
+        profileDetailsPortfolioFailure,
+    required TResult Function(ProfileDetailPortfoliosLoading<T> value)
+        profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
+  }) {
+    return updateEducationLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult? Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult? Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult? Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult? Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult? Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult? Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+  }) {
+    return updateEducationLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (updateEducationLoading != null) {
+      return updateEducationLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateEducationLoading<T> implements ProfileState<T> {
+  const factory UpdateEducationLoading() = _$UpdateEducationLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$AddEducationSuccessImplCopyWith<T, $Res> {
+  factory _$$AddEducationSuccessImplCopyWith(_$AddEducationSuccessImpl<T> value,
+          $Res Function(_$AddEducationSuccessImpl<T>) then) =
+      __$$AddEducationSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$AddEducationSuccessImplCopyWithImpl<T, $Res>
+    extends _$ProfileStateCopyWithImpl<T, $Res, _$AddEducationSuccessImpl<T>>
+    implements _$$AddEducationSuccessImplCopyWith<T, $Res> {
+  __$$AddEducationSuccessImplCopyWithImpl(_$AddEducationSuccessImpl<T> _value,
+      $Res Function(_$AddEducationSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$AddEducationSuccessImpl<T> implements AddEducationSuccess<T> {
+  const _$AddEducationSuccessImpl();
+
+  @override
+  String toString() {
+    return 'ProfileState<$T>.addEducationSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddEducationSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(ProfileResponseModel profileResponseModel)
+        profileDetailsSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsFailure,
+    required TResult Function() profileDetailsLoading,
+    required TResult Function(T profileResponseModel)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateGeneralProfileDataFailure,
+    required TResult Function() updateGeneralProfileDataLoading,
+    required TResult Function(List<Portfolios> portfolios)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsPortfolioFailure,
+    required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
+  }) {
+    return addEducationSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult? Function()? profileDetailsLoading,
+    TResult? Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult? Function()? updateGeneralProfileDataLoading,
+    TResult? Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
+  }) {
+    return addEducationSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult Function()? profileDetailsLoading,
+    TResult Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult Function()? updateGeneralProfileDataLoading,
+    TResult Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (addEducationSuccess != null) {
+      return addEducationSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(ProfileDetailsSuccess<T> value)
+        profileDetailsSuccess,
+    required TResult Function(ProfileDetailsFailure<T> value)
+        profileDetailsFailure,
+    required TResult Function(ProfileDetailsLoading<T> value)
+        profileDetailsLoading,
+    required TResult Function(UpdateGeneralProfileDataSuccess<T> value)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(UpdateGeneralProfileDataFailure<T> value)
+        updateGeneralProfileDataFailure,
+    required TResult Function(UpdateGeneralProfileDataLoading<T> value)
+        updateGeneralProfileDataLoading,
+    required TResult Function(ProfileDetailsPortfoliosSuccess<T> value)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ProfileDetailsPortfolioFailure<T> value)
+        profileDetailsPortfolioFailure,
+    required TResult Function(ProfileDetailPortfoliosLoading<T> value)
+        profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
+  }) {
+    return addEducationSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult? Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult? Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult? Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult? Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult? Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult? Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+  }) {
+    return addEducationSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (addEducationSuccess != null) {
+      return addEducationSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddEducationSuccess<T> implements ProfileState<T> {
+  const factory AddEducationSuccess() = _$AddEducationSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$AddEducationFailureImplCopyWith<T, $Res> {
+  factory _$$AddEducationFailureImplCopyWith(_$AddEducationFailureImpl<T> value,
+          $Res Function(_$AddEducationFailureImpl<T>) then) =
+      __$$AddEducationFailureImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ApiErrorModel apiErrorModel});
+}
+
+/// @nodoc
+class __$$AddEducationFailureImplCopyWithImpl<T, $Res>
+    extends _$ProfileStateCopyWithImpl<T, $Res, _$AddEducationFailureImpl<T>>
+    implements _$$AddEducationFailureImplCopyWith<T, $Res> {
+  __$$AddEducationFailureImplCopyWithImpl(_$AddEducationFailureImpl<T> _value,
+      $Res Function(_$AddEducationFailureImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? apiErrorModel = null,
+  }) {
+    return _then(_$AddEducationFailureImpl<T>(
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddEducationFailureImpl<T> implements AddEducationFailure<T> {
+  const _$AddEducationFailureImpl(this.apiErrorModel);
+
+  @override
+  final ApiErrorModel apiErrorModel;
+
+  @override
+  String toString() {
+    return 'ProfileState<$T>.addEducationFailure(apiErrorModel: $apiErrorModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddEducationFailureImpl<T> &&
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddEducationFailureImplCopyWith<T, _$AddEducationFailureImpl<T>>
+      get copyWith => __$$AddEducationFailureImplCopyWithImpl<T,
+          _$AddEducationFailureImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(ProfileResponseModel profileResponseModel)
+        profileDetailsSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsFailure,
+    required TResult Function() profileDetailsLoading,
+    required TResult Function(T profileResponseModel)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateGeneralProfileDataFailure,
+    required TResult Function() updateGeneralProfileDataLoading,
+    required TResult Function(List<Portfolios> portfolios)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsPortfolioFailure,
+    required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
+  }) {
+    return addEducationFailure(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult? Function()? profileDetailsLoading,
+    TResult? Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult? Function()? updateGeneralProfileDataLoading,
+    TResult? Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
+  }) {
+    return addEducationFailure?.call(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult Function()? profileDetailsLoading,
+    TResult Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult Function()? updateGeneralProfileDataLoading,
+    TResult Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (addEducationFailure != null) {
+      return addEducationFailure(apiErrorModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(ProfileDetailsSuccess<T> value)
+        profileDetailsSuccess,
+    required TResult Function(ProfileDetailsFailure<T> value)
+        profileDetailsFailure,
+    required TResult Function(ProfileDetailsLoading<T> value)
+        profileDetailsLoading,
+    required TResult Function(UpdateGeneralProfileDataSuccess<T> value)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(UpdateGeneralProfileDataFailure<T> value)
+        updateGeneralProfileDataFailure,
+    required TResult Function(UpdateGeneralProfileDataLoading<T> value)
+        updateGeneralProfileDataLoading,
+    required TResult Function(ProfileDetailsPortfoliosSuccess<T> value)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ProfileDetailsPortfolioFailure<T> value)
+        profileDetailsPortfolioFailure,
+    required TResult Function(ProfileDetailPortfoliosLoading<T> value)
+        profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
+  }) {
+    return addEducationFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult? Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult? Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult? Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult? Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult? Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult? Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+  }) {
+    return addEducationFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (addEducationFailure != null) {
+      return addEducationFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddEducationFailure<T> implements ProfileState<T> {
+  const factory AddEducationFailure(final ApiErrorModel apiErrorModel) =
+      _$AddEducationFailureImpl<T>;
+
+  ApiErrorModel get apiErrorModel;
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AddEducationFailureImplCopyWith<T, _$AddEducationFailureImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddEducationLoadingImplCopyWith<T, $Res> {
+  factory _$$AddEducationLoadingImplCopyWith(_$AddEducationLoadingImpl<T> value,
+          $Res Function(_$AddEducationLoadingImpl<T>) then) =
+      __$$AddEducationLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$AddEducationLoadingImplCopyWithImpl<T, $Res>
+    extends _$ProfileStateCopyWithImpl<T, $Res, _$AddEducationLoadingImpl<T>>
+    implements _$$AddEducationLoadingImplCopyWith<T, $Res> {
+  __$$AddEducationLoadingImplCopyWithImpl(_$AddEducationLoadingImpl<T> _value,
+      $Res Function(_$AddEducationLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$AddEducationLoadingImpl<T> implements AddEducationLoading<T> {
+  const _$AddEducationLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ProfileState<$T>.addEducationLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddEducationLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(ProfileResponseModel profileResponseModel)
+        profileDetailsSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsFailure,
+    required TResult Function() profileDetailsLoading,
+    required TResult Function(T profileResponseModel)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateGeneralProfileDataFailure,
+    required TResult Function() updateGeneralProfileDataLoading,
+    required TResult Function(List<Portfolios> portfolios)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsPortfolioFailure,
+    required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
+  }) {
+    return addEducationLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult? Function()? profileDetailsLoading,
+    TResult? Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult? Function()? updateGeneralProfileDataLoading,
+    TResult? Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
+  }) {
+    return addEducationLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult Function()? profileDetailsLoading,
+    TResult Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult Function()? updateGeneralProfileDataLoading,
+    TResult Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (addEducationLoading != null) {
+      return addEducationLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(ProfileDetailsSuccess<T> value)
+        profileDetailsSuccess,
+    required TResult Function(ProfileDetailsFailure<T> value)
+        profileDetailsFailure,
+    required TResult Function(ProfileDetailsLoading<T> value)
+        profileDetailsLoading,
+    required TResult Function(UpdateGeneralProfileDataSuccess<T> value)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(UpdateGeneralProfileDataFailure<T> value)
+        updateGeneralProfileDataFailure,
+    required TResult Function(UpdateGeneralProfileDataLoading<T> value)
+        updateGeneralProfileDataLoading,
+    required TResult Function(ProfileDetailsPortfoliosSuccess<T> value)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ProfileDetailsPortfolioFailure<T> value)
+        profileDetailsPortfolioFailure,
+    required TResult Function(ProfileDetailPortfoliosLoading<T> value)
+        profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
+  }) {
+    return addEducationLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult? Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult? Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult? Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult? Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult? Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult? Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+  }) {
+    return addEducationLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (addEducationLoading != null) {
+      return addEducationLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddEducationLoading<T> implements ProfileState<T> {
+  const factory AddEducationLoading() = _$AddEducationLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$DeleteEducationSuccessImplCopyWith<T, $Res> {
+  factory _$$DeleteEducationSuccessImplCopyWith(
+          _$DeleteEducationSuccessImpl<T> value,
+          $Res Function(_$DeleteEducationSuccessImpl<T>) then) =
+      __$$DeleteEducationSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$DeleteEducationSuccessImplCopyWithImpl<T, $Res>
+    extends _$ProfileStateCopyWithImpl<T, $Res, _$DeleteEducationSuccessImpl<T>>
+    implements _$$DeleteEducationSuccessImplCopyWith<T, $Res> {
+  __$$DeleteEducationSuccessImplCopyWithImpl(
+      _$DeleteEducationSuccessImpl<T> _value,
+      $Res Function(_$DeleteEducationSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$DeleteEducationSuccessImpl<T> implements DeleteEducationSuccess<T> {
+  const _$DeleteEducationSuccessImpl();
+
+  @override
+  String toString() {
+    return 'ProfileState<$T>.deleteEducationSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteEducationSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(ProfileResponseModel profileResponseModel)
+        profileDetailsSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsFailure,
+    required TResult Function() profileDetailsLoading,
+    required TResult Function(T profileResponseModel)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateGeneralProfileDataFailure,
+    required TResult Function() updateGeneralProfileDataLoading,
+    required TResult Function(List<Portfolios> portfolios)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsPortfolioFailure,
+    required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
+  }) {
+    return deleteEducationSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult? Function()? profileDetailsLoading,
+    TResult? Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult? Function()? updateGeneralProfileDataLoading,
+    TResult? Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
+  }) {
+    return deleteEducationSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult Function()? profileDetailsLoading,
+    TResult Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult Function()? updateGeneralProfileDataLoading,
+    TResult Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (deleteEducationSuccess != null) {
+      return deleteEducationSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(ProfileDetailsSuccess<T> value)
+        profileDetailsSuccess,
+    required TResult Function(ProfileDetailsFailure<T> value)
+        profileDetailsFailure,
+    required TResult Function(ProfileDetailsLoading<T> value)
+        profileDetailsLoading,
+    required TResult Function(UpdateGeneralProfileDataSuccess<T> value)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(UpdateGeneralProfileDataFailure<T> value)
+        updateGeneralProfileDataFailure,
+    required TResult Function(UpdateGeneralProfileDataLoading<T> value)
+        updateGeneralProfileDataLoading,
+    required TResult Function(ProfileDetailsPortfoliosSuccess<T> value)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ProfileDetailsPortfolioFailure<T> value)
+        profileDetailsPortfolioFailure,
+    required TResult Function(ProfileDetailPortfoliosLoading<T> value)
+        profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
+  }) {
+    return deleteEducationSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult? Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult? Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult? Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult? Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult? Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult? Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+  }) {
+    return deleteEducationSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (deleteEducationSuccess != null) {
+      return deleteEducationSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteEducationSuccess<T> implements ProfileState<T> {
+  const factory DeleteEducationSuccess() = _$DeleteEducationSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$DeleteEducationFailureImplCopyWith<T, $Res> {
+  factory _$$DeleteEducationFailureImplCopyWith(
+          _$DeleteEducationFailureImpl<T> value,
+          $Res Function(_$DeleteEducationFailureImpl<T>) then) =
+      __$$DeleteEducationFailureImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ApiErrorModel apiErrorModel});
+}
+
+/// @nodoc
+class __$$DeleteEducationFailureImplCopyWithImpl<T, $Res>
+    extends _$ProfileStateCopyWithImpl<T, $Res, _$DeleteEducationFailureImpl<T>>
+    implements _$$DeleteEducationFailureImplCopyWith<T, $Res> {
+  __$$DeleteEducationFailureImplCopyWithImpl(
+      _$DeleteEducationFailureImpl<T> _value,
+      $Res Function(_$DeleteEducationFailureImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? apiErrorModel = null,
+  }) {
+    return _then(_$DeleteEducationFailureImpl<T>(
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteEducationFailureImpl<T> implements DeleteEducationFailure<T> {
+  const _$DeleteEducationFailureImpl(this.apiErrorModel);
+
+  @override
+  final ApiErrorModel apiErrorModel;
+
+  @override
+  String toString() {
+    return 'ProfileState<$T>.deleteEducationFailure(apiErrorModel: $apiErrorModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteEducationFailureImpl<T> &&
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteEducationFailureImplCopyWith<T, _$DeleteEducationFailureImpl<T>>
+      get copyWith => __$$DeleteEducationFailureImplCopyWithImpl<T,
+          _$DeleteEducationFailureImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(ProfileResponseModel profileResponseModel)
+        profileDetailsSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsFailure,
+    required TResult Function() profileDetailsLoading,
+    required TResult Function(T profileResponseModel)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateGeneralProfileDataFailure,
+    required TResult Function() updateGeneralProfileDataLoading,
+    required TResult Function(List<Portfolios> portfolios)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsPortfolioFailure,
+    required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
+  }) {
+    return deleteEducationFailure(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult? Function()? profileDetailsLoading,
+    TResult? Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult? Function()? updateGeneralProfileDataLoading,
+    TResult? Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
+  }) {
+    return deleteEducationFailure?.call(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult Function()? profileDetailsLoading,
+    TResult Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult Function()? updateGeneralProfileDataLoading,
+    TResult Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (deleteEducationFailure != null) {
+      return deleteEducationFailure(apiErrorModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(ProfileDetailsSuccess<T> value)
+        profileDetailsSuccess,
+    required TResult Function(ProfileDetailsFailure<T> value)
+        profileDetailsFailure,
+    required TResult Function(ProfileDetailsLoading<T> value)
+        profileDetailsLoading,
+    required TResult Function(UpdateGeneralProfileDataSuccess<T> value)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(UpdateGeneralProfileDataFailure<T> value)
+        updateGeneralProfileDataFailure,
+    required TResult Function(UpdateGeneralProfileDataLoading<T> value)
+        updateGeneralProfileDataLoading,
+    required TResult Function(ProfileDetailsPortfoliosSuccess<T> value)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ProfileDetailsPortfolioFailure<T> value)
+        profileDetailsPortfolioFailure,
+    required TResult Function(ProfileDetailPortfoliosLoading<T> value)
+        profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
+  }) {
+    return deleteEducationFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult? Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult? Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult? Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult? Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult? Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult? Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+  }) {
+    return deleteEducationFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (deleteEducationFailure != null) {
+      return deleteEducationFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteEducationFailure<T> implements ProfileState<T> {
+  const factory DeleteEducationFailure(final ApiErrorModel apiErrorModel) =
+      _$DeleteEducationFailureImpl<T>;
+
+  ApiErrorModel get apiErrorModel;
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DeleteEducationFailureImplCopyWith<T, _$DeleteEducationFailureImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteEducationLoadingImplCopyWith<T, $Res> {
+  factory _$$DeleteEducationLoadingImplCopyWith(
+          _$DeleteEducationLoadingImpl<T> value,
+          $Res Function(_$DeleteEducationLoadingImpl<T>) then) =
+      __$$DeleteEducationLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$DeleteEducationLoadingImplCopyWithImpl<T, $Res>
+    extends _$ProfileStateCopyWithImpl<T, $Res, _$DeleteEducationLoadingImpl<T>>
+    implements _$$DeleteEducationLoadingImplCopyWith<T, $Res> {
+  __$$DeleteEducationLoadingImplCopyWithImpl(
+      _$DeleteEducationLoadingImpl<T> _value,
+      $Res Function(_$DeleteEducationLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$DeleteEducationLoadingImpl<T> implements DeleteEducationLoading<T> {
+  const _$DeleteEducationLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ProfileState<$T>.deleteEducationLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteEducationLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(ProfileResponseModel profileResponseModel)
+        profileDetailsSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsFailure,
+    required TResult Function() profileDetailsLoading,
+    required TResult Function(T profileResponseModel)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateGeneralProfileDataFailure,
+    required TResult Function() updateGeneralProfileDataLoading,
+    required TResult Function(List<Portfolios> portfolios)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        profileDetailsPortfolioFailure,
+    required TResult Function() profileDetailPortfoliosLoading,
+    required TResult Function() updateEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateEducationFailure,
+    required TResult Function() updateEducationLoading,
+    required TResult Function() addEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) addEducationFailure,
+    required TResult Function() addEducationLoading,
+    required TResult Function() deleteEducationSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteEducationFailure,
+    required TResult Function() deleteEducationLoading,
+  }) {
+    return deleteEducationLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult? Function()? profileDetailsLoading,
+    TResult? Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult? Function()? updateGeneralProfileDataLoading,
+    TResult? Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult? Function()? profileDetailPortfoliosLoading,
+    TResult? Function()? updateEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult? Function()? updateEducationLoading,
+    TResult? Function()? addEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult? Function()? addEducationLoading,
+    TResult? Function()? deleteEducationSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult? Function()? deleteEducationLoading,
+  }) {
+    return deleteEducationLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(ProfileResponseModel profileResponseModel)?
+        profileDetailsSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? profileDetailsFailure,
+    TResult Function()? profileDetailsLoading,
+    TResult Function(T profileResponseModel)? updateGeneralProfileDataSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        updateGeneralProfileDataFailure,
+    TResult Function()? updateGeneralProfileDataLoading,
+    TResult Function(List<Portfolios> portfolios)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        profileDetailsPortfolioFailure,
+    TResult Function()? profileDetailPortfoliosLoading,
+    TResult Function()? updateEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? updateEducationFailure,
+    TResult Function()? updateEducationLoading,
+    TResult Function()? addEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? addEducationFailure,
+    TResult Function()? addEducationLoading,
+    TResult Function()? deleteEducationSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteEducationFailure,
+    TResult Function()? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (deleteEducationLoading != null) {
+      return deleteEducationLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(ProfileDetailsSuccess<T> value)
+        profileDetailsSuccess,
+    required TResult Function(ProfileDetailsFailure<T> value)
+        profileDetailsFailure,
+    required TResult Function(ProfileDetailsLoading<T> value)
+        profileDetailsLoading,
+    required TResult Function(UpdateGeneralProfileDataSuccess<T> value)
+        updateGeneralProfileDataSuccess,
+    required TResult Function(UpdateGeneralProfileDataFailure<T> value)
+        updateGeneralProfileDataFailure,
+    required TResult Function(UpdateGeneralProfileDataLoading<T> value)
+        updateGeneralProfileDataLoading,
+    required TResult Function(ProfileDetailsPortfoliosSuccess<T> value)
+        profileDetailsPortfoliosSuccess,
+    required TResult Function(ProfileDetailsPortfolioFailure<T> value)
+        profileDetailsPortfolioFailure,
+    required TResult Function(ProfileDetailPortfoliosLoading<T> value)
+        profileDetailPortfoliosLoading,
+    required TResult Function(UpdateEducationSuccess<T> value)
+        updateEducationSuccess,
+    required TResult Function(UpdateEducationFailure<T> value)
+        updateEducationFailure,
+    required TResult Function(UpdateEducationLoading<T> value)
+        updateEducationLoading,
+    required TResult Function(AddEducationSuccess<T> value) addEducationSuccess,
+    required TResult Function(AddEducationFailure<T> value) addEducationFailure,
+    required TResult Function(AddEducationLoading<T> value) addEducationLoading,
+    required TResult Function(DeleteEducationSuccess<T> value)
+        deleteEducationSuccess,
+    required TResult Function(DeleteEducationFailure<T> value)
+        deleteEducationFailure,
+    required TResult Function(DeleteEducationLoading<T> value)
+        deleteEducationLoading,
+  }) {
+    return deleteEducationLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult? Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult? Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult? Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult? Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult? Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult? Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult? Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult? Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult? Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult? Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult? Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult? Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult? Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult? Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult? Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult? Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult? Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+  }) {
+    return deleteEducationLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(ProfileDetailsSuccess<T> value)? profileDetailsSuccess,
+    TResult Function(ProfileDetailsFailure<T> value)? profileDetailsFailure,
+    TResult Function(ProfileDetailsLoading<T> value)? profileDetailsLoading,
+    TResult Function(UpdateGeneralProfileDataSuccess<T> value)?
+        updateGeneralProfileDataSuccess,
+    TResult Function(UpdateGeneralProfileDataFailure<T> value)?
+        updateGeneralProfileDataFailure,
+    TResult Function(UpdateGeneralProfileDataLoading<T> value)?
+        updateGeneralProfileDataLoading,
+    TResult Function(ProfileDetailsPortfoliosSuccess<T> value)?
+        profileDetailsPortfoliosSuccess,
+    TResult Function(ProfileDetailsPortfolioFailure<T> value)?
+        profileDetailsPortfolioFailure,
+    TResult Function(ProfileDetailPortfoliosLoading<T> value)?
+        profileDetailPortfoliosLoading,
+    TResult Function(UpdateEducationSuccess<T> value)? updateEducationSuccess,
+    TResult Function(UpdateEducationFailure<T> value)? updateEducationFailure,
+    TResult Function(UpdateEducationLoading<T> value)? updateEducationLoading,
+    TResult Function(AddEducationSuccess<T> value)? addEducationSuccess,
+    TResult Function(AddEducationFailure<T> value)? addEducationFailure,
+    TResult Function(AddEducationLoading<T> value)? addEducationLoading,
+    TResult Function(DeleteEducationSuccess<T> value)? deleteEducationSuccess,
+    TResult Function(DeleteEducationFailure<T> value)? deleteEducationFailure,
+    TResult Function(DeleteEducationLoading<T> value)? deleteEducationLoading,
+    required TResult orElse(),
+  }) {
+    if (deleteEducationLoading != null) {
+      return deleteEducationLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteEducationLoading<T> implements ProfileState<T> {
+  const factory DeleteEducationLoading() = _$DeleteEducationLoadingImpl<T>;
 }

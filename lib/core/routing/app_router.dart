@@ -11,6 +11,7 @@ import 'package:jobizz/features/category/ui/screens/trending_category_screen.dar
 import 'package:jobizz/features/companies/ui/screens/company_of_jobs_screen.dart';
 import 'package:jobizz/features/companies/ui/screens/profile_company_screen.dart';
 import 'package:jobizz/features/job_details/job_details_screen.dart';
+import 'package:jobizz/features/jobs/data/models/job.dart';
 
 import 'package:jobizz/features/onboarding/ui/onboarding_screen.dart';
 import 'package:jobizz/features/saved_jobs/cubit/saved_cubit.dart';
@@ -31,11 +32,10 @@ import '../../features/companies/data/model/company_response.dart';
 import '../../features/companies/ui/screens/compaies_screen.dart';
 import '../../features/companies/ui/screens/popular_company_screen.dart';
 import '../../features/companies/ui/screens/trending_company_screen.dart';
-import '../../features/home/data/model/home_response_model.dart';
 import '../../features/home/ui/home_screen.dart';
-import '../../features/jobs/screens/featured_jobs_screen.dart';
-import '../../features/jobs/screens/popular_jobs_screen.dart';
-import '../../features/jobs/screens/recommended_jobs_screen.dart';
+import '../../features/jobs/ui/screens/featured_jobs_screen.dart';
+import '../../features/jobs/ui/screens/popular_jobs_screen.dart';
+import '../../features/jobs/ui/screens/recommended_jobs_screen.dart';
 import '../../features/layout/layout_screen/logic/cubit/layout_cubit.dart';
 import '../../features/layout/layout_screen/ui/layout_screen.dart';
 import '../../features/notifications/ui/notifications_screen.dart.dart';
@@ -44,7 +44,7 @@ import '../../features/profile/logic/profile_cubit.dart';
 import '../../features/profile/ui/screens/edit_education_screen.dart';
 import '../../features/profile/ui/screens/educations_screen.dart';
 import '../../features/profile/ui/screens/profile_screen.dart';
-import '../../features/profile/ui/screens/personal_info_screen.dart';
+import '../../features/profile/ui/screens/edit_personal_info_screen.dart';
 import '../../features/saved_jobs/ui/saved_screen.dart';
 import '../../features/settings/ui/screens/settings_screen.dart';
 import '../../features/settings/ui/screens/terms_and_conditions.dart';
@@ -233,7 +233,7 @@ class AppRouter {
 
       // popularJobsScreen
       case Routes.popularJobsScreen:
-        final popularJobs = settings.arguments as List<Jop?>? ?? [];
+        final popularJobs = settings.arguments as List<Job?>? ?? [];
         return MaterialPageRoute(
           builder: (_) => PopularJobsScreen(
             popularJobs: popularJobs,
@@ -242,7 +242,7 @@ class AppRouter {
       //Jobs Details Screen
 
       case Routes.jobDetailsScreen:
-        final jobDetails = settings.arguments as Jop?;
+        final jobDetails = settings.arguments as Job?;
 
         return MaterialPageRoute(
           builder: (context) {
@@ -260,7 +260,7 @@ class AppRouter {
 
       // Featured Jobs Screen
       case Routes.featuredJobsScreen:
-        final featuredJobs = settings.arguments as List<Jop?>? ?? [];
+        final featuredJobs = settings.arguments as List<Job?>? ?? [];
         return MaterialPageRoute(
           builder: (_) => FeaturedJobsScreen(
             featuredJobs: featuredJobs,
@@ -268,7 +268,7 @@ class AppRouter {
         );
 // Recommended Jobs Screen
       case Routes.recommendedJobsScreen:
-        final recommendedJobs = settings.arguments as List<Jop?>? ?? [];
+        final recommendedJobs = settings.arguments as List<Job?>? ?? [];
         return MaterialPageRoute(
           builder: (_) => RecommendedJobsScreen(
             recommendedJobs: recommendedJobs,

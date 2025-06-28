@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jobizz/features/home/data/model/home_response_model.dart';
 
+import '../../../../jobs/data/models/job.dart';
 import 'recommended_jobs_item.dart';
 
 class SliverGridRecommendedJobs extends StatelessWidget {
   const SliverGridRecommendedJobs({super.key, this.recommendedJobs});
 
-  final List<Jop?>? recommendedJobs;
+  final List<Job?>? recommendedJobs;
   @override
   Widget build(BuildContext context) {
     return SliverGrid(

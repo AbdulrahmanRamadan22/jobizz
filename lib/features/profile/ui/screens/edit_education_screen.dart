@@ -8,6 +8,7 @@ import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
 import '../../../../core/widgets/app_text_form_field.dart';
 import '../../../../core/widgets/button_app_text.dart';
+import '../../../../core/widgets/showdialog_errors.dart';
 import '../../data/models/profile_response_model.dart';
 import '../../logic/profile_state.dart';
 
@@ -33,7 +34,16 @@ class EditEducationScreen extends StatelessWidget {
         title: const Text('Edit Education'),
       ),
       body: BlocConsumer<ProfileCubit, ProfileState>(
-        listener: (context, state) {},
+        listener: (context, state) {
+          state.whenOrNull(
+            updateEducationSuccess: () {
+              Navigator.of(context).pop(true);
+            },
+            updateEducationFailure: (error) {
+              setupErrorState(context, error);
+            },
+          );
+        },
         builder: (context, state) {
           schoolController.text = education?.college ?? '';
           fieldOfStudyController.text = education?.fieldOfStudy ?? '';
@@ -120,7 +130,7 @@ class EditEducationScreen extends StatelessWidget {
                               prefixIcon: Icon(Icons.calendar_month_outlined,
                                   color: ColorsApp.gray, size: 23.sp),
                               hintText: 'Ex: 2022-09-30',
-                              validator: (value) => null,
+                              validator: (value) {},
                             ),
                           ],
                         ),
@@ -154,7 +164,9 @@ class EditEducationScreen extends StatelessWidget {
                     verticalSpace(40),
                     AppTextButton(
                       buttonText: 'Save',
-                      onPressed: () {},
+                      onPressed: () {
+                        validateThenDoProfileScreen(context);
+                      },
                       textStyle: TextStyles.font16White,
                       borderRadius: 8,
                     ),
@@ -166,5 +178,24 @@ class EditEducationScreen extends StatelessWidget {
         },
       ),
     );
+  }
+
+  void validateThenDoProfileScreen(BuildContext context) {
+        if (formKey.currentState!.validate()) {
+      context.read<ProfileCubit>().updateEducation(
+            education: Education(
+              id: education?.id,
+              college: schoolController.text,
+              fieldOfStudy: fieldOfStudyController.text,
+              degree: degreeController.text,
+              location: locationController.text,
+              startDate: startDateController.text,
+              endDate: endDateController.text,
+              description: descriptionController.text,
+               isCurrent: true, 
+            ),
+            educationId: education?.id ?? 0,
+          );
+    }
   }
 }

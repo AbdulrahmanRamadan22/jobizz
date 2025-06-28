@@ -2,10 +2,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobizz/core/cache/constants.dart';
 import 'package:jobizz/core/cache/shared_pref.dart';
-import 'package:jobizz/features/home/data/model/home_response_model.dart';
 
 import 'package:jobizz/features/saved_jobs/cubit/saved_state.dart';
 import 'package:jobizz/features/saved_jobs/data/repo/repo_saved.dart';
+
+import '../../jobs/data/models/job.dart';
 
 class SavedCubit extends Cubit<SavedState> {
   SavedCubit(
@@ -35,7 +36,7 @@ class SavedCubit extends Cubit<SavedState> {
     );
   }
 
-  void initSavedJob(Jop job) {
+  void initSavedJob(Job job) {
     if (!savedJobsMap.containsKey(job.id)) {
       savedJobsMap[job.id] = job.isFavorite;
     }

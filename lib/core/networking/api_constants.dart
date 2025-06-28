@@ -23,6 +23,16 @@ class ApiConstant {
 
   static const String editGeneralProfileData = "auth/profiles";
 
+  static const String addEducation = "auth/profiles/{profileId}/educations/add-education";
+
+  static const String updateEducation = "auth/profiles/{profileId}/educations/{educationId}";
+
+
+  static const String deleteEducation = "auth/profiles/{profileId}/educations/{educationId}";
+
+
+
+
 
 
 

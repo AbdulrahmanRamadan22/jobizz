@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jobizz/features/home/data/model/home_response_model.dart';
 
+import '../../data/models/job.dart';
 import 'job_item.dart';
 
 class GridViewJobs extends StatelessWidget {
@@ -9,7 +9,7 @@ class GridViewJobs extends StatelessWidget {
   const GridViewJobs({super.key, this.Jobs});
 
   // ignore: non_constant_identifier_names
-  final List<Jop?>? Jobs;
+  final List<Job?>? Jobs;
   @override
   Widget build(BuildContext context) {
     return SliverGrid.builder(

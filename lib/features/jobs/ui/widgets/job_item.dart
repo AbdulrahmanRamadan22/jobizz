@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/helper/extensions.dart';
 import 'package:jobizz/core/routing/routers_string.dart';
-import 'package:jobizz/features/home/data/model/home_response_model.dart';
 
-import '../../../../../core/theming/colors.dart';
-import '../../../../../core/theming/styles.dart';
+import '../../../../../../core/theming/colors.dart';
+import '../../../../../../core/theming/styles.dart';
+import '../../data/models/job.dart';
 
 class JobItem extends StatelessWidget {
   const JobItem({super.key, this.jop});
 
-  final Jop? jop;
+  final Job? jop;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

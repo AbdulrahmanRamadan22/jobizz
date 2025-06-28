@@ -6,7 +6,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../../../core/helper/size_box.dart';
 import '../../../../../core/theming/colors.dart';
 
-import '../../../data/model/home_response_model.dart';
+import '../../../../jobs/data/models/job.dart';
 import 'Featured_jobs_item.dart';
 
 class SliverListFeaturedJobs extends StatelessWidget {
@@ -14,7 +14,7 @@ class SliverListFeaturedJobs extends StatelessWidget {
 
   final PageController _pageController = PageController();
 
-  final List<Jop?>? jobs;
+  final List<Job?>? jobs;
 
   @override
   Widget build(BuildContext context) {
