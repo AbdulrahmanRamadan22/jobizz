@@ -23,6 +23,9 @@ class ApiConstant {
 
   static const String editGeneralProfileData = "auth/profiles";
 
+  static const String deleteAccount = "auth/delete-account";
+  
+
 
 
 

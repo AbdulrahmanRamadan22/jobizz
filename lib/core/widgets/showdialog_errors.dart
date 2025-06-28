@@ -32,7 +32,7 @@ void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
               _buildOptimizedLottieAnimation(),
               const SizedBox(height: 16),
               Text(
-                apiErrorModel.message ?? "Unknown error",
+                apiErrorModel.getErrorMessage(),
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -41,7 +41,7 @@ void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
               ),
               const SizedBox(height: 8),
               Text(
-                apiErrorModel.getErrorMessage(),
+                'There is an error, usually in the email or password.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 14,
@@ -77,6 +77,7 @@ void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
   );
 }
 
+// error lottie animation widget
 Widget _buildOptimizedLottieAnimation() {
   return SizedBox(
     width: 180,

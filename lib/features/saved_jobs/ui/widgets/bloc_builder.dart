@@ -32,8 +32,12 @@ class SavedJobsBlocBuilder extends StatelessWidget {
             );
           },
           savedFailure: (error) {
-            return Center(
-              child: Text('$error', style: TextStyles.font14Gray),
+            return Align(
+              alignment: Alignment.center,
+              child: Text(
+                'Not Found Saved Jobs',
+                style: TextStyles.font14Gray,
+              ),
             );
           },
           orElse: () => const SizedBox.shrink(),

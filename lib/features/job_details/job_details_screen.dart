@@ -55,7 +55,7 @@ class JobDetailsScreen extends StatelessWidget {
                   ),
                 ),
                 Tab(
-                  child: Text('About'),
+                  child: Text('Benefits'),
                 ),
               ],
             ),
