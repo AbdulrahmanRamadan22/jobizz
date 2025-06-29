@@ -6,7 +6,7 @@ Future<dynamic> showDialogLoading(BuildContext context) {
     context: context,
     builder: (context) => Center(
       child: Lottie.asset(
-        'assets/lottie/indicator.json',
+        'assets/lottie/Loading_static.json',
         width: 200,
         height: 200,
       ),

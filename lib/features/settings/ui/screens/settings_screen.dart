@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobizz/core/helper/extensions.dart';
+import 'package:jobizz/features/settings/ui/widgets/delete_account.dart';
 
 import '../../../../core/helper/size_box.dart';
 import '../../../../core/routing/routers_string.dart';
@@ -13,9 +14,7 @@ class SettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Settings',
-        ),
+        title: const Text('Settings'),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -33,7 +32,7 @@ class SettingScreen extends StatelessWidget {
               verticalSpace(20),
               ListTile(
                 contentPadding: EdgeInsets.zero,
-                leading: Icon(
+                leading: const Icon(
                   Icons.password_rounded,
                   color: ColorsApp.lightBlueGray,
                   size: 30.0,
@@ -46,19 +45,8 @@ class SettingScreen extends StatelessWidget {
                   context.pushNamed(Routes.changePasswordScreen);
                 },
               ),
-              ListTile(
-                contentPadding: EdgeInsets.zero,
-                leading: Icon(
-                  Icons.delete_outlined,
-                  color: ColorsApp.red,
-                  size: 30.0,
-                ),
-                title: Text(
-                  'Delete Account',
-                  style: TextStyles.font16Red,
-                ),
-                onTap: () {},
-              ),
+              // Delete Account
+              DeleteAccount(),
               verticalSpace(20),
               Text(
                 'About',
@@ -67,7 +55,7 @@ class SettingScreen extends StatelessWidget {
               verticalSpace(20),
               ListTile(
                 contentPadding: EdgeInsets.zero,
-                leading: Icon(
+                leading: const Icon(
                   Icons.description,
                   color: ColorsApp.lightBlueGray,
                   size: 30.0,
@@ -82,7 +70,7 @@ class SettingScreen extends StatelessWidget {
               ),
               ListTile(
                 contentPadding: EdgeInsets.zero,
-                leading: Icon(
+                leading: const Icon(
                   Icons.question_mark_outlined,
                   color: ColorsApp.lightBlueGray,
                   size: 30.0,
@@ -91,7 +79,9 @@ class SettingScreen extends StatelessWidget {
                   'About',
                   style: TextStyles.font16Black,
                 ),
-                onTap: () {},
+                onTap: () {
+                  context.pushNamed(Routes.aboutApplicationScreen);
+                },
               ),
             ],
           ),

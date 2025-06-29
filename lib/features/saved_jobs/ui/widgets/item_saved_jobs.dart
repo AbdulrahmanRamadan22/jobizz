@@ -18,6 +18,7 @@ class ItemSavedJobs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // متناش تعملها switch case
     final Color statusColor;
     if (job?.jobStatus == 'Open || open') {
       statusColor = ColorsApp.lightBlue2;
@@ -30,7 +31,7 @@ class ItemSavedJobs extends StatelessWidget {
       padding: EdgeInsets.only(bottom: 16.h),
       child: GestureDetector(
         onTap: () {
-          context.pushNamed(Routes.jobDetailsScreen, arguments: job);
+          //  context.pushNamed(Routes.jobDetailsScreen, arguments: job);
         },
         child: Container(
           width: double.infinity,

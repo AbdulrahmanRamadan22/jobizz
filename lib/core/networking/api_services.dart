@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:jobizz/core/networking/api_constants.dart';
+import 'package:jobizz/features/auth/delet_account/data/model/delete_response_model.dart';
 import 'package:jobizz/features/saved_jobs/data/model/saved_response.dart';
 import 'package:retrofit/http.dart';
 import 'package:retrofit/error_logger.dart';
@@ -93,6 +94,9 @@ abstract class ApisServices {
   );
 
   @PUT("${ApiConstant.editGeneralProfileData}/{id}")
+  Future<dynamic> updateGeneralProfileData(@Path('id') int id,
+      @Header('Authorization') String token, @Body() Map<String, dynamic> data);
+
   Future<dynamic> updateGeneralProfileData(
     @Path('id') int id,
     @Header('Authorization') String token,
@@ -120,6 +124,7 @@ abstract class ApisServices {
       @Header('Authorization') String token,
       @Body() Education? education);
 
+
   @GET(ApiConstant.getProfilesDetails)
   Future<ProfilesResponseModel> getProfilesDetails(
     @Header('Authorization') String token,
@@ -136,5 +141,11 @@ abstract class ApisServices {
   Future<SavedResponse> getFavorites(
     @Header('Authorization') String token,
     @Path('profileId') int profileId,
+  );
+  // delete account
+  @DELETE(ApiConstant.deleteAccount)
+  Future<DeleteAccountResponse> deleteAccount(
+    @Header('Authorization') String token,
+
   );
 }

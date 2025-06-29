@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:jobizz/features/auth/change_password/data/repo/change_password_repo.dart';
+import 'package:jobizz/features/auth/delet_account/data/repo/delete_repo.dart';
 import 'package:jobizz/features/auth/login/data/model/login_response.dart';
 import 'package:jobizz/features/companies/data/repo/company_info_repo.dart';
 import 'package:jobizz/features/home/data/repo/home_repo.dart';
@@ -99,10 +100,8 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<SwitchProfileCubit>(() => SwitchProfileCubit(getIt<SwitchProfilesRepo>()));
   getIt.registerFactory<ProfileCubit>(() => ProfileCubit(getIt<ProfileRepo>()));
 
-
-
-  // // reset password
-
-  // company info
   getIt.registerLazySingleton<RepoSaved>(() => RepoSaved(getIt()));
+  // delete account 
+  getIt.registerLazySingleton<DeleteRepo>(() => DeleteRepo(getIt())); 
+
 }

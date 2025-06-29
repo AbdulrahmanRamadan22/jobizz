@@ -1,10 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobizz/core/helper/size_box.dart';
 
 import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
-import 'package:jobizz/core/widgets/row_text_and_see_all.dart';
 import 'package:jobizz/features/companies/data/model/company_response.dart';
 import 'package:jobizz/features/companies/ui/widgets/company_of_jobs/company_item_jobs.dart';
 
@@ -20,11 +20,18 @@ class FeatureCompanyJobs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      // mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        RowTextAndSeeAll(
-          text: 'Featured Jobs',
-          onPressed: () {},
+        Text(
+          'Featured Jobs',
+          style: TextStyles.font16DarkBlackSemiBold,
         ),
+        // RowTextAndSeeAll(
+        //   text: 'Featured Jobs',
+        //   onPressed: () {},
+        // ),
+        verticalSpace(10.h),
         if (featureJobCompany == null || featureJobCompany?.isEmpty == true)
           Container(
             alignment: Alignment.center,

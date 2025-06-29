@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobizz/core/routing/routers_string.dart';
 import 'package:jobizz/features/auth/change_password/ui/change_password_screen.dart';
+import 'package:jobizz/features/auth/delet_account/logic/cubit/delete_acount_cubit.dart';
 import 'package:jobizz/features/auth/register/logic/cubit/sign_up_cubit.dart';
 import 'package:jobizz/features/auth/reset_password_screen/logic/cubit/resetpassword_cubit.dart';
 import 'package:jobizz/features/bot_chat/ui/chat_bot_screen.dart';
@@ -15,6 +16,7 @@ import 'package:jobizz/features/jobs/data/models/job.dart';
 
 import 'package:jobizz/features/onboarding/ui/onboarding_screen.dart';
 import 'package:jobizz/features/saved_jobs/cubit/saved_cubit.dart';
+import 'package:jobizz/features/settings/ui/screens/about_screen.dart';
 
 import '../../features/auth/change_password/logic/cubit/change_password_cubit.dart';
 import '../../features/auth/forget_password_screen/logic/cubit/forget_pass_cubit.dart';
@@ -145,7 +147,7 @@ class AppRouter {
           ),
         );
 
-// saved jobs screen
+      // saved jobs screen
 
       case Routes.personalInfoScreen:
         final profileCubit = getIt<ProfileCubit>();
@@ -178,8 +180,7 @@ class AppRouter {
             ),
           ),
         );
-
-
+// saved jobs screen
       case Routes.savedJobsScreen:
 
         //   final savedJobs = settings.arguments as List<SavedJob?>? ?? [];
@@ -192,7 +193,17 @@ class AppRouter {
       // settings screen
       case Routes.settingsScreen:
         return MaterialPageRoute(
-          builder: (context) => const SettingScreen(),
+          builder: (context) => BlocProvider(
+            create: (context) => DeleteAccountCubit(
+              getIt(),
+            ),
+            child: const SettingScreen(),
+          ),
+        );
+      // about application screen 
+      case Routes.aboutApplicationScreen:
+        return MaterialPageRoute(
+          builder: (context) => const AboutApplicationScreen(),
         );
       // termsAndConditionsScreen
       case Routes.termsAndConditionsScreen:
