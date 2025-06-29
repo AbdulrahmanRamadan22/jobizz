@@ -84,76 +84,80 @@ class ProfileData {
 @JsonSerializable()
 class Education {
   @JsonKey(name: "id")
-  final int id;
+  final int? id;
   @JsonKey(name: "college")
-  final String college;
+  final String? college;
   @JsonKey(name: "degree")
-  final String degree;
+  final String? degree;
   @JsonKey(name: "field_of_study")
-  final String fieldOfStudy;
+  final String? fieldOfStudy;
   @JsonKey(name: "start_date")
-  final String startDate;
+  final String? startDate;
   @JsonKey(name: "end_date")
   final String? endDate;
   @JsonKey(name: "is_current")
-  final bool isCurrent;
+  final bool? isCurrent;
   @JsonKey(name: "description")
-  final String description;
+  final String? description;
   @JsonKey(name: "location")
-  final String location;
-  final String image;
+  final String? location;
+  final String? image;
 
   Education({
-    required this.id,
-    required this.college,
-    required this.degree,
-    required this.fieldOfStudy,
-    required this.startDate,
-    required this.endDate,
-    required this.isCurrent,
-    required this.description,
-    required this.location,
-    required this.image,
+     this.id,
+     this.college,
+     this.degree,
+     this.fieldOfStudy,
+     this.startDate,
+     this.endDate,
+     this.isCurrent,
+     this.description,
+     this.location,
+     this.image,
   });
 
   factory Education.fromJson(Map<String, dynamic> json) =>
       _$EducationFromJson(json);
+
+  Map<String, dynamic> toJson() => _$EducationToJson(this);
 }
 
 @JsonSerializable()
 class Experience {
   @JsonKey(name: "id")
-  final int id;
+  final int? id;
   @JsonKey(name: "company")
-  final String company;
+  final String? company;
   @JsonKey(name: "position")
-  final String position;
+  final String? position;
   @JsonKey(name: "start_date")
-  final String startDate;
+  final String? startDate;
   @JsonKey(name: "end_date")
   final String? endDate;
   @JsonKey(name: "is_current")
-  final bool isCurrent;
+  final bool? isCurrent;
   @JsonKey(name: "description")
-  final String description;
+  final String? description;
   @JsonKey(name: "location")
-  final String location;
+  final String? location;
   final String? image;
 
   Experience({
-    required this.id,
-    required this.company,
-    required this.position,
-    required this.startDate,
-    required this.endDate,
-    required this.isCurrent,
-    required this.description,
-    required this.location,
+     this.id,
+     this.company,
+     this.position,
+     this.startDate,
+     this.endDate,
+     this.isCurrent,
+     this.description,
+     this.location,
     this.image,
   });
 
   factory Experience.fromJson(Map<String, dynamic> json) =>
       _$ExperienceFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ExperienceToJson(this);
 }
 
 @JsonSerializable()

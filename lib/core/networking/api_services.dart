@@ -97,6 +97,34 @@ abstract class ApisServices {
   Future<dynamic> updateGeneralProfileData(@Path('id') int id,
       @Header('Authorization') String token, @Body() Map<String, dynamic> data);
 
+  Future<dynamic> updateGeneralProfileData(
+    @Path('id') int id,
+    @Header('Authorization') String token,
+    @Body() Map<String, dynamic> data,
+  );
+
+  @POST(ApiConstant.addEducation)
+  Future<dynamic> addEducation(
+    @Path('profileId') int profileId,
+    @Header('Authorization') String token,
+    @Body() Education education,
+  );
+
+  @DELETE(ApiConstant.deleteEducation)
+  Future<dynamic> deleteEducation(
+    @Path('profileId') int profileId,
+    @Path('educationId') int educationId,
+    @Header('Authorization') String token,
+  );
+
+  @PUT(ApiConstant.updateEducation)
+  Future<dynamic> updateEducation(
+      @Path('profileId') int profileId,
+      @Path('educationId') int educationId,
+      @Header('Authorization') String token,
+      @Body() Education? education);
+
+
   @GET(ApiConstant.getProfilesDetails)
   Future<ProfilesResponseModel> getProfilesDetails(
     @Header('Authorization') String token,
@@ -108,6 +136,7 @@ abstract class ApisServices {
     @Path('profileId') int profileId,
     @Path('itemId') int itemId,
   );
+
   @GET(ApiConstant.getFavorites)
   Future<SavedResponse> getFavorites(
     @Header('Authorization') String token,

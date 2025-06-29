@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:jobizz/core/theming/colors.dart';
 
-import '../../home/data/model/home_response_model.dart';
+import '../../data/models/job.dart';
 import '../widgets/grid_view_jobs.dart';
 import '../widgets/job_fond_length.dart';
 
 class RecommendedJobsScreen extends StatelessWidget {
   const RecommendedJobsScreen({super.key, this.recommendedJobs});
 
-  final List<Jop?>? recommendedJobs;
+  final List<Job?>? recommendedJobs;
 
   @override
   Widget build(BuildContext context) {

@@ -102,7 +102,7 @@ class EducationItemDetails extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8.r),
                         ),
                         child: Text(
-                          "${education?.startDate.split("-").first} - ${education?.endDate?.split("-").first ?? 'Present'}",
+                          "${education?.startDate?.split("-").first} - ${education?.endDate?.split("-").first ?? 'Present'}",
                           style: TextStyles.font12Gray.copyWith(
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w500,

@@ -6,7 +6,16 @@ import 'package:jobizz/core/helper/size_box.dart';
 import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
 import 'package:jobizz/features/category/data/model/category_response.dart';
+
+import 'package:jobizz/core/helper/extensions.dart';
+
+import 'package:jobizz/core/theming/colors.dart';
+import 'package:jobizz/core/theming/styles.dart';
+import 'package:jobizz/core/widgets/row_text_and_see_all.dart';
 import 'package:jobizz/features/category/ui/widget/category_of_jobs/job_category_item.dart';
+
+import '../../../../../core/routing/routers_string.dart';
+import '../../../../jobs/data/models/job.dart';
 
 class FeatureJobsCategory extends StatelessWidget {
   const FeatureJobsCategory({
@@ -56,8 +65,16 @@ class FeatureJobsCategory extends StatelessWidget {
             ),
             itemBuilder: (context, index) {
               final job = featureJobList?[index];
-              return JobCategoryItem(
-                job: job,
+              return GestureDetector(
+                onTap: () {
+                  context.pushNamed(
+                    Routes.jobDetailsScreen,
+                    arguments: job,
+                  );
+                },
+                child: JobCategoryItem(
+                  job: job,
+                ),
               );
             },
           ),

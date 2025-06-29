@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/theming/styles.dart';
 import 'package:jobizz/features/saved_jobs/data/model/saved_response.dart';
 
-class JobStatusAndSallary extends StatelessWidget {
-  const JobStatusAndSallary({
+class JobStatusAndSalary extends StatelessWidget {
+  const JobStatusAndSalary({
     super.key,
     required this.statusColor,
     required this.job,

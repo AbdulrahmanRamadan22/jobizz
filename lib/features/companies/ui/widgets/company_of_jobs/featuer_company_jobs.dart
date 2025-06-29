@@ -14,7 +14,7 @@ class FeatureCompanyJobs extends StatelessWidget {
     this.featureJobCompany,
     this.companyItem,
   });
-  final List<Job>? featureJobCompany;
+  final List<JobInCompany>? featureJobCompany;
   final Company? companyItem;
 
   @override
@@ -58,9 +58,15 @@ class FeatureCompanyJobs extends StatelessWidget {
             ),
             itemBuilder: (context, index) {
               final job = featureJobCompany?[index];
-              return CompanyItemJobs(
-                companyItem: companyItem,
-                jobOFCompany: job,
+              return GestureDetector(
+                onTap: () {
+                  // navigate to job details
+                  // context.pushNamed(Routes.jobDetailsScreen, arguments: job);
+                },
+                child: CompanyItemJobs(
+                  companyItem: companyItem,
+                  jobOFCompany: job,
+                ),
               );
             },
           ),

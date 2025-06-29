@@ -14,11 +14,11 @@ class CompaniesScreen extends StatelessWidget {
         backgroundColor: ColorsApp.backGroundWhite,
         centerTitle: true,
         scrolledUnderElevation: 0,
-        title: Text('Companies', style: TextStyles.font16Black),
+        title: Text('Companies'),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: 20.0.w,
+          horizontal: 18.0.w,
           vertical: 20.h,
         ),
         child: CompanyBlocBuilder(),

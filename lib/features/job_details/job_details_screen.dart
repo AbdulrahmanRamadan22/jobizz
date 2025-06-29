@@ -8,12 +8,14 @@ import 'package:jobizz/features/home/data/model/home_response_model.dart';
 import 'package:jobizz/features/job_details/widgets/stack_image_title_buttons.dart';
 import 'package:jobizz/features/job_details/widgets/tab_bar_view.dart';
 
+import '../jobs/data/models/job.dart';
+
 class JobDetailsScreen extends StatelessWidget {
   const JobDetailsScreen({
     super.key,
     this.job,
   });
-  final Jop? job;
+  final Job? job;
 
   @override
   Widget build(BuildContext context) {

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../home/data/model/home_response_model.dart';
+import '../../data/models/job.dart';
 import '../widgets/grid_view_jobs.dart';
 import '../widgets/job_fond_length.dart';
 
 class FeaturedJobsScreen extends StatelessWidget {
   const FeaturedJobsScreen({super.key, this.featuredJobs});
 
-  final List<Jop?>? featuredJobs;
+  final List<Job?>? featuredJobs;
 
   @override
   Widget build(BuildContext context) {

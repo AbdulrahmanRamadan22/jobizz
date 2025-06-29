@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/widgets/show_generic_search_dialog.dart';
-import 'package:jobizz/features/home/data/model/home_response_model.dart';
 
 import 'package:jobizz/features/home/ui/widgets/page_to_top.dart';
-import 'package:jobizz/features/jobs/widgets/job_item.dart';
+import 'package:jobizz/features/jobs/ui/widgets/job_item.dart';
 
 import '../../../core/helper/size_box.dart';
 import '../../../core/theming/colors.dart';
+import '../../jobs/data/models/job.dart';
 import '../logic/cubit/home_cubit.dart';
 import 'widgets/jobs_bloc_builder.dart';
 import 'widgets/search_and_filter.dart';
@@ -32,19 +32,19 @@ class HomeScreen extends StatelessWidget {
             SearchAndFilter(
               onSearchTap: () {
                 final homeCubit = context.read<HomeCubit>();
-                final List<Jop> allJobsList = homeCubit.state.maybeWhen(
+                final List<Job> allJobsList = homeCubit.state.maybeWhen(
                   success: (homeResponse) {
-                    final List<Jop?> combinedRawList = [
+                    final List<Job?> combinedRawList = [
                       ...(homeResponse.data?.popular ?? []),
                       ...(homeResponse.data?.recommended ?? []),
                       ...(homeResponse.data?.trending ?? []),
                     ];
-                    return combinedRawList.whereType<Jop>().toList();
+                    return combinedRawList.whereType<Job>().toList();
                   },
                   orElse: () => [],
                 );
 
-                showGenericSearchDialog<Jop>(
+                showGenericSearchDialog<Job>(
                   context: context,
                   items: allJobsList,
                   searchFields: [
@@ -84,30 +84,6 @@ class HomeScreen extends StatelessWidget {
     
     );
 
-    // return  Padding(
-    //       padding: EdgeInsets.symmetric(horizontal: 18.w),
-    //       child: Column(
-    //         crossAxisAlignment: CrossAxisAlignment.start,
-    //         children: [
-    //           PageTopBar(),
-    //           verticalSpace(10),
-    //           SearchAndFilter(),
-    //           verticalSpace(9),
-    //           Expanded(
-    //             child: RefreshIndicator(
-    //               backgroundColor: ColorsApp.mainBlue,
-    //               color: ColorsApp.whiteColor,
-    //               onRefresh: () async {
-    //                 await Future.delayed(const Duration(seconds: 1));
-    //                 context.read<HomeCubit>().emitRefreshGetHomeData();
-    //               },
-    //               child: JobsBlocBuilder(),
-    //             ),
-
-    //           ),
-    //         ],
-    //       ),
-
-    // );
+    
   }
 }

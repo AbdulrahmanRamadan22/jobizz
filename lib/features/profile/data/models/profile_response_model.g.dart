@@ -72,16 +72,16 @@ Map<String, dynamic> _$ProfileDataToJson(ProfileData instance) =>
     };
 
 Education _$EducationFromJson(Map<String, dynamic> json) => Education(
-      id: (json['id'] as num).toInt(),
-      college: json['college'] as String,
-      degree: json['degree'] as String,
-      fieldOfStudy: json['field_of_study'] as String,
-      startDate: json['start_date'] as String,
+      id: (json['id'] as num?)?.toInt(),
+      college: json['college'] as String?,
+      degree: json['degree'] as String?,
+      fieldOfStudy: json['field_of_study'] as String?,
+      startDate: json['start_date'] as String?,
       endDate: json['end_date'] as String?,
-      isCurrent: json['is_current'] as bool,
-      description: json['description'] as String,
-      location: json['location'] as String,
-      image: json['image'] as String,
+      isCurrent: json['is_current'] as bool?,
+      description: json['description'] as String?,
+      location: json['location'] as String?,
+      image: json['image'] as String?,
     );
 
 Map<String, dynamic> _$EducationToJson(Education instance) => <String, dynamic>{
@@ -98,14 +98,14 @@ Map<String, dynamic> _$EducationToJson(Education instance) => <String, dynamic>{
     };
 
 Experience _$ExperienceFromJson(Map<String, dynamic> json) => Experience(
-      id: (json['id'] as num).toInt(),
-      company: json['company'] as String,
-      position: json['position'] as String,
-      startDate: json['start_date'] as String,
+      id: (json['id'] as num?)?.toInt(),
+      company: json['company'] as String?,
+      position: json['position'] as String?,
+      startDate: json['start_date'] as String?,
       endDate: json['end_date'] as String?,
-      isCurrent: json['is_current'] as bool,
-      description: json['description'] as String,
-      location: json['location'] as String,
+      isCurrent: json['is_current'] as bool?,
+      description: json['description'] as String?,
+      location: json['location'] as String?,
       image: json['image'] as String?,
     );
 
