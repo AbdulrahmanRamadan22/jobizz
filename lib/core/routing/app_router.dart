@@ -44,7 +44,7 @@ import '../../features/notifications/ui/notifications_screen.dart.dart';
 import '../../features/profile/data/models/profile_response_model.dart';
 import '../../features/profile/logic/profile_cubit.dart';
 import '../../features/profile/ui/screens/education/edit_education_screen.dart';
-import '../../features/profile/ui/screens/educations_screen.dart';
+import '../../features/profile/ui/screens/education/educations_screen.dart';
 import '../../features/profile/ui/screens/profile_screen.dart';
 import '../../features/profile/ui/screens/edit_personal_info_screen.dart';
 import '../../features/saved_jobs/ui/saved_screen.dart';
