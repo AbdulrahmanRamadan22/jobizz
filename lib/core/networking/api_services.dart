@@ -94,9 +94,6 @@ abstract class ApisServices {
   );
 
   @PUT("${ApiConstant.editGeneralProfileData}/{id}")
-  Future<dynamic> updateGeneralProfileData(@Path('id') int id,
-      @Header('Authorization') String token, @Body() Map<String, dynamic> data);
-
   Future<dynamic> updateGeneralProfileData(
     @Path('id') int id,
     @Header('Authorization') String token,
