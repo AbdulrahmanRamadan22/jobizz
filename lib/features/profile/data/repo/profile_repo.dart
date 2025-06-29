@@ -46,7 +46,7 @@ class ProfileRepo {
     }
   }
 
-  Future<ApiResult<dynamic>> addedEducation({
+  Future<ApiResult<dynamic>> addEducation({
     required String token,
     required int profileId,
     required Education education,

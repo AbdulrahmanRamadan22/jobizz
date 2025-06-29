@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:jobizz/features/profile/data/models/profile_response_model.dart';
 import 'package:jobizz/features/profile/logic/profile_state.dart';
 
@@ -93,6 +94,44 @@ class ProfileCubit extends Cubit<ProfileState> {
       },
       failure: (error) {
         emit(ProfileState.updateEducationFailure(error));
+      },
+    );
+  }
+
+  final formKey = GlobalKey<FormState>();
+  final schoolController = TextEditingController();
+  final fieldOfStudyController = TextEditingController();
+  // final collegeController = TextEditingController();
+  final degreeController = TextEditingController();
+  final locationController = TextEditingController();
+  final startDateController = TextEditingController();
+  final endDateController = TextEditingController();
+  final descriptionController = TextEditingController();
+
+  void addEducation() async {
+    emit(const ProfileState.addEducationLoading());
+
+    final response = await _profileRepo.addEducation(
+      profileId: await SharedPrefHelper.getData(key: SharedPrefKeys.idProfile),
+      token:
+          "Bearer ${await SharedPrefHelper.getSecuredString(key: SharedPrefKeys.token)}",
+      education: Education(
+          isCurrent: true,
+          college: schoolController.text,
+          degree: degreeController.text,
+          fieldOfStudy: fieldOfStudyController.text,
+          startDate: startDateController.text,
+          endDate: endDateController.text,
+          location: locationController.text,
+          description: descriptionController.text),
+    );
+    response.when(
+      success: (profileResponse) async {
+        // await saveProfile(profileResponse);
+        emit(ProfileState.addEducationSuccess());
+      },
+      failure: (error) {
+        emit(ProfileState.addEducationFailure(error));
       },
     );
   }

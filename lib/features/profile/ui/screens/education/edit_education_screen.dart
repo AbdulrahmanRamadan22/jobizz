@@ -21,7 +21,7 @@ class EditEducationScreen extends StatelessWidget {
   final formKey = GlobalKey<FormState>();
   final schoolController = TextEditingController();
   final fieldOfStudyController = TextEditingController();
-  final collegeController = TextEditingController();
+  // final collegeController = TextEditingController();
   final degreeController = TextEditingController();
   final locationController = TextEditingController();
   final startDateController = TextEditingController();
@@ -35,6 +35,10 @@ class EditEducationScreen extends StatelessWidget {
         title: const Text('Edit Education'),
       ),
       body: BlocConsumer<ProfileCubit, ProfileState>(
+        listenWhen: (previous, current) =>
+            current is UpdateEducationSuccess ||
+            current is UpdateEducationFailure,
+
         listener: (context, state) {
           state.whenOrNull(
             updateEducationSuccess: () {
@@ -48,7 +52,7 @@ class EditEducationScreen extends StatelessWidget {
         builder: (context, state) {
           schoolController.text = education?.college ?? '';
           fieldOfStudyController.text = education?.fieldOfStudy ?? '';
-          collegeController.text = education?.college ?? '';
+          // collegeController.text = education?.college ?? '';
           degreeController.text = education?.degree ?? '';
           locationController.text = education?.location ?? '';
           startDateController.text = education?.startDate ?? '';
@@ -149,69 +153,7 @@ class EditEducationScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    // Row(children: [
-                    //   Expanded(
-                    //     child: Column(
-                    //       crossAxisAlignment: CrossAxisAlignment.start,
-                    //       children: [
-                    //         AppTextFormField(
-                    //           labelText: 'Start Date',
-                    //           controller: startDateController,
-                    //           keyboardType: TextInputType.text,
-                    //           prefixIcon: Icon(Icons.calendar_month_outlined,
-                    //               color: ColorsApp.gray, size: 23.sp),
-                    //           hintText: 'Ex: 2020-09-30',
-                    //           validator: (value) => value?.isEmpty == true
-                    //               ? 'Please enter your Start Date'
-                    //               : null,
-                    //           onTap: () async {
-                    //             DateTime? pickedDate = await showDatePicker(
-                    //               context: context,
-                    //               initialDate: DateTime.now(),
-                    //               firstDate: DateTime(2000),
-                    //               lastDate: DateTime(2100),
-                    //             );
-                    //             if (pickedDate != null) {
-                    //               String formattedDate =
-                    //                   "${pickedDate.year.toString().padLeft(4, '0')}-${pickedDate.month.toString().padLeft(2, '0')}-${pickedDate.day.toString().padLeft(2, '0')}";
-                    //               startDateController.text = formattedDate;
-                    //             }
-                    //           },
-                    //         ),
-                    //       ],
-                    //     ),
-                    //   ),
-                    //   horizontalSpace(18),
-                    //   Expanded(
-                    //     child: Column(
-                    //       crossAxisAlignment: CrossAxisAlignment.start,
-                    //       children: [
-                    //         AppTextFormField(
-                    //           labelText: 'End Date',
-                    //           controller: endDateController,
-                    //           keyboardType: TextInputType.text,
-                    //           prefixIcon: Icon(Icons.calendar_month_outlined,
-                    //               color: ColorsApp.gray, size: 23.sp),
-                    //           hintText: 'Ex: 2022-09-30',
-                    //           validator: (value) {},
-                    //           onTap: () async {
-                    //             DateTime? pickedDate = await showDatePicker(
-                    //               context: context,
-                    //               initialDate: DateTime.now(),
-                    //               firstDate: DateTime(2000),
-                    //               lastDate: DateTime(2100),
-                    //             );
-                    //             if (pickedDate != null) {
-                    //               String formattedDate =
-                    //                   "${pickedDate.year.toString().padLeft(4, '0')}-${pickedDate.month.toString().padLeft(2, '0')}-${pickedDate.day.toString().padLeft(2, '0')}";
-                    //               endDateController.text = formattedDate;
-                    //             }
-                    //           },
-                    //         ),
-                    //       ],
-                    //     ),
-                    //   ),
-                    // ]),
+                   
                     verticalSpace(18),
                     AppTextFormField(
                       labelText: 'Location',
@@ -275,3 +217,19 @@ class EditEducationScreen extends StatelessWidget {
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

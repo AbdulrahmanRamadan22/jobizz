@@ -180,6 +180,16 @@ class AppRouter {
             ),
           ),
         );
+
+      case Routes.addEducationScreen:
+        final profileCubit = getIt<ProfileCubit>();
+        // final education = settings.arguments as Education?;
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider.value(
+            value: profileCubit,
+            child:  AddEducationScreen(),
+          ),
+        );
 // saved jobs screen
       case Routes.savedJobsScreen:
 
@@ -200,7 +210,7 @@ class AppRouter {
             child: const SettingScreen(),
           ),
         );
-      // about application screen 
+      // about application screen
       case Routes.aboutApplicationScreen:
         return MaterialPageRoute(
           builder: (context) => const AboutApplicationScreen(),
