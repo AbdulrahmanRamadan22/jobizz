@@ -3,14 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/features/profile/logic/profile_cubit.dart';
 
-import '../../../../core/helper/size_box.dart';
-import '../../../../core/theming/colors.dart';
-import '../../../../core/theming/styles.dart';
-import '../../../../core/widgets/app_text_form_field.dart';
-import '../../../../core/widgets/button_app_text.dart';
-import '../../../../core/widgets/showdialog_errors.dart';
-import '../../data/models/profile_response_model.dart';
-import '../../logic/profile_state.dart';
+import '../../../../../core/helper/size_box.dart';
+import '../../../../../core/theming/colors.dart';
+import '../../../../../core/theming/styles.dart';
+import '../../../../../core/widgets/app_text_form_field.dart';
+import '../../../../../core/widgets/button_app_text.dart';
+import '../../../../../core/widgets/show_custom_date_picker.dart';
+import '../../../../../core/widgets/showdialog_errors.dart';
+import '../../../data/models/profile_response_model.dart';
+import '../../../logic/profile_state.dart';
 
 class EditEducationScreen extends StatelessWidget {
   EditEducationScreen({super.key, this.education});
@@ -99,43 +100,118 @@ class EditEducationScreen extends StatelessWidget {
                           : null,
                     ),
                     verticalSpace(18),
-                    Row(children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            AppTextFormField(
-                              labelText: 'Start Date',
+                    Row(
+                      children: [
+                        Expanded(
+                          child: AppTextFormField(
+                            labelText: 'Start Date',
+                            controller: startDateController,
+                            keyboardType: TextInputType.none,
+                            // readOnly: true,
+                            prefixIcon: Icon(Icons.calendar_month_outlined,
+                                color: ColorsApp.gray, size: 23),
+                            hintText: 'Ex: 2022-09-01',
+                            onTap: () => showCustomDatePicker(
+                              context,
                               controller: startDateController,
-                              keyboardType: TextInputType.text,
-                              prefixIcon: Icon(Icons.calendar_month_outlined,
-                                  color: ColorsApp.gray, size: 23.sp),
-                              hintText: 'Ex: 2020-09-30',
-                              validator: (value) => value?.isEmpty == true
-                                  ? 'Please enter your Start Date'
-                                  : null,
+                              onDateSelected: () {
+                                print(
+                                    'Start date selected: ${startDateController.text}');
+                              },
                             ),
-                          ],
+                            validator: (value) => value?.isEmpty == true
+                                ? 'Please enter your Start Date'
+                                : null,
+                          ),
                         ),
-                      ),
-                      horizontalSpace(18),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            AppTextFormField(
-                              labelText: 'End Date (Optional)',
+                        horizontalSpace(18),
+                        Expanded(
+                          child: AppTextFormField(
+                            labelText: 'End Date',
+                            controller: endDateController,
+                            keyboardType: TextInputType.none,
+                            // readOnly: true,
+                            prefixIcon: Icon(Icons.calendar_month_outlined,
+                                color: ColorsApp.gray, size: 23),
+                            hintText: 'Ex: 2024-10-23',
+                            onTap: () => showCustomDatePicker(
+                              context,
                               controller: endDateController,
-                              keyboardType: TextInputType.text,
-                              prefixIcon: Icon(Icons.calendar_month_outlined,
-                                  color: ColorsApp.gray, size: 23.sp),
-                              hintText: 'Ex: 2022-09-30',
-                              validator: (value) {},
+                              firstDate: DateTime(2020), // Custom first date
+                              lastDate: DateTime(2030), // Custom last date
+                              onDateSelected: () {
+                                print(
+                                    'End date selected: ${endDateController.text}');
+                              },
                             ),
-                          ],
+                            validator: (value) {},
+                          ),
                         ),
-                      ),
-                    ]),
+                      ],
+                    ),
+                    // Row(children: [
+                    //   Expanded(
+                    //     child: Column(
+                    //       crossAxisAlignment: CrossAxisAlignment.start,
+                    //       children: [
+                    //         AppTextFormField(
+                    //           labelText: 'Start Date',
+                    //           controller: startDateController,
+                    //           keyboardType: TextInputType.text,
+                    //           prefixIcon: Icon(Icons.calendar_month_outlined,
+                    //               color: ColorsApp.gray, size: 23.sp),
+                    //           hintText: 'Ex: 2020-09-30',
+                    //           validator: (value) => value?.isEmpty == true
+                    //               ? 'Please enter your Start Date'
+                    //               : null,
+                    //           onTap: () async {
+                    //             DateTime? pickedDate = await showDatePicker(
+                    //               context: context,
+                    //               initialDate: DateTime.now(),
+                    //               firstDate: DateTime(2000),
+                    //               lastDate: DateTime(2100),
+                    //             );
+                    //             if (pickedDate != null) {
+                    //               String formattedDate =
+                    //                   "${pickedDate.year.toString().padLeft(4, '0')}-${pickedDate.month.toString().padLeft(2, '0')}-${pickedDate.day.toString().padLeft(2, '0')}";
+                    //               startDateController.text = formattedDate;
+                    //             }
+                    //           },
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ),
+                    //   horizontalSpace(18),
+                    //   Expanded(
+                    //     child: Column(
+                    //       crossAxisAlignment: CrossAxisAlignment.start,
+                    //       children: [
+                    //         AppTextFormField(
+                    //           labelText: 'End Date',
+                    //           controller: endDateController,
+                    //           keyboardType: TextInputType.text,
+                    //           prefixIcon: Icon(Icons.calendar_month_outlined,
+                    //               color: ColorsApp.gray, size: 23.sp),
+                    //           hintText: 'Ex: 2022-09-30',
+                    //           validator: (value) {},
+                    //           onTap: () async {
+                    //             DateTime? pickedDate = await showDatePicker(
+                    //               context: context,
+                    //               initialDate: DateTime.now(),
+                    //               firstDate: DateTime(2000),
+                    //               lastDate: DateTime(2100),
+                    //             );
+                    //             if (pickedDate != null) {
+                    //               String formattedDate =
+                    //                   "${pickedDate.year.toString().padLeft(4, '0')}-${pickedDate.month.toString().padLeft(2, '0')}-${pickedDate.day.toString().padLeft(2, '0')}";
+                    //               endDateController.text = formattedDate;
+                    //             }
+                    //           },
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ]),
                     verticalSpace(18),
                     AppTextFormField(
                       labelText: 'Location',
@@ -181,7 +257,7 @@ class EditEducationScreen extends StatelessWidget {
   }
 
   void validateThenDoProfileScreen(BuildContext context) {
-        if (formKey.currentState!.validate()) {
+    if (formKey.currentState!.validate()) {
       context.read<ProfileCubit>().updateEducation(
             education: Education(
               id: education?.id,
@@ -192,7 +268,7 @@ class EditEducationScreen extends StatelessWidget {
               startDate: startDateController.text,
               endDate: endDateController.text,
               description: descriptionController.text,
-               isCurrent: true, 
+              isCurrent: true,
             ),
             educationId: education?.id ?? 0,
           );

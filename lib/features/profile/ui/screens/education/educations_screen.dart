@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/helper/size_box.dart';
 import 'package:jobizz/features/profile/ui/widgets/custom_card_data_is_empty.dart';
 
-import '../../data/models/profile_response_model.dart';
-import '../widgets/education/education_item_details.dart';
+import '../../../data/models/profile_response_model.dart';
+import '../../widgets/education/education_item_details.dart';
 
 class EducationsScreen extends StatelessWidget {
   const EducationsScreen({super.key, this.educations});

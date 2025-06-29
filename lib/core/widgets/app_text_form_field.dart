@@ -23,6 +23,7 @@ class AppTextFormField extends StatelessWidget {
   final TextDirection? textDirection;
   final TextEditingController? controller;
   final Function(String?) validator;
+  void Function()? onTap;
 
   // maxLines
   int? maxLines;
@@ -45,6 +46,7 @@ class AppTextFormField extends StatelessWidget {
     required this.validator,
     this.textDirection,
     this.maxLines,
+    this.onTap,
   });
 
   @override
@@ -53,6 +55,7 @@ class AppTextFormField extends StatelessWidget {
     final int safeMaxLines = isObscure ? 1 : (maxLines ?? 1);
     return TextFormField(
       autovalidateMode: AutovalidateMode.onUserInteraction,
+      onTap:onTap ,
       maxLines: safeMaxLines,
       autofillHints: [
         AutofillHints.email,
