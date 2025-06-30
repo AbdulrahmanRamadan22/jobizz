@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/theming/colors.dart';
-import 'package:jobizz/core/theming/styles.dart';
 import 'package:jobizz/features/companies/data/model/company_response.dart';
-
 
 class ContainerOfProfileCompany extends StatelessWidget {
   const ContainerOfProfileCompany({
     super.key,
     this.companyItem,
     this.text,
+    required this.style,
   });
 
   final Company? companyItem;
   final text;
+  final style;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class ContainerOfProfileCompany extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: TextStyles.font16Black,
+          style: style,
           textAlign: TextAlign.start,
           textDirection: TextDirection.ltr,
         ),

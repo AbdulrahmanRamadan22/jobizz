@@ -4,20 +4,24 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
-import 'package:jobizz/features/companies/data/model/company_response.dart';
+
+import '../../../../jobs/data/models/job.dart';
 
 class CompanyItemJobs extends StatelessWidget {
   const CompanyItemJobs({
     super.key,
-    this.companyItem,
-    this.jobOFCompany,
+    // this.companyItem,
+    this.job,
   });
-  final Company? companyItem;
-  final JobInCompany? jobOFCompany;
+  //final Company? companyItem;
+  final Job? job;
 
   @override
   Widget build(BuildContext context) {
+    //print("job: ${job?.toJson()}");
+
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: 2.9.w),
       width: double.infinity,
       height: 150.h,
       decoration: BoxDecoration(
@@ -37,25 +41,32 @@ class CompanyItemJobs extends StatelessWidget {
             backgroundColor: ColorsApp.whiteColor,
             radius: 28.r,
             child: Image.network(
-              companyItem?.logo ?? '',
+              job?.companyLogo ?? '',
+              errorBuilder: (context, error, stackTrace) {
+                return const Icon(
+                  Icons.error,
+                  color: ColorsApp.red,
+                );
+              },
               fit: BoxFit.cover,
               height: 50.h,
             ),
           ),
           Text(
-            jobOFCompany?.title ?? '',
+          
+            job?.categoryName ?? 'no Found',
             style: TextStyles.font14DarkBlackSemiBold,
             textAlign: TextAlign.center,
           ),
           Text(
-            companyItem?.name ?? 'no Found',
+            job?.companyName ?? 'no Found',
             style: TextStyles.font14Gray,
             textAlign: TextAlign.center,
           ),
-          Text(
-            '\$${jobOFCompany?.jobSalary}/y',
-            style: TextStyles.font12DarkBlack,
-          ),
+          // Text(
+          //   job?.salary.toString() ?? 'no Found',
+          //   style: TextStyles.font12DarkBlack,
+          // ),
         ],
       ),
     );

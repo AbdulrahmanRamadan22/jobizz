@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jobizz/core/widgets/show_generic_search_dialog.dart';
+import 'package:jobizz/features/jobs/ui/widgets/job_item.dart';
 
 import '../../data/models/job.dart';
 import '../widgets/grid_view_jobs.dart';
@@ -14,6 +16,31 @@ class RecommendedJobsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Recommended Jobs'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              final List<Job> jobs =
+                  recommendedJobs?.whereType<Job>().toList() ?? [];
+
+              showGenericSearchDialog<Job>(
+                context: context,
+                items: jobs,
+                searchFields: [
+                  (job) => job.title ?? '',
+                  (job) => job.companyName ?? '',
+                ],
+                isGrid: true,
+                itemBuilder: (context, job) {
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: JobItem(jop: job),
+                  );
+                },
+              );
+            },
+          ),
+        ],
       ),
       body: CustomScrollView(slivers: [
         JobFondLength(jobs: recommendedJobs),

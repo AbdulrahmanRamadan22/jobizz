@@ -1,3 +1,4 @@
+import 'package:jobizz/features/jobs/data/models/job.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'company_response.g.dart';
 
@@ -52,7 +53,7 @@ class Company {
   final String? createdAt;
   @JsonKey(name: 'updated_at')
   final String? updatedAt;
-  final List<JobInCompany>? jobs;
+  final List<Job>? jobs;
 
   Company(
     this.id,
@@ -74,24 +75,24 @@ class Company {
       _$CompanyFromJson(json);
 }
 
-@JsonSerializable()
-class JobInCompany {
-  final int? id;
-  @JsonKey(name: 'company_id')
-  final int? companyId;
-  final String? title;
-  @JsonKey(name: 'job_status')
-  final String? jobStatus;
-  @JsonKey(name: 'job_salary')
-  final String? jobSalary;
+//@JsonSerializable()
+// class Job {
+//   final int? id;
+//   @JsonKey(name: 'company_id')
+//   final int? companyId;
+//   final String? title;
+//   @JsonKey(name: 'job_status')
+//   final String? jobStatus;
+//   @JsonKey(name: 'job_salary')
+//   final String? jobSalary;
 
-  JobInCompany(
-    this.id,
-    this.companyId,
-    this.title,
-    this.jobStatus,
-    this.jobSalary,
-  );
+//   Job(
+//     this.id,
+//     this.companyId,
+//     this.title,
+//     this.jobStatus,
+//     this.jobSalary,
+//   );
 
-  factory JobInCompany.fromJson(Map<String, dynamic> json) => _$JobInCompanyFromJson(json);
-}
+//   factory Job.fromJson(Map<String, dynamic> json) => _$JobFromJson(json);
+// }

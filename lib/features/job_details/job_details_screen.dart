@@ -4,7 +4,6 @@ import 'package:jobizz/core/helper/size_box.dart';
 import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
 import 'package:jobizz/core/widgets/button_app_text.dart';
-import 'package:jobizz/features/home/data/model/home_response_model.dart';
 import 'package:jobizz/features/job_details/widgets/stack_image_title_buttons.dart';
 import 'package:jobizz/features/job_details/widgets/tab_bar_view.dart';
 

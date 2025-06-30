@@ -140,7 +140,7 @@ class AppRouter {
           ),
         );
 
-      // Drawer Screens
+      // profile Screens
       case Routes.profileScreen:
         final profileCubit = getIt<ProfileCubit>();
         // Always refresh when entering profile screen
@@ -192,6 +192,7 @@ class AppRouter {
           ),
         );
 
+
       case Routes.addEducationScreen:
         final profileCubit = getIt<EducationCubit>();
         // final education = settings.arguments as Education?;
@@ -202,12 +203,17 @@ class AppRouter {
           ),
         );
 
+
       // case Routes.addEducationScreen:
       //   final profileCubit = getIt<ProfileCubit>();
       //   // final education = settings.arguments as Education?;
       //   return MaterialPageRoute(
       //     builder: (context) => BlocProvider.value(
       //       value: profileCubit,
+      //       child:  AddEducationScreen(),
+      //     ),
+      //   );
+
       //       child: AddEducationScreen(),
       //     ),
       //   );
@@ -244,6 +250,7 @@ class AppRouter {
             ),
           ),
         );
+
 
 
 // saved jobs screen
@@ -316,7 +323,6 @@ class AppRouter {
           ),
         );
       //Jobs Details Screen
-
       case Routes.jobDetailsScreen:
         final jobDetails = settings.arguments as Job?;
 

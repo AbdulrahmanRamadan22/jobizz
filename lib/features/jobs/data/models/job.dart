@@ -26,7 +26,7 @@ class Job {
   final String? jobStatus;
 
   Job({
-  required  this.id,
+    required this.id,
     this.companyId,
     this.title,
     this.jobType,

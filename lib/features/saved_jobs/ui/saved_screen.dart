@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/widgets/show_generic_search_dialog.dart'; // هذا هو ملف الدالة العامة (showGenericSearchDialog)
+import 'package:jobizz/features/jobs/data/models/job.dart';
 
 import 'package:jobizz/features/saved_jobs/cubit/saved_cubit.dart'; // استيراد SavedCubit
-import 'package:jobizz/features/saved_jobs/data/model/saved_response.dart'; // نموذج SavedJob
 import 'package:jobizz/features/saved_jobs/ui/widgets/bloc_builder.dart'; // SavedJobsBlocBuilder
 import 'package:jobizz/features/saved_jobs/ui/widgets/item_saved_jobs.dart'; // ItemSavedJobs (أو ItelSavedJobs)
 
@@ -32,14 +32,14 @@ class SavedJobsScreen extends StatelessWidget {
             onPressed: () {
               final savedCubit = context.read<SavedCubit>();
 
-              final List<SavedJob> savedJobs = savedCubit.state.maybeWhen(
+              final List<Job> savedJobs = savedCubit.state.maybeWhen(
                 savedSuccess: (response) => response.data?.favoriteJobs ?? [],
-                orElse: () => <SavedJob>[],
+                orElse: () => <Job>[],
               );
 
-              showGenericSearchDialog<SavedJob>(
+              showGenericSearchDialog<Job>(
                 context: context,
-                items: savedJobs.whereType<SavedJob>().toList(),
+                items: savedJobs.whereType<Job>().toList(),
                 searchFields: [
                   (job) => job.categoryName ?? '',
                   (job) => job.companyName ?? '',
@@ -49,7 +49,7 @@ class SavedJobsScreen extends StatelessWidget {
                 isGrid: false,
                 itemBuilder: (context, job) {
                   return ItemSavedJobs(
-                    job: job,
+                    savedJob: job,
                   );
                 },
               );

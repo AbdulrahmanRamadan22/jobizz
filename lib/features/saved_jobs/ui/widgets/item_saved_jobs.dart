@@ -5,24 +5,24 @@ import 'package:jobizz/core/helper/size_box.dart';
 import 'package:jobizz/core/routing/routers_string.dart';
 import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
-import 'package:jobizz/features/saved_jobs/data/model/saved_response.dart';
+import 'package:jobizz/features/jobs/data/models/job.dart';
 import 'package:jobizz/features/saved_jobs/ui/widgets/row_job_status_and_salary.dart';
 
 class ItemSavedJobs extends StatelessWidget {
   const ItemSavedJobs({
     super.key,
-    this.job,
+    this.savedJob,
   });
 
-  final SavedJob? job;
+  final Job? savedJob;
 
   @override
   Widget build(BuildContext context) {
     // متناش تعملها switch case
     final Color statusColor;
-    if (job?.jobStatus == 'Open || open') {
+    if (savedJob?.jobStatus == 'open') {
       statusColor = ColorsApp.lightBlue2;
-    } else if (job?.jobStatus == 'Closed || closed') {
+    } else if (savedJob?.jobStatus == 'closed') {
       statusColor = ColorsApp.lightRed;
     } else {
       statusColor = ColorsApp.lightBlue2; // Default color for unknown status
@@ -31,7 +31,7 @@ class ItemSavedJobs extends StatelessWidget {
       padding: EdgeInsets.only(bottom: 16.h),
       child: GestureDetector(
         onTap: () {
-          //  context.pushNamed(Routes.jobDetailsScreen, arguments: job);
+          context.pushNamed(Routes.jobDetailsScreen, arguments: savedJob);
         },
         child: Container(
           width: double.infinity,
@@ -54,7 +54,7 @@ class ItemSavedJobs extends StatelessWidget {
                 ListTile(
                   contentPadding: EdgeInsets.zero,
                   leading: Image.network(
-                    job?.companyLogo ?? '',
+                    savedJob?.companyLogo ?? '',
                     height: 50.h,
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) {
@@ -62,13 +62,13 @@ class ItemSavedJobs extends StatelessWidget {
                     },
                   ),
                   title: Text(
-                    job?.categoryName ?? 'No Category',
+                    savedJob?.categoryName ?? 'No Category',
                     style: TextStyles.font14Black,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
                   subtitle: Text(
-                    job?.companyName ?? 'No Company',
+                    savedJob?.companyName ?? 'No Company',
                     style: TextStyles.font14Gray,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -82,14 +82,14 @@ class ItemSavedJobs extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          '\$${job?.salary}/y',
+                          '\$${savedJob?.salary}/y',
                           style: TextStyles.font12DarkBlack,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                         ),
                         verticalSpace(4),
                         Text(
-                          job?.location ?? 'Location not specified',
+                          savedJob?.location ?? 'Location not specified',
                           style: TextStyles.font14Gray,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
@@ -99,7 +99,7 @@ class ItemSavedJobs extends StatelessWidget {
                   ),
                 ),
                 verticalSpace(16),
-                JobStatusAndSalary(statusColor: statusColor, job: job),
+                JobStatusAndSalary(statusColor: statusColor, job: savedJob),
               ],
             ),
           ),
