@@ -19,6 +19,7 @@ import '../../features/auth/reset_password_screen/data/model/reset_password_requ
 import '../../features/category/data/model/category_response.dart';
 import '../../features/companies/data/model/company_response.dart';
 import '../../features/home/data/model/home_response_model.dart';
+import '../../features/profile/data/models/education_response_model.dart';
 import '../../features/profile/data/models/profile_response_model.dart';
 import '../../features/switch_profile/data/models/profile_response_model.dart';
 
@@ -99,6 +100,13 @@ abstract class ApisServices {
     @Header('Authorization') String token,
     @Body() Map<String, dynamic> data,
   );
+
+
+@GET(ApiConstant.getAllEducations)
+Future<EducationResponseModel> getAllEducations(
+  @Path('profileId') int profileId,
+  @Header('Authorization') String token,
+);
 
   @POST(ApiConstant.addEducation)
   Future<dynamic> addEducation(

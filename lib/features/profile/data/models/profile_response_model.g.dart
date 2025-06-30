@@ -78,7 +78,7 @@ Education _$EducationFromJson(Map<String, dynamic> json) => Education(
       fieldOfStudy: json['field_of_study'] as String?,
       startDate: json['start_date'] as String?,
       endDate: json['end_date'] as String?,
-      isCurrent: json['is_current'] as bool?,
+      isCurrent: json['is_current'],
       description: json['description'] as String?,
       location: json['location'] as String?,
       image: json['image'] as String?,

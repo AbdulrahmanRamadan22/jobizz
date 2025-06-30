@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/helper/extensions.dart';
+import 'package:jobizz/features/profile/logic/education/education_cubit.dart';
 
 import '../../../../../core/routing/routers_string.dart';
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/widgets/custom_ show_dialog.dart';
+import '../../../../../core/widgets/showdialog_errors.dart';
+import '../../../../../core/widgets/showdialog_loadin.dart';
+
 import '../../../data/models/profile_response_model.dart';
+import '../../../logic/education/education_state.dart';
 import '../build_menu_item.dart';
 
 class BuildEnhancedMenuEducation extends StatefulWidget {
@@ -58,8 +64,6 @@ class _BuildEnhancedMenuEducationState
             onPressed: () {
               context.pushNamed(Routes.editEducationScreen,
                   arguments: widget.education);
-
-              // Handle edit action
             },
             color: ColorsApp.mainBlue,
           ),
@@ -70,22 +74,57 @@ class _BuildEnhancedMenuEducationState
             indent: 16.w,
             endIndent: 16.w,
           ),
-          buildMenuItem(
-            icon: Icons.delete_outline,
-            text: 'Delete',
-            onPressed: () {
-              showDialogDeleteItem(
-                context,
-                title: "Delete Education",
-                content:
-                    "Are you sure you want to delete your ${widget.education?.college} education?",
-                onPressed: () {
-                  // Handle delete action
+          BlocListener<EducationCubit, EducationState>(
+            listenWhen: (previous, current) =>
+                current is DeleteEducationFailure ||
+                current is DeleteEducationSuccess ||
+                current is DeleteEducationLoading,
+            listener: (context, state) {
+              state.whenOrNull(
+                deleteEducationSuccess: () {
+                  // Close the loading dialog first
+
+                  // Show success message
+            
+
+                  context.pop();
+
+                  // Refresh the education list
+                  // Navigator.of(context).pop();
+                },
+                deleteEducationFailure: (error) {
+                  // Close the loading dialog
+                  Navigator.of(context).pop();
+                  // Show error dialog
+                  setupErrorState(context, error);
+                },
+                deleteEducationLoading: () {
+                  showDialogLoading(context);
                 },
               );
             },
-            color: Colors.red,
-            isDestructive: true,
+            child: buildMenuItem(
+              icon: Icons.delete_outline,
+              text: 'Delete',
+              onPressed: () {
+                showDialogDeleteItem(
+                  context,
+                  title: "Delete Education",
+                  content:
+                      "Are you sure you want to delete your ${widget.education?.college} education?",
+                  onPressed: () {
+                    // Close the delete confirmation dialog first
+                    Navigator.of(context).pop();
+
+                    // Then trigger the delete action
+                    context.read<EducationCubit>().deleteEducation(
+                        educationId: widget.education?.id ?? 0);
+                  },
+                );
+              },
+              color: Colors.red,
+              isDestructive: true,
+            ),
           ),
         ],
         builder: (_, MenuController controller, Widget? child) {

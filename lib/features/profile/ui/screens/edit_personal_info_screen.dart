@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobizz/features/profile/logic/profile/profile_cubit.dart';
 import '../../../../core/helper/size_box.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
 import '../../../../core/widgets/button_app_text.dart';
 import '../../../../core/widgets/showdialog_errors.dart';
 import '../../data/models/profile_response_model.dart';
-import '../../logic/profile_cubit.dart';
-import '../../logic/profile_state.dart';
+import '../../logic/profile/profile_state.dart';
 import '../widgets/profile_header.dart/form_update_job_title_and_full_name.dart';
 import '../widgets/profile_header.dart/stack_profile_image.dart';
 

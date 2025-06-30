@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/helper/extensions.dart';
 import 'package:jobizz/features/profile/data/models/profile_response_model.dart';
-import 'package:jobizz/features/profile/logic/profile_cubit.dart';
-import 'package:jobizz/features/profile/logic/profile_state.dart';
+import 'package:jobizz/features/profile/logic/profile/profile_cubit.dart';
+import 'package:jobizz/features/profile/logic/profile/profile_state.dart';
 import 'package:jobizz/features/profile/ui/widgets/custom_card_data_is_empty.dart';
 import 'package:jobizz/features/profile/ui/widgets/education/sliver_list_education.dart';
 import 'package:jobizz/features/profile/ui/widgets/experience/sliver_list_experience.dart';
@@ -79,8 +79,9 @@ class ProfileBlocBuilder extends StatelessWidget {
             child: RowTextAndSeeAll(
               text: 'Education',
               onPressed: () {
-                context.pushNamed(Routes.educationsScreen,
-                    arguments: profile.profileData?.educations ?? []);
+                context.pushNamed(
+                  Routes.educationsScreen,
+                );
               },
             ),
           ),

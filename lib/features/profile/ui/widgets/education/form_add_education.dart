@@ -3,12 +3,13 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobizz/features/profile/logic/education/education_cubit.dart';
 
 import '../../../../../core/helper/size_box.dart';
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
 import '../../../../../core/widgets/show_custom_date_picker.dart';
-import '../../../logic/profile_cubit.dart';
+import '../../../logic/profile/profile_cubit.dart';
 
 class FormAddEducation extends StatelessWidget {
   const FormAddEducation({super.key});
@@ -16,14 +17,14 @@ class FormAddEducation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: context.read<ProfileCubit>().formKey,
+      key: context.read<EducationCubit>().formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           verticalSpace(8),
           AppTextFormField(
             labelText: 'School',
-            controller: context.read<ProfileCubit>().schoolController,
+            controller: context.read<EducationCubit>().schoolController,
             keyboardType: TextInputType.text,
             prefixIcon:
                 Icon(Icons.school_outlined, color: ColorsApp.gray, size: 25.sp),
@@ -34,7 +35,7 @@ class FormAddEducation extends StatelessWidget {
           verticalSpace(18),
           AppTextFormField(
             labelText: 'Degree',
-            controller: context.read<ProfileCubit>().degreeController,
+            controller: context.read<EducationCubit>().degreeController,
             keyboardType: TextInputType.text,
             prefixIcon: Icon(Icons.rotate_90_degrees_ccw,
                 color: ColorsApp.gray, size: 23.sp),
@@ -45,7 +46,7 @@ class FormAddEducation extends StatelessWidget {
           verticalSpace(18),
           AppTextFormField(
             labelText: 'Field of Study',
-            controller: context.read<ProfileCubit>().fieldOfStudyController,
+            controller: context.read<EducationCubit>().fieldOfStudyController,
             keyboardType: TextInputType.text,
             prefixIcon:
                 Icon(Icons.work_outline, color: ColorsApp.gray, size: 23.sp),
@@ -60,7 +61,7 @@ class FormAddEducation extends StatelessWidget {
               Expanded(
                 child: AppTextFormField(
                   labelText: 'Start Date',
-                  controller: context.read<ProfileCubit>().startDateController,
+                  controller: context.read<EducationCubit>().startDateController,
                   keyboardType: TextInputType.none,
                   // readOnly: true,
                   prefixIcon: Icon(Icons.calendar_month_outlined,
@@ -69,9 +70,9 @@ class FormAddEducation extends StatelessWidget {
                   onTap: () => showCustomDatePicker(
                     context,
                     controller:
-                        context.read<ProfileCubit>().startDateController,
+                        context.read<EducationCubit>().startDateController,
                     onDateSelected: () {
-                      log('Start date selected: ${context.read<ProfileCubit>().startDateController.text}');
+                      log('Start date selected: ${context.read<EducationCubit>().startDateController.text}');
                     },
                   ),
                   validator: (value) => value?.isEmpty == true
@@ -83,7 +84,7 @@ class FormAddEducation extends StatelessWidget {
               Expanded(
                 child: AppTextFormField(
                   labelText: 'End Date',
-                  controller: context.read<ProfileCubit>().endDateController,
+                  controller: context.read<EducationCubit>().endDateController,
                   keyboardType: TextInputType.none,
                   // readOnly: true,
                   prefixIcon: Icon(Icons.calendar_month_outlined,
@@ -91,11 +92,11 @@ class FormAddEducation extends StatelessWidget {
                   hintText: 'Ex: 2024-10-23',
                   onTap: () => showCustomDatePicker(
                     context,
-                    controller: context.read<ProfileCubit>().endDateController,
+                    controller: context.read<EducationCubit>().endDateController,
                     firstDate: DateTime(2020), // Custom first date
                     lastDate: DateTime(2030), // Custom last date
                     onDateSelected: () {
-                      log('End date selected: ${context.read<ProfileCubit>().endDateController.text}');
+                      log('End date selected: ${context.read<EducationCubit>().endDateController.text}');
                     },
                   ),
                   validator: (value) {},
@@ -106,7 +107,7 @@ class FormAddEducation extends StatelessWidget {
           verticalSpace(18),
           AppTextFormField(
             labelText: 'Location',
-            controller: context.read<ProfileCubit>().locationController,
+            controller: context.read<EducationCubit>().locationController,
             keyboardType: TextInputType.text,
             prefixIcon: Icon(
               Icons.location_on_outlined,
@@ -119,7 +120,7 @@ class FormAddEducation extends StatelessWidget {
           verticalSpace(18),
           AppTextFormField(
             labelText: 'Description (Optional)',
-            controller: context.read<ProfileCubit>().endDateController,
+            controller: context.read<EducationCubit>().descriptionController,
             keyboardType: TextInputType.multiline,
             maxLines: 5,
             hintText: 'Ex: Description',

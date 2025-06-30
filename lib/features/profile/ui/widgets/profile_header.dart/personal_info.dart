@@ -11,7 +11,7 @@ import '../../../../../core/routing/routers_string.dart';
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/theming/styles.dart';
 import '../../../data/models/profile_response_model.dart';
-import '../../../logic/profile_cubit.dart';
+import '../../../logic/profile/profile_cubit.dart';
 
 class PersonalInfoData extends StatelessWidget {
   final ProfileData? profileData;
@@ -79,8 +79,7 @@ class PersonalInfoData extends StatelessWidget {
   }
 
   void navigateAndUpdateProfile(BuildContext context) async {
-    final result = await context.pushNamed(
-        Routes.personalInfoScreen,
+    final result = await context.pushNamed(Routes.personalInfoScreen,
         arguments: profileData);
 
     if (result == true) {

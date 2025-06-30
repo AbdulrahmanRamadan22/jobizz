@@ -1,7 +1,8 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jobizz/features/profile/logic/profile_cubit.dart';
+import 'package:jobizz/features/profile/logic/education/education_cubit.dart';
 
 import '../../../../../core/helper/size_box.dart';
 import '../../../../../core/theming/colors.dart';
@@ -11,7 +12,7 @@ import '../../../../../core/widgets/button_app_text.dart';
 import '../../../../../core/widgets/show_custom_date_picker.dart';
 import '../../../../../core/widgets/showdialog_errors.dart';
 import '../../../data/models/profile_response_model.dart';
-import '../../../logic/profile_state.dart';
+import '../../../logic/education/education_state.dart';
 
 class EditEducationScreen extends StatelessWidget {
   EditEducationScreen({super.key, this.education});
@@ -34,11 +35,10 @@ class EditEducationScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Edit Education'),
       ),
-      body: BlocConsumer<ProfileCubit, ProfileState>(
+      body: BlocConsumer<EducationCubit, EducationState>(
         listenWhen: (previous, current) =>
             current is UpdateEducationSuccess ||
             current is UpdateEducationFailure,
-
         listener: (context, state) {
           state.whenOrNull(
             updateEducationSuccess: () {
@@ -153,7 +153,6 @@ class EditEducationScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                   
                     verticalSpace(18),
                     AppTextFormField(
                       labelText: 'Location',
@@ -200,7 +199,7 @@ class EditEducationScreen extends StatelessWidget {
 
   void validateThenDoProfileScreen(BuildContext context) {
     if (formKey.currentState!.validate()) {
-      context.read<ProfileCubit>().updateEducation(
+      context.read<EducationCubit>().updateEducation(
             education: Education(
               id: education?.id,
               college: schoolController.text,
@@ -217,19 +216,3 @@ class EditEducationScreen extends StatelessWidget {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

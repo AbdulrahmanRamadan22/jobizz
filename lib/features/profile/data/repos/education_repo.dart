@@ -1,35 +1,13 @@
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/api_services.dart';
-import '../../../profile/data/models/profile_response_model.dart';
+import '../models/profile_response_model.dart';
+import '../models/education_response_model.dart';
 
-class ProfileRepo {
+class EducationRepo {
   final ApisServices _apisServices;
 
-  ProfileRepo(this._apisServices);
-
-  Future<ApiResult<ProfileResponseModel>> getProfileDetails(
-      {required String token, required int id}) async {
-    try {
-      final response = await _apisServices.getProfileDetailsById(id, token);
-      return ApiResult.success(response);
-    } catch (error) {
-      return ApiResult.failure(ApiErrorHandler.handle(error));
-    }
-  }
-
-  Future<ApiResult<dynamic>> updateGeneralProfileData(
-      {required String token,
-      required int id,
-      required Map<String, dynamic> data}) async {
-    try {
-      final response =
-          await _apisServices.updateGeneralProfileData(id, token, data);
-      return ApiResult.success(response);
-    } catch (error) {
-      return ApiResult.failure(ApiErrorHandler.handle(error));
-    }
-  }
+  EducationRepo(this._apisServices);
 
   Future<ApiResult<dynamic>> updateEducation({
     required String token,
@@ -68,6 +46,16 @@ class ProfileRepo {
     try {
       final response =
           await _apisServices.deleteEducation(profileId, educationId, token);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  Future<ApiResult<EducationResponseModel>> getAllEductions(
+      {required String token, required int profileId}) async {
+    try {
+      final response = await _apisServices.getAllEducations(profileId, token);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

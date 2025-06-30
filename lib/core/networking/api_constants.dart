@@ -27,6 +27,10 @@ class ApiConstant {
   static const String deleteAccount = "auth/delete-account";
   
 
+  static const String getAllEducations = "auth/profiles/{profileId}/educations";
+
+
+
   static const String addEducation = "auth/profiles/{profileId}/educations/add-education";
 
   static const String updateEducation = "auth/profiles/{profileId}/educations/{educationId}";

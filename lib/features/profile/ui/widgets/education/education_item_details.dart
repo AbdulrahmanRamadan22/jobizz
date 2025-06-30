@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobizz/features/profile/data/models/profile_response_model.dart';
 import 'package:jobizz/features/profile/ui/widgets/education/build_enhanced_menu_education.dart';
 
 import '../../../../../core/helper/size_box.dart';
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/theming/styles.dart';
 import '../../../../../core/widgets/cached_network_image_widget.dart';
-import '../../../data/models/profile_response_model.dart';
+// import '../../../data/models/education_response_model.dart';
+// import '../../../data/models/profile_response_model.dart';
 
 class EducationItemDetails extends StatelessWidget {
   final Education? education;
