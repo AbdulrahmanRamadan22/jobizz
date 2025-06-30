@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/features/profile/data/models/profile_response_model.dart';
-import 'package:jobizz/features/profile/ui/widgets/education/build_enhanced_menu_education.dart';
+import 'package:jobizz/features/profile/ui/widgets/experience/build_enhanced_menu_education.dart';
 
 import '../../../../../core/helper/size_box.dart';
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/theming/styles.dart';
 import '../../../../../core/widgets/cached_network_image_widget.dart';
-// import '../../../data/models/education_response_model.dart';
-// import '../../../data/models/profile_response_model.dart';
 
-class EducationItemDetails extends StatelessWidget {
-  final Education? education;
-  const EducationItemDetails({
+class ExperienceItemDetails extends StatelessWidget {
+  final Experience? experience;
+  const ExperienceItemDetails({
     super.key,
-    this.education,
+    this.experience,
   });
 
-  // final FocusNode _buttonFocusNode = FocusNode(debugLabel: 'Menu Button');
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,7 +43,7 @@ class EducationItemDetails extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Institution Image
+                // Company Image
                 Container(
                   height: 40.h,
                   width: 40.w,
@@ -63,8 +60,8 @@ class EducationItemDetails extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(12.r),
                     child: CachedNetworkImageWidget(
-                      imageUrl: "${education?.image}",
-                      imageKey: "${education?.image}",
+                      imageUrl: "${experience?.image}",
+                      imageKey: "${experience?.image}",
                       height: 40.h,
                       width: 40.w,
                       fit: BoxFit.cover,
@@ -79,7 +76,7 @@ class EducationItemDetails extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "${education?.college}",
+                        "${experience?.company}",
                         style: TextStyles.font14Black.copyWith(
                           fontWeight: FontWeight.w600,
                           fontSize: 16.sp,
@@ -87,7 +84,7 @@ class EducationItemDetails extends StatelessWidget {
                       ),
                       verticalSpace(4),
                       Text(
-                        "${education?.degree} in ${education?.fieldOfStudy}",
+                        "${experience?.position}",
                         style: TextStyles.font14Gray.copyWith(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w500,
@@ -107,14 +104,14 @@ class EducationItemDetails extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              "${education?.startDate?.split("-").first} - ${education?.endDate?.split("-").first ?? 'Present'}",
+                              "${experience?.startDate?.split("-").first} - ${experience?.isCurrent == true ? 'Present' : experience?.endDate?.split("-").first ?? 'Present'}",
                               style: TextStyles.font12Gray.copyWith(
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w500,
                                 color: ColorsApp.mainBlue,
                               ),
                             ),
-                            if (education?.isCurrent == 1) ...[
+                            if (experience?.isCurrent == 1) ...[
                               horizontalSpace(6),
                               Container(
                                 width: 6.w,
@@ -133,8 +130,8 @@ class EducationItemDetails extends StatelessWidget {
                 ),
 
                 // Enhanced Menu Button
-                BuildEnhancedMenuEducation(
-                  education: education,
+                BuildEnhancedMenuExperience(
+                  experience: experience,
                 ),
               ],
             ),
@@ -142,20 +139,20 @@ class EducationItemDetails extends StatelessWidget {
             verticalSpace(8),
 
             // Description section
-            if (education?.description != null)
+            if (experience?.description != null)
               Container(
                 width: double.infinity,
                 padding: EdgeInsets.only(left: 55.w),
                 decoration: BoxDecoration(),
                 child: Text(
-                  "${education?.description}",
+                  "${experience?.description}",
                   style: TextStyles.font12Gray.copyWith(
                     fontSize: 13.sp,
                     height: 1.4,
                   ),
                 ),
               ),
-            if (education?.description != null) verticalSpace(12),
+            if (experience?.description != null) verticalSpace(12),
 
             // Location section
             Padding(
@@ -169,7 +166,7 @@ class EducationItemDetails extends StatelessWidget {
                   ),
                   horizontalSpace(6),
                   Text(
-                    "${education?.location}",
+                    "${experience?.location}",
                     style: TextStyles.font12Gray.copyWith(
                       fontSize: 13.sp,
                       fontWeight: FontWeight.w500,

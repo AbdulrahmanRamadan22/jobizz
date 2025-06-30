@@ -2,65 +2,64 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/helper/extensions.dart';
+// import 'package:jobizz/core/helper/extensions.dart';
 import 'package:jobizz/core/helper/size_box.dart';
-import 'package:jobizz/core/widgets/showdialog_loadin.dart';
-import 'package:jobizz/features/profile/logic/education/education_cubit.dart';
+// import 'package:jobizz/core/widgets/showdialog_loadin.dart';
+import 'package:jobizz/features/profile/logic/experience/experience_cubit.dart';
 import 'package:jobizz/features/profile/ui/widgets/custom_card_data_is_empty.dart';
 
+// import '../../../../../core/routing/routers_string.dart';
 import '../../../../../core/routing/routers_string.dart';
-import '../../../logic/education/education_state.dart';
-import '../../widgets/education/education_item_details.dart';
+import '../../../logic/experience/experience_state.dart';
+import '../../widgets/experience/experience_item_details.dart';
 
-class EducationsScreen extends StatelessWidget {
-  const EducationsScreen({
+class ExperiencesScreen extends StatelessWidget {
+  const ExperiencesScreen({
     super.key,
   });
-
-  // final List<Education>? educations;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Educations'),
+        title: const Text('Experiences'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          context.pushNamed(Routes.addEducationScreen);
+          context.pushNamed(Routes.addExperienceScreen);
         },
         child: const Icon(Icons.add),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 18.0.w, vertical: 20.0.w),
-        child: BlocBuilder<EducationCubit, EducationState>(
+        child: BlocBuilder<ExperienceCubit, ExperienceState>(
           buildWhen: (previous, current) =>
-              current is GetAllEducationsFailure ||
-              current is GetAllEducationsSuccess ||
-              current is GetAllEducationsLoading ||
-              current is DeleteEducationSuccess,
+              current is GetAllExperiencesFailure ||
+              current is GetAllExperiencesSuccess ||
+              current is GetAllExperiencesLoading ||
+              current is DeleteExperienceSuccess,
           builder: (context, state) {
-       
             return state.maybeWhen(
-              getAllEducationsSuccess: (educations) =>
+              getAllExperiencesSuccess: (experiences) =>
                   CustomScrollView(slivers: [
-                if (educations.isEmpty)
+                if (experiences.isEmpty)
                   SliverToBoxAdapter(
                     child: CustomCardDataIsEmpty(
-                      title: 'No Education Added Yet',
+                      title: 'No Experience Added Yet',
                       onTap: () {},
                     ),
                   ),
                 SliverList.separated(
-                  itemCount: educations.length,
+                  itemCount: experiences.length,
                   separatorBuilder: (context, index) => verticalSpace(10),
-                  itemBuilder: (context, index) => EducationItemDetails(
-                    education: educations[index],
+                  itemBuilder: (context, index) => ExperienceItemDetails(
+                    experience: experiences[index],
                   ),
                 ),
               ]),
-              getAllEducationsLoading: () =>
+              getAllExperiencesLoading: () =>
                   const Center(child: CircularProgressIndicator()),
-              getAllEducationsFailure: (error) =>
+              getAllExperiencesFailure: (error) =>
                   Center(child: Text(error.message.toString())),
               orElse: () => SizedBox.shrink(),
             );
@@ -71,7 +70,7 @@ class EducationsScreen extends StatelessWidget {
   }
 
   // void navigateAndUpdateProfile(BuildContext context) async {
-  //   final result = await context.pushNamed(Routes.addEducationScreen);
+  //   final result = await context.pushNamed(Routes.addExperienceScreen);
 
   //   if (result == true) {
   //     log("User Profile updated successfully ");

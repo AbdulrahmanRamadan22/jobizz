@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jobizz/features/profile/logic/education/education_cubit.dart';
+import 'package:jobizz/features/profile/logic/experience/experience_cubit.dart';
 
 import '../../../../../core/helper/size_box.dart';
 import '../../../../../core/theming/colors.dart';
@@ -11,20 +10,19 @@ import '../../../../../core/widgets/app_text_form_field.dart';
 import '../../../../../core/widgets/button_app_text.dart';
 import '../../../../../core/widgets/show_custom_date_picker.dart';
 import '../../../../../core/widgets/showdialog_errors.dart';
-import '../../../data/models/education_request_model.dart';
+import '../../../data/models/experience_request_model.dart';
 import '../../../data/models/profile_response_model.dart';
-import '../../../logic/education/education_state.dart';
+import '../../../logic/experience/experience_state.dart';
 
-class EditEducationScreen extends StatelessWidget {
-  EditEducationScreen({super.key, this.education});
+class EditExperiencesScreen extends StatelessWidget {
+  EditExperiencesScreen({super.key, this.experience});
 
-  final Education? education;
+  final Experience? experience;
 
   final formKey = GlobalKey<FormState>();
-  final schoolController = TextEditingController();
-  final fieldOfStudyController = TextEditingController();
-  // final collegeController = TextEditingController();
-  final degreeController = TextEditingController();
+  final companyController = TextEditingController();
+  final positionController = TextEditingController();
+  // final jobTypeController = TextEditingController();
   final locationController = TextEditingController();
   final startDateController = TextEditingController();
   final endDateController = TextEditingController();
@@ -34,31 +32,30 @@ class EditEducationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Edit Education'),
+        title: const Text('Edit Experience'),
       ),
-      body: BlocConsumer<EducationCubit, EducationState>(
+      body: BlocConsumer<ExperienceCubit, ExperienceState>(
         listenWhen: (previous, current) =>
-            current is UpdateEducationSuccess ||
-            current is UpdateEducationFailure,
+            current is UpdateExperienceSuccess ||
+            current is UpdateExperienceFailure,
         listener: (context, state) {
           state.whenOrNull(
-            updateEducationSuccess: () {
+            updateExperienceSuccess: () {
               Navigator.of(context).pop(true);
             },
-            updateEducationFailure: (error) {
+            updateExperienceFailure: (error) {
               setupErrorState(context, error);
             },
           );
         },
         builder: (context, state) {
-          schoolController.text = education?.college ?? '';
-          fieldOfStudyController.text = education?.fieldOfStudy ?? '';
-          // collegeController.text = education?.college ?? '';
-          degreeController.text = education?.degree ?? '';
-          locationController.text = education?.location ?? '';
-          startDateController.text = education?.startDate ?? '';
-          endDateController.text = education?.endDate ?? '';
-          descriptionController.text = education?.description ?? '';
+          companyController.text = experience?.company ?? '';
+          positionController.text = experience?.position ?? '';
+          // jobTypeController.text = experience?.jobType ?? '';
+          locationController.text = experience?.location ?? '';
+          startDateController.text = experience?.startDate ?? '';
+          endDateController.text = experience?.endDate ?? '';
+          descriptionController.text = experience?.description ?? '';
 
           return SingleChildScrollView(
             child: Padding(
@@ -70,40 +67,40 @@ class EditEducationScreen extends StatelessWidget {
                   children: [
                     verticalSpace(8),
                     AppTextFormField(
-                      labelText: 'School',
-                      controller: schoolController,
+                      labelText: 'Company',
+                      controller: companyController,
                       keyboardType: TextInputType.text,
-                      prefixIcon: Icon(Icons.school_outlined,
+                      prefixIcon: Icon(Icons.business_outlined,
                           color: ColorsApp.gray, size: 25.sp),
-                      hintText: 'Ex:Cairo University',
+                      hintText: 'Ex: Google',
                       validator: (value) => value?.isEmpty == true
-                          ? 'Please enter your School'
+                          ? 'Please enter your Company'
                           : null,
                     ),
                     verticalSpace(18),
                     AppTextFormField(
-                      labelText: 'Degree',
-                      controller: degreeController,
-                      keyboardType: TextInputType.text,
-                      prefixIcon: Icon(Icons.rotate_90_degrees_ccw,
-                          color: ColorsApp.gray, size: 23.sp),
-                      hintText: 'Ex: Bachelors',
-                      validator: (value) => value?.isEmpty == true
-                          ? 'Please enter your Degree'
-                          : null,
-                    ),
-                    verticalSpace(18),
-                    AppTextFormField(
-                      labelText: 'Field of Study',
-                      controller: fieldOfStudyController,
+                      labelText: 'Position',
+                      controller: positionController,
                       keyboardType: TextInputType.text,
                       prefixIcon: Icon(Icons.work_outline,
                           color: ColorsApp.gray, size: 23.sp),
-                      hintText: 'Ex: Computer Science',
+                      hintText: 'Ex: Software Engineer',
                       validator: (value) => value?.isEmpty == true
-                          ? 'Please enter your Field of Study'
+                          ? 'Please enter your Position'
                           : null,
                     ),
+                    // verticalSpace(18),
+                    // AppTextFormField(
+                    //   labelText: 'Job Type',
+                    //   controller: jobTypeController,
+                    //   keyboardType: TextInputType.text,
+                    //   prefixIcon: Icon(Icons.category_outlined,
+                    //       color: ColorsApp.gray, size: 23.sp),
+                    //   hintText: 'Ex: Full-time',
+                    //   validator: (value) => value?.isEmpty == true
+                    //       ? 'Please enter your Job Type'
+                    //       : null,
+                    // ),
                     verticalSpace(18),
                     Row(
                       children: [
@@ -200,19 +197,19 @@ class EditEducationScreen extends StatelessWidget {
 
   void validateThenDoProfileScreen(BuildContext context) {
     if (formKey.currentState!.validate()) {
-      context.read<EducationCubit>().updateEducation(
-             educationRequestModel: EducationRequestModel(
-              college: schoolController.text,
-              fieldOfStudy: fieldOfStudyController.text,
-              degree: degreeController.text,
+      context.read<ExperienceCubit>().updateExperience(
+            experienceRequestModel: ExperienceRequestModel(
+           
+              company: companyController.text,
+              position: positionController.text,
+              // jobType: jobTypeController.text,
               location: locationController.text,
               startDate: startDateController.text,
               endDate: endDateController.text,
               description: descriptionController.text,
-              isCurrent: endDateController.text.isEmpty ? true : false,
-              // image: education.image
+              isCurrent:  endDateController.text.isEmpty ? true : false,
             ),
-            educationId: education?.id ?? 0,
+            experienceId: experience?.id ?? 0,
           );
     }
   }

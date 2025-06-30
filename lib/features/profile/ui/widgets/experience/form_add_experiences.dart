@@ -3,64 +3,64 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jobizz/features/profile/logic/education/education_cubit.dart';
+import 'package:jobizz/features/profile/logic/experience/experience_cubit.dart';
 
 import '../../../../../core/helper/size_box.dart';
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
 import '../../../../../core/widgets/show_custom_date_picker.dart';
 
-class FormAddEducation extends StatelessWidget {
-  const FormAddEducation({super.key});
+class FormAddExperiences extends StatelessWidget {
+  const FormAddExperiences({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: context.read<EducationCubit>().formKey,
+      key: context.read<ExperienceCubit>().formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           verticalSpace(8),
           AppTextFormField(
-            labelText: 'School',
-            controller: context.read<EducationCubit>().schoolController,
+            labelText: 'Company',
+            controller: context.read<ExperienceCubit>().companyController,
             keyboardType: TextInputType.text,
             prefixIcon:
-                Icon(Icons.school_outlined, color: ColorsApp.gray, size: 25.sp),
-            hintText: 'Ex:Cairo University',
+                Icon(Icons.business_outlined, color: ColorsApp.gray, size: 25.sp),
+            hintText: 'Ex: Google Inc.',
             validator: (value) =>
-                value?.isEmpty == true ? 'Please enter your School' : null,
+                value?.isEmpty == true ? 'Please enter your Company' : null,
           ),
           verticalSpace(18),
           AppTextFormField(
-            labelText: 'Degree',
-            controller: context.read<EducationCubit>().degreeController,
+            labelText: 'Job Title',
+            controller: context.read<ExperienceCubit>().positionController,
             keyboardType: TextInputType.text,
-            prefixIcon: Icon(Icons.rotate_90_degrees_ccw,
+            prefixIcon: Icon(Icons.work_outline,
                 color: ColorsApp.gray, size: 23.sp),
-            hintText: 'Ex: Bachelors',
+            hintText: 'Ex: Software Engineer',
             validator: (value) =>
-                value?.isEmpty == true ? 'Please enter your Degree' : null,
+                value?.isEmpty == true ? 'Please enter your Job Title' : null,
           ),
-          verticalSpace(18),
-          AppTextFormField(
-            labelText: 'Field of Study',
-            controller: context.read<EducationCubit>().fieldOfStudyController,
-            keyboardType: TextInputType.text,
-            prefixIcon:
-                Icon(Icons.work_outline, color: ColorsApp.gray, size: 23.sp),
-            hintText: 'Ex: Computer Science',
-            validator: (value) => value?.isEmpty == true
-                ? 'Please enter your Field of Study'
-                : null,
-          ),
+          // verticalSpace(18),
+          // AppTextFormField(
+          //   labelText: 'Employment Type',
+          //   controller: context.read<ExperienceCubit>().employmentTypeController,
+          //   keyboardType: TextInputType.text,
+          //   prefixIcon:
+          //       Icon(Icons.assignment_outlined, color: ColorsApp.gray, size: 23.sp),
+          //   hintText: 'Ex: Full-time, Part-time, Contract',
+          //   validator: (value) => value?.isEmpty == true
+          //       ? 'Please enter your Employment Type'
+          //       : null,
+          // ),
           verticalSpace(18),
           Row(
             children: [
               Expanded(
                 child: AppTextFormField(
                   labelText: 'Start Date',
-                  controller: context.read<EducationCubit>().startDateController,
+                  controller: context.read<ExperienceCubit>().startDateController,
                   keyboardType: TextInputType.none,
                   // readOnly: true,
                   prefixIcon: Icon(Icons.calendar_month_outlined,
@@ -69,9 +69,9 @@ class FormAddEducation extends StatelessWidget {
                   onTap: () => showCustomDatePicker(
                     context,
                     controller:
-                        context.read<EducationCubit>().startDateController,
+                        context.read<ExperienceCubit>().startDateController,
                     onDateSelected: () {
-                      log('Start date selected: ${context.read<EducationCubit>().startDateController.text}');
+                      log('Start date selected: ${context.read<ExperienceCubit>().startDateController.text}');
                     },
                   ),
                   validator: (value) => value?.isEmpty == true
@@ -83,7 +83,7 @@ class FormAddEducation extends StatelessWidget {
               Expanded(
                 child: AppTextFormField(
                   labelText: 'End Date',
-                  controller: context.read<EducationCubit>().endDateController,
+                  controller: context.read<ExperienceCubit>().endDateController,
                   keyboardType: TextInputType.none,
                   // readOnly: true,
                   prefixIcon: Icon(Icons.calendar_month_outlined,
@@ -91,11 +91,11 @@ class FormAddEducation extends StatelessWidget {
                   hintText: 'Ex: 2024-10-23',
                   onTap: () => showCustomDatePicker(
                     context,
-                    controller: context.read<EducationCubit>().endDateController,
+                    controller: context.read<ExperienceCubit>().endDateController,
                     firstDate: DateTime(2020), // Custom first date
                     lastDate: DateTime(2030), // Custom last date
                     onDateSelected: () {
-                      log('End date selected: ${context.read<EducationCubit>().endDateController.text}');
+                      log('End date selected: ${context.read<ExperienceCubit>().endDateController.text}');
                     },
                   ),
                   validator: (value) {},
@@ -106,7 +106,7 @@ class FormAddEducation extends StatelessWidget {
           verticalSpace(18),
           AppTextFormField(
             labelText: 'Location',
-            controller: context.read<EducationCubit>().locationController,
+            controller: context.read<ExperienceCubit>().locationController,
             keyboardType: TextInputType.text,
             prefixIcon: Icon(
               Icons.location_on_outlined,
@@ -119,10 +119,10 @@ class FormAddEducation extends StatelessWidget {
           verticalSpace(18),
           AppTextFormField(
             labelText: 'Description (Optional)',
-            controller: context.read<EducationCubit>().descriptionController,
+            controller: context.read<ExperienceCubit>().descriptionController,
             keyboardType: TextInputType.multiline,
             maxLines: 5,
-            hintText: 'Ex: Description',
+            hintText: 'Ex: Responsibilities and achievements',
             validator: (value) => null, // Always returns null (no validation)
             // No validator needed
           ),

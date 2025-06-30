@@ -2,9 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:jobizz/features/auth/change_password/data/repo/change_password_repo.dart';
 import 'package:jobizz/features/auth/delet_account/data/repo/delete_repo.dart';
-import 'package:jobizz/features/auth/login/data/model/login_response.dart';
 import 'package:jobizz/features/companies/data/repo/company_info_repo.dart';
 import 'package:jobizz/features/home/data/repo/home_repo.dart';
+import 'package:jobizz/features/profile/data/repos/experience_repo.dart';
+import 'package:jobizz/features/profile/logic/experience/experience_cubit.dart';
 import 'package:jobizz/features/saved_jobs/data/repo/repo_saved.dart';
 
 import '../../features/auth/forget_password_screen/data/repo/forget_pass.dart';
@@ -13,8 +14,10 @@ import '../../features/auth/otp_screen/data/repo/otp_repo.dart';
 import '../../features/auth/register/data/repo/sign_up_repo.dart';
 import '../../features/auth/reset_password_screen/data/repo/reset_password_repo.dart';
 import '../../features/category/data/repo/category_repo.dart';
-import '../../features/profile/data/repo/profile_repo.dart';
-import '../../features/profile/logic/profile_cubit.dart';
+import '../../features/profile/data/repos/education_repo.dart';
+import '../../features/profile/data/repos/profile_repo.dart';
+import '../../features/profile/logic/education/education_cubit.dart';
+import '../../features/profile/logic/profile/profile_cubit.dart';
 import '../../features/switch_profile/data/repo/profiles_repo.dart';
 import '../../features/switch_profile/logic/switch_profile_cubit.dart';
 import '../networking/api_factory.dart';
@@ -22,23 +25,6 @@ import '../networking/api_services.dart';
 
 final getIt = GetIt.instance;
 Future<void> setupGetIt() async {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   // dio and ApiServices
   Dio dio = DioFactory.getDio();
   getIt.registerLazySingleton<ApisServices>(() => ApisServices(dio));
@@ -77,31 +63,39 @@ Future<void> setupGetIt() async {
 //   getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(getIt()));
 //   getIt.registerLazySingleton<ProfileCubit>(() => ProfileCubit(getIt()));
 
-
-
-
-
-
-
   // Repositories (stateless, keep as singletons)
   getIt.registerLazySingleton<SignUpRepo>(() => SignUpRepo(getIt()));
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
-  getIt.registerLazySingleton<ForgetPasswordRepo>(() => ForgetPasswordRepo(getIt()));
+  getIt.registerLazySingleton<ForgetPasswordRepo>(
+      () => ForgetPasswordRepo(getIt()));
   getIt.registerLazySingleton<OtpRepo>(() => OtpRepo(getIt()));
-  getIt.registerLazySingleton<ResetPasswordRepo>(() => ResetPasswordRepo(getIt()));
-  getIt.registerLazySingleton<ChangePasswordRepo>(() => ChangePasswordRepo(getIt()));
+  getIt.registerLazySingleton<ResetPasswordRepo>(
+      () => ResetPasswordRepo(getIt()));
+  getIt.registerLazySingleton<ChangePasswordRepo>(
+      () => ChangePasswordRepo(getIt()));
   getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
   getIt.registerLazySingleton<CompanyInfoRepo>(() => CompanyInfoRepo(getIt()));
   getIt.registerLazySingleton<CategoryRepo>(() => CategoryRepo(getIt()));
-  getIt.registerLazySingleton<SwitchProfilesRepo>(() => SwitchProfilesRepo(getIt()));
+  getIt.registerLazySingleton<SwitchProfilesRepo>(
+      () => SwitchProfilesRepo(getIt()));
   getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(getIt()));
+  getIt.registerLazySingleton<EducationRepo>(() => EducationRepo(getIt()));
+
+  getIt.registerLazySingleton<ExperienceRepo>(() => ExperienceRepo(getIt()));
+
 
   // Cubits (stateful, register as factories)
-  getIt.registerLazySingleton<SwitchProfileCubit>(() => SwitchProfileCubit(getIt<SwitchProfilesRepo>()));
+  getIt.registerLazySingleton<SwitchProfileCubit>(
+      () => SwitchProfileCubit(getIt<SwitchProfilesRepo>()));
+
+  getIt.registerLazySingleton<EducationCubit>(() => EducationCubit(getIt()));
+
+
+  getIt.registerLazySingleton<ExperienceCubit>(() => ExperienceCubit(getIt()));
+
   getIt.registerFactory<ProfileCubit>(() => ProfileCubit(getIt<ProfileRepo>()));
 
   getIt.registerLazySingleton<RepoSaved>(() => RepoSaved(getIt()));
-  // delete account 
-  getIt.registerLazySingleton<DeleteRepo>(() => DeleteRepo(getIt())); 
-
+  // delete account
+  getIt.registerLazySingleton<DeleteRepo>(() => DeleteRepo(getIt()));
 }

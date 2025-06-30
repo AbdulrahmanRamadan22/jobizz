@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/helper/extensions.dart';
-import 'package:jobizz/features/profile/logic/education/education_cubit.dart';
+import 'package:jobizz/features/profile/logic/experience/experience_cubit.dart';
 
 import '../../../../../core/routing/routers_string.dart';
 import '../../../../../core/theming/colors.dart';
@@ -11,20 +11,20 @@ import '../../../../../core/widgets/showdialog_errors.dart';
 import '../../../../../core/widgets/showdialog_loadin.dart';
 
 import '../../../data/models/profile_response_model.dart';
-import '../../../logic/education/education_state.dart';
+import '../../../logic/experience/experience_state.dart';
 import '../build_menu_item.dart';
 
-class BuildEnhancedMenuEducation extends StatefulWidget {
-  const BuildEnhancedMenuEducation({super.key, this.education});
-  final Education? education;
+class BuildEnhancedMenuExperience extends StatefulWidget {
+  const BuildEnhancedMenuExperience({super.key, this.experience});
+  final Experience? experience;
 
   @override
-  State<BuildEnhancedMenuEducation> createState() =>
-      _BuildEnhancedMenuEducationState();
+  State<BuildEnhancedMenuExperience> createState() =>
+      _BuildEnhancedMenuExperienceState();
 }
 
-class _BuildEnhancedMenuEducationState
-    extends State<BuildEnhancedMenuEducation> {
+class _BuildEnhancedMenuExperienceState
+    extends State<BuildEnhancedMenuExperience> {
   final FocusNode _buttonFocusNode = FocusNode(debugLabel: 'Menu Button');
 
   @override
@@ -62,8 +62,8 @@ class _BuildEnhancedMenuEducationState
             icon: Icons.edit_outlined,
             text: 'Edit',
             onPressed: () {
-              context.pushNamed(Routes.editEducationScreen,
-                  arguments: widget.education);
+              context.pushNamed(Routes.editExperienceScreen,
+                  arguments: widget.experience);
             },
             color: ColorsApp.mainBlue,
           ),
@@ -74,14 +74,14 @@ class _BuildEnhancedMenuEducationState
             indent: 16.w,
             endIndent: 16.w,
           ),
-          BlocListener<EducationCubit, EducationState>(
+          BlocListener<ExperienceCubit, ExperienceState>(
             listenWhen: (previous, current) =>
-                current is DeleteEducationFailure ||
-                current is DeleteEducationSuccess ||
-                current is DeleteEducationLoading,
+                current is DeleteExperienceFailure ||
+                current is DeleteExperienceSuccess ||
+                current is DeleteExperienceLoading,
             listener: (context, state) {
               state.whenOrNull(
-                deleteEducationSuccess: () {
+                deleteExperienceSuccess: () {
                   // Close the loading dialog first
 
                   // Show success message
@@ -89,16 +89,16 @@ class _BuildEnhancedMenuEducationState
 
                   context.pop();
 
-                  // Refresh the education list
+                  // Refresh the experience list
                   // Navigator.of(context).pop();
                 },
-                deleteEducationFailure: (error) {
+                deleteExperienceFailure: (error) {
                   // Close the loading dialog
                   Navigator.of(context).pop();
                   // Show error dialog
                   setupErrorState(context, error);
                 },
-                deleteEducationLoading: () {
+                deleteExperienceLoading: () {
                   showDialogLoading(context);
                 },
               );
@@ -109,16 +109,16 @@ class _BuildEnhancedMenuEducationState
               onPressed: () {
                 showDialogDeleteItem(
                   context,
-                  title: "Delete Education",
+                  title: "Delete Experience",
                   content:
-                      "Are you sure you want to delete your ${widget.education?.college} education?",
+                      "Are you sure you want to delete your ${widget.experience?.position} experience at ${widget.experience?.company}?",
                   onPressed: () {
                     // Close the delete confirmation dialog first
                     Navigator.of(context).pop();
 
                     // Then trigger the delete action
-                    context.read<EducationCubit>().deleteEducation(
-                        educationId: widget.education?.id ?? 0);
+                    context.read<ExperienceCubit>().deleteExperience(
+                        experienceId: widget.experience?.id ?? 0);
                   },
                 );
               },

@@ -55,10 +55,13 @@ class CustomExperienceAndEducationCardItem extends StatelessWidget {
               maxLines: 1,
               style: TextStyles.font14Black,
             ),
-            subtitle: Text(
-              subtitleText,
-              maxLines: 1,
-              style: TextStyles.font12Gray,
+            subtitle: Padding(
+              padding:  EdgeInsets.only(top: 4),
+              child: Text(
+                subtitleText,
+                maxLines: 1,
+                style: TextStyles.font12Gray,
+              ),
             ),
             trailing: Column(
               crossAxisAlignment: CrossAxisAlignment.end,

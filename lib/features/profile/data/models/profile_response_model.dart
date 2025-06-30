@@ -96,7 +96,7 @@ class Education {
   @JsonKey(name: "end_date")
   final String? endDate;
   @JsonKey(name: "is_current")
-  final bool? isCurrent;
+  final dynamic isCurrent;
   @JsonKey(name: "description")
   final String? description;
   @JsonKey(name: "location")
@@ -135,7 +135,7 @@ class Experience {
   @JsonKey(name: "end_date")
   final String? endDate;
   @JsonKey(name: "is_current")
-  final bool? isCurrent;
+  final dynamic isCurrent;
   @JsonKey(name: "description")
   final String? description;
   @JsonKey(name: "location")
