@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/theming/styles.dart';
-import 'package:jobizz/features/saved_jobs/data/model/saved_response.dart';
+import 'package:jobizz/features/jobs/data/models/job.dart';
 
 class JobStatusAndSalary extends StatelessWidget {
   const JobStatusAndSalary({
@@ -11,7 +11,7 @@ class JobStatusAndSalary extends StatelessWidget {
   });
 
   final Color statusColor;
-  final SavedJob? job;
+  final Job? job;
 
   @override
   Widget build(BuildContext context) {

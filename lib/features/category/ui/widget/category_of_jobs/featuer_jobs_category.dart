@@ -5,13 +5,9 @@ import 'package:jobizz/core/helper/size_box.dart';
 
 import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
-import 'package:jobizz/features/category/data/model/category_response.dart';
 
 import 'package:jobizz/core/helper/extensions.dart';
 
-import 'package:jobizz/core/theming/colors.dart';
-import 'package:jobizz/core/theming/styles.dart';
-import 'package:jobizz/core/widgets/row_text_and_see_all.dart';
 import 'package:jobizz/features/category/ui/widget/category_of_jobs/job_category_item.dart';
 
 import '../../../../../core/routing/routers_string.dart';
@@ -28,7 +24,7 @@ class FeatureJobsCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      // mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Text(
           'Featured Jobs',
@@ -39,18 +35,22 @@ class FeatureJobsCategory extends StatelessWidget {
         //   onPressed: () {},
         // ),
         verticalSpace(10.h),
-        if (featureJobList == null || featureJobList?.isEmpty == true)
-          Container(
-            alignment: Alignment.center,
-            height: 150.h,
-            width: 150.w,
-            decoration: BoxDecoration(
-              color: ColorsApp.red,
-              borderRadius: BorderRadius.circular(12.r),
-            ),
-            child: Text(
-              'No Found Jobs',
-              style: TextStyles.font16WhiteSemiBold,
+        if (featureJobList == null || featureJobList!.isEmpty)
+          Center(
+            heightFactor: 2.3,
+            child: Container(
+              height: 150.h,
+              width: 150.w,
+              decoration: BoxDecoration(
+                color: ColorsApp.red,
+                borderRadius: BorderRadius.circular(12.r),
+              ),
+              alignment: Alignment.center,
+              child: Text(
+                'No Found Jobs',
+                style: TextStyles.font16WhiteSemiBold,
+                textAlign: TextAlign.center,
+              ),
             ),
           )
         else

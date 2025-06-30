@@ -19,7 +19,7 @@ class PopularCompanyScreen extends StatelessWidget {
         scrolledUnderElevation: 0,
         title: Text(
           'Popular ',
-          style: TextStyles.font16Black,
+         // style: TextStyles.font16Black,
         ),
         // icon Button Search
         actions: [

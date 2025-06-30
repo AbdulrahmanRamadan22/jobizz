@@ -5,8 +5,11 @@ import 'package:jobizz/core/helper/size_box.dart';
 
 import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
-import 'package:jobizz/features/companies/data/model/company_response.dart';
-import 'package:jobizz/features/companies/ui/widgets/company_of_jobs/company_item_jobs.dart';
+
+import '../../../../../core/routing/routers_string.dart';
+import '../../../../jobs/data/models/job.dart';
+import '../../../data/model/company_response.dart';
+import 'company_item_jobs.dart';
 
 class FeatureCompanyJobs extends StatelessWidget {
   const FeatureCompanyJobs({
@@ -14,14 +17,14 @@ class FeatureCompanyJobs extends StatelessWidget {
     this.featureJobCompany,
     this.companyItem,
   });
-  final List<JobInCompany>? featureJobCompany;
+  final List<Job>? featureJobCompany;
   final Company? companyItem;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      // mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Text(
           'Featured Jobs',
@@ -33,17 +36,20 @@ class FeatureCompanyJobs extends StatelessWidget {
         // ),
         verticalSpace(10.h),
         if (featureJobCompany == null || featureJobCompany?.isEmpty == true)
-          Container(
-            alignment: Alignment.center,
-            height: 150.h,
-            width: 150.w,
-            decoration: BoxDecoration(
-              color: ColorsApp.red,
-              borderRadius: BorderRadius.circular(12.r),
-            ),
-            child: Text(
-              'No Found Jobs',
-              style: TextStyles.font16WhiteSemiBold,
+          Center(
+            heightFactor: 2.3,
+            child: Container(
+              alignment: Alignment.center,
+              height: 150.h,
+              width: 150.w,
+              decoration: BoxDecoration(
+                color: ColorsApp.red,
+                borderRadius: BorderRadius.circular(12.r),
+              ),
+              child: Text(
+                'No Found Jobs',
+                style: TextStyles.font16WhiteSemiBold,
+              ),
             ),
           )
         else
@@ -60,12 +66,11 @@ class FeatureCompanyJobs extends StatelessWidget {
               final job = featureJobCompany?[index];
               return GestureDetector(
                 onTap: () {
-                  // navigate to job details
-                  // context.pushNamed(Routes.jobDetailsScreen, arguments: job);
+                  // ToDo : Backend محتاج تتعدل من
                 },
                 child: CompanyItemJobs(
                   companyItem: companyItem,
-                  jobOFCompany: job,
+                  job: job,
                 ),
               );
             },

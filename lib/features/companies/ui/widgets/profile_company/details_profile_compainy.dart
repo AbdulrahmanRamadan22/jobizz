@@ -5,6 +5,7 @@ import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
 import 'package:jobizz/features/companies/data/model/company_response.dart';
 import 'package:jobizz/features/companies/ui/widgets/profile_company/container_of_profile_company.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CompanyDetails extends StatelessWidget {
   const CompanyDetails({super.key, this.companyItem});
@@ -31,13 +32,34 @@ class CompanyDetails extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: ClipOval(
-                child: Image.network(
-                  companyItem?.logo ?? '',
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) {
-                    return Icon(Icons.image_not_supported);
-                  },
+              // Image of the company logo
+              child: GestureDetector(
+                onTap: () {
+                  final imageUrl = companyItem?.logo;
+                  if (imageUrl != null && imageUrl.isNotEmpty) {
+                    showDialog(
+                      context: context,
+                      builder: (_) => Dialog(
+                        child: InteractiveViewer(
+                          child: Image.network(
+                            imageUrl,
+                            fit: BoxFit.contain,
+                            errorBuilder: (context, error, stackTrace) =>
+                                const Icon(Icons.broken_image),
+                          ),
+                        ),
+                      ),
+                    );
+                  }
+                },
+                child: ClipOval(
+                  child: Image.network(
+                    companyItem?.logo ?? '',
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) {
+                      return const Icon(Icons.image_not_supported);
+                    },
+                  ),
                 ),
               ),
             ),
@@ -47,13 +69,36 @@ class CompanyDetails extends StatelessWidget {
         Text('Name Of Company', style: TextStyles.font16Black),
         verticalSpace(15),
         ContainerOfProfileCompany(
+          style: TextStyles.font16Black,
           companyItem: companyItem,
           text: companyItem?.name ?? 'not found name',
+        ),
+        verticalSpace(15),
+        Text('Website Link', style: TextStyles.font16Black),
+        verticalSpace(15),
+        GestureDetector(
+          onTap: () {
+            if (companyItem?.website != null) {
+              // Open the website link
+              launchUrl(Uri.parse(companyItem!.website!));
+            } else {
+              Text(
+                'Website link not available',
+                style: TextStyles.font16Black,
+              );
+            }
+          },
+          child: ContainerOfProfileCompany(
+            style: TextStyles.font166MainBlueMedium,
+            companyItem: companyItem,
+            text: companyItem?.website ?? 'not found name',
+          ),
         ),
         verticalSpace(15),
         Text('Count Of Jobs', style: TextStyles.font16Black),
         verticalSpace(10),
         ContainerOfProfileCompany(
+          style: TextStyles.font16Black,
           companyItem: companyItem,
           text: companyItem?.jobsCount.toString() ?? 'not found jobs count',
         ),
@@ -61,6 +106,7 @@ class CompanyDetails extends StatelessWidget {
         Text('Establishment Date', style: TextStyles.font16Black),
         verticalSpace(10),
         ContainerOfProfileCompany(
+          style: TextStyles.font16Black,
           companyItem: companyItem,
           text: companyItem?.createdAt ?? 'not found date',
         ),
@@ -68,6 +114,7 @@ class CompanyDetails extends StatelessWidget {
         Text('Country', style: TextStyles.font16Black),
         verticalSpace(10),
         ContainerOfProfileCompany(
+          style: TextStyles.font16Black,
           companyItem: companyItem,
           text: companyItem?.location ?? 'not found location',
         ),
@@ -75,6 +122,7 @@ class CompanyDetails extends StatelessWidget {
         Text('Description', style: TextStyles.font16Black),
         verticalSpace(10),
         ContainerOfProfileCompany(
+          style: TextStyles.font16Black,
           companyItem: companyItem,
           text: companyItem?.description ?? 'not found description',
         ),

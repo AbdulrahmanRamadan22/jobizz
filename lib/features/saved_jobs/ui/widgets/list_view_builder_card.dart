@@ -1,10 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:jobizz/features/saved_jobs/data/model/saved_response.dart';
+import 'package:jobizz/features/jobs/data/models/job.dart';
 import 'package:jobizz/features/saved_jobs/ui/widgets/item_saved_jobs.dart';
 
 class ListViewBuilderCard extends StatelessWidget {
-  final List<SavedJob?>? savedJobs;
+  final List<Job?>? savedJobs;
 
   const ListViewBuilderCard({
     super.key,
@@ -20,7 +20,7 @@ class ListViewBuilderCard extends StatelessWidget {
           final job = savedJobs?[index];
           // if (job == null) return const SizedBox.shrink();
 
-          return ItemSavedJobs(job: job);
+          return ItemSavedJobs(savedJob: job);
         },
       ),
     );

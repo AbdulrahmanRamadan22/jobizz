@@ -4,16 +4,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
-import 'package:jobizz/features/companies/data/model/company_response.dart';
+
+import '../../../../jobs/data/models/job.dart';
+import '../../../data/model/company_response.dart';
 
 class CompanyItemJobs extends StatelessWidget {
   const CompanyItemJobs({
     super.key,
     this.companyItem,
-    this.jobOFCompany,
+    this.job,
   });
   final Company? companyItem;
-  final JobInCompany? jobOFCompany;
+  final Job? job;
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +40,18 @@ class CompanyItemJobs extends StatelessWidget {
             radius: 28.r,
             child: Image.network(
               companyItem?.logo ?? '',
+              errorBuilder: (context, error, stackTrace) {
+                return const Icon(
+                  Icons.error,
+                  color: ColorsApp.red,
+                );
+              },
               fit: BoxFit.cover,
               height: 50.h,
             ),
           ),
           Text(
-            jobOFCompany?.title ?? '',
+            job?.title ?? '',
             style: TextStyles.font14DarkBlackSemiBold,
             textAlign: TextAlign.center,
           ),
@@ -52,10 +60,10 @@ class CompanyItemJobs extends StatelessWidget {
             style: TextStyles.font14Gray,
             textAlign: TextAlign.center,
           ),
-          Text(
-            '\$${jobOFCompany?.jobSalary}/y',
-            style: TextStyles.font12DarkBlack,
-          ),
+          // Text(
+          //   job?.salary.toString() ?? 'no Found',
+          //   style: TextStyles.font12DarkBlack,
+          // ),
         ],
       ),
     );

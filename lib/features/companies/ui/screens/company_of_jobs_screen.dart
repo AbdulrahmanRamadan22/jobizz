@@ -29,34 +29,37 @@ class CompanyOfJobsScreen extends StatelessWidget {
           style: TextStyles.font16DarkBlackSemiBold,
         ),
         // icon Button Search
-        actions: [
-          // IconButton(
-          //   icon: const Icon(
-          //     Icons.search,
-          //     color: Colors.black,
-          //   ),
-          //   onPressed: () {
-          //     final List<Job> jobs = companyItem?.jobs ?? [];
+        // actions: [
+        //   IconButton(
+        //     icon: const Icon(
+        //       Icons.search,
+        //       color: Colors.black,
+        //     ),
+        //     onPressed: () {
+        //       final List<Job> jobs = companyItem?.jobs ?? [];
 
-          //     showGenericSearchDialog<Job>(
-          //       context: context,
-          //       items: jobs,
-          //       searchFields: [
-          //         (job) => job.title ?? '',
-          //       ],
-          //       isGrid: false, // نعرض عنصر واحد فقط في السطر
-          //       itemBuilder: (context, job) {
-          //         return Padding(
-          //             padding: EdgeInsets.symmetric(
-          //               horizontal: 10.0.w,
-          //               vertical: 7.h,
-          //             ),
-          //             child:);
-          //       },
-          //     );
-          //   },
-          // ),
-        ],
+        //       showGenericSearchDialog<Job>(
+        //         context: context,
+        //         items: jobs,
+        //         searchFields: [
+        //           (job) => job.title ?? '',
+        //         ],
+        //         isGrid: true,
+        //         itemBuilder: (context, job) {
+        //           return Padding(
+        //             padding: EdgeInsets.symmetric(
+        //               horizontal: 10.0.w,
+        //               vertical: 7.h,
+        //             ),
+        //             child: JobItem(
+        //               jop: job,
+        //             ),
+        //           );
+        //         },
+        //       );
+        //     },
+        //   ),
+        // ],
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 30.h),
