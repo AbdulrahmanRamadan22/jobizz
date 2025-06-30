@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobizz/core/helper/extensions.dart';
 import 'package:jobizz/core/helper/size_box.dart';
 
 import 'package:jobizz/core/theming/colors.dart';
@@ -8,17 +9,16 @@ import 'package:jobizz/core/theming/styles.dart';
 
 import '../../../../../core/routing/routers_string.dart';
 import '../../../../jobs/data/models/job.dart';
-import '../../../data/model/company_response.dart';
 import 'company_item_jobs.dart';
 
 class FeatureCompanyJobs extends StatelessWidget {
   const FeatureCompanyJobs({
     super.key,
     this.featureJobCompany,
-    this.companyItem,
+    //this.companyItem,
   });
   final List<Job>? featureJobCompany;
-  final Company? companyItem;
+  //final Company? companyItem;
 
   @override
   Widget build(BuildContext context) {
@@ -66,10 +66,10 @@ class FeatureCompanyJobs extends StatelessWidget {
               final job = featureJobCompany?[index];
               return GestureDetector(
                 onTap: () {
-                  // ToDo : Backend محتاج تتعدل من
+                  context.pushNamed(Routes.jobDetailsScreen, arguments: job);
                 },
                 child: CompanyItemJobs(
-                  companyItem: companyItem,
+                  //   companyItem: companyItem,
                   job: job,
                 ),
               );

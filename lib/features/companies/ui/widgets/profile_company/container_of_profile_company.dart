@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/theming/colors.dart';
-import 'package:jobizz/core/theming/styles.dart';
 import 'package:jobizz/features/companies/data/model/company_response.dart';
 
 class ContainerOfProfileCompany extends StatelessWidget {

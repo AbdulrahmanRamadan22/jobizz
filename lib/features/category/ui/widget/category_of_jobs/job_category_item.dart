@@ -16,6 +16,7 @@ class JobCategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: 3.w),
       width: double.infinity,
       height: 150.h,
       decoration: BoxDecoration(
