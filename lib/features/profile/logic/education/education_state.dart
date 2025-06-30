@@ -3,7 +3,6 @@ import 'package:jobizz/features/profile/data/models/profile_response_model.dart'
 
 import '../../../../core/networking/api_error_model.dart';
 // import '../data/models/education_response_model.dart';
-import '../../data/models/education_response_model.dart';
 
 part 'education_state.freezed.dart';
 

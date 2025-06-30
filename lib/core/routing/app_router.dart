@@ -15,7 +15,9 @@ import 'package:jobizz/features/job_details/job_details_screen.dart';
 import 'package:jobizz/features/jobs/data/models/job.dart';
 
 import 'package:jobizz/features/onboarding/ui/onboarding_screen.dart';
+import 'package:jobizz/features/profile/logic/experience/experience_cubit.dart';
 import 'package:jobizz/features/profile/ui/screens/education/add_education_screen.dart';
+import 'package:jobizz/features/profile/ui/screens/experiences/experiences_screen.dart';
 import 'package:jobizz/features/saved_jobs/cubit/saved_cubit.dart';
 import 'package:jobizz/features/settings/ui/screens/about_screen.dart';
 
@@ -47,6 +49,8 @@ import '../../features/profile/logic/education/education_cubit.dart';
 import '../../features/profile/logic/profile/profile_cubit.dart';
 import '../../features/profile/ui/screens/education/edit_education_screen.dart';
 import '../../features/profile/ui/screens/education/educations_screen.dart';
+import '../../features/profile/ui/screens/experiences/add_experiences_screen.dart';
+import '../../features/profile/ui/screens/experiences/edit_experiences_screen.dart';
 import '../../features/profile/ui/screens/profile_screen.dart';
 import '../../features/profile/ui/screens/edit_personal_info_screen.dart';
 import '../../features/saved_jobs/ui/saved_screen.dart';
@@ -152,10 +156,10 @@ class AppRouter {
       // saved jobs screen
 
       case Routes.personalInfoScreen:
-        final profileCubit = getIt<EducationCubit>();
+        final profileCubit = getIt<ProfileCubit>();
         final data = settings.arguments as ProfileData?;
         return MaterialPageRoute(
-          builder: (context) => BlocProvider<EducationCubit>.value(
+          builder: (context) => BlocProvider<ProfileCubit>.value(
             value: profileCubit,
             child: PersonalInfoScreen(
               profileData: data,
@@ -163,6 +167,8 @@ class AppRouter {
           ),
         );
 
+
+// educations
       case Routes.educationsScreen:
         final educationCubit = getIt<EducationCubit>()..getAllEducations();
 
@@ -205,6 +211,40 @@ class AppRouter {
       //       child: AddEducationScreen(),
       //     ),
       //   );
+
+
+      // Experiences
+      case Routes.experiencesScreen:
+        final experienceCubit = getIt<ExperienceCubit>()..getAllExperiences();
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider.value(
+            value: experienceCubit,
+            child: ExperiencesScreen(),
+          ),
+        );
+
+         case Routes.addExperienceScreen:
+        final experienceCubit = getIt<ExperienceCubit>();
+        // final education = settings.arguments as Education?;
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider.value(
+            value: experienceCubit,
+            child: AddExperiencesScreen(),
+          ),
+        );
+
+          case Routes.editExperienceScreen:
+        final profileCubit = getIt<ExperienceCubit>();
+        final experience = settings.arguments as Experience?;
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider.value(
+            value: profileCubit,
+            child: EditExperiencesScreen(
+              experience: experience,
+            ),
+          ),
+        );
+
 
 // saved jobs screen
       case Routes.savedJobsScreen:

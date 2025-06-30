@@ -27,20 +27,21 @@ class ApiConstant {
   static const String deleteAccount = "auth/delete-account";
   
 
+// educations
   static const String getAllEducations = "auth/profiles/{profileId}/educations";
-
-
-
   static const String addEducation = "auth/profiles/{profileId}/educations/add-education";
-
   static const String updateEducation = "auth/profiles/{profileId}/educations/{educationId}";
-
-
   static const String deleteEducation = "auth/profiles/{profileId}/educations/{educationId}";
 
 
 
+// experiences
 
+
+  static const String getAllExperiences = "auth/profiles/{profileId}/experiences";
+  static const String addExperience = "auth/profiles/{profileId}/experiences/add-experience";
+  static const String updateExperience = "auth/profiles/{profileId}/experiences/{experienceId}";
+  static const String deleteExperience = "auth/profiles/{profileId}/experiences/{experienceId}";
 
 
 

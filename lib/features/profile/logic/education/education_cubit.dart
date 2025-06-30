@@ -2,11 +2,11 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:jobizz/features/profile/data/models/profile_response_model.dart';
 import 'package:jobizz/features/profile/logic/education/education_state.dart';
 
 import '../../../../core/cache/constants.dart';
 import '../../../../core/cache/shared_pref.dart';
+import '../../data/models/education_request_model.dart';
 import '../../data/repos/education_repo.dart';
 
 class EducationCubit extends Cubit<EducationState> {
@@ -19,18 +19,17 @@ class EducationCubit extends Cubit<EducationState> {
   bool firstLoadedEducations = false;
 
   // Add method to refresh data when needed
-    void refreshEducations() {
+  void refreshEducations() {
     firstLoadedEducations = false;
     // _cachedEducations = null;
     getAllEducations();
 
     log("firstLoadedEducations: $firstLoadedEducations");
-
   }
 
   void updateEducation({
     required int educationId,
-    Education? education,
+    required EducationRequestModel educationRequestModel,
   }) async {
     emit(const EducationState.updateEducationLoading());
 
@@ -39,7 +38,7 @@ class EducationCubit extends Cubit<EducationState> {
       profileId: await SharedPrefHelper.getData(key: SharedPrefKeys.idProfile),
       token:
           "Bearer ${await SharedPrefHelper.getSecuredString(key: SharedPrefKeys.token)}",
-      education: education,
+      educationRequestModel: educationRequestModel,
     );
     response.when(
       success: (profileResponse) async {
@@ -63,7 +62,6 @@ class EducationCubit extends Cubit<EducationState> {
   final endDateController = TextEditingController();
   final descriptionController = TextEditingController();
 
-
   void resetForm() {
     schoolController.clear();
     fieldOfStudyController.clear();
@@ -74,7 +72,6 @@ class EducationCubit extends Cubit<EducationState> {
     endDateController.clear();
     descriptionController.clear();
   }
- 
 
   void addEducation() async {
     emit(const EducationState.addEducationLoading());
@@ -83,15 +80,16 @@ class EducationCubit extends Cubit<EducationState> {
       profileId: await SharedPrefHelper.getData(key: SharedPrefKeys.idProfile),
       token:
           "Bearer ${await SharedPrefHelper.getSecuredString(key: SharedPrefKeys.token)}",
-      education: Education(
-          isCurrent: true,
-          college: schoolController.text,
-          degree: degreeController.text,
-          fieldOfStudy: fieldOfStudyController.text,
-          startDate: startDateController.text,
-          endDate: endDateController.text,
-          location: locationController.text,
-          description: descriptionController.text),
+      educationRequestModel: EducationRequestModel(
+        isCurrent: endDateController.text.isEmpty ? true : false,
+        college: schoolController.text,
+        degree: degreeController.text,
+        fieldOfStudy: fieldOfStudyController.text,
+        startDate: startDateController.text,
+        endDate: endDateController.text,
+        location: locationController.text,
+        description: descriptionController.text,
+      ),
     );
     response.when(
       success: (profileResponse) async {
@@ -128,8 +126,6 @@ class EducationCubit extends Cubit<EducationState> {
       },
     );
   }
-
- 
 
   void deleteEducation({
     required int educationId,

@@ -2,9 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:jobizz/features/auth/change_password/data/repo/change_password_repo.dart';
 import 'package:jobizz/features/auth/delet_account/data/repo/delete_repo.dart';
-import 'package:jobizz/features/auth/login/data/model/login_response.dart';
 import 'package:jobizz/features/companies/data/repo/company_info_repo.dart';
 import 'package:jobizz/features/home/data/repo/home_repo.dart';
+import 'package:jobizz/features/profile/data/repos/experience_repo.dart';
+import 'package:jobizz/features/profile/logic/experience/experience_cubit.dart';
 import 'package:jobizz/features/saved_jobs/data/repo/repo_saved.dart';
 
 import '../../features/auth/forget_password_screen/data/repo/forget_pass.dart';
@@ -80,11 +81,17 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(getIt()));
   getIt.registerLazySingleton<EducationRepo>(() => EducationRepo(getIt()));
 
+  getIt.registerLazySingleton<ExperienceRepo>(() => ExperienceRepo(getIt()));
+
+
   // Cubits (stateful, register as factories)
   getIt.registerLazySingleton<SwitchProfileCubit>(
       () => SwitchProfileCubit(getIt<SwitchProfilesRepo>()));
 
   getIt.registerLazySingleton<EducationCubit>(() => EducationCubit(getIt()));
+
+
+  getIt.registerLazySingleton<ExperienceCubit>(() => ExperienceCubit(getIt()));
 
   getIt.registerFactory<ProfileCubit>(() => ProfileCubit(getIt<ProfileRepo>()));
 

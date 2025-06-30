@@ -58,11 +58,22 @@ class Routes {
   static const String personalInfoScreen = '/personalInfoScreen';
 
 
+
+// educations
   static const String educationsScreen = '/educationsScreen';
 
   static const String editEducationScreen = '/editEducationScreen';
 
   static const String addEducationScreen = '/addEducationScreen';
+
+
+  // experiences
+  static const String experiencesScreen = '/experiencesScreen';
+
+  static const String editExperienceScreen = '/editExperienceScreen';
+
+  static const String addExperienceScreen = '/addExperienceScreen';
+  
 
 
   static const String aboutApplicationScreen = '/aboutApplicationScreen';

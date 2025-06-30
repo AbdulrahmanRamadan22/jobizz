@@ -103,13 +103,29 @@ class EducationItemDetails extends StatelessWidget {
                           color: ColorsApp.lightBlueGray.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(8.r),
                         ),
-                        child: Text(
-                          "${education?.startDate?.split("-").first} - ${education?.endDate?.split("-").first ?? 'Present'}",
-                          style: TextStyles.font12Gray.copyWith(
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w500,
-                            color: ColorsApp.mainBlue,
-                          ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              "${education?.startDate?.split("-").first} - ${education?.endDate?.split("-").first ?? 'Present'}",
+                              style: TextStyles.font12Gray.copyWith(
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w500,
+                                color: ColorsApp.mainBlue,
+                              ),
+                            ),
+                            if (education?.isCurrent == 1) ...[
+                              horizontalSpace(6),
+                              Container(
+                                width: 6.w,
+                                height: 6.h,
+                                decoration: BoxDecoration(
+                                  color: Colors.green,
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                            ],
+                          ],
                         ),
                       ),
                     ],
@@ -126,23 +142,24 @@ class EducationItemDetails extends StatelessWidget {
             verticalSpace(8),
 
             // Description section
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.only(left: 55.w),
-              decoration: BoxDecoration(),
-              child: Text(
-                "${education?.description}",
-                style: TextStyles.font12Gray.copyWith(
-                  fontSize: 13.sp,
-                  height: 1.4,
+            if (education?.description != null)
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.only(left: 55.w),
+                decoration: BoxDecoration(),
+                child: Text(
+                  "${education?.description}",
+                  style: TextStyles.font12Gray.copyWith(
+                    fontSize: 13.sp,
+                    height: 1.4,
+                  ),
                 ),
               ),
-            ),
-            verticalSpace(12),
+            if (education?.description != null) verticalSpace(12),
 
             // Location section
             Padding(
-              padding: EdgeInsets.only(left: 50.w),
+              padding: EdgeInsets.only(left: 53.w),
               child: Row(
                 children: [
                   Icon(

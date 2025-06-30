@@ -103,7 +103,7 @@ Experience _$ExperienceFromJson(Map<String, dynamic> json) => Experience(
       position: json['position'] as String?,
       startDate: json['start_date'] as String?,
       endDate: json['end_date'] as String?,
-      isCurrent: json['is_current'] as bool?,
+      isCurrent: json['is_current'],
       description: json['description'] as String?,
       location: json['location'] as String?,
       image: json['image'] as String?,

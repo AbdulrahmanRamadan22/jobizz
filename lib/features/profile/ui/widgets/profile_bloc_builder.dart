@@ -61,7 +61,11 @@ class ProfileBlocBuilder extends StatelessWidget {
           SliverToBoxAdapter(
             child: RowTextAndSeeAll(
               text: 'Experience',
-              onPressed: () {},
+              onPressed: () {
+                context.pushNamed(
+                  Routes.experiencesScreen,
+                );
+              },
             ),
           ),
           if (profile.profileData?.experiences.isEmpty ?? false)

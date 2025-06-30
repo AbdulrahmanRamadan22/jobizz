@@ -39,15 +39,15 @@ void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
                   color: Colors.red[700],
                 ),
               ),
-              const SizedBox(height: 8),
-              Text(
-                'There is an error, usually in the email or password.',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.grey[600],
-                ),
-              ),
+              // const SizedBox(height: 8),
+              // Text(
+              //   'There is an error, usually in the email or password.',
+              //   textAlign: TextAlign.center,
+              //   style: TextStyle(
+              //     fontSize: 14,
+              //     color: Colors.grey[600],
+              //   ),
+              // ),
               const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,

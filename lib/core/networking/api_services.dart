@@ -19,7 +19,10 @@ import '../../features/auth/reset_password_screen/data/model/reset_password_requ
 import '../../features/category/data/model/category_response.dart';
 import '../../features/companies/data/model/company_response.dart';
 import '../../features/home/data/model/home_response_model.dart';
+import '../../features/profile/data/models/education_request_model.dart';
 import '../../features/profile/data/models/education_response_model.dart';
+import '../../features/profile/data/models/experience_request_model.dart';
+import '../../features/profile/data/models/experience_response_model.dart';
 import '../../features/profile/data/models/profile_response_model.dart';
 import '../../features/switch_profile/data/models/profile_response_model.dart';
 
@@ -88,6 +91,8 @@ abstract class ApisServices {
     @Header("Authorization") String token,
   );
 
+  //profile
+
   @GET("${ApiConstant.getProfileById}/{id}")
   Future<ProfileResponseModel> getProfileDetailsById(
     @Path('id') int id,
@@ -101,18 +106,18 @@ abstract class ApisServices {
     @Body() Map<String, dynamic> data,
   );
 
-
-@GET(ApiConstant.getAllEducations)
-Future<EducationResponseModel> getAllEducations(
-  @Path('profileId') int profileId,
-  @Header('Authorization') String token,
-);
+// educations
+  @GET(ApiConstant.getAllEducations)
+  Future<EducationResponseModel> getAllEducations(
+    @Path('profileId') int profileId,
+    @Header('Authorization') String token,
+  );
 
   @POST(ApiConstant.addEducation)
   Future<dynamic> addEducation(
     @Path('profileId') int profileId,
     @Header('Authorization') String token,
-    @Body() Education education,
+    @Body() EducationRequestModel educationRequestModel,
   );
 
   @DELETE(ApiConstant.deleteEducation)
@@ -127,13 +132,39 @@ Future<EducationResponseModel> getAllEducations(
       @Path('profileId') int profileId,
       @Path('educationId') int educationId,
       @Header('Authorization') String token,
-      @Body() Education? education);
-
+      @Body() EducationRequestModel educationRequestModel);
 
   @GET(ApiConstant.getProfilesDetails)
   Future<ProfilesResponseModel> getProfilesDetails(
     @Header('Authorization') String token,
   );
+
+  @GET(ApiConstant.getAllExperiences)
+  Future<ExperienceResponseModel> getAllExperience(
+    @Path('profileId') int profileId,
+    @Header('Authorization') String token,
+  );
+
+  @POST(ApiConstant.addExperience)
+  Future<dynamic> addExperience(
+    @Path('profileId') int profileId,
+    @Header('Authorization') String token,
+    @Body() ExperienceRequestModel experienceRequestModel,
+  );
+
+  @DELETE(ApiConstant.deleteExperience)
+  Future<dynamic> deleteExperience(
+    @Path('profileId') int profileId,
+    @Path('experienceId') int experienceId,
+    @Header('Authorization') String token,
+  );
+
+  @PUT(ApiConstant.updateExperience)
+  Future<dynamic> updateExperience(
+      @Path('profileId') int profileId,
+      @Path('experienceId') int experienceId,
+      @Header('Authorization') String token,
+      @Body() ExperienceRequestModel experienceRequestModel);
 
   @POST(ApiConstant.addFavorite)
   Future<dynamic> addFavorite(
@@ -151,6 +182,5 @@ Future<EducationResponseModel> getAllEducations(
   @DELETE(ApiConstant.deleteAccount)
   Future<DeleteAccountResponse> deleteAccount(
     @Header('Authorization') String token,
-
   );
 }
