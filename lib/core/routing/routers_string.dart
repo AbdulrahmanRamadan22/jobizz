@@ -68,7 +68,7 @@ class Routes {
   static const String aboutApplicationScreen = '/aboutApplicationScreen';
 
 
-
+  static const String chatSupportScreen = '/chatSupportScreen';
 
 
 

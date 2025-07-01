@@ -17,6 +17,7 @@ import 'package:jobizz/features/jobs/data/models/job.dart';
 import 'package:jobizz/features/onboarding/ui/onboarding_screen.dart';
 import 'package:jobizz/features/saved_jobs/cubit/saved_cubit.dart';
 import 'package:jobizz/features/settings/ui/screens/about_screen.dart';
+import 'package:jobizz/features/settings/ui/widgets/chat_suport.dart';
 
 import '../../features/auth/change_password/logic/cubit/change_password_cubit.dart';
 import '../../features/auth/forget_password_screen/logic/cubit/forget_pass_cubit.dart';
@@ -209,6 +210,11 @@ class AppRouter {
             ),
             child: const SettingScreen(),
           ),
+        );
+      // chat support screen
+      case Routes.chatSupportScreen:
+        return MaterialPageRoute(
+          builder: (context) => const ChatSupport(),
         );
       // about application screen
       case Routes.aboutApplicationScreen:
