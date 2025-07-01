@@ -78,6 +78,13 @@ class Routes {
 
   static const String aboutApplicationScreen = '/aboutApplicationScreen';
 
+  static const String pdfViewScreen = '/pdfViewScreen';
+  static const String resumesScreen = '/resumesScreen';
+
+
+
+
+
 
 
 

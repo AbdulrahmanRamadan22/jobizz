@@ -36,6 +36,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
+  flutter_cached_pdfview: ^0.4.3
   flutter_native_splash: ^2.4.4
   flutter_phoenix: ^1.1.1
   flutter_screenutil: ^5.9.3

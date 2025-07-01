@@ -10,7 +10,7 @@ import 'package:jobizz/features/profile/ui/widgets/education/sliver_list_educati
 import 'package:jobizz/features/profile/ui/widgets/experience/sliver_list_experience.dart';
 import 'package:jobizz/features/profile/ui/widgets/portfolio/portfolio_item_link.dart';
 import 'package:jobizz/features/profile/ui/widgets/portfolio/sliver_grid_portfolio.dart';
-import 'package:jobizz/features/profile/ui/widgets/resume/resume_item.dart';
+import 'package:jobizz/features/profile/ui/widgets/resume/sliver_list_resume.dart';
 
 import '../../../../core/helper/size_box.dart';
 import '../../../../core/routing/routers_string.dart';
@@ -72,7 +72,10 @@ class ProfileBlocBuilder extends StatelessWidget {
             SliverToBoxAdapter(
                 child: CustomCardDataIsEmpty(
               title: 'No Work Experiences Added Yet',
-              onTap: () {},
+              onTap: () {
+                context.pushNamed(Routes.addExperienceScreen);
+                
+              },
             )),
           SliverListExperience(
             experiences: profile.profileData?.experiences ?? [],
@@ -93,7 +96,9 @@ class ProfileBlocBuilder extends StatelessWidget {
             SliverToBoxAdapter(
               child: CustomCardDataIsEmpty(
                 title: 'No Education Added Yet',
-                onTap: () {},
+                onTap: () {
+                  context.pushNamed(Routes.addEducationScreen);
+                },
               ),
             ),
           SliverListEducation(
@@ -116,7 +121,10 @@ class ProfileBlocBuilder extends StatelessWidget {
                 onTap: () {},
               ),
             ),
-          if (profile.profileData?.cvs.isNotEmpty ?? false) SliverListResume(),
+          if (profile.profileData?.cvs.isNotEmpty ?? false)
+            SliverListResume(
+              cvs: profile.profileData?.cvs ?? [],
+            ),
 
           SliverToBoxAdapter(
             child: RowTextAndSeeAll(

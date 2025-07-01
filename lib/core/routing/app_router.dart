@@ -51,6 +51,7 @@ import '../../features/profile/ui/screens/education/edit_education_screen.dart';
 import '../../features/profile/ui/screens/education/educations_screen.dart';
 import '../../features/profile/ui/screens/experiences/add_experiences_screen.dart';
 import '../../features/profile/ui/screens/experiences/edit_experiences_screen.dart';
+import '../../features/profile/ui/screens/pdf_view_screen.dart';
 import '../../features/profile/ui/screens/profile_screen.dart';
 import '../../features/profile/ui/screens/edit_personal_info_screen.dart';
 import '../../features/saved_jobs/ui/saved_screen.dart';
@@ -167,7 +168,6 @@ class AppRouter {
           ),
         );
 
-
 // educations
       case Routes.educationsScreen:
         final educationCubit = getIt<EducationCubit>()..getAllEducations();
@@ -192,7 +192,6 @@ class AppRouter {
           ),
         );
 
-
       case Routes.addEducationScreen:
         final profileCubit = getIt<EducationCubit>();
         // final education = settings.arguments as Education?;
@@ -202,7 +201,6 @@ class AppRouter {
             child: AddEducationScreen(),
           ),
         );
-
 
       // case Routes.addEducationScreen:
       //   final profileCubit = getIt<ProfileCubit>();
@@ -218,7 +216,6 @@ class AppRouter {
       //     ),
       //   );
 
-
       // Experiences
       case Routes.experiencesScreen:
         final experienceCubit = getIt<ExperienceCubit>()..getAllExperiences();
@@ -229,7 +226,7 @@ class AppRouter {
           ),
         );
 
-         case Routes.addExperienceScreen:
+      case Routes.addExperienceScreen:
         final experienceCubit = getIt<ExperienceCubit>();
         // final education = settings.arguments as Education?;
         return MaterialPageRoute(
@@ -239,7 +236,7 @@ class AppRouter {
           ),
         );
 
-          case Routes.editExperienceScreen:
+      case Routes.editExperienceScreen:
         final profileCubit = getIt<ExperienceCubit>();
         final experience = settings.arguments as Experience?;
         return MaterialPageRoute(
@@ -251,7 +248,14 @@ class AppRouter {
           ),
         );
 
+      case Routes.pdfViewScreen:
+        final pdfUrl = settings.arguments as String;
 
+        return MaterialPageRoute(
+          builder: (context) => PdfViewScreen(
+            pdfUrl: pdfUrl,
+          ),
+        );
 
 // saved jobs screen
       case Routes.savedJobsScreen:
