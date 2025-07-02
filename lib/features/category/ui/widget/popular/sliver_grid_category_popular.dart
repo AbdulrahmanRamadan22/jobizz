@@ -20,6 +20,12 @@ class SliverGridCategoryPopular extends StatelessWidget {
       ),
       delegate: SliverChildBuilderDelegate(
         childCount: 4,
+        // childCount: (categoryDataList?.length ?? 0) > 4
+        //     ? 4
+        //     : categoryDataList?.length ?? 0,
+        // childCount: categoryDataList == null
+        //     ? 0
+        //     : (categoryDataList!.length >= 4 ? 4 : categoryDataList!.length),
         (context, index) {
           if (isLoading) {
             return const ShimmerLoadingCustom();

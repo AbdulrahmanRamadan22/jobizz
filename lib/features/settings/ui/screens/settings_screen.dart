@@ -47,6 +47,22 @@ class SettingScreen extends StatelessWidget {
               ),
               // Delete Account
               DeleteAccount(),
+              // chat support
+              ListTile(
+                contentPadding: EdgeInsets.zero,
+                leading: const Icon(
+                  Icons.chat_bubble_outline,
+                  color: ColorsApp.lightBlueGray,
+                  size: 30.0,
+                ),
+                title: Text(
+                  'Chat Support',
+                  style: TextStyles.font16Black,
+                ),
+                onTap: () {
+                  context.pushNamed(Routes.chatSupportScreen);
+                },
+              ),
               verticalSpace(20),
               Text(
                 'About',

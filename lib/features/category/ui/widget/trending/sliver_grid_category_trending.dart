@@ -19,6 +19,9 @@ class SliverGridCategoryTrending extends StatelessWidget {
       ),
       delegate: SliverChildBuilderDelegate(
         childCount: 4,
+        // childCount: (categoryDataList?.length ?? 0) > 4
+        //     ? 4
+        //     : categoryDataList?.length ?? 0,
         (context, index) {
           if (isLoading) {
             return const ShimmerLoadingCustom();

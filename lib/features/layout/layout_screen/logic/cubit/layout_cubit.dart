@@ -54,7 +54,7 @@ class LayoutCubit extends Cubit<LayoutState> {
 
     const GeminiChatScreen(),
 
-    const NotificationScreen(),
+    //const NotificationScreen(),
 
     // const MessagesScreen(),
     // const SavedScreen(),
