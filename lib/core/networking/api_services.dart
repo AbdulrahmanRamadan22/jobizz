@@ -24,6 +24,7 @@ import '../../features/profile/data/models/education_response_model.dart';
 import '../../features/profile/data/models/experience_request_model.dart';
 import '../../features/profile/data/models/experience_response_model.dart';
 import '../../features/profile/data/models/profile_response_model.dart';
+import '../../features/profile/data/models/resume_response_model.dart';
 import '../../features/switch_profile/data/models/profile_response_model.dart';
 
 part 'api_services.g.dart';
@@ -183,4 +184,11 @@ abstract class ApisServices {
   Future<DeleteAccountResponse> deleteAccount(
     @Header('Authorization') String token,
   );
+
+  @GET(ApiConstant.getAllResumes)
+  Future<ResumeResponseModel> getAllCvs(
+    @Path('profileId') int profileId,
+    @Header('Authorization') String token,
+  );
+
 }

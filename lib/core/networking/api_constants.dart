@@ -45,5 +45,10 @@ class ApiConstant {
 
 
 
+// resumes
+  static const String getAllResumes = "auth/profiles/{profileId}/cvs/getAllCvs";
+  static const String addResume = "auth/profiles/{profileId}/resumes/add-resume";
+  static const String updateResume = "auth/profiles/{profileId}/resumes/{resumeId}";
+  static const String deleteResume = "auth/profiles/{profileId}/resumes/{resumeId}";
 }
 // ${SharedPrefHelper.getData(key: SharedPrefKeys.fullName) ?? ''}
