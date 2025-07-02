@@ -183,4 +183,5 @@ abstract class ApisServices {
   Future<DeleteAccountResponse> deleteAccount(
     @Header('Authorization') String token,
   );
+  // chat support
 }

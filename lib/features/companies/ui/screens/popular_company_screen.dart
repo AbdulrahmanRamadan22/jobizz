@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobizz/core/theming/colors.dart';
-import 'package:jobizz/core/theming/styles.dart';
 import 'package:jobizz/core/widgets/show_generic_search_dialog.dart';
 import 'package:jobizz/features/companies/data/model/company_response.dart';
 import 'package:jobizz/features/companies/ui/widgets/company_item.dart';
@@ -19,7 +18,7 @@ class PopularCompanyScreen extends StatelessWidget {
         scrolledUnderElevation: 0,
         title: Text(
           'Popular ',
-         // style: TextStyles.font16Black,
+          // style: TextStyles.font16Black,
         ),
         // icon Button Search
         actions: [
@@ -33,19 +32,20 @@ class PopularCompanyScreen extends StatelessWidget {
                   companyDataList?.whereType<Company>().toList() ?? [];
               showGenericSearchDialog<Company>(
                 context: context,
-                items: companies, // تمرير قائمة الفئات
+                items: companies,
                 searchFields: [
-                  (company) => company.name ?? '', // حقل البحث للفئة (الاسم)
+                  (company) => company.name ?? '',
                 ],
                 itemBuilder: (context, company) {
                   return Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 10.0.w,
-                        vertical: 7.h,
-                      ),
-                      child: CompanyItem(
-                        companyItem: company,
-                      ));
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10.0.w,
+                      vertical: 7.h,
+                    ),
+                    child: CompanyItem(
+                      companyItem: company,
+                    ),
+                  );
                 },
               );
             },

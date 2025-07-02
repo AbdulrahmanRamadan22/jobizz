@@ -36,7 +36,6 @@ class _LayoutScreensState extends State<LayoutScreens> {
   void dispose() {
     super.dispose();
     _connectionStream.drain();
-
   }
 
   @override
@@ -92,13 +91,13 @@ class _LayoutScreensState extends State<LayoutScreens> {
                       ),
                       label: 'ChatBot',
                     ),
-                    BottomNavigationBarItem(
-                      icon: Icon(
-                        Icons.notifications,
-                        size: 30,
-                      ),
-                      label: 'Notification',
-                    ),
+                    // BottomNavigationBarItem(
+                    //   icon: Icon(
+                    //     Icons.notifications,
+                    //     size: 30,
+                    //   ),
+                    //   label: 'Notification',
+                    // ),
                   ],
                 ),
               );
