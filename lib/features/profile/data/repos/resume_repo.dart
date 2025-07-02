@@ -62,4 +62,19 @@ class ResumeRepo {
     }
   }
 
+
+  Future<ApiResult<dynamic>> addApplication({
+    required String token,
+    required int profileId,
+    required int jobId,
+    required Map<String, dynamic> data,
+  }) async {
+    try {
+      final response =
+          await _apisServices.addApplication(profileId, jobId, token, data);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
 }

@@ -15,7 +15,7 @@ class AppTextButton extends StatelessWidget {
   final String buttonText;
   final TextStyle textStyle;
   final double borderWidth ;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   const AppTextButton({
     super.key,
     this.borderRadius,
@@ -28,7 +28,7 @@ class AppTextButton extends StatelessWidget {
     this.borderWidth=1.0,
     required this.buttonText,
     required this.textStyle,
-    required this.onPressed,
+     this.onPressed,
   });
 
   @override

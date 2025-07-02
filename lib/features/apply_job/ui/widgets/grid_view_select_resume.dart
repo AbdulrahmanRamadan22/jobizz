@@ -11,7 +11,12 @@ import '../../../profile/logic/resume/resume_cubit.dart';
 import '../../../profile/logic/resume/resume_state.dart';
 
 class GridViewSelectResume extends StatefulWidget {
-  const GridViewSelectResume({super.key});
+  final Function(int? resumeId)? onResumeSelected;
+  
+  const GridViewSelectResume({
+    super.key,
+    this.onResumeSelected,
+  });
 
   @override
   State<GridViewSelectResume> createState() => _GridViewSelectResumeState();
@@ -19,6 +24,19 @@ class GridViewSelectResume extends StatefulWidget {
 
 class _GridViewSelectResumeState extends State<GridViewSelectResume> {
   int? selectedIndex;
+
+  void _selectResume(int index, int? resumeId) {
+    setState(() {
+      selectedIndex = (selectedIndex == index) ? null : index;
+    });
+    
+    // Call the callback with the selected resume ID
+    if (widget.onResumeSelected != null) {
+      widget.onResumeSelected!(
+        selectedIndex == index ? resumeId : null
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +56,7 @@ class _GridViewSelectResumeState extends State<GridViewSelectResume> {
                     child: Text('No resumes found'),
                   );
                 }
-                
+
                 return GridView.builder(
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
@@ -47,26 +65,23 @@ class _GridViewSelectResumeState extends State<GridViewSelectResume> {
                     crossAxisCount: 2,
                     crossAxisSpacing: 16.w,
                     mainAxisSpacing: 16.h,
-                    mainAxisExtent: 100.h, // Increased height for better layout
+                    childAspectRatio: 1.9,
                   ),
                   itemCount: resumes.length,
                   itemBuilder: (BuildContext context, int index) {
                     final isSelected = selectedIndex == index;
-                    
+                    final resume = resumes[index];
+
                     return GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          selectedIndex = isSelected ? null : index;
-                        });
-                      },
+                      onTap: () => _selectResume(index, resume.id),
                       child: AnimatedContainer(
                         duration: const Duration(milliseconds: 200),
                         decoration: BoxDecoration(
                           color: ColorsApp.whiteColor,
-                          borderRadius: BorderRadius.circular(16.r),
+                          borderRadius: BorderRadius.circular(8.r),
                           border: Border.all(
-                            color: isSelected 
-                                ? ColorsApp.mainBlue 
+                            color: isSelected
+                                ? ColorsApp.mainBlue
                                 : Colors.transparent,
                             width: 2,
                           ),
@@ -80,19 +95,19 @@ class _GridViewSelectResumeState extends State<GridViewSelectResume> {
                           ],
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(12.w),
+                          padding: EdgeInsets.all(8),
                           child: Row(
                             children: [
                               Icon(
-                                isSelected 
-                                    ? Icons.check_circle 
+                                isSelected
+                                    ? Icons.check_circle
                                     : Icons.radio_button_unchecked,
-                                size: 24.r,
+                                size: 20.r,
                                 color: isSelected
                                     ? ColorsApp.mainBlue
                                     : ColorsApp.lightBlueGray,
                               ),
-                              horizontalSpace(12),
+                              horizontalSpace(4),
                               Expanded(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -101,26 +116,28 @@ class _GridViewSelectResumeState extends State<GridViewSelectResume> {
                                     Container(
                                       width: double.infinity,
                                       padding: EdgeInsets.symmetric(
-                                        horizontal: 8.w, 
+                                        horizontal: 8.w,
                                         vertical: 4.h,
                                       ),
                                       decoration: BoxDecoration(
                                         color: ColorsApp.darkBlue,
-                                        borderRadius: BorderRadius.circular(8.r),
+                                        borderRadius:
+                                            BorderRadius.circular(4.r),
                                       ),
                                       child: Text(
-                                        resumes[index].name ?? 'Resume Name',
+                                        resume.name ?? 'Resume Name',
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.center,
-                                        style: TextStyles.font8White,
+                                        style: TextStyles.font10White,
                                       ),
                                     ),
                                     verticalSpace(8),
                                     Text(
                                       SharedPrefHelper.getData(
-                                        key: SharedPrefKeys.fullName,
-                                      )?.toString() ?? 'Unknown User',
+                                            key: SharedPrefKeys.fullName,
+                                          )?.toString() ??
+                                          'Unknown User',
                                       maxLines: 1,
                                       overflow: TextOverflow.ellipsis,
                                       style: TextStyles.font11Black,

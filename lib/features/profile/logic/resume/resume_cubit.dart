@@ -1,5 +1,3 @@
-
-
 import 'package:bloc/bloc.dart';
 
 import 'package:jobizz/features/profile/logic/resume/resume_state.dart';
@@ -108,7 +106,6 @@ class ResumeCubit extends Cubit<ResumeState> {
     emit(const ResumeState.getAllResumesLoading());
 
     final response = await _resumeRepo.getAllResume(
-      
       profileId: await SharedPrefHelper.getData(key: SharedPrefKeys.idProfile),
       token:
           "Bearer ${await SharedPrefHelper.getSecuredString(key: SharedPrefKeys.token)}",
@@ -116,11 +113,32 @@ class ResumeCubit extends Cubit<ResumeState> {
     response.when(
       success: (profileResponse) async {
         firstLoadedResumes = true;
-        emit(ResumeState.getAllResumesSuccess(
-            profileResponse.data?.cvs??[]));
+        emit(ResumeState.getAllResumesSuccess(profileResponse.data?.cvs ?? []));
       },
       failure: (error) {
         emit(ResumeState.getAllResumesFailure(error));
+      },
+    );
+  }
+
+  void addApplication({required int jobId, required int cvId}) async {
+    emit(const ResumeState.addResumeLoading());
+
+    final response = await _resumeRepo.addApplication(
+        jobId: jobId,
+        profileId:
+            await SharedPrefHelper.getData(key: SharedPrefKeys.idProfile),
+        token:
+            "Bearer ${await SharedPrefHelper.getSecuredString(key: SharedPrefKeys.token)}",
+        data: {
+          "cv_id": cvId,
+        });
+    response.when(
+      success: (profileResponse) async {
+        emit(ResumeState.addResumeSuccess());
+      },
+      failure: (error) {
+        emit(ResumeState.addResumeFailure(error));
       },
     );
   }

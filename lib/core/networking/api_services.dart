@@ -191,5 +191,12 @@ abstract class ApisServices {
     @Header('Authorization') String token,
   );
 
+  @POST(ApiConstant.addApplication)
+  Future<dynamic> addApplication(
+    @Path('profileId') int profileId,
+    @Path('jobId') int jobId,
+    @Header('Authorization') String token,
+    @Body() Map<String, dynamic> data,
+  );
   // chat support
 }

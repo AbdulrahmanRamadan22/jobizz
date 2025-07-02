@@ -46,6 +46,16 @@ abstract class ResumeState<T> with _$ResumeState<T> {
 
 
 
+  const factory ResumeState.applicationApplyLoading() = ApplicationApplyLoading;
+
+  const factory ResumeState.applicationApplySuccess() = ApplicationApplySuccess;
+
+  const factory ResumeState.applicationApplyFailure(ApiErrorModel apiErrorModel) =
+      ApplicationApplyFailure;
+
+
+
+
 
 
  

@@ -11,14 +11,22 @@ import '../../../../core/routing/routers_string.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
 import '../../../../core/widgets/button_app_text.dart';
+import '../../../../core/widgets/showdialog_loadin.dart';
 import '../../../jobs/data/models/job.dart';
 import '../../../profile/logic/resume/resume_cubit.dart';
 import '../../../profile/logic/resume/resume_state.dart';
 
-class ApplyScreen extends StatelessWidget {
+class ApplyScreen extends StatefulWidget {
   final Job? job;
 
   const ApplyScreen({super.key, this.job});
+
+  @override
+  State<ApplyScreen> createState() => _ApplyScreenState();
+}
+
+class _ApplyScreenState extends State<ApplyScreen> {
+  int? selectedResumeId;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +42,26 @@ class ApplyScreen extends StatelessWidget {
         ),
       ),
       body: BlocConsumer<ResumeCubit, ResumeState>(
-        listener: (context, state) {},
+        listener: (context, state) {
+          // Handle state changes like success/error
+          if (state is ApplicationApplySuccess) {
+            Navigator.pushNamed(context, Routes.applySuccessScreen);
+          }
+
+            if (state is AddResumeLoading) {
+            showDialogLoading(context);
+          }
+
+          if (state is ApplicationApplyFailure) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(
+                    'Failed to submit application: ${state.apiErrorModel.message ?? 'Unknown error'}'),
+                backgroundColor: Colors.red,
+              ),
+            );
+          }
+        },
         builder: (context, state) {
           return SingleChildScrollView(
             child: Padding(
@@ -43,7 +70,7 @@ class ApplyScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CardSelectCompany(
-                    job: job,
+                    job: widget.job,
                   ),
                   verticalSpace(24),
                   Text('Select a profile', style: TextStyles.font16Black),
@@ -55,22 +82,27 @@ class ApplyScreen extends StatelessWidget {
                   verticalSpace(32),
                   Text('Select a resume', style: TextStyles.font16Black),
                   verticalSpace(16),
-                  SizedBox(
-                    height: 80.h,
-                    child: GridViewSelectResume(),
+                  GridViewSelectResume(
+                    onResumeSelected: (resumeId) {
+                      setState(() {
+                        selectedResumeId = resumeId;
+                      });
+                    },
                   ),
                   verticalSpace(24),
                   TextFormAndUploadPdf(),
-                  verticalSpace(24),
+                  verticalSpace(12),
                   AppTextButton(
                     borderRadius: 5.r,
-                    buttonHeight: 62.h,
-                    buttonText: 'Apply',
+                    buttonHeight: 55.h,
+                    buttonText: state is ApplicationApplyLoading
+                        ? 'Applying...'
+                        : 'Apply',
                     textStyle: TextStyles.font16White,
                     onPressed: () {
-                      Navigator.pushNamed(context, Routes.applySuccessScreen);
-                    },
-                  )
+                      _validateAndSubmitApplication(context);
+                    }
+                  ),
                 ],
               ),
             ),
@@ -78,5 +110,45 @@ class ApplyScreen extends StatelessWidget {
         },
       ),
     );
+  }
+
+  void _validateAndSubmitApplication(BuildContext context) {
+    // Validate that both profile and resume are selected
+    if (selectedResumeId == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please select a resume'),
+          backgroundColor: Colors.orange,
+        ),
+      );
+      return;
+    }
+
+    // if (selectedProfileId == null) {
+    //   ScaffoldMessenger.of(context).showSnackBar(
+    //     const SnackBar(
+    //       content: Text('Please select a profile'),
+    //       backgroundColor: Colors.orange,
+    //     ),
+    //   );
+    //   return;
+    // }
+
+    // if (widget.job?.id == null) {
+    //   ScaffoldMessenger.of(context).showSnackBar(
+    //     const SnackBar(
+    //       content: Text('Job information is missing'),
+    //       backgroundColor: Colors.red,
+    //     ),
+    //   );
+    //   return;
+    // }
+
+    // Submit the application
+    context.read<ResumeCubit>().addApplication(
+          jobId: widget.job!.id,
+          cvId: selectedResumeId!,
+          // if needed
+        );
   }
 }
