@@ -45,7 +45,7 @@ class RecommendedJobsItem extends StatelessWidget {
                   height: 45.h,
                 ),
               ),
-              Text('${jop?.title}',
+              Text('${jop?.categoryName}',
                   textAlign: TextAlign.center,
                   maxLines: 1,
                   style: TextStyles.font14DarkBlackSemiBold),

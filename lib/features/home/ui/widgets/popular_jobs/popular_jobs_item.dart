@@ -47,7 +47,7 @@ class PopularJobsItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '${jop?.title}',
+                        '${jop?.categoryName}',
                         style: TextStyles.font14DarkBlackSemiBold,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1,

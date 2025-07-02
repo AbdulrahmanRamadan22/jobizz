@@ -54,7 +54,7 @@ class FeaturedJobsItem extends StatelessWidget {
                 child: ListTile(
                   contentPadding: EdgeInsets.zero,
                   title: Text(
-                    '${job?.title}',
+                    '${job?.categoryName}',
                     style: TextStyles.font16WhiteSemiBold,
                     maxLines: 1,
                   ),
