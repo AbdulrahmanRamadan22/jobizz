@@ -24,6 +24,7 @@ import 'package:jobizz/features/saved_jobs/cubit/saved_cubit.dart';
 import 'package:jobizz/features/settings/ui/screens/about_screen.dart';
 import 'package:jobizz/features/settings/ui/widgets/chat_suport.dart';
 
+import '../../features/apply_job/ui/screens/applied_job_details.dart';
 import '../../features/auth/change_password/logic/cubit/change_password_cubit.dart';
 import '../../features/auth/forget_password_screen/logic/cubit/forget_pass_cubit.dart';
 import '../../features/auth/forget_password_screen/ui/forget_pass_screen.dart';
@@ -50,6 +51,7 @@ import '../../features/notifications/ui/notifications_screen.dart.dart';
 import '../../features/profile/data/models/profile_response_model.dart';
 import '../../features/profile/logic/education/education_cubit.dart';
 import '../../features/profile/logic/profile/profile_cubit.dart';
+import '../../features/profile/logic/resume/resume_cubit.dart';
 import '../../features/profile/ui/screens/education/edit_education_screen.dart';
 import '../../features/profile/ui/screens/education/educations_screen.dart';
 import '../../features/profile/ui/screens/experiences/add_experiences_screen.dart';
@@ -446,15 +448,26 @@ class AppRouter {
 
       // applyScreen
       case Routes.applyScreen:
-        // final categoryDataList = settings.arguments as List<Category?>? ?? [];
+        final job = settings.arguments as Job?;
         return MaterialPageRoute(
-          builder: (context) => ApplyScreen(),
+          builder: (context) => BlocProvider(
+            create: (context) => ResumeCubit(getIt())..getAllResume(),
+            child: ApplyScreen(
+              job: job,
+            ),
+          ),
         );
 
-         case Routes.applySuccessScreen:
+      case Routes.applySuccessScreen:
         // final categoryDataList = settings.arguments as List<Category?>? ?? [];
         return MaterialPageRoute(
           builder: (context) => ApplySuccessScreen(),
+        );
+
+      case Routes.appliedJobDetailsScreen:
+        // final categoryDataList = settings.arguments as List<Category?>? ?? [];
+        return MaterialPageRoute(
+          builder: (context) => AppliedJobDetailsScreen(),
         );
       // Tr
 

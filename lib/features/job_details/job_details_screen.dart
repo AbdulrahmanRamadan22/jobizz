@@ -74,7 +74,7 @@ class JobDetailsScreen extends StatelessWidget {
               buttonText: 'Apply Now',
               textStyle: TextStyles.font16White,
               onPressed: () {
-                  context.pushNamed(Routes.applyScreen);
+                  context.pushNamed(Routes.applyScreen,arguments: job);
               },
             ),
             verticalSpace(8)

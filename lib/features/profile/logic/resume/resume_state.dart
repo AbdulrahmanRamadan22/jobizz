@@ -1,11 +1,10 @@
 
 
 
-import 'package:flutter/painting.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../../core/networking/api_error_model.dart';
-import '../../../data/models/profile_response_model.dart';
+import '../../../../core/networking/api_error_model.dart';
+import '../../data/models/profile_response_model.dart';
 
 part 'resume_state.freezed.dart';
 

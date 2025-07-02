@@ -5,6 +5,7 @@ import 'package:jobizz/features/auth/delet_account/data/repo/delete_repo.dart';
 import 'package:jobizz/features/companies/data/repo/company_info_repo.dart';
 import 'package:jobizz/features/home/data/repo/home_repo.dart';
 import 'package:jobizz/features/profile/data/repos/experience_repo.dart';
+import 'package:jobizz/features/profile/data/repos/resume_repo.dart';
 import 'package:jobizz/features/profile/logic/experience/experience_cubit.dart';
 import 'package:jobizz/features/saved_jobs/data/repo/repo_saved.dart';
 
@@ -82,6 +83,9 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<EducationRepo>(() => EducationRepo(getIt()));
 
   getIt.registerLazySingleton<ExperienceRepo>(() => ExperienceRepo(getIt()));
+
+  getIt.registerLazySingleton<ResumeRepo>(() => ResumeRepo(getIt()));
+
 
 
   // Cubits (stateful, register as factories)

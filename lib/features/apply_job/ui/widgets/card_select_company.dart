@@ -3,12 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
-
+import '../../../jobs/data/models/job.dart';
 
 class CardSelectCompany extends StatelessWidget {
-  const CardSelectCompany({
-    super.key,
-  });
+  final Job? job;
+
+  const CardSelectCompany({super.key, this.job});
 
   @override
   Widget build(BuildContext context) {
@@ -25,16 +25,32 @@ class CardSelectCompany extends StatelessWidget {
               vertical: 20.0.h,
             ),
             child: ListTile(
-              leading: CircleAvatar(
-                radius: 25.r,
-                backgroundImage: AssetImage('assets/images/image_jobs.png'),
+              contentPadding: EdgeInsets.zero,
+              leading: Container(
+                height: 40.h,
+                width: 40.w,
+                decoration: BoxDecoration(
+                  color: ColorsApp.backGroundWhite,
+                  borderRadius: BorderRadius.circular(12.r),
+                ),
+                child: Image.network(
+                  job?.companyLogo ?? 'https://via.placeholder.com/150',
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    return const Icon(
+                      Icons.error,
+                      color: Colors.red,
+                      size: 50,
+                    );
+                  },
+                ),
               ),
               title: Text(
-                'UX Intern',
+                job?.title ?? 'title ',
                 style: TextStyles.font14Black,
               ),
               subtitle: Text(
-                'King Burger',
+                job?.companyName ?? 'Company Name',
                 style: TextStyles.font12Gray,
               ),
               trailing: Column(
@@ -42,11 +58,11 @@ class CardSelectCompany extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    r'$88,000/y',
+                    '\$${job?.salary}/y',
                     style: TextStyles.font12DarkBlack,
                   ),
                   Text(
-                    'Los Angels, US',
+                    job?.location ?? 'Location',
                     style: TextStyles.font12Gray,
                   ),
                 ],

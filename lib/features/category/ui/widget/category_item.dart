@@ -40,6 +40,13 @@ class CategoryItem extends StatelessWidget {
                 "${categoryItem?.image}",
                 height: 45.h,
                 fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return const Icon(
+                    Icons.error,
+                    color: Colors.red,
+                    size: 45,
+                  );
+                },
               ),
               Text(
                 // overflow: TextOverflow.ellipsis,

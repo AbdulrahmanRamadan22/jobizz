@@ -7,7 +7,6 @@ import '../../../../core/routing/routers_string.dart';
 import '../../../../core/theming/styles.dart';
 import '../../../../core/widgets/button_app_text.dart';
 
-
 class ApplySuccessScreen extends StatelessWidget {
   const ApplySuccessScreen({super.key});
 
@@ -48,7 +47,8 @@ class ApplySuccessScreen extends StatelessWidget {
               buttonText: 'Browse Jobs',
               textStyle: TextStyles.font16Black,
               onPressed: () {
-                context.pushNamed(Routes.homeScreen);
+                context.pushNamedAndRemoveUntil(Routes.layoutScreen,
+                    predicate: (Route<dynamic> route) => false);
               },
             ),
           ],

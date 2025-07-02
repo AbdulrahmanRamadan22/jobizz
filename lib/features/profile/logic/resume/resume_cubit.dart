@@ -1,14 +1,12 @@
 
-import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 
-import 'package:jobizz/features/profile/logic/experience/experience_state.dart';
-import 'package:jobizz/features/profile/logic/resume/experience/resume_state.dart';
+import 'package:jobizz/features/profile/logic/resume/resume_state.dart';
 
-import '../../../../../core/cache/constants.dart';
-import '../../../../../core/cache/shared_pref.dart';
-import '../../../data/repos/resume_repo.dart';
+import '../../../../core/cache/constants.dart';
+import '../../../../core/cache/shared_pref.dart';
+import '../../data/repos/resume_repo.dart';
 
 class ResumeCubit extends Cubit<ResumeState> {
   ResumeCubit(this._resumeRepo) : super(ResumeState.initial());
