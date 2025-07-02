@@ -131,7 +131,7 @@ class ResumeCubit extends Cubit<ResumeState> {
         token:
             "Bearer ${await SharedPrefHelper.getSecuredString(key: SharedPrefKeys.token)}",
         data: {
-          "cv_id": cvId,
+          "cv_id": cvId.toInt(),
         });
     response.when(
       success: (profileResponse) async {

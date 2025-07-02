@@ -95,9 +95,7 @@ class _ApplyScreenState extends State<ApplyScreen> {
                   AppTextButton(
                     borderRadius: 5.r,
                     buttonHeight: 55.h,
-                    buttonText: state is ApplicationApplyLoading
-                        ? 'Applying...'
-                        : 'Apply',
+                    buttonText: "Apply",
                     textStyle: TextStyles.font16White,
                     onPressed: () {
                       _validateAndSubmitApplication(context);
