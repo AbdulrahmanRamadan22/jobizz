@@ -1,3 +1,5 @@
+import 'package:jobizz/features/profile/data/models/application_request.dart';
+
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/api_services.dart';
@@ -67,7 +69,7 @@ class ResumeRepo {
     required String token,
     required int profileId,
     required int jobId,
-    required Map<String, dynamic> data,
+    required ApplicationRequest data,
   }) async {
     try {
       final response =

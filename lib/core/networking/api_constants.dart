@@ -51,9 +51,10 @@ class ApiConstant {
   static const String updateResume = "auth/profiles/{profileId}/resumes/{resumeId}";
   static const String deleteResume = "auth/profiles/{profileId}/resumes/{resumeId}";
 
-  static const String addApplication = "auth/profiles/{profileId}/applications/add-application/{jobId}";
+  static const String addApplication = "auth/profile/{profileId}/applications/add-application/{jobId}";
 
 
+// {{baseUrl}}/auth/profile/14/applications/add-application/14
 
 
 

@@ -4,6 +4,7 @@ import 'package:jobizz/features/profile/logic/resume/resume_state.dart';
 
 import '../../../../core/cache/constants.dart';
 import '../../../../core/cache/shared_pref.dart';
+import '../../data/models/application_request.dart';
 import '../../data/repos/resume_repo.dart';
 
 class ResumeCubit extends Cubit<ResumeState> {
@@ -122,7 +123,7 @@ class ResumeCubit extends Cubit<ResumeState> {
   }
 
   void addApplication({required int jobId, required int cvId}) async {
-    emit(const ResumeState.addResumeLoading());
+    emit(const ResumeState.applicationApplyLoading());
 
     final response = await _resumeRepo.addApplication(
         jobId: jobId,
@@ -130,15 +131,15 @@ class ResumeCubit extends Cubit<ResumeState> {
             await SharedPrefHelper.getData(key: SharedPrefKeys.idProfile),
         token:
             "Bearer ${await SharedPrefHelper.getSecuredString(key: SharedPrefKeys.token)}",
-        data: {
-          "cv_id": cvId.toInt(),
-        });
+       data: ApplicationRequest(cv_id: cvId),
+        
+        );
     response.when(
       success: (profileResponse) async {
-        emit(ResumeState.addResumeSuccess());
+        emit(ResumeState.applicationApplySuccess());
       },
       failure: (error) {
-        emit(ResumeState.addResumeFailure(error));
+        emit(ResumeState.applicationApplyFailure(error));
       },
     );
   }

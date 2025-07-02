@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobizz/core/helper/extensions.dart';
 import 'package:jobizz/features/apply_job/ui/widgets/card_select_company.dart';
 import 'package:jobizz/features/apply_job/ui/widgets/grid_view_select_profile.dart';
 import 'package:jobizz/features/apply_job/ui/widgets/grid_view_select_resume.dart';
@@ -45,10 +46,12 @@ class _ApplyScreenState extends State<ApplyScreen> {
         listener: (context, state) {
           // Handle state changes like success/error
           if (state is ApplicationApplySuccess) {
-            Navigator.pushNamed(context, Routes.applySuccessScreen);
+            context.pop();
+            context.pushNamed(Routes.applySuccessScreen);
+            // Navigator.pushNamed(context, Routes.applySuccessScreen);
           }
 
-            if (state is AddResumeLoading) {
+          if (state is ApplicationApplyLoading) {
             showDialogLoading(context);
           }
 
@@ -93,14 +96,13 @@ class _ApplyScreenState extends State<ApplyScreen> {
                   TextFormAndUploadPdf(),
                   verticalSpace(12),
                   AppTextButton(
-                    borderRadius: 5.r,
-                    buttonHeight: 55.h,
-                    buttonText: "Apply",
-                    textStyle: TextStyles.font16White,
-                    onPressed: () {
-                      _validateAndSubmitApplication(context);
-                    }
-                  ),
+                      borderRadius: 5.r,
+                      buttonHeight: 55.h,
+                      buttonText: "Apply",
+                      textStyle: TextStyles.font16White,
+                      onPressed: () {
+                        _validateAndSubmitApplication(context);
+                      }),
                 ],
               ),
             ),

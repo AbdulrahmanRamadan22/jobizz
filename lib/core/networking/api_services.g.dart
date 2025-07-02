@@ -758,19 +758,19 @@ class _ApisServices implements ApisServices {
     int profileId,
     int jobId,
     String token,
-    Map<String, dynamic> data,
+    ApplicationRequest data,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
-    _data.addAll(data);
+    _data.addAll(data.toJson());
     final _options = _setStreamType<dynamic>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'auth/profiles/${profileId}/applications/add-application/${jobId}',
+            'auth/profile/${profileId}/applications/add-application/${jobId}',
             queryParameters: queryParameters,
             data: _data,
           )

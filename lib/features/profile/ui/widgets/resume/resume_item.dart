@@ -8,7 +8,6 @@ import '../../../../../core/theming/colors.dart';
 import '../../../../../core/theming/styles.dart';
 import '../../../data/models/profile_response_model.dart';
 
-
 class ResumeItem extends StatelessWidget {
   const ResumeItem({
     super.key,

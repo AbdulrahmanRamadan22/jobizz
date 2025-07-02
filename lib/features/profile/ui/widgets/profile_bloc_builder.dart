@@ -74,7 +74,6 @@ class ProfileBlocBuilder extends StatelessWidget {
               title: 'No Work Experiences Added Yet',
               onTap: () {
                 context.pushNamed(Routes.addExperienceScreen);
-                
               },
             )),
           SliverListExperience(
@@ -110,7 +109,7 @@ class ProfileBlocBuilder extends StatelessWidget {
             child: RowTextAndSeeAll(
               text: 'Resume',
               onPressed: () {
-                context.pushNamed(Routes.resumeAndProtfolioScreen);
+                //   context.pushNamed(Routes.resumeAndProtfolioScreen);
               },
             ),
           ),

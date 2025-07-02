@@ -19,6 +19,7 @@ import '../../features/auth/reset_password_screen/data/model/reset_password_requ
 import '../../features/category/data/model/category_response.dart';
 import '../../features/companies/data/model/company_response.dart';
 import '../../features/home/data/model/home_response_model.dart';
+import '../../features/profile/data/models/application_request.dart';
 import '../../features/profile/data/models/education_request_model.dart';
 import '../../features/profile/data/models/education_response_model.dart';
 import '../../features/profile/data/models/experience_request_model.dart';
@@ -196,7 +197,7 @@ abstract class ApisServices {
     @Path('profileId') int profileId,
     @Path('jobId') int jobId,
     @Header('Authorization') String token,
-    @Body() Map<String, dynamic> data,
+    @Body() ApplicationRequest data,
   );
   // chat support
 }
