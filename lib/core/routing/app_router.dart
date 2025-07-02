@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobizz/core/routing/routers_string.dart';
+import 'package:jobizz/features/apply_job/ui/screens/apply_screen.dart';
+import 'package:jobizz/features/apply_job/ui/screens/apply_success_screen.dart';
 import 'package:jobizz/features/auth/change_password/ui/change_password_screen.dart';
 import 'package:jobizz/features/auth/delet_account/logic/cubit/delete_acount_cubit.dart';
 import 'package:jobizz/features/auth/register/logic/cubit/sign_up_cubit.dart';
@@ -441,6 +443,20 @@ class AppRouter {
             child: const SwitchProfileScreen(),
           ),
         );
+
+      // applyScreen
+      case Routes.applyScreen:
+        // final categoryDataList = settings.arguments as List<Category?>? ?? [];
+        return MaterialPageRoute(
+          builder: (context) => ApplyScreen(),
+        );
+
+         case Routes.applySuccessScreen:
+        // final categoryDataList = settings.arguments as List<Category?>? ?? [];
+        return MaterialPageRoute(
+          builder: (context) => ApplySuccessScreen(),
+        );
+      // Tr
 
       default:
         return null;

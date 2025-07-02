@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobizz/core/helper/extensions.dart';
 import 'package:jobizz/core/helper/size_box.dart';
+import 'package:jobizz/core/routing/routers_string.dart';
 import 'package:jobizz/core/theming/colors.dart';
 import 'package:jobizz/core/theming/styles.dart';
 import 'package:jobizz/core/widgets/button_app_text.dart';
@@ -72,7 +74,7 @@ class JobDetailsScreen extends StatelessWidget {
               buttonText: 'Apply Now',
               textStyle: TextStyles.font16White,
               onPressed: () {
-                //   context.pushNamed(Routes.applyScreen);
+                  context.pushNamed(Routes.applyScreen);
               },
             ),
             verticalSpace(8)
