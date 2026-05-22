@@ -20,19 +20,13 @@
 
 ---
 
-## 📺 Demo Preview
 
-<p align="center">
-  <img src="assets/demo/app_demo.gif" width="700" alt="Jobizz App Demo">
-</p>
-
----
 
 ## 🔍 Explore the Full Case Study
 
 > 💡 Want to dive deeper into the architecture, design decisions, and real code snippets?
 >
-> 🎯 **[View Interactive Case Study →](https://your-portfolio.com/case-study/jobizz)**
+> 🎯 **[View Interactive Case Study →](https://abdelrahmanramadan.netlify.app/?tab=jobizz-details)**
 > Includes UI Mockups, Clean Architecture breakdown, BLoC state management walkthrough, and real code snippets — no GitHub access needed.
 
 
