@@ -23,13 +23,19 @@
 ## 📺 Demo Preview
 
 <p align="center">
-  <!-- Replace with your actual GIF: record with scrcpy, LICEcap, or Android Studio -->
   <img src="assets/demo/app_demo.gif" width="700" alt="Jobizz App Demo">
 </p>
 
-> 💡 **Try it yourself:** Download the latest APK → [**Jobizz-v1.0.0.apk**](https://github.com/AbdulrahmanRamadan22/jobizz/releases/latest)
+---
+
+## 🔍 Explore the Full Case Study
+
+> 💡 Want to dive deeper into the architecture, design decisions, and real code snippets?
 >
-> Or preview in browser → [**Run on Appetize.io**](https://appetize.io) *(upload your APK to get a live link)*
+> 🎯 **[View Interactive Case Study →](https://your-portfolio.com/case-study/jobizz)**
+> Includes UI Mockups, Clean Architecture breakdown, BLoC state management walkthrough, and real code snippets — no GitHub access needed.
+
+
 
 ---
 
