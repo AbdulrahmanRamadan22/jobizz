@@ -26,7 +26,7 @@
 
 > 💡 Want to dive deeper into the architecture, design decisions, and real code snippets?
 >
-> 🎯 **[View Interactive Case Study →](https://abdelrahmanramadan.netlify.app/?tab=jobizz-details)**
+> 🎯 **[View Interactive Case Study →](https://abdulrahmanramadan22.github.io/portfolio/?tab=jobizz-details)**
 > Includes UI Mockups, Clean Architecture breakdown, BLoC state management walkthrough, and real code snippets — no GitHub access needed.
 
 
